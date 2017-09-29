@@ -1,0 +1,443 @@
+> restart;with(geometry);Digits:=30;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               30
+                               x
+                               y
+Este tanto es diferente de los anteriores, aqui se evaluan al vuelo z y c_z y su complementario, se construyen dos rectas opuestas y se restan las intersecciones con el eje y.
+> tanto_test1 := proc( p1, p2, p3 )
+>   local k, sq, a, c_a, die, r, c_z, c_q, t;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+>   printf(" %d * %d = %d, sqrt(%d) = %f \n",p1,p2,k,k,sq);
+> 
+>   
+>   a  := evalf( k / ( k - sq ) );
+>   c_a:= a * sq;
+> 
+>   if ( p3 = 0 ) then
+>     die := rand(2..trunc(sq));
+>     r := die(); 
+>     while ( (r mod 2) <> 0) do
+>       r := die();
+>     end do;
+>   else
+>     r := p3;
+>   end if;
+> 
+>   c_z := (c_a*k)/(k-r*c_a);
+>   c_q := -(c_z - sq);
+>   t   := (((c_q*k)-(c_a*k))/(c_a*c_q));
+>   c_q := (c_a*k)/(k-t*c_a);
+> 
+>   printf(" p1-1 = [%d,%f] , p2-1 = [%f,%f] \n", r, c_z, t, c_q);
+> 
+>   line(Y,y=x,[x,y]);
+>   line(l0,y=0,[x,y]);
+>   line(l1,x=0,[x,y]);
+>   line(sqv,x=sq,[x,y]);
+>   line(sqh,y=sq,[x,y]);
+> 
+>   point(P1,[t,c_z]):
+>   point(P2,[r,c_q]):
+>   line(lin1,[P1,P2]);
+> 
+> #  point(P1,[t+p3,c_z/p3]):
+> #  point(P2,[r+p3,c_q/p3]):
+> #  line(lin12,[P1,P2]);
+> 
+>   
+> 
+>   point(P1,[r,c_z]):
+>   point(P2,[t,c_q]):
+>   line(lin2,[P1,P2]);
+> 
+>   ParallelLine(lin12,intersection(Q9,lin2,sqh),lin1);
+> 
+>   print("recta a  ", a, c_a);
+>   print("slope A ", slope(lin1));
+>   print("slope R ", slope(lin2));
+>   print("interseccion A-R ", coordinates(intersection(Q1,lin1,lin2)));
+>   print("interseccion A-X ", coordinates(intersection(Q2,lin1,l0)));
+>   print("interseccion A-Y ", coordinates(intersection(Q3,lin1,l1)));
+>   print("interseccion R-X ", coordinates(intersection(Q4,lin2,l0)));
+>   print("interseccion R-Y ", coordinates(intersection(Q5,lin2,l1)));
+>   print("distance AR<->AY ", distance(Q1,Q3));
+>   print("distance AX<->AY ", distance(Q2,Q3));
+>   print("distance AR<->AX ", distance(Q1,Q2));
+>   print("interseccion A-SQV", coordinates(intersection(Q6,lin1,sqv)));
+>   print("interseccion R-V", coordinates(intersection(Q7,lin2,lin12)));
+>   #print("interseccion A-V", coordinates(intersection(Q7,lin1,lin12)));
+>   print("intersection V-SQV", coordinates(intersection(Q8,lin12,sqv)));
+>   #print("new ", VerticalCoord(Q8)/VerticalCoord(Q6));
+>   print("intersection V-X", coordinates(intersection(Q9,lin12,l0)));
+>   print("intersection V-Y", coordinates(intersection(Q9,lin12,l1)));
+>   print("intersection V-SQH", coordinates(intersection(Q9,lin12,sqh)));
+>   print("intersection V-XY", coordinates(intersection(Q12,lin12,Y)));
+> 
+>   print(VerticalCoord(intersection(Q,lin1,l1)) + VerticalCoord(intersection(Q,lin2,l1)));
+>   print(abs(VerticalCoord(intersection(Q,lin1,l1))) + abs(VerticalCoord(intersection(Q,lin2,l1))));
+> 
+>   print("intersection A-XY", coordinates(intersection(Q10,lin1,Y)));
+>   print("intersection R-XY", coordinates(intersection(Q11,lin2,Y)));
+>   print("intersection R-SQH", coordinates(intersection(Q9,lin2,sqh)));
+>   print("intersection A-SQH", coordinates(intersection(Q13,lin1,sqh)));
+>   print("distance (A-XY)<->(R-XY)", distance(Q10,Q11) );
+>   print("distance (V-XY)<->(R-XY)", distance(Q12,Q11) );
+>   print("distance (V-XY)<->(A-XY)", distance(Q10,Q12) );
+>   print("distance (R-V)<->(R-A)", distance(Q1,Q7) );
+> 
+>   draw([lin1(colour=blue), lin12(colour=green), lin2,  sqv(colour=black), sqh(colour=black), Y(colour=black)], axes=normal, view=[0..sq*2,-sq*3..sq*3]);
+> 
+> end proc:
+> tanto_test1(3,11,2);
+ 3 * 11 = 33, sqrt(33) = 5.744563 
+ p1-1 = [2,12.023774] , p2-1 = [10.000000,-6.279211] 
+"recta a  ", 1.21076758270431339562033160838, 6.95533022924234205547094307659
+          "slope A ", 2.28787307893019376934232125868
+          "slope R ", -2.28787307893019376934232125868
+   "interseccion A-R ", [6., 2.87228132326901432992530573410]
+   "interseccion A-X ", [4.74456264653802865985061146821, 0.]
+  "interseccion A-Y ", [0., -10.8549571503121482861286218179]
+   "interseccion R-X ", [7.25543735346197134014938853176, 0.]
+   "interseccion R-Y ", [0., 16.5995197968501769459792332861]
+      "distance AR<->AY ", 14.9812241192289386086920385043
+      "distance AX<->AY ", 11.8465593925847000634696433005
+      "distance AR<->AX ", 3.13466472664423854522239520389
+"interseccion A-SQV", 
+
+  [5.74456264653802865985061146822, 2.28787307893019376934232125870]
+"interseccion R-V", 
+
+  [4.74456264653802865985061146820, 5.74456264653802865985061146824]
+"intersection V-SQV", 
+
+  [5.74456264653802865985061146822, 8.03243572546822242919293272695]
+   "intersection V-X", [2.23368793961408597955183440464, 0.]
+   "intersection V-Y", [0., -5.11039450377411962627801034968]
+"intersection V-SQH", 
+
+  [4.74456264653802865985061146820, 5.74456264653802865985061146822]
+"intersection V-XY", 
+
+  [3.96808861632483656838617027457, 3.96808861632483656838617027457]
+                 5.7445626465380286598506114682
+                27.4544769471623252321078551040
+"intersection A-XY", 
+
+  [8.42859232629438055531982153264, 8.42859232629438055531982153264]
+"intersection R-XY", 
+
+  [5.04871064008690963385117244640, 5.04871064008690963385117244640]
+"intersection R-SQH", 
+
+  [4.74456264653802865985061146820, 5.74456264653802865985061146822]
+"intersection A-SQH", 
+
+  [7.25543735346197134014938853176, 5.74456264653802865985061146822]
+  "distance (A-XY)<->(R-XY)", 4.77987451985105084552111083397
+  "distance (V-XY)<->(R-XY)", 1.52823032180338471710721019028
+  "distance (V-XY)<->(A-XY)", 6.30810484165443556262832102427
+   "distance (R-V)<->(R-A)", 3.13466472664423854522239520393
+
+> tanto_test1(7,23,6);
+ 7 * 23 = 161, sqrt(161) = 12.688578 
+ p1-1 = [6,28.302330] , p2-1 = [22.000000,-15.613753] 
+"recta a  ", 1.08555360962780950237621107966, 13.7741311500773298825699838257
+          "slope A ", 2.74475518052142816955395774362
+          "slope R ", -2.74475518052142816955395774362
+"interseccion A-R ", 
+
+  [14.0000000000000000000000000001, 6.34428877022476019009688637299]
+   "interseccion A-X ", [11.6885775404495203801937727462, 0.]
+  "interseccion A-Y ", [0., -32.0822837570752341836585220380]
+   "interseccion R-X ", [16.3114224595504796198062272541, 0.]
+   "interseccion R-Y ", [0., 44.7708612975247545638522947840]
+      "distance AR<->AY ", 40.8974507297930084180415056941
+      "distance AX<->AY ", 34.1452160044213860460831082889
+      "distance AR<->AX ", 6.75223472537162237195839740518
+"interseccion A-SQV", 
+
+  [12.6885775404495203801937727461, 2.74475518052142816955395774347]
+"interseccion R-V", 
+
+  [11.6885775404495203801937727461, 12.6885775404495203801937727461]
+"intersection V-SQV", 
+
+  [12.6885775404495203801937727461, 15.4333327209709485497477304897]
+   "intersection V-X", [7.06573262134856114058131823818, 0.]
+   "intersection V-Y", [0., -19.3937062166257138034647492918]
+"intersection V-SQH", 
+
+  [11.6885775404495203801937727461, 12.6885775404495203801937727461]
+"intersection V-XY", 
+
+  [11.1154312267637542391995775141, 11.1154312267637542391995775141]
+                12.6885775404495203801937727460
+                76.8531450545999887475108168220
+"intersection A-XY", 
+
+  [18.3878426699884020623456813373, 18.3878426699884020623456813373]
+"intersection R-XY", 
+
+  [11.9556176944231528410790052463, 11.9556176944231528410790052463]
+"intersection R-SQH", 
+
+  [11.6885775404495203801937727461, 12.6885775404495203801937727461]
+"intersection A-SQH", 
+
+  [16.3114224595504796198062272541, 12.6885775404495203801937727461]
+  "distance (A-XY)<->(R-XY)", 9.09653979667932535578722986639
+  "distance (V-XY)<->(R-XY)", 1.18820309748626531069562717405
+  "distance (V-XY)<->(A-XY)", 10.2847428941655906664828570405
+   "distance (R-V)<->(R-A)", 6.75223472537162237195839740532
+
+> tanto_test1(23,61,22);
+ 23 * 61 = 1403, sqrt(1403) = 37.456642 
+ p1-1 = [22,97.048819] , p2-1 = [60.000000,-59.592178] 
+"recta a  ", 1.02742984422300719290103056963, 38.4840714448790916401458891852
+          "slope A ", 4.12213150585534009249900839606
+          "slope R ", -4.12213150585534009249900839606
+"interseccion A-R ", 
+
+  [40.9999999999999999999999999997, 18.7283208003280422236224293075]
+   "interseccion A-X ", [36.4566416006560844472448586152, 0.]
+  "interseccion A-Y ", [0., -150.279070939740901568836914929]
+   "interseccion R-X ", [45.5433583993439155527551413840, 0.]
+   "interseccion R-Y ", [0., 187.735712540396986016081773544]
+      "distance AR<->AY ", 173.909454782599799422686917284
+      "distance AX<->AY ", 154.637918633530392495036111595
+      "distance AR<->AX ", 19.2715361490694069276508056892
+"interseccion A-SQV", 
+
+  [37.4566416006560844472448586155, 4.12213150585534009249900839667]
+"interseccion R-V", 
+
+  [36.4566416006560844472448586152, 37.4566416006560844472448586156]
+"intersection V-SQV", 
+
+  [37.4566416006560844472448586155, 41.5787731065114245397438670127]
+   "intersection V-X", [27.3699248019682533417345758462, 0.]
+   "intersection V-Y", [0., -112.822429339084817121592056313]
+"intersection V-SQH", 
+
+  [36.4566416006560844472448586151, 37.4566416006560844472448586154]
+"intersection V-XY", 
+
+  [36.1363475969843718115298042039, 36.1363475969843718115298042039]
+                 37.456641600656084447244858615
+                338.014783480137887584918688473
+"intersection A-XY", 
+
+  [48.1334852993549359800547553013, 48.1334852993549359800547553013]
+"intersection R-XY", 
+
+  [36.6518728239967688460475177124, 36.6518728239967688460475177124]
+"intersection R-SQH", 
+
+  [36.4566416006560844472448586151, 37.4566416006560844472448586154]
+"intersection A-SQH", 
+
+  [45.5433583993439155527551413842, 37.4566416006560844472448586154]
+  "distance (A-XY)<->(R-XY)", 16.2374520805636435351915402457
+  "distance (V-XY)<->(R-XY)", 0.729062767786400538074224502682
+  "distance (V-XY)<->(A-XY)", 16.9665148483500440732657647484
+   "distance (R-V)<->(R-A)", 19.2715361490694069276508056898
+
+> tanto_test1(59,127,58);
+ 59 * 127 = 7493, sqrt(7493) = 86.562116 
+ p1-1 = [58,271.858659] , p2-1 = [126.000000,-185.296542] 
+"recta a  ", 1.01168741543314774870641417148, 87.5738038405760810571613868867
+          "slope A ", 6.72287060014632041422418359126
+          "slope R ", -6.72287060014632041422418359126
+"interseccion A-R ", 
+
+  [91.9999999999999999999999999995, 43.2810582125714666542274863557]
+   "interseccion A-X ", [85.5621164251429333084549727152, 0.]
+  "interseccion A-Y ", [0., -575.223037000890011454397404038]
+   "interseccion R-X ", [98.4378835748570666915450272841, 0.]
+   "interseccion R-Y ", [0., 661.785153426032944762852376749]
+      "distance AR<->AY ", 625.308976263592926295975056417
+      "distance AX<->AY ", 581.551732921222575318767490499
+      "distance AR<->AX ", 43.7572433423703509772075659173
+"interseccion A-SQV", 
+
+  [86.5621164251429333084549727151, 6.72287060014632041422418358980]
+"interseccion R-V", 
+
+  [85.5621164251429333084549727147, 86.5621164251429333084549727146]
+"intersection V-SQV", 
+
+  [86.5621164251429333084549727151, 93.2849870252892537226791563073]
+   "intersection V-X", [72.6863492754287999253649181455, 0.]
+   "intersection V-Y", [0., -488.660920575747078145942431320]
+"intersection V-SQH", 
+
+  [85.5621164251429333084549727148, 86.5621164251429333084549727150]
+"intersection V-XY", 
+
+  [85.3873789428775764193415892940, 85.3873789428775764193415892940]
+                 86.562116425142933308454972711
+                1237.00819042692295621724978079
+"intersection A-XY", 
+
+  [100.513025226567748005401379578, 100.513025226567748005401379578]
+"intersection R-XY", 
+
+  [85.6916019560776421748028816206, 85.6916019560776421748028816206]
+"intersection R-SQH", 
+
+  [85.5621164251429333084549727148, 86.5621164251429333084549727150]
+"intersection A-SQH", 
+
+  [98.4378835748570666915450272845, 86.5621164251429333084549727150]
+  "distance (A-XY)<->(R-XY)", 20.9606578027993016908616613193
+  "distance (V-XY)<->(R-XY)", 0.430236311253542110621610500289
+  "distance (V-XY)<->(A-XY)", 21.3908941140528438014832718196
+   "distance (R-V)<->(R-A)", 43.7572433423703509772075659206
+
+> p1:=nextprime(1234):p2:=nextprime(9741):tanto_test1(p1,p2,1236);
+ 1237 * 9743 = 12052091, sqrt(12052091) = 3471.612162 
+ p1-1 = [1236,5393.370361] , p2-1 = [9742.000000,-1921.758199] 
+"recta a  ", 1.00028813360682819710695864882, 3472.61244965165289900236881816
+          "slope A ", 0.859996303814700471697047685263
+         "slope R ", -0.859996303814700471697047685263
+"interseccion A-R ", 
+
+  [5488.99999999999999999999999995, 1735.80608075902303540263092975]
+   "interseccion A-X ", [3470.61216151804607080526185951, 0.]
+  "interseccion A-Y ", [0., -2984.71363087986785374246381464]
+   "interseccion R-X ", [7507.38783848195392919473814046, 0.]
+   "interseccion R-Y ", [0., 6456.32579239791392454772567414]
+      "distance AR<->AY ", 7239.64276383657742647127014994
+      "distance AX<->AY ", 4577.51725655262253976472194423
+      "distance AR<->AX ", 2662.12550728395488670654820571
+"interseccion A-SQV", 
+
+  [3471.61216151804607080526185952, 0.859996303814700471697047683992]
+"interseccion R-V", 
+
+  [3470.61216151804607080526185948, 3471.61216151804607080526185950]
+"intersection V-SQV", 
+
+  [3471.61216151804607080526185952, 3472.47215782186077127695890721]
+   "intersection V-X", [-566.163515445861787584214421467, 0.]
+   "intersection V-Y", [0., 486.898530638178217062798044888]
+"intersection V-SQH", 
+
+  [3470.61216151804607080526185949, 3471.61216151804607080526185951]
+"intersection V-XY", 
+
+  [3477.75483008499923812535356438, 3477.75483008499923812535356438]
+                3471.61216151804607080526185950
+                9441.03942327778177829018948878
+"intersection A-XY", 
+
+  [-21318.8202326422905339471270024, -21318.8202326422905339471270024]
+"intersection R-XY", 
+
+  [3471.14979699503550443603163055, 3471.14979699503550443603163055]
+"intersection R-SQH", 
+
+  [3470.61216151804607080526185949, 3471.61216151804607080526185951]
+"intersection A-SQH", 
+
+  [7507.38783848195392919473814047, 3471.61216151804607080526185951]
+  "distance (A-XY)<->(R-XY)", 35058.3118267356635028971345183
+  "distance (V-XY)<->(R-XY)", 9.34092737574978341463216149679
+  "distance (V-XY)<->(A-XY)", 35067.6527541114132863117666798
+   "distance (R-V)<->(R-A)", 2662.12550728395488670654820573
+
+> tanto_test1(101,103,100);
+ 101 * 103 = 10403, sqrt(10403) = 101.995098 
+ p1-1 = [100,10454.247543] , p2-1 = [102.000000,-10352.252445] 
+"recta a  ", 1.00990147067116128949225940713, 103.004999392090894587974612378
+          "slope A ", 10403.2499939924063982225999993
+          "slope R ", -10403.2499939924063982225999993
+  "interseccion A-R ", [101., 50.9975489607098666492411748634]
+   "interseccion A-X ", [100.995097921419733298482352971, 0.]
+                     [                                       6]
+"interseccion A-Y ", [0., -1.05067725184427233635383335876 10 ]
+   "interseccion R-X ", [101.004902078580266701517647029, 0.]
+                      [                                      6]
+ "interseccion R-Y ", [0., 1.05077924694219375608713184110 10 ]
+                                                           6
+    "distance AR<->AY ", 1.05072825424748531474330695401 10 
+                                                           6
+    "distance AX<->AY ", 1.05067725669828900164825437836 10 
+      "distance AR<->AX ", 50.9975491963130950525756496584
+"interseccion A-SQV", 
+
+  [101.995097921419733298482352971, 10403.2499939924063982225999950]
+"interseccion R-V", 
+
+  [                                                                   5]
+  [67.3333333333333333333333333332, 3.50293747346705058606810107821 10 ]
+"intersection V-SQV", 
+
+  [                                                                   6]
+  [101.995097921419733298482352971, 1.07148375183225714915027855875 10 ]
+   "intersection V-X", [50.4975489607098666492411764854, 0.]
+"intersection V-SQH", 
+
+  [50.5024510392901333507588235142, 101.995097921419733298482352971]
+"intersection V-XY", 
+
+  [50.4999760857003678257462611495, 50.4999760857003678257462611495]
+                  101.99509792141973329848234
+                                                6
+              2.10145649878646609244096519986 10 
+"intersection A-XY", 
+
+  [101.004806888035585374621625308, 101.004806888035585374621625308]
+"intersection R-XY", 
+
+  [100.995194035988354527044477727, 100.995194035988354527044477727]
+"intersection R-SQH", 
+
+  [100.995097921419733298482352971, 101.995097921419733298482352971]
+"intersection A-SQH", 
+
+  [101.004902078580266701517647029, 101.995097921419733298482352971]
+ "distance (A-XY)<->(R-XY)", 0.0135946257382798366920419567633
+  "distance (V-XY)<->(R-XY)", 71.4110220602826284040661857597
+  "distance (V-XY)<->(A-XY)", 71.4246166860209082407582277165
+                                                             5
+ "distance (R-V)<->(R-A)", 3.50242751415828438247768984673 10 
+
+> 

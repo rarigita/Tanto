@@ -1,0 +1,528 @@
+> restart;Digits:=40;with(geometry);with(plots);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 40
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+Warning, the name changecoords has been redefined
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, interactiveparams, listcontplot, 
+
+  listcontplot3d, listdensityplot, listplot, listplot3d, loglogplot, logplot, 
+
+  matrixplot, multiple, odeplot, pareto, plotcompare, pointplot, pointplot3d, 
+
+  polarplot, polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, 
+
+  replot, rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+> tanto90 := proc( c1, c2, c3 )
+>   global k, sq, slo, p1, p2, new1, new2;
+>   k := c1 * c2;
+>   sq := evalf( sqrt(k) );
+>   p1 := c3;
+>   p2 := evalf(k/c3);
+
+>   new1 := k/(sq-c3);
+>   
+
+>   line( y, y=x, [x,y] );
+>   point( sq1, sq, 0 ); point( sq2, sq, sq );
+>   line( sqv, [sq1,sq2] );
+>   point( sq1, 0, sq ); point( sq2, sq, sq );
+>   line( sqh, [sq1,sq2] );
+>   point( ph, p1, 0 ); point( pv, p1, p1 );
+>   line( p1_x, [ph,pv] );
+>   point( ph, p2, 0 ); point( pv, p2, p2 );
+>   line( p2_x, [ph,pv] );
+>   point( ph, 0, p1 ); point( pv, p1, p1 );
+>   line( p1_y, [ph,pv] );
+>   point( ph1, 0, p2 ); point( pv, p2, p2 );
+>   line( p2_y, [ph1,pv] );
+>   point( ph, p1, sq ); point( pv, sq, 0 );
+>   line( l1, [ph,pv] );
+>   point( ph, p2, sq ); point( pv, sq, 0 );
+>   line( l2, [ph,pv] );
+>   point( ph, p1, 0 ); point( pv, sq, sq );
+>   line( l3, [ph,pv] );
+>   point( ph, p2, 0); point( pv1, sq, sq );
+>   line( l4, [ph,pv1] );
+>   point( ph, 0, 0 ); point( pv, p1, sq );
+>   line( l5, [ph,pv] );
+>   slo := slope(l5);
+>   line( Blue, [point(K, k,0), point(P,p2,p2)] );
+
+> #  point(inter,coordinates(intersection(Q,Brown,sqh)));
+> # line(A,[ph1,K]);  
+>   line(Brown, [point(P1,0,new1),point(PP,p1,p2)]);
+>   line(A,[P1,point(P2,sq,p2)]);
+>   line(B,[PP,point(SQ,sq,sq)]);
+>   line(C,[K,P1]);
+>   line(D,[point(P3,p2,p1),PP]);
+
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),p1_x(colour=pink),p1_y(colour=pink),p2_x(colour=pink),p2_y(colour=pink), l1,l2,l3,l4,l5(colour=red), Blue(colour=blue),A(colour=magenta),B(colour=yellow),C(colour=orange),D(colour=red)],colour=green,axes=normal,view=[-k..k,-k..k]);
+> end proc:
+> tanto90(3,11,3);slo;sq*slo;sq/slo;print(slope(l3));solve({Equation(Blue),x=0});solve({Equation(l1),x=16.5});print(coordinates(intersection(Q,l3,l5)));print(coordinates(intersection(Q,l2,y)));print(coordinates(intersection(Q,l3,Blue)));print(coordinates(intersection(Q,l2,Blue)));solve({Equation(Brown),x=sqrt(33)});solve({Equation(A),y=sqrt(33)});solve({Equation(p2_y),y=0});solve({Equation(l5),Equation(A)});solve({Equation(Brown),y=0});solve({Equation(Brown),Equation(A)});solve({Equation(l1),Equation(l3)});solve({Equation(A),y=0});solve({Equation(Brown),y=0});solve({Equation(B),y=0});solve({Equation(B),x=0});solve({Equation(l5),Equation(B)});solve({Equation(B),y=33});solve({Equation(l1),Equation(B)});solve({Equation(l1),y=33});solve({Equation(l3),y=33});solve({Equation(l2),y=33});solve({Equation(l4),y=33});solve({Equation(l5),y=33});solve({Equation(l1),y=-33});solve({Equation(l2),y=-33});solve({Equation(l3),y=-33});solve({Equation(l4),y=-33});solve({Equation(l5),y=-33});solve({Equation(l1),x=33});solve({Equation(l2),x=33});solve({Equation(l3),x=33});solve({Equation(l4),x=33});solve({Equation(l5),x=33});solve({Equation(C),y=33});solve({Equation(C),x=-33});solve({Equation(l5),Equation(p1_y)});solve({Equation(l5),Equation(p2_x)});solve({Equation(C),x=p1});solve({Equation(C),x=p2});solve({Equation(D),x=0});solve({Equation(D),Equation(y)});solve({Equation(C),Equation(y)});solve({Equation(D),Equation(B)});
+
+           1.914854215512676219950203822739643106073
+           11.00000000000000000000000000000000000000
+           3.000000000000000000000000000000000000001
+           2.093070330817253582481326433527366164778
+    {x = 0., y = 16.50000000000000000000000000000000000000}
+       {y = -22.51188681949489470364729538440051390628, 
+
+         x = 16.50000000000000000000000000000000000000}
+          [35.23368793961408597955183440465678795470, 
+
+            67.46737587922817195910366880931357590939]
+          [67.46737587922817195910366880931357590939, 
+
+            67.46737587922817195910366880931357590939]
+          [8.784648345913732087593367832363169176113, 
+
+            12.10767582704313395620331608381841541195]
+          [14.29893618115774206134449678602963613602, 
+
+            9.350531909421128969327751606985181931993]
+        {x = 5.744562646538028659850611468218929318220, 
+
+          y = 10.06339637063943841945224205013607416681}
+        {x = 35.23368793961408597955183440465678795474, 
+
+          y = 5.744562646538028659850611468218929318220}
+        {y = 11.00000000000000000000000000000000000000, 
+
+          x = 5.744562646538028659850611468218929318221}
+    {y = 0., x = 35.23368793961408597955183440465678795475}
+     /                                                 -39  
+    { x = -1.109534567206502638136437976425677384059 10   , 
+     \                                                      
+
+                                                   \ 
+      y = 12.02377363898978940729459076880102781255 }
+                                                   / 
+        {y = 2.872281323269014329925305734109464659111, 
+
+          x = 4.372281323269014329925305734109464659110}
+    {y = 0., x = 67.46737587922817195910366880931357590949}
+    {y = 0., x = 35.23368793961408597955183440465678795475}
+    {y = 0., x = 8.744562646538028659850611468218929318219}
+    {x = 0., y = 16.74456264653802865985061146821892931822}
+        {x = 4.372281323269014329925305734109464659110, 
+
+          y = 8.372281323269014329925305734109464659110}
+   {y = 33., x = -8.489125293076057319701222936437858636439}
+       {y = 67.46737587922817195910366880931357590938, 
+
+         x = -26.48912529307605731970122293643785863646}
+   {x = -10.02174941384788536059755412712428272712, y = 33.}
+    {x = 18.76631206038591402044816559534321204534, y = 33.}
+    {x = 35.93475175845634391820733761862715181865, y = 33.}
+   {x = -19.19018911191831525835672615040822250043, y = 33.}
+    {x = 17.23368793961408597955183440465678795466, y = 33.}
+   {y = -33., x = 21.51087470692394268029877706356214136356}
+   {x = -24.44562646538028659850611468218929318221, y = -33.}
+   {x = -12.76631206038591402044816559534321204534, y = -33.}
+   {x = 41.19018911191831525835672615040822250043, y = -33.}
+   {x = -17.23368793961408597955183440465678795466, y = -33.}
+   {x = 33., y = -57.04754727797957881458918153760205562511}
+    {x = 33., y = 29.79210992451760747443979300582098494332}
+    {y = 62.79210992451760747443979300582098494333, x = 33.}
+   {x = 33., y = -24.04754727797957881458918153760205562510}
+    {x = 33., y = 63.19018911191831525835672615040822250042}
+   {y = 33., x = -57.57056733575494577507017845122466750129}
+   {x = -33., y = 24.04754727797957881458918153760205562510}
+    {y = 3., x = 1.566698903601280543595621309514253450424}
+    {x = 11., y = 21.06339637063943841945224205013607416681}
+    {y = 10.93070330817253582481326433527366164777, x = 3.}
+    {y = 8.015849092659859604863060512534018541702, x = 11.}
+                       {x = 0., y = 14.}
+                        {y = 7., x = 7.}
+        {y = 8.812778183991549854312764774180160948319, 
+
+          x = 8.812778183991549854312764774180160948319}
+                       {x = 3., y = 11.}
+> evalf(sqrt(33)-(0.872281323269014329925305734109464659111+0.5*1));evalf(-8.489125293076057319701222936437858636439-sqrt(33));evalf(%*2);evalf(-8.489125293076057319701222936437858636439/2);evalf(-3.744562646538028659850611468218929318220-sqrt(33));evalf(%*2);evalf(-8.489125293076057319701222936437858636439+sqrt(33));
+           4.372281323269014329925305734109464659109
+           -14.23368793961408597955183440465678795466
+           -28.46737587922817195910366880931357590932
+           -4.244562646538028659850611468218929318220
+           -9.489125293076057319701222936437858636440
+           -18.97825058615211463940244587287571727288
+           -2.744562646538028659850611468218929318219
+> tanto90(7,23,7);slo;sq*slo;sq/slo;print(slope(l3));solve({Equation(Blue),x=0});solve({Equation(l1),x=23});print(coordinates(intersection(Q,l3,l5)));print(coordinates(intersection(Q,l2,y)));print(coordinates(intersection(Q,l3,Blue)));print(coordinates(intersection(Q,l2,Blue)));solve({Equation(Brown),x=sqrt(161)});solve({Equation(A),y=sqrt(161)});solve({Equation(p2_y),y=0});solve({Equation(l5),Equation(A)});solve({Equation(Brown),y=0});solve({Equation(Brown),Equation(A)});solve({Equation(l1),Equation(l3)});solve({Equation(A),y=0});solve({Equation(Brown),y=0});solve({Equation(B),y=0});solve({Equation(B),x=0});solve({Equation(l5),Equation(B)});solve({Equation(B),y=161});solve({Equation(l1),y=161});solve({Equation(l2),y=161});solve({Equation(l3),y=161});solve({Equation(l4),y=161});solve({Equation(l5),y=161});solve({Equation(l1),y=-161});solve({Equation(l2),y=-161});solve({Equation(l3),y=-161});solve({Equation(l4),y=-161});solve({Equation(l5),y=-161});solve({Equation(l1),x=161});solve({Equation(l2),x=161});solve({Equation(l3),x=161});solve({Equation(l4),x=161});solve({Equation(l5),x=161});solve({Equation(C),y=161});solve({Equation(C),x=-161});solve({Equation(l5),Equation(p1_y)});solve({Equation(l5),Equation(p2_x)});solve({Equation(C),x=p1});solve({Equation(C),x=p2});
+
+           1.812653934349931482884824678012784255963
+           23.00000000000000000000000000000000000000
+           6.999999999999999999999999999999999999999
+           2.230536096278095023762110796630593111984
+    {x = 0., y = 26.83333333333333333333333333333333333333}
+                      {x = 23., y = -23.}
+          [37.36400855662932853227128184452528570845, 
+
+            67.72801711325865706454256368905057141688]
+          [67.72801711325865706454256368905057141684, 
+
+            67.72801711325865706454256368905057141684]
+          [17.70692352912914568634013748447617092181, 
+
+            23.88217941181180905227664375258730484636]
+          [30.38004728663576294149918914079763154662, 
+
+            21.76999211889403950975013514320039474223]
+        {y = 18.69104049004842410635096759429403788714, 
+
+          x = 12.68857754044952038019377274608948979174}
+        {y = 12.68857754044952038019377274608948979174, 
+
+          x = 37.36400855662932853227128184452528570846}
+        {x = 12.68857754044952038019377274608948979174, 
+
+          y = 23.00000000000000000000000000000000000000}
+    {x = 37.36400855662932853227128184452528570846, y = 0.}
+     /                                               
+    { y = 28.30233021439618554652854832250364157562, 
+     \                                               
+
+                                                       -38\ 
+      x = -1.178736995456353780373296648151192972428 10    }
+                                                          / 
+        {y = 6.344288770224760190096886373044744895869, 
+
+          x = 9.844288770224760190096886373044744895870}
+    {y = 0., x = 67.72801711325865706454256368905057141693}
+    {x = 37.36400855662932853227128184452528570846, y = 0.}
+    {y = 0., x = 19.68857754044952038019377274608948979174}
+    {x = 0., y = 35.68857754044952038019377274608948979173}
+        {x = 9.844288770224760190096886373044744895868, 
+
+          y = 17.84428877022476019009688637304474489587}
+   {y = 161., x = -69.13146524269712228116263647653693875045}
+   {y = 161., x = -59.49137967640383695844981803128408166609}
+   {y = 161., x = 143.5258609707884891246505459061477550017}
+   {y = 161., x = 79.17995721685335733864359077737357145783}
+   {y = 161., x = -107.8372834303389687444567731600582652100}
+   {y = 161., x = 88.82004278314664266135640922262642854217}
+   {y = -161., x = 84.86853475730287771883736352346306124957}
+  {x = -118.1487058898894483642630004139687754183, y = -161.}
+  {y = -161., x = -65.17995721685335733864359077737357145783}
+   {y = -161., x = 153.8372834303389687444567731600582652100}
+  {y = -161., x = -88.82004278314664266135640922262642854217}
+   {y = -330.8139812863771132791712899350218494537, x = 161.}
+   {x = 161., y = 182.5025588268266336593650626811113392455}
+   {y = 343.5025588268266336593650626811113392455, x = 161.}
+   {y = -169.8139812863771132791712899350218494538, x = 161.}
+   {y = 291.8372834303389687444567731600582652100, x = 161.}
+   {y = 161., x = -754.8609840123727812111974121204078564702}
+   {y = 56.60466042879237109305709664500728315124, x = -161.}
+    {x = 3.861740990571593159189409096635931675747, y = 7.}
+    {y = 41.69104049004842410635096759429403788715, x = 23.}
+    {x = 7., y = 27.07179411811809052276643752587304846364}
+    {x = 23., y = 24.25914018376815903988161284786026420768}
+> evalf(-69.13146524269712228116263647653693875045-root[2](161));evalf(-69.13146524269712228116263647653693875045+sqrt(161));evalf(-69.13146524269712228116263647653693875045/7);
+           -81.82004278314664266135640922262642854219
+           -56.44288770224760190096886373044744895871
+           -9.875923606099588897308948068076705535779
+> tanto90(23,61,23);slo;sq*slo;sq/slo;print(slope(l3));solve({Equation(Blue),x=0});solve({Equation(l1),x=61});print(coordinates(intersection(Q,l3,l5)));print(coordinates(intersection(Q,l2,y)));print(coordinates(intersection(Q,l3,Blue)));print(coordinates(intersection(Q,l2,Blue)));solve({Equation(Brown),x=sqrt(1403)});solve({Equation(A),y=sqrt(1403)});solve({Equation(p2_y),y=0});solve({Equation(l5),Equation(A)});solve({Equation(Brown),y=0});solve({Equation(Brown),Equation(A)});solve({Equation(l1),Equation(l3)});solve({Equation(A),y=0});solve({Equation(Brown),y=0});solve({Equation(B),y=0});solve({Equation(B),x=0});solve({Equation(l5),Equation(B)});solve({Equation(B),y=1403});solve({Equation(l1),y=1403});solve({Equation(l2),y=1403});solve({Equation(l3),y=1403});solve({Equation(l4),y=1403});solve({Equation(l5),y=1403});solve({Equation(l1),y=-1403});solve({Equation(l2),y=-1403});solve({Equation(l3),y=-1403});solve({Equation(l4),y=-1403});solve({Equation(l5),y=-1403});solve({Equation(l1),x=1403});solve({Equation(l2),x=1403});solve({Equation(l3),x=1403});solve({Equation(l4),x=1403});solve({Equation(l5),x=1403});solve({Equation(C),y=1403});solve({Equation(C),x=-1403});
+
+           1.628549634811134106401950374581832915809
+           61.00000000000000000000000000000000000001
+           23.00000000000000000000000000000000000000
+           2.590964252648844327559075226720583080621
+    {x = 0., y = 63.77272727272727272727272727272727272727}
+                      {x = 61., y = -61.}
+          [61.91944376822870781569779832754160040200, 
+
+            100.8388875364574156313955966550832008040]
+          [100.8388875364574156313955966550832008041, 
+
+            100.8388875364574156313955966550832008041]
+          [46.79260562563050537063964809393406039661, 
+
+            61.64579065338043157406183417754845180016]
+          [75.38712292148604006001623424612541766346, 
+
+            60.34603986720517999727198935244884465166]
+        {y = 38.34152772347918049051897284949180786431, 
+
+          x = 37.45664160065608444724485861538215706360}
+        {y = 37.45664160065608444724485861538215706360, 
+
+          x = 61.91944376822870781569779832754160040201}
+        {x = 37.45664160065608444724485861538215706360, 
+
+          y = 60.99999999999999999999999999999999999999}
+    {x = 61.91944376822870781569779832754160040201, y = 0.}
+     /                                                 -38  
+    { x = -1.362714470851315500074375815945350509061 10   , 
+     \                                                      
+
+                                                   \ 
+      y = 97.04881941157950398110358882995556791789 }
+                                                   / 
+        {y = 18.72832080032804222362242930769107853180, 
+
+          x = 30.22832080032804222362242930769107853180}
+    {y = 0., x = 100.8388875364574156313955966550832008040}
+    {x = 61.91944376822870781569779832754160040201, y = 0.}
+    {y = 0., x = 60.45664160065608444724485861538215706361}
+    {x = 0., y = 98.45664160065608444724485861538215706362}
+        {x = 30.22832080032804222362242930769107853180, 
+
+          y = 49.22832080032804222362242930769107853181}
+  {y = 1403., x = -801.0461152144338578393868895384074553991}
+  {y = 1403., x = -504.0406015842539732661233932308282304736}
+   {y = 1403., x = 919.3117792406772357291812341536937379433}
+   {y = 1403., x = 564.4972431849100577133682518462103875372}
+  {x = -820.8551376400211512819363755383115808797, y = 1403.}
+   {x = 861.5027568150899422866317481537896124628, y = 1403.}
+  {y = -1403., x = 578.9538847855661421606131104615925446008}
+  {y = -1403., x = -844.3984960393650668346915169229294238161}
+  {y = -1403., x = -518.4972431849100577133682518462103875372}
+  {x = 942.8551376400211512819363755383115808797, y = -1403.}
+  {y = -1403., x = -861.5027568150899422866317481537896124628}
+  {x = 1403., y = -3538.074027054749087584278954259022494194}
+   {x = 1403., y = 2172.530668655405172031523812874404651257}
+   {x = 1403., y = 3575.530668655405172031523812874404651257}
+  {x = 1403., y = -2135.074027054749087584278954259022494193}
+   {x = 1403., y = 2284.855137640021151281936375538311580880}
+  {x = -18879.66816572048647948453663738116636023, y = 1403.}
+  {y = 194.0976388231590079622071776599111358358, x = -1403.}
+> nextprime(80);13*83;
+                               83
+                              1079
+> tanto90(101,103,101);slo;sq*slo;sq/slo;print(slope(l3));solve({Equation(Blue),x=0});solve({Equation(l1),x=103});print(coordinates(intersection(Q,l3,l5)));print(coordinates(intersection(Q,l2,y)));print(coordinates(intersection(Q,l3,Blue)));print(coordinates(intersection(Q,l2,Blue)));solve({Equation(Brown),x=sqrt(10403)});solve({Equation(A),y=sqrt(10403)});solve({Equation(p2_y),y=0});solve({Equation(l5),Equation(A)});solve({Equation(Brown),y=0});solve({Equation(Brown),Equation(A)});solve({Equation(l1),Equation(l3)});solve({Equation(A),y=0});solve({Equation(Brown),y=0});solve({Equation(B),y=0});solve({Equation(B),x=0});solve({Equation(l5),Equation(B)});solve({Equation(B),y=10403});solve({Equation(l1),y=10403});solve({Equation(l2),y=10403});solve({Equation(l3),y=10403});solve({Equation(l4),y=10403});solve({Equation(l5),y=10403});solve({Equation(l1),y=-10403});solve({Equation(l2),y=-10403});solve({Equation(l3),y=-10403});solve({Equation(l4),y=-10403});solve({Equation(l5),y=-10403});solve({Equation(l1),x=10403});solve({Equation(l2),x=10403});solve({Equation(l3),x=10403});solve({Equation(l4),x=10403});solve({Equation(l5),x=10403});solve({Equation(C),y=10403});solve({Equation(C),x=-10403});
+
+           1.009852454667522111866161910605071135570
+           103.0000000000000000000000000000000000000
+           101.0000000000000000000000000000000000000
+           102.4975489607098666492411764855560923428
+    {x = 0., y = 104.0300000000000000000000000000000000000}
+   {x = 103., y = -102.9999999999999999999999999999999999900}
+          [102.0049996347621031998229822261871450297, 
+
+            103.0099992695242063996459644523742900594]
+          [103.0099992695242063996459644523742900595, 
+
+            103.0099992695242063996459644523742900595]
+          [102.0049991541548471789540472692420415436, 
+
+            103.0099500084584515282104595273075795846]
+          [103.0098997768034890710667192009511831805, 
+
+            102.9999010022319651092893328079904881682]
+        {x = 101.9950979214197332984823529711121846926, 
+
+          y = 1.014802830754777522214676792322326964156}
+        {x = 102.0049996347621031998229822261871450297, 
+
+          y = 101.9950979214197332984823529711121846926}
+        {x = 101.9950979214197332984823529711121846926, 
+
+          y = 103.0000000000000000000000000000000000000}
+    {x = 102.0049996347621031998229822261871450297, y = 0.}
+     /                                               
+    { y = 10454.24754295311626487184117801227751131, 
+     \                                               
+
+                                                       -38\ 
+      x = -4.181763040969766551643054855382626026332 10    }
+                                                          / 
+        {y = 50.99754896070986664924117648555609234916, 
+
+          x = 101.4975489607098666492411764855560923463}
+    {y = 0., x = 103.0099992695242063996459644523742900595}
+    {x = 102.0049996347621031998229822261871450297, y = 0.}
+    {y = 0., x = 202.9950979214197332984823529711121847043}
+    {x = 0., y = 204.9950979214197332984823529711121846905}
+        {x = 101.4975489607098666492411764855560923487, 
+
+          y = 102.4975489607098666492411764855560923487}
+  {x = -10098.50979214197332984823529711121846994, y = 10403.}
+  {y = 10403., x = 0.4999879848127964452000030534428386383864}
+  {x = 204.4901838276522630421647089956672080235, y = 10403.}
+  {y = 10403., x = 202.4951099366069368532823499176693460542}
+  {y = 10403., x = 0.5049140937674702563176439754449766692009}
+  {x = 10301.50489006339306314671765008233065395, y = 10403.}
+  {y = -10403., x = 203.4902078580266701517647028887815307469}
+ {y = -10403., x = -0.4999879848127964452000030534428386381904}
+ {y = -10403., x = -0.4951099366069368532823499176693460542693}
+  {y = -10403., x = 205.4950859062325297436823560245550233308}
+ {y = -10403., x = -10301.50489006339306314671765008233065395}
+ /                                                             6\ 
+{ x = 10403., y = -1.055827754295311626487184117801227751131 10  }
+ \                                                              / 
+ /                                                6            \ 
+{ y = 1.045526749393233046220482600154198863387 10 , x = 10403. }
+ \                                                             / 
+ /                                                6            \ 
+{ y = 1.055929749393233046220482600154198863316 10 , x = 10403. }
+ \                                                             / 
+ /                                                 6            \ 
+{ y = -1.045424754295311626487184117801227751202 10 , x = 10403. }
+ \                                                              / 
+  {y = 10505.49508590623252974368235602455502334, x = 10403.}
+  {x = 50.99632347051449588808204151994264288502, y = 10403.}
+  {y = 20908.49508590623252974368235602455502262, x = -10403.}
+> evalf(sqrt(1403)/2+(0.5*23));
+           30.22832080032804222362242930769107853180
+> tanto90(59,127,59);slo;sq*slo;sq/slo;print(slope(l3));solve({Equation(Blue),x=0});solve({Equation(l1),x=103});print(coordinates(intersection(Q,l3,l5)));print(coordinates(intersection(Q,l2,y)));print(coordinates(intersection(Q,l3,Blue)));print(coordinates(intersection(Q,l2,Blue)));solve({Equation(Brown),x=sqrt(7493)});solve({Equation(A),y=sqrt(7493)});solve({Equation(p2_y),y=0});solve({Equation(l5),Equation(A)});solve({Equation(Brown),y=0});solve({Equation(Brown),Equation(A)});solve({Equation(l1),Equation(l3)});solve({Equation(A),y=0});solve({Equation(Brown),y=0});solve({Equation(B),y=0});solve({Equation(B),x=0});solve({Equation(l5),Equation(B)});solve({Equation(B),y=7493});solve({Equation(l1),y=7493});solve({Equation(l2),y=7493});solve({Equation(l3),y=7493});solve({Equation(l4),y=7493});solve({Equation(l5),y=7493});solve({Equation(l1),y=-7493});solve({Equation(l2),y=-7493});solve({Equation(l3),y=-7493});solve({Equation(l4),y=-10403});solve({Equation(l5),y=-7493});solve({Equation(l1),x=7493});solve({Equation(l2),x=10403});solve({Equation(l3),x=7493});solve({Equation(l4),x=7493});solve({Equation(l5),x=7493});solve({Equation(C),y=7493});solve({Equation(C),x=-7493});
+
+           1.467154515680388700143304622289827082365
+           127.0000000000000000000000000000000000000
+           59.00000000000000000000000000000000000001
+           3.140619359193278431006690775222055850876
+    {x = 0., y = 129.1896551724137931034482758620689655172}
+   {y = -51.62513537936131765583942139467065957901, x = 103.}
+          [110.7262832026003033504481044971641107680, 
+
+            162.4525664052006067008962089943282215360]
+          [162.4525664052006067008962089943282215360, 
+
+            162.4525664052006067008962089943282215360]
+          [99.58836801455625245352523483689944971200, 
+
+            127.4726143445766163370081856062603543153]
+          [145.7398022742185257762526187598774170652, 
+
+            126.6768999607893357624784031248296997058]
+        {y = 59.32862349140936491819968703080803946042, 
+
+          x = 86.56211642514293330845497271509979785955}
+        {y = 86.56211642514293330845497271509979785955, 
+
+          x = 110.7262832026003033504481044971641107680}
+        {y = 127.0000000000000000000000000000000000000, 
+
+          x = 86.56211642514293330845497271509979785956}
+    {x = 110.7262832026003033504481044971641107680, y = 0.}
+     /                                               
+    { y = 271.8586586175463607378497284532010930613, 
+     \                                               
+
+                                                      -38\ 
+      x = 3.699954685109888677864657768465339161960 10    }
+                                                         / 
+        {x = 72.78105821257146665422748635754989892977, 
+
+          y = 43.28105821257146665422748635754989892978}
+    {y = 0., x = 162.4525664052006067008962089943282215360}
+    {x = 110.7262832026003033504481044971641107680, y = 0.}
+    {y = 0., x = 145.5621164251429333084549727150997978595}
+    {y = 213.5621164251429333084549727150997978595, x = 0.}
+        {y = 106.7810582125714666542274863575498989297, 
+
+          x = 72.78105821257146665422748635754989892975}
+  {y = 7493., x = -4961.602752658290131890388417475788275853}
+  {y = 7493., x = -2299.273014491424001492701637094012128427}
+   {y = 7493., x = 3586.950902418295463482236507532774126023}
+   {y = 7493., x = 2444.835130916566934801156609809111926286}
+  {y = 7493., x = -3373.388785993152530173781534817674328164}
+   {y = 7493., x = 5107.164869083433065198843390190888073714}
+  {y = -7493., x = 2472.397247341709868109611582524211724146}
+  {x = -3413.826669568009596865326562102574530304, y = -7493.}
+  {y = -7493., x = -2326.835130916566934801156609809111926286}
+  {y = -10403., x = 4986.808426623083647590797985681071137847}
+  {y = -7493., x = -5107.164869083433065198843390190888073714}
+  {x = 7493., y = -23260.80219981768892279528425028566339755}
+  {x = 10403., y = 22083.56665149527209033320937889694572146}
+   {x = 7493., y = 23347.36431624283185610373922300076319541}
+  {x = 7493., y = -15767.80219981768892279528425028566339755}
+   {x = 7493., y = 10993.38878599315253017378153481767432816}
+ /                                                            5\ 
+{ y = 7493., x = -1.990299383735959992802531105542427853616 10  }
+ \                                                             / 
+  {x = -7493., y = 543.7173172350927214756994569064021861226}
+> tanto91 := proc( k, p )
+>   global sq, slo, inter;
+>   
+>   sq := evalf( sqrt(k) );
+>   line( y, y=x, [x,y] );
+>   point( sq1, sq, 0 ); point( sq2, sq, sq );
+>   line( sqv, [sq1,sq2] );
+>   point( sq1, 0, sq ); point( sq2, sq, sq );
+>   line( sqh, [sq1,sq2] );
+>   point( cero, 0, 0 ); point( test, p, sq );
+>   line( red, [cero,test] );
+>   point( test, p, 0 ); point( sq2, sq, sq );
+>   line( green, [test,sq2] );
+>   intersection(Q,red,sqv);
+>   point( he1, coordinates(Q) ); 
+>   point( he2, 0, VerticalCoord(Q) );
+>   line( rosa, [he1,he2] );
+>   point( he2, VerticalCoord(Q), 0 );
+>   point( he1, VerticalCoord(Q), VerticalCoord(Q) );
+>   line( rose, [he1,he2] );
+>   inter := coordinates(intersection(Q,red,green));
+>   slo := slope(red);
+>   slo * sq ;
+
+> #draw([sqv(colour=black),sqh(colour=black),red(colour=red),green(colour=green),rosa(colour=pink),rose(colour=pink)],colour=green,axes=normal,view=[sq..HorizontalCoord(he1)*2,sq..VerticalCoord(intersection(Q,rose,green))]);
+> draw([sqv(colour=black),sqh(colour=black),red(colour=red),green(colour=green),rosa(colour=pink),rose(colour=pink)],colour=green,axes=normal,view=[0..k,0..k]);
+> end proc:
+> tanto91(33,3);inter;
+
+          [35.23368793961408597955183440465678795470, 
+
+            67.46737587922817195910366880931357590939]
+> tanto91(1403,23);inter;
+
+          [61.91944376822870781569779832754160040200, 
+
+            100.8388875364574156313955966550832008040]
+> tant := proc(k,x)
+>   global sq;
+>   sq := sqrt(k);
+>   point( p1, sq, 0); point( p2, x, sq );
+>   line( red, [p1,p2] );
+>   draw([red(colour=red)],axes=normal,view=[0..sq,0..sq]);
+> end proc:
+> tant(33,3); 
+Error, (in isassign) the first argument is expected of type name
+> plot(tant,33);
+Error, (in plot) invalid arguments
+
+

@@ -1,0 +1,239 @@
+> with(geometry);Digits:=20;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               20
+                               x
+                               y
+> tanto := proc( p1, p2, c, z )
+>   local sq, k, a, c_a, b, c_b, i;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+>   
+>   line(Y_X,y=x,[x,y]);
+>   line(Y_1,y=-x,[x,y]);
+>   line(l0,y=0,[x,y]);
+>   line(l1,x=0,[x,y]);
+>   line(sqv,x=sq*z,[x,y]);
+>   line(sqh,y=sq*z,[x,y]);
+>   line(sqv_1,x=-sq,[x,y]);
+>   line(sqh_1,y=-sq,[x,y]);
+>   line(_sqh,y=k-sq,[x,y]);
+>   line(top,y=k,[x,y]);
+>   line(right,x=k,[x,y]);
+> 
+>   line(A,[point(P1,k,0),point(P2,sq*z,sq*z)]);
+>   line(B,[point(P3,k,k),point(P4,-sq,k-sq)]);
+> 
+>   intersection(p3,A,B);
+>   intersection(Q1,A,Y_1);
+>   intersection(Q2,A,Y_X);
+>   point(K,k,0);
+>   point(_K,-k,0);
+>   point(KK,k,k);
+>   point(_KK,-k,k);
+>   point(K_K,k,-k);
+>   point(_K_K,-k,-k);
+> 
+>   line(blue,[Q1,_K]);
+>   line(red,[Q1,KK]);
+> 
+>   
+>     
+>   i := 1;
+>   while( i < c ) do
+> 
+>     intersection(T1,B,Y_1);
+>     line(B,[point(N,0,VerticalCoord(T1)),P3]);
+>     if( slope(blue) > 0 ) then
+>       line(blue,[intersection(Q1,blue,Y_X),K]);
+>       line(red,[intersection(Q2,blue,Y_1),KK]);
+>   
+>     else
+>       line(blue,[intersection(Q1,blue,Y_1),_K]);
+>       line(red,[intersection(Q2,blue,Y_X),_KK]);
+>     end if;
+>     i := i+1;
+>   end do;
+> 
+>   print(coordinates(intersection(Q1,A,l1)));
+>   print(coordinates(intersection(Q2,blue,l1)));
+>   print(coordinates(intersection(Q3,red,l1)));
+>   
+>   if( slope(blue) > 0 ) then
+>       line(yell,[intersection(Q4,blue,Y_1),Q3]);
+>       
+>     else
+>       line(yell,[intersection(Q4,blue,Y_X),Q3]);
+>       
+>     end if;
+> 
+>   line(mag,[intersection(Q5,B,Y_1),K]);
+> 
+>   print(coordinates(intersection(Q6,mag,l1)));
+>   print(distance(Q4,Q3));
+>   print(coordinates(intersection(A,red,sqv)));
+>   print(coordinates(intersection(A,blue,sqh)));
+>   print(coordinates(intersection(A,yell,l1)));
+>   print(coordinates(intersection(Z,B,Y_1)));
+>   print("doble del tanto",coordinates(intersection(Z,red,l0)));
+>   print(coordinates(intersection(Z,blue,sqh)));
+>   print(coordinates(intersection(Z,blue,red)));
+>   print(coordinates(intersection(Z,yell,blue)));
+>   print(coordinates(intersection(Z,yell,l0)));
+>   print(coordinates(intersection(Z,yell,top)));
+>   print(coordinates(intersection(Z,blue,right)));
+>   print(coordinates(intersection(Z,B,Y_1)));
+>   print(coordinates(intersection(Z,B,l1)));
+>   print(slope(yell),slope(red),slope(blue));
+> 
+>   draw([B(colour=green),Y_X,Y_1,l0,l1,sqv,sqh,sqv_1,sqh_1,_sqh,top,right,blue(colour=blue),red(colour=red),yell(colour=yellow), mag(colour=magenta)],colour=black,axes=normal,view=[-k..k,-k..k]);
+> end proc:
+> tanto(3,11,3,1);
+                  [0., 6.9553302292423420557]
+                  [0., -26.285660458484684105]
+                  [0., -52.571320916969368210]
+                  [0., 9.7269920781464769677]
+                     40.663493761035860584
+        [5.7445626465380286601, -67.467375879228171945]
+        [-40.211938525766200621, 5.7445626465380286599]
+                  [0., -52.571320916969368210]
+        [-13.792404473743211813, 13.792404473743211813]
+        "doble del tanto", [-20.273773638989789405, 0.]
+        [-40.211938525766200621, 5.7445626465380286599]
+        [-14.631308623734030507, -14.631308623734030508]
+        [-14.631308623734030506, -14.631308623734030508]
+                  [-20.273773638989789405, 0.]
+                          [-33., 33.]
+                 [33., -52.571320916969368211]
+        [-13.792404473743211813, 13.792404473743211813]
+                  [0., 19.453984156292953935]
+-2.5930703308172535821, -2.5930703308172535821, -0.79653516540862679107
+
+> tanto(7,23,3,1);
+                  [0., 13.774131150077329882]
+                  [0., 28.302330214396185547]
+                  [0., 56.604660428792371092]
+                  [0., 61.205365737760375437]
+                     40.470408939394444332
+         [12.688577540449520380, 48.377155080899040760]
+        [-88.820042783146642661, 12.688577540449520380]
+                  [0., 56.604660428792371093]
+        [-98.743423998979564445, 98.743423998979564445]
+         "doble del tanto", [87.296524600309319532, 0.]
+        [-88.820042783146642661, 12.688577540449520380]
+         [34.338773031055389494, 34.338773031055389496]
+        [-24.070887872098982251, 24.070887872098982250]
+                  [-41.880308588417246785, 0.]
+                 [77.239382823165506438, 161.]
+                 [161., 56.604660428792371093]
+        [-98.743423998979564445, 98.743423998979564445]
+                  [0., 122.41073147552075087]
+1.3515817417937414353, -0.64841825820625856461, 0.17579087089687071768
+
+> tanto(23,61,11,1);
+                  [0., 38.484071444879091638]
+                  [0., 97.048819411579503954]
+                  [0., 194.09763882315900790]
+                  [0., 24.754505321325978716]
+                     137.53469671957224788
+         [37.456641600656084447, 161.82292572780061210]
+        [-861.50275681508994217, 37.456641600656084447]
+                  [0., 194.09763882315900790]
+        [-25.199118081584935214, 25.199118081584935214]
+         "doble del tanto", [225.26135775249482377, 0.]
+        [-861.50275681508994217, 37.456641600656084447]
+         [104.26078375540566680, 104.26078375540566681]
+        [-90.770041529619680575, 90.770041529619680583]
+                  [-170.50866562519851654, 0.]
+                 [1061.9826687496029670, 1403.]
+                 [1403., 194.09763882315900791]
+        [-25.199118081584935214, 25.199118081584935214]
+                  [0., 49.509010642651957431]
+1.1383447176216386371, -0.86165528237836136287, 0.069172358810819318569
+
+> tanto(59,127,29,1);
+                  [0., 87.573803840576081057]
+                  [0., 271.85865861754636071]
+                  [0., 543.71731723509272141]
+                 [0., 0.0012081297658701559523]
+                     384.70176902332448812
+         [86.562116425142933308, 463.43643952833634496]
+        [-5107.1648690834330648, 86.562116425142933309]
+                  [0., 543.71731723509272141]
+     [-0.0012081299606623308510, 0.0012081299606623308510]
+         "doble del tanto", [586.25818577603181291, 0.]
+        [-5107.1648690834330648, 86.562116425142933309]
+         [282.09348532586591296, 282.09348532586591296]
+        [-262.34050336003778134, 262.34050336003778134]
+                  [-506.93258170291988650, 0.]
+         [6479.1348365941602269, 7492.9999999999999998]
+                 [7493., 543.71731723509272141]
+     [-0.0012081299606623308510, 0.0012081299606623308510]
+                 [0., 0.0024162595317403119047]
+1.0725633681082467265, -0.92743663189175327352, 0.036281684054123363233
+
+> tanto(1237,9743,618,1);
+                  [0., 3472.6124496516528989]
+                  [0., 5393.3703608829441571]
+                  [0., 10786.740721765888314]
+               [                            -176]
+               [0., 3.8464162692058989716 10    ]
+                     7627.3782743105055305
+         [3471.6121615180460708, 14255.245756041630589]
+       [                        6                       ]
+       [4.2943842437978230119 10 , 3471.6121615180460708]
+                  [0., 10786.740721765888314]
+ [                         -176                          -176]
+ [-3.8464162692058989716 10    , 3.8464162692058989716 10    ]
+        "doble del tanto", [-10796.403609846217980, 0.]
+       [                        6                       ]
+       [4.2943842437978230119 10 , 3471.6121615180460708]
+        [-5395.7850013714779449, 5395.7850013714779448]
+         [5390.9578805548622560, 5390.9578805548622558]
+                  [10777.095114979556034, 0.]
+          [                         7              7]
+          [-1.2030536809770040889 10 , 1.2052091 10 ]
+                      [            7    ]
+                      [1.2052091 10 , 0.]
+ [                         -176                          -176]
+ [-3.8464162692058989716 10    , 3.8464162692058989716 10    ]
+               [                            -176]
+               [0., 7.6928325384117979432 10    ]
+-1.0008950098967694392, 0.99910499010323056070, -0.00044750494838471964384
+
+> 

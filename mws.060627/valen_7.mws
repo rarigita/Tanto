@@ -1,0 +1,422 @@
+{VERSION 5 0 "IBM INTEL LINUX" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Text Output" -1 6 
+1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 2 1 3 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 
+1 2 2 2 2 2 2 1 1 1 1 }3 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "restart;with(plots,p
+ointplot);Digits:=8;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7#%*pointplotG
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'DigitsG\"\")" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 124 "Tanto que genera un array con los resultados d
+e todos los numeros entre 2 y sq/2, que sirven para hacer un plot de i
+magenes." }}{PARA 0 "" 0 "" {TEXT -1 276 "Esta versi\363n hace un n
+\372mero fijo de iteraciones, definido en el while loop interior, hast
+a que la variable se hace negativa, entonces se reduce en 1 el numero \+
+de iteraciones.trabaja solo con negativos y obtenemos informaci\363n i
+nteresante en el cambio del numero de iteraciones." }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 23 "tanto := proc( p1, p2 )" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 47 "  local k,sq,a,c_a,b,c_b,c,c_c,d,c_d,z,c_z,i,t;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "  global L;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "  k  := p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+27 "  sq := evalf( sqrt( k ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 62 "
+  printf(\"  p1=%d, p2=%d, k=%d, sq(k)=%f \\n\", p1, p2, k, sq );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "  # recta que viene de (k,k) y pasa
+ por (sq,0)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "  a  := evalf( k / (
+ k - sq ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_a:= a * sq;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "  # recta que viene de (k,0) y pasa
+ por (sq,sq)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "  b  := a - 1;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "  c_b:= c_a;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 48 "  # recta que viene de (sq,0) y pasa por (p2,p2)" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  c  := p2 / ( p2 - sq );" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 15 "  c_c:= c * sq;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 58 "  printf( \"  c(x) = %f x - %f <--- Objetivo \\n\", c
+, c_c );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 48 "  # recta que viene de \+
+(sq,0) y pasa por (p1,p1)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  d  :
+= p1 / ( sq - p1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_d:= d * \+
+sq;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "  printf( \"  d(x) = %f x - \+
+%f <--- Objetivo \\n\", d, c_d );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+39 "  # loop que encuentra la constante c_d" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 44 "  # y genera la lista de puntos para el plot" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "  t  := 2;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 11 "  L  := [];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "  w
+hile( t < ( sq - 1 ) ) do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "    z \+
+ := c_a / ( ( k / t ) - c_a );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 " \+
+   c_z:= z * ( k / t );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "    i  :
+= 1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "    while( c_z > 0 ) do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "      z   := c_z / ( ( k / t ) - c_
+z );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "      c_z := z * ( k / t );
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "      i   := i + 1;" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 11 "    end do;" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 51 "    #if( abs( trunc( c_z ) ) = abs( trunc( c_c ) ) " }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 60 "    #    or abs( trunc( c_z ) ) = abs( tr
+unc( c_d ) ) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 69 "      printf
+( \"  t = %d, c_z = %f, iteraciones = %d \\n\", t, c_z, i );" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 12 "    #end if;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "    L := [op(L),[t,c_z]];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "    t := t + 1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "
+  end do;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "  pointplot(L,connect=
+true);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "  #print(L);" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 9 "end proc:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+23 "#stopat(tanto,20,t=48);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+12 "tanto(3,11);" }}{PARA 6 "" 1 "" {TEXT -1 36 "  p1=3, p2=11, k=33, \+
+sq(k)=5.744563 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  c(x) = 2.093070 x - \+
+12.023773 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 45 "  d(x) = 1.09
+3070 x - 6.279211 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t =
+ 2, c_z = -26.285658, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 43 
+"  t = 3, c_z = -26.285659, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 43 "  t = 4, c_z = -10.136886, iteraciones = 2 " }}{PARA 13 "" 1 "
+" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7%7$$\"\"#\"\"!$!)e
+cGE!\"'7$$\"\"$F*$!)fcGEF-7$$\"\"%F*$!)')o85F-" 1 2 0 1 10 0 2 9 1 4 
+2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 12 "tanto(7,23);" }}{PARA 6 "" 1 "" {TEXT -1 38 "  p
+1=7, p2=23, k=161, sq(k)=12.688578 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  \+
+c(x) = 2.230536 x - 28.302333 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "  d(x) = 1.230536 x - 15.613752 <--- Objetivo " }}{PARA 6 "" 1 
+"" {TEXT -1 44 "  t = 2, c_z = -516.981150, iteraciones = 6 " }}{PARA 
+6 "" 1 "" {TEXT -1 44 "  t = 3, c_z = -516.981670, iteraciones = 4 " }
+}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 4, c_z = -516.981280, iteraciones \+
+= 3 " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 5, c_z = -48.619582, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 6, c_z = -516.980900,
+ iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 7, c_z = -69.6
+54053, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 8, c_z =
+ -37.342658, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 9,
+ c_z = -25.509301, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  \+
+t = 10, c_z = -19.370931, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 44 "  t = 11, c_z = -15.613752, iteraciones = 2 " }}{PARA 13 "" 1 "
+" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7,7$$\"\"#\"\"!$!):
+\")p^!\"&7$$\"\"$F*$!)n\")p^F-7$$\"\"%F*$!)G\")p^F-7$$\"\"&F*$!)#e>'[!
+\"'7$$\"\"'F*$!)!4)p^F-7$$\"\"(F*$!)`SlpF=7$$\"\")F*$!)eEMPF=7$$\"\"*F
+*$!),$4b#F=7$$\"#5F*$!)J4P>F=7$$\"#6F*$!)_Ph:F=" 1 2 0 1 10 0 2 9 1 4 
+2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 13 "tanto(23,61);" }}{PARA 6 "" 1 "" {TEXT -1 40 "  \+
+p1=23, p2=61, k=1403, sq(k)=37.456642 " }}{PARA 6 "" 1 "" {TEXT -1 46 
+"  c(x) = 2.590964 x - 97.048822 <--- Objetivo " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  d(x) = 1.590964 x - 59.592176 <--- Objetivo " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 2, c_z = -909.058350, iteraciones = 19 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 3, c_z = -551.633230, iteraciones
+ = 13 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 4, c_z = -395.952200, ite
+raciones = 10 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 5, c_z = -395.952
+140, iteraciones = 8 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 6, c_z = -
+253.095650, iteraciones = 7 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 7, \+
+c_z = -253.095740, iteraciones = 6 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  \+
+t = 8, c_z = -395.952150, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT 
+-1 44 "  t = 9, c_z = -164.221200, iteraciones = 5 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 10, c_z = -395.952270, iteraciones = 4 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 11, c_z = -185.991380, iteraciones = 4 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 12, c_z = -121.541780, iteracione
+s = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 13, c_z = -551.633710, it
+eraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 14, c_z = -253.09
+5860, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 15, c_z =
+ -164.221160, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 1
+6, c_z = -121.541760, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 44 
+"  t = 17, c_z = -96.470165, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 44 "  t = 18, c_z = -79.973289, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 45 "  t = 19, c_z = -909.056950, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 20, c_z = -395.952210, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 21, c_z = -253.095730, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 22, c_z = -185.9914
+50, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 23, c_z = -
+147.013270, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 24,
+ c_z = -121.541760, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 25, c_z = -103.593230, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 44 "  t = 26, c_z = -90.263639, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 44 "  t = 27, c_z = -79.973293, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 44 "  t = 28, c_z = -71.789100, iteraciones = 2 " }
+}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 29, c_z = -65.124483, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 30, c_z = -59.592183, itera
+ciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 31, c_z = -54.926219
+, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 32, c_z = -50
+.937872, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 33, c_
+z = -47.489527, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t =
+ 34, c_z = -44.478462, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 
+44 "  t = 35, c_z = -41.826466, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 44 "  t = 36, c_z = -39.472917, iteraciones = 2 " }}{PARA 13 
+"" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7E7$$\"\"#\"
+\"!$!)Ne!4*!\"&7$$\"\"$F*$!)BL;bF-7$$\"\"%F*$!)?_fRF-7$$\"\"&F*$!)9_fR
+F-7$$\"\"'F*$!)l&4`#F-7$$\"\"(F*$!)u&4`#F-7$$\"\")F*$!):_fRF-7$$\"\"*F
+*$!)?@U;F-7$$\"#5F*$!)F_fRF-7$$\"#6F*$!)Q\"*f=F-7$$\"#7F*$!)yT:7F-7$$
+\"#8F*$!)rL;bF-7$$\"#9F*$!)'e4`#F-7$$\"#:F*$!);@U;F-7$$\"#;F*$!)wT:7F-
+7$$\"#<F*$!)l,Z'*!\"'7$$\"#=F*$!)*Gt*zFcp7$$\"#>F*$!)&p04*F-7$$\"#?F*$
+!)@_fRF-7$$\"#@F*$!)t&4`#F-7$$\"#AF*$!)X\"*f=F-7$$\"#BF*$!)F8q9F-7$$\"
+#CF*F\\p7$$\"#DF*$!)B$f.\"F-7$$\"#EF*$!)ROE!*Fcp7$$\"#FF*$!)$Ht*zFcp7$
+$\"#GF*$!)+\"*yrFcp7$$\"#HF*$!)$[C^'Fcp7$$\"#IF*$!)$=#ffFcp7$$\"#JF*$!
+)>i#\\&Fcp7$$\"#KF*$!)sy$4&Fcp7$$\"#LF*$!)F&*[ZFcp7$$\"#MF*$!)i%yW%Fcp
+7$$\"#NF*$!)mk#=%Fcp7$$\"#OF*$!)<HZRFcp" 1 2 0 1 10 0 2 9 1 4 2 
+1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 14 "tanto(59,127);" }}{PARA 6 "" 1 "" {TEXT -1 41 "  p1
+=59, p2=127, k=7493, sq(k)=86.562116 " }}{PARA 6 "" 1 "" {TEXT -1 47 "
+  c(x) = 3.140619 x - 271.858650 <--- Objetivo " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  d(x) = 2.140619 x - 185.296540 <--- Objetivo " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 2, c_z = -17112.671000, iteraciones = 43 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 3, c_z = -5211.220300, iteracio
+nes = 29 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 4, c_z = -3073.569500,
+ iteraciones = 22 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 5, c_z = -168
+8.421200, iteraciones = 18 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 6, c
+_z = -1688.409000, iteraciones = 15 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 7, c_z = -1377.931200, iteraciones = 13 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 8, c_z = -3073.568500, iteraciones = 11 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 9, c_z = -1688.420000, iteraciones = 10 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 10, c_z = -1688.417800, iteraci
+ones = 9 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 11, c_z = -3073.570900
+, iteraciones = 8 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 12, c_z = -71
+7.865870, iteraciones = 8 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 13, c
+_z = -1377.925700, iteraciones = 7 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  \+
+t = 14, c_z = -602.433770, iteraciones = 7 " }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "  t = 15, c_z = -1688.417900, iteraciones = 6 " }}{PARA 6 "" 1 
+"" {TEXT -1 45 "  t = 16, c_z = -717.865620, iteraciones = 6 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 17, c_z = -455.837490, iteraciones \+
+= 6 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 18, c_z = -1688.418900, ite
+raciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 19, c_z = -793.927
+890, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 20, c_z = \+
+-518.981950, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 21
+, c_z = -385.484380, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 46 "
+  t = 22, c_z = -3073.571800, iteraciones = 4 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 23, c_z = -1163.892300, iteraciones = 4 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 24, c_z = -717.865830, iteraciones = 4 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 25, c_z = -518.981920, iteracione
+s = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 26, c_z = -406.391690, it
+eraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 27, c_z = -333.94
+4220, iteraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 28, c_z =
+ -283.419090, iteraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 2
+9, c_z = -5211.145200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+46 "  t = 30, c_z = -1688.420300, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 31, c_z = -1007.410700, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 32, c_z = -717.866120, iteraciones = 3 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 33, c_z = -557.602940, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 34, c_z = -455.837320, it
+eraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 35, c_z = -385.48
+4370, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 36, c_z =
+ -333.944190, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 3
+7, c_z = -294.560680, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 38, c_z = -263.486580, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 39, c_z = -238.343070, iteraciones = 3 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 40, c_z = -217.580160, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 41, c_z = -200.144880, iteraciones \+
+= 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 42, c_z = -185.296540, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 43, c_z = -17111.87
+6000, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 44, c_z =
+ -3073.566400, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = \+
+45, c_z = -1688.418200, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 
+46 "  t = 46, c_z = -1163.891700, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 47, c_z = -888.019130, iteraciones = 2 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 48, c_z = -717.866190, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 49, c_z = -602.433900, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 50, c_z = -518.981920, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 51, c_z = -455.8372
+90, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 52, c_z = -
+406.391540, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 53,
+ c_z = -366.623130, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 54, c_z = -333.944180, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 55, c_z = -306.614090, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 56, c_z = -283.419050, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 57, c_z = -263.486580, iteraciones = 2 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 58, c_z = -246.173550, iteracione
+s = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 59, c_z = -230.995340, it
+eraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 60, c_z = -217.58
+0150, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 61, c_z =
+ -205.637660, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 6
+2, c_z = -194.937900, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 63, c_z = -185.296560, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 64, c_z = -176.563920, iteraciones = 2 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 65, c_z = -168.617380, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 66, c_z = -161.355330, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 67, c_z = -154.692970, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 68, c_z = -148.5589
+90, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 69, c_z = -
+142.892880, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 70,
+ c_z = -137.643120, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 71, c_z = -132.765440, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 72, c_z = -128.221610, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 73, c_z = -123.978540, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 74, c_z = -120.007280, iteraciones = 2 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 75, c_z = -116.282530, iteracione
+s = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 76, c_z = -112.782040, it
+eraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 77, c_z = -109.48
+6150, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 78, c_z =
+ -106.377420, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 7
+9, c_z = -103.440350, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 80, c_z = -100.661110, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 44 "  t = 81, c_z = -98.027311, iteraciones = 2 " }}{PARA 6 "
+" 1 "" {TEXT -1 44 "  t = 82, c_z = -95.527819, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 44 "  t = 83, c_z = -93.152624, iteraciones =
+ 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 84, c_z = -90.892677, iterac
+iones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 85, c_z = -88.739793,
+ iteraciones = 2 " }}{PARA 13 "" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 
+2 "6#-%'CURVESG6#7`p7$$\"\"#\"\"!$!)rE6<!\"$7$$\"\"$F*$!).A6_!\"%7$$\"
+\"%F*$!)&pN2$F37$$\"\"&F*$!)7U)o\"F37$$\"\"'F*$!)!4%)o\"F37$$\"\"(F*$!
+)7$zP\"F37$$\"\")F*$!)&oN2$F37$$\"\"*F*$!)+U)o\"F37$$\"#5F*$!)yT)o\"F3
+7$$\"#6F*$!)4dtIF37$$\"#7F*$!)(e'yr!\"&7$$\"#8F*$!)d#zP\"F37$$\"#9F*$!
+)xLCgF[o7$$\"#:F*$!)zT)o\"F37$$\"#;F*$!)ilyrF[o7$$\"#<F*$!)\\PeXF[o7$$
+\"#=F*$!)*=%)o\"F37$$\"#>F*$!)*y#RzF[o7$$\"#?F*$!)&>)*=&F[o7$$\"#@F*$!
+)Q%[&QF[o7$$\"#AF*$!)=dtIF37$$\"#BF*$!)B*Q;\"F37$$\"#CF*$!)$e'yrF[o7$$
+\"#DF*$!)#>)*=&F[o7$$\"#EF*$!)p\"R1%F[o7$$\"#FF*$!)AWRLF[o7$$\"#GF*$!)
+4>MGF[o7$$\"#HF*$!)_96_F37$$\"#IF*$!).U)o\"F37$$\"#JF*$!)2T25F37$$\"#K
+F*$!)7myrF[o7$$\"#LF*$!)%Hgd&F[o7$$\"#MF*$!)KPeXF[o7$$\"#NF*$!)P%[&QF[
+o7$$\"#OF*$!)>WRLF[o7$$\"#PF*$!)ogXHF[o7$$\"#QF*$!)e'[j#F[o7$$\"#RF*$!
+)2V$Q#F[o7$$\"#SF*$!);!e<#F[o7$$\"#TF*$!))[9+#F[o7$$\"#UF*$!)a'H&=F[o7
+$$\"#VF*$!)w=6<F-7$$\"#WF*$!)kctIF37$$\"#XF*$!)#=%)o\"F37$$\"#YF*$!)<*
+Q;\"F37$$\"#ZF*$!)8>!)))F[o7$$\"#[F*$!)>myrF[o7$$\"#\\F*$!)!RV-'F[o7$$
+\"#]F*F[s7$$\"#^F*$!)HPeXF[o7$$\"#_F*$!)a\"R1%F[o7$$\"#`F*$!)8BmOF[o7$
+$\"#aF*$!)=WRLF[o7$$\"#bF*$!)49mIF[o7$$\"#cF*$!)0>MGF[o7$$\"#dF*F\\w7$
+$\"#eF*$!)bthCF[o7$$\"#fF*$!)M&*4BF[o7$$\"#gF*$!):!e<#F[o7$$\"#hF*$!)m
+Pc?F[o7$$\"#iF*$!)!z$\\>F[o7$$\"#jF*$!)c'H&=F[o7$$\"#kF*$!)#Rcw\"F[o7$
+$\"#lF*$!)Q<'o\"F[o7$$\"#mF*$!)Lb8;F[o7$$\"#nF*$!)(Hpa\"F[o7$$\"#oF*$!
+)**e&[\"F[o7$$\"#pF*$!))G*G9F[o7$$\"#qF*$!)7Vw8F[o7$$\"#rF*$!)WlF8F[o7
+$$\"#sF*$!)h@#G\"F[o7$$\"#tF*$!)ayR7F[o7$$\"#uF*$!)G2+7F[o7$$\"#vF*$!)
+`#G;\"F[o7$$\"#wF*$!)/#y7\"F[o7$$\"#xF*$!):'[4\"F[o7$$\"#yF*$!)Uxj5F[o
+7$$\"#zF*$!)NSM5F[o7$$\"#!)F*$!)6h15F[o7$$\"#\")F*$!)6t-)*!\"'7$$\"##)
+F*$!)>y_&*Fadl7$$\"#$)F*$!)CE:$*Fadl7$$\"#%)F*$!)xE*3*Fadl7$$\"#&)F*$!
+)$zR())Fadl" 1 2 0 1 10 0 2 9 1 4 2 1.000000 45.000000 45.000000 0 0 "
+Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "tanto(101,103);
+" }}{PARA 6 "" 1 "" {TEXT -1 44 "  p1=101, p2=103, k=10403, sq(k)=101.
+995100 " }}{PARA 6 "" 1 "" {TEXT -1 51 "  c(x) = 102.497760 x - 10454.
+269000 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 51 "  d(x) = 101.497
+340 x - 10352.231000 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 47 "  \+
+t = 2, c_z = -10352.324000, iteraciones = 51 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 3, c_z = -10352.352000, iteraciones = 34 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 4, c_z = -3462.006200, iteraciones = 26 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 5, c_z = -2597.572000, iteracio
+nes = 21 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 6, c_z = -10352.120000
+, iteraciones = 17 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 7, c_z = -25
+97.581400, iteraciones = 15 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 8, \+
+c_z = -3462.002600, iteraciones = 13 " }}{PARA 6 "" 1 "" {TEXT -1 46 "
+  t = 9, c_z = -1485.104100, iteraciones = 12 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 10, c_z = -1155.259700, iteraciones = 11 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 11, c_z = -1155.260100, iteraciones = 10 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 12, c_z = -1485.103600, iteraci
+ones = 9 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 13, c_z = -3462.017500
+, iteraciones = 8 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 14, c_z = -94
+5.305930, iteraciones = 8 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 15, c
+_z = -2597.566500, iteraciones = 7 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  \+
+t = 16, c_z = -945.306440, iteraciones = 7 " }}{PARA 6 "" 1 "" {TEXT 
+-1 47 "  t = 17, c_z = -10352.298000, iteraciones = 6 " }}{PARA 6 "" 
+1 "" {TEXT -1 46 "  t = 18, c_z = -1485.101600, iteraciones = 6 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 19, c_z = -799.929320, iteraciones \+
+= 6 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 20, c_z = -547.385000, iter
+aciones = 6 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 21, c_z = -2597.564
+300, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 22, c_z = \+
+-1155.260500, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 2
+3, c_z = -742.811300, iteraciones = 5 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 24, c_z = -547.385040, iteraciones = 5 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 25, c_z = -433.369800, iteraciones = 5 " }}{PARA 6 
+"" 1 "" {TEXT -1 46 "  t = 26, c_z = -3462.011700, iteraciones = 4 " }
+}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 27, c_z = -1485.103800, iteracione
+s = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 28, c_z = -945.305820, it
+eraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 29, c_z = -693.30
+6760, iteraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 30, c_z =
+ -547.385200, iteraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 3
+1, c_z = -452.208030, iteraciones = 4 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 32, c_z = -385.226380, iteraciones = 4 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 33, c_z = -335.527550, iteraciones = 4 " }}{PARA 6 
+"" 1 "" {TEXT -1 47 "  t = 34, c_z = -10352.254000, iteraciones = 3 " 
+}}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 35, c_z = -2597.567100, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 36, c_z = -1485.102400, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 37, c_z = -1039
+.790000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 38, c_
+z = -799.929240, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t \+
+= 39, c_z = -649.988430, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+45 "  t = 40, c_z = -547.385100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 41, c_z = -472.758320, iteraciones = 3 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 42, c_z = -416.038450, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 43, c_z = -371.470610, iteraciones \+
+= 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 44, c_z = -335.527590, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 45, c_z = -305.9264
+70, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 46, c_z = -
+281.124890, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 47,
+ c_z = -260.043150, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 48, c_z = -241.902670, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 49, c_z = -226.128060, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 50, c_z = -212.284880, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 51, c_z = -10352.273000, iteraciones = 2 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 52, c_z = -3462.007300, iteraci
+ones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 53, c_z = -2078.562600
+, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 54, c_z = -14
+85.102600, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 55, \+
+c_z = -1155.259200, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 56, c_z = -945.306130, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 57, c_z = -799.929120, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 58, c_z = -693.306830, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 59, c_z = -611.764590, iteraciones = 2 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 60, c_z = -547.384970, iteracione
+s = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 61, c_z = -495.265310, it
+eraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 62, c_z = -452.20
+7940, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 63, c_z =
+ -416.038330, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 6
+4, c_z = -385.226420, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 65, c_z = -358.663460, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 66, c_z = -335.527580, iteraciones = 2 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 67, c_z = -315.195630, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 68, c_z = -297.186910, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 69, c_z = -281.124940, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 70, c_z = -266.7100
+70, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 71, c_z = -
+253.701390, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 72,
+ c_z = -241.902650, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 73, c_z = -231.152590, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 74, c_z = -221.317320, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 75, c_z = -212.284890, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 76, c_z = -203.960790, iteraciones = 2 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 77, c_z = -196.264870, iteracione
+s = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 78, c_z = -189.128580, it
+eraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 79, c_z = -182.49
+3060, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 80, c_z =
+ -176.307380, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 8
+1, c_z = -170.527280, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 82, c_z = -165.114130, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 83, c_z = -160.034080, iteraciones = 2 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 84, c_z = -155.257300, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 85, c_z = -150.757410, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 86, c_z = -146.511010, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 87, c_z = -142.4972
+60, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 88, c_z = -
+138.697600, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 89,
+ c_z = -135.095300, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 90, c_z = -131.675370, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 91, c_z = -128.424330, iteraciones = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 45 "  t = 92, c_z = -125.329950, iteraciones = 2 " }}{PARA 
+6 "" 1 "" {TEXT -1 45 "  t = 93, c_z = -122.381180, iteraciones = 2 " 
+}}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 94, c_z = -119.567970, iteracione
+s = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 95, c_z = -116.881200, it
+eraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 96, c_z = -114.31
+2520, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 97, c_z =
+ -111.854310, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 9
+8, c_z = -109.499610, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 
+"  t = 99, c_z = -107.242010, iteraciones = 2 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 100, c_z = -105.075610, iteraciones = 2 " }}{PARA 
+13 "" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7_q7$$\"\"
+#\"\"!$!)CBN5!\"$7$$\"\"$F*$!)_BN5F-7$$\"\"%F*$!)i+iM!\"%7$$\"\"&F*$!)
+?d(f#F87$$\"\"'F*$!)?@N5F-7$$\"\"(F*$!)9e(f#F87$$\"\")F*$!)E+iMF87$$\"
+\"*F*$!)T5&[\"F87$$\"#5F*$!)(f_:\"F87$$\"#6F*$!),Eb6F87$$\"#7F*$!)O5&[
+\"F87$$\"#8F*$!)v,iMF87$$\"#9F*$!)$fIX*!\"&7$$\"#:F*$!)lc(f#F87$$\"#;F
+*$!)W1`%*Feo7$$\"#<F*$!))H_.\"F-7$$\"#=F*$!);5&[\"F87$$\"#>F*$!)KH**zF
+eo7$$\"#?F*$!)+&QZ&Feo7$$\"#@F*$!)Vc(f#F87$$\"#AF*$!)0Eb6F87$$\"#BF*$!
+)I6GuFeo7$$\"#CF*$!)/&QZ&Feo7$$\"#DF*$!)!)pLVFeo7$$\"#EF*$!)<,iMF87$$
+\"#FF*$!)Q5&[\"F87$$\"#GF*$!)#eIX*Feo7$$\"#HF*$!)w1LpFeo7$$\"#IF*$!)?&
+QZ&Feo7$$\"#JF*$!).3AXFeo7$$\"#KF*$!)QE_QFeo7$$\"#LF*$!)bFbLFeo7$$\"#M
+F*$!)aAN5F-7$$\"#NF*$!)rc(f#F87$$\"#OF*$!)C5&[\"F87$$\"#PF*$!)+zR5F87$
+$\"#QF*$!)CH**zFeo7$$\"#RF*$!)V))*\\'Feo7$$\"#SF*$!)5&QZ&Feo7$$\"#TF*$
+!)KeFZFeo7$$\"#UF*$!)XQgTFeo7$$\"#VF*$!)hq9PFeo7$$\"#WF*$!)fFbLFeo7$$
+\"#XF*$!)ZEfIFeo7$$\"#YF*$!)*[7\"GFeo7$$\"#ZF*$!):V+EFeo7$$\"#[F*$!)n-
+>CFeo7$$\"#\\F*$!)1GhAFeo7$$\"#]F*$!))[G7#Feo7$$\"#^F*$!)tAN5F-7$$\"#_
+F*$!)t+iMF87$$\"#`F*$!)Ecy?F87$$\"#aF*$!)E5&[\"F87$$\"#bF*$!)#f_:\"F87
+$$\"#cF*$!)81`%*Feo7$$\"#dF*$!)7H**zFeo7$$\"#eF*$!)$oI$pFeo7$$\"#fF*$!
+)fk<hFeo7$$\"#gF*$!)(\\QZ&Feo7$$\"#hF*$!)Jl_\\Feo7$$\"#iF*$!)%z?_%Feo7
+$$\"#jF*$!)LQgTFeo7$$\"#kF*$!)UE_QFeo7$$\"#lF*$!)Yj'e$Feo7$$\"#mF*$!)e
+FbLFeo7$$\"#nF*$!)j&>:$Feo7$$\"#oF*$!)\"p=(HFeo7$$\"#pF*$!)%\\7\"GFeo7
+$$\"#qF*$!)25nEFeo7$$\"#rF*$!)R,PDFeo7$$\"#sF*$!)l->CFeo7$$\"#tF*$!)f_
+6BFeo7$$\"#uF*$!)K<8AFeo7$$\"#vF*$!)*[G7#Feo7$$\"#wF*$!)zgR?Feo7$$\"#x
+F*$!)([E'>Feo7$$\"#yF*$!)eG\"*=Feo7$$\"#zF*$!)1$\\#=Feo7$$\"#!)F*$!)Q2
+j<Feo7$$\"#\")F*$!)GF0<Feo7$$\"##)F*$!)89^;Feo7$$\"#$)F*$!)3M+;Feo7$$
+\"#%)F*$!)Id_:Feo7$$\"#&)F*$!)Td2:Feo7$$\"#')F*$!),6l9Feo7$$\"#()F*$!)
+E(\\U\"Feo7$$\"#))F*$!)g(pQ\"Feo7$$\"#*)F*$!)I&4N\"Feo7$$\"#!*F*$!)Pv;
+8Feo7$$\"#\"*F*$!)LC%G\"Feo7$$\"##*F*$!)&*H`7Feo7$$\"#$*F*$!)=\"QA\"Fe
+o7$$\"#%*F*$!)(zc>\"Feo7$$\"#&*F*$!)?\")o6Feo7$$\"#'*F*$!)_7V6Feo7$$\"
+#(*F*$!)Ja=6Feo7$$\"#)*F*$!)h*\\4\"Feo7$$\"#**F*$!),Us5Feo7$$\"$+\"F*$
+!)hv]5Feo" 1 2 0 1 10 0 2 9 1 4 2 1.000000 45.000000 45.000000 0 0 "Cu
+rve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "7 0 0
+" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

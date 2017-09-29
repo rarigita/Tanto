@@ -1,0 +1,158 @@
+> restart;Digits:=30;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                               30
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               x
+                               y
+> tanto_slope_6:=proc(k,p1,d)
+>   local p2, p3, sq, sl1, sl2, pp1, z, sol;
+>   p2:=evalf(k/p1);
+>   sq:=evalf(sqrt(k));
+> 
+>   line(Y,y=x,[x,y]);
+>   line(_Y,y=-x,[x,y]);
+>   line(SQh,y=sq,[x,y]);
+>   line(SQv,x=sq,[x,y]);
+>   line(P1h,y=p1,[x,y]);
+>   line(P1v,x=p1,[x,y]);
+>   line(P2h,y=p2,[x,y]);
+>   line(P2v,x=p2,[x,y]);
+>   line(LH,y=0,[x,y]);
+>   line(LV,x=0,[x,y]);
+> 
+>   point(KK,k,k);
+>   point(K0,k,0);
+>   point(SQP1,sq,0);
+>   point(SQP1SQ,sq*d,sq);
+> 
+>   line(A,[K0,SQP1SQ]);  
+> 
+>   point(P1,sq,sq*p1);
+>   line(B,[P1,KK]);
+> 
+>   print( solve({Equation(A),Equation(B)}) );
+>   print( solve({Equation(B),x=0}) );
+>   print( solve({Equation(A),x=0}) );
+>   print( solve({Equation(B),y=0}) );
+>   print( solve({Equation(A),y=0}) );
+>   print( solve({Equation(B),x=-k}) );
+>   print( solve({Equation(A),x=-k}) );
+> 
+> 
+>   draw([Y,_Y,SQh,SQv,A(colour=green),B(colour=green)],colour=black,axes=normal,view=[-k..k,-k..k]);
+> 
+> end proc:
+> tanto_slope_6(33,3,3);
+{y = 12.7529677851485724858674374115, x = -2.00131901562158777149663884959}
+         {x = 0., y = 13.9106604584846841109418861532}
+         {x = 0., y = 12.0237736389897894072945907688}
+         {y = 0., x = -24.0475472779795788145891815378}
+         {x = 33.0000000000000000000000000000, y = 0.}
+        {y = -5.17867908303063177811622769348, x = -33.}
+        {y = 24.0475472779795788145891815377, x = -33.}
+
+> tanto_slope_6(161,7,7);
+{y = 42.7224837825658733072726258365, x = -82.0301617177230976189978797364}
+         {x = 0., y = 82.6447869004639792954199029550}
+         {x = 0., y = 28.3023302143961855465285483225}
+         {y = 0., x = -169.813981286377113279171289936}
+         {y = 0., x = 161.000000000000000000000000000}
+        {x = -161., y = 4.28957380092795859083980590963}
+        {x = -161., y = 56.6046604287923710930570966451}
+
+> tanto_slope_6(1403,23,23);
+{x = -1609.56698283191735814611399763, y = 208.386364278076749549173734967}
+         {x = 0., y = 846.649571787340016083209562071}
+         {y = 97.0488194115795039811035888300, x = 0.}
+         {y = 0., x = -2135.07402705474908758427895426}
+         {x = 1403.00000000000000000000000000, y = 0.}
+       {y = 290.299143574680032166419124140, x = -1403.}
+       {x = -1403., y = 194.097638823159007962207177660}
+
+> tanto_slope_6(10403,102,1);
+ /                                       6                                     
+{ x = -1.04542475429531162648718411724 10 , y = 10454.2475429531162648718411725
+ \                                                                             
+
+  \ 
+   }
+  / 
+         {y = 10403.5049386011803533854358502, x = 0.}
+         {x = 0., y = 103.004999392090894587974612379}
+       /                                              8\ 
+      { y = 0., x = 2.14338261371329478035915326622 10  }
+       \                                               / 
+         {y = 0., x = 10403.0000000000000000000000000}
+       {x = -10403., y = 10404.0098772023607067708717003}
+       {x = -10403., y = 206.009998784181789175949224757}
+
+> tanto_slope_6(7493,60,1);
+{y = 271.858658617546360737849728454, x = -15767.8021998176889227952842503}
+         {y = 5166.85442659398878237252182631, x = 0.}
+         {y = 87.5738038405760810571613868866, x = 0.}
+         {x = -16643.5156342260888665643291864, y = 0.}
+         {x = 7493.00000000000000000000000000, y = 0.}
+       {x = -7493., y = 2840.70885318797756474504365262}
+       {x = -7493., y = 175.147607681152162114322773773}
+
+> tanto_slope_6(12052091,1238,1);
+ /                                                                            6
+{ y = 5393.37036088294414153017473517, x = -6.66620576605131895893129597264 10 
+ \                                                                             
+
+  \ 
+   }
+  / 
+       /                                              6\ 
+      { x = 0., y = 4.29562160021909463606593022807 10  }
+       \                                               / 
+         {x = 0., y = 3472.61244965165289900236881817}
+       /                                               6\ 
+      { y = 0., x = -6.67458604669651819837904378835 10  }
+       \                                                / 
+       /                                              7\ 
+      { y = 0., x = 1.20520910000000000000000000000 10  }
+       \                                               / 
+ /                 7                                         6\ 
+{ x = -1.2052091 10 , y = -3.46084779956181072786813954389 10  }
+ \                                                            / 
+   /                 7                                     \ 
+  { x = -1.2052091 10 , y = 6945.22489930330579800473763634 }
+   \                                                       / 
+
+> 

@@ -1,0 +1,1826 @@
+{VERSION 5 0 "IBM INTEL LINUX" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Text Output" -1 6 
+1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 2 1 3 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Warning" -1 7 1 {CSTYLE "" -1 -1 "Co
+urier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 3 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 
+1 }{PSTYLE "Error" 7 8 1 {CSTYLE "" -1 -1 "" 0 1 255 0 255 1 0 0 0 0 
+0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 
+-1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 
+3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 1 0 0 0 0 1 0 1 0 2 2 
+0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "restart;with(plots,p
+ointplot);Digits:=8;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7#%*pointplotG
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'DigitsG\"\")" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 124 "Tanto que genera un array con los resultados d
+e todos los numeros entre 2 y sq/2, que sirven para hacer un plot de i
+magenes." }}{PARA 0 "" 0 "" {TEXT -1 86 "Esta versi\363n computa c_z p
+ara t=sq/2 y luego da marcha atras con t y tres iteraciones." }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 23 "tanto := proc( p1, p2 )" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 49 "  local k,sq,a,c_a,b,c_b,c,c_c,d,c_d,z,c_z,i,t,j
+;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "  global L;" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 16 "  k  := p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 27 "  sq := evalf( sqrt( k ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+62 "  printf(\"  p1=%d, p2=%d, k=%d, sq(k)=%f \\n\", p1, p2, k, sq );
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "  # recta que viene de (k,k) y \+
+pasa por (sq,0)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "  a  := evalf( k
+ / ( k - sq ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_a:= a * sq;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "  # recta que viene de (k,0) y \+
+pasa por (sq,sq)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "  b  := a - 1;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "  c_b:= c_a;" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 48 "  # recta que viene de (sq,0) y pasa por (p2,p2)" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  c  := p2 / ( p2 - sq );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_c:= c * sq;" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 58 "  printf( \"  c(x) = %f x - %f <--- Objetivo \\n\",
+ c, c_c );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 48 "  # recta que viene d
+e (sq,0) y pasa por (p1,p1)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  d \+
+ := p1 / ( sq - p1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_d:= d \+
+* sq;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "  printf( \"  d(x) = %f x \+
+- %f <--- Objetivo \\n\", d, c_d );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+39 "  # loop que encuentra la constante c_d" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 44 "  # y genera la lista de puntos para el plot" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "  t  := trunc(sq/2)+1;" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 11 "  L  := [];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 33 "  while( t > (trunc(p1/2)-2) ) do" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 36 "    z  := c_a / ( ( k / t ) - c_a );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "    c_z:= z * ( k / t );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "    i  := 1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "  \+
+  if( t >= trunc(sq/2) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "  \+
+    j := 2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "    else" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 13 "      j := 3;" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 11 "    end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "    while( i
+ < j ) do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "      z   := c_z / ( (
+ k / t ) - c_z );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "      c_z := z
+ * ( k / t );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "      i   := i + 1
+;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "    end do;" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 51 "    #if( abs( trunc( c_z ) ) = abs( trunc( c_c ) )
+ " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 60 "    #    or abs( trunc( c_z ) \+
+) = abs( trunc( c_d ) ) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 69 " \+
+     printf( \"  t = %d, c_z = %f, iteraciones = %d \\n\", t, c_z, i )
+;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "    #end if;" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 25 "    L := [op(L),[t,c_z]];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "    t := t - 1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "
+  end do;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "  pointplot(L,connect=
+true);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "  #print(L);" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 9 "end proc:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+23 "#stopat(tanto,20,t=48);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+12 "tanto(3,11);" }}{PARA 6 "" 1 "" {TEXT -1 36 "  p1=3, p2=11, k=33, \+
+sq(k)=5.744563 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  c(x) = 2.093070 x - \+
+12.023773 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 45 "  d(x) = 1.09
+3070 x - 6.279211 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t =
+ 3, c_z = -26.285659, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 42 
+"  t = 2, c_z = 44.321326, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 42 "  t = 1, c_z = 18.915914, iteraciones = 3 " }}{PARA 8 "" 1 "" 
+{TEXT -1 54 "Error, (in tanto) numeric exception: division by zero\n" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "tanto(7,23);" }}{PARA 6 "
+" 1 "" {TEXT -1 38 "  p1=7, p2=23, k=161, sq(k)=12.688578 " }}{PARA 6 
+"" 1 "" {TEXT -1 46 "  c(x) = 2.230536 x - 28.302333 <--- Objetivo " }
+}{PARA 6 "" 1 "" {TEXT -1 46 "  d(x) = 1.230536 x - 15.613752 <--- Obj
+etivo " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 7, c_z = -69.654053, iter
+aciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 6, c_z = -516.98090
+0, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 43 "  t = 5, c_z = -48
+.619582, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 4, c_z
+ = -516.981280, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 42 "  t =
+ 3, c_z = 59.882980, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 42 "
+  t = 2, c_z = 28.302334, iteraciones = 3 " }}{PARA 13 "" 1 "" 
+{GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7(7$$\"\"(\"\"!$!)`Sl
+p!\"'7$$\"\"'F*$!)!4)p^!\"&7$$\"\"&F*$!)#e>'[F-7$$\"\"%F*$!)G\")p^F37$
+$\"\"$F*$\")!)H))fF-7$$\"\"#F*$\")MBIGF-" 1 2 0 1 10 0 2 9 1 4 2 
+1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 13 "tanto(23,61);" }}{PARA 6 "" 1 "" {TEXT -1 40 "  p1=
+23, p2=61, k=1403, sq(k)=37.456642 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  \+
+c(x) = 2.590964 x - 97.048822 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "  d(x) = 1.590964 x - 59.592176 <--- Objetivo " }}{PARA 6 "" 1 
+"" {TEXT -1 45 "  t = 19, c_z = -909.056950, iteraciones = 2 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 18, c_z = 3072.420200, iteraciones \+
+= 2 " }}{PARA 6 "" 1 "" {TEXT -1 44 "  t = 17, c_z = -96.470165, itera
+ciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 16, c_z = -121.54176
+0, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 15, c_z = -1
+64.221160, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 14, \+
+c_z = -253.095860, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  \+
+t = 13, c_z = -551.633710, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 12, c_z = 3072.407500, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 44 "  t = 11, c_z = 405.885490, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 44 "  t = 10, c_z = 217.295560, iteraciones = 3 " }
+}{PARA 13 "" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7,7
+$$\"#>\"\"!$!)&p04*!\"&7$$\"#=F*$\")-UsI!\"%7$$\"#<F*$!)l,Z'*!\"'7$$\"
+#;F*$!)wT:7F-7$$\"#:F*$!);@U;F-7$$\"#9F*$!)'e4`#F-7$$\"#8F*$!)rL;bF-7$
+$\"#7F*$\")vSsIF37$$\"#6F*$\")\\&)eSF-7$$\"#5F*$\")c&H<#F-" 1 2 0 1 
+10 0 2 9 1 4 2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "tanto(59,127);" }}{PARA 6 "" 1 "" 
+{TEXT -1 41 "  p1=59, p2=127, k=7493, sq(k)=86.562116 " }}{PARA 6 "" 
+1 "" {TEXT -1 47 "  c(x) = 3.140619 x - 271.858650 <--- Objetivo " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  d(x) = 2.140619 x - 185.296540 <--- Obj
+etivo " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 44, c_z = -3073.566400, i
+teraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 43, c_z = -17111
+.876000, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 42, c_
+z = -185.296540, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t \+
+= 41, c_z = -200.144880, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+45 "  t = 40, c_z = -217.580160, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 45 "  t = 39, c_z = -238.343070, iteraciones = 3 " }}{PARA 6 
+"" 1 "" {TEXT -1 45 "  t = 38, c_z = -263.486580, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 45 "  t = 37, c_z = -294.560680, iteraciones \+
+= 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 36, c_z = -333.944190, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 35, c_z = -385.4843
+70, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 34, c_z = -
+455.837320, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 33,
+ c_z = -557.602940, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 " \+
+ t = 32, c_z = -717.866120, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "  t = 31, c_z = -1007.410700, iteraciones = 3 " }}{PARA 6 "" 1 
+"" {TEXT -1 46 "  t = 30, c_z = -1688.420300, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 46 "  t = 29, c_z = -5211.145200, iteraciones
+ = 3 " }}{PARA 6 "" 1 "" {TEXT -1 45 "  t = 28, c_z = 4796.687500, ite
+raciones = 3 " }}{PARA 13 "" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6
+#-%'CURVESG6#737$$\"#W\"\"!$!)kctI!\"%7$$\"#VF*$!)w=6<!\"$7$$\"#UF*$!)
+a'H&=!\"&7$$\"#TF*$!))[9+#F97$$\"#SF*$!);!e<#F97$$\"#RF*$!)2V$Q#F97$$
+\"#QF*$!)e'[j#F97$$\"#PF*$!)ogXHF97$$\"#OF*$!)>WRLF97$$\"#NF*$!)P%[&QF
+97$$\"#MF*$!)KPeXF97$$\"#LF*$!)%Hgd&F97$$\"#KF*$!)7myrF97$$\"#JF*$!)2T
+25F-7$$\"#IF*$!).U)o\"F-7$$\"#HF*$!)_96_F-7$$\"#GF*$\")vo'z%F-" 1 2 0 
+1 10 0 2 9 1 4 2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "tanto(101,103);" }}{PARA 6 "
+" 1 "" {TEXT -1 44 "  p1=101, p2=103, k=10403, sq(k)=101.995100 " }}
+{PARA 6 "" 1 "" {TEXT -1 51 "  c(x) = 102.497760 x - 10454.269000 <---
+ Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 51 "  d(x) = 101.497340 x - 103
+52.231000 <--- Objetivo " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 51, c_z
+ = -10352.273000, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t
+ = 50, c_z = 10454.246000, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT 
+-1 45 "  t = 49, c_z = -226.128060, iteraciones = 3 " }}{PARA 13 "" 1 
+"" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6#-%'CURVESG6#7%7$$\"#^\"\"!$!)t
+AN5!\"$7$$\"#]F*$\")YUX5F-7$$\"#\\F*$!)1GhA!\"&" 1 2 0 1 10 0 2 9 1 4 
+2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 17 "tanto(1237,9743);" }}{PARA 6 "" 1 "" {TEXT -1 
+50 "  p1=1237, p2=9743, k=12052091, sq(k)=3471.612200 " }}{PARA 6 "" 
+1 "" {TEXT -1 48 "  c(x) = 1.553564 x - 5393.370300 <--- Objetivo " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  d(x) = .553564 x - 1921.758200 <--- Obj
+etivo " }}{PARA 6 "" 1 "" {TEXT -1 51 "  t = 1736, c_z = -8682909.0000
+00, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 51 "  t = 1735, c_z =
+ 19697071.000000, iteraciones = 2 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t
+ = 1734, c_z = -6960.941800, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 48 "  t = 1733, c_z = -6973.023700, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1732, c_z = -6985.147800, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1731, c_z = -6997.314300
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1730, c_z = -
+7009.523100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 17
+29, c_z = -7021.775000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1728, c_z = -7034.069400, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1727, c_z = -7046.407600, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1726, c_z = -7058.788000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1725, c_z = -7071.212800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1724, c_z = -
+7083.681000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 17
+23, c_z = -7096.194400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1722, c_z = -7108.750300, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1721, c_z = -7121.351500, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1720, c_z = -7133.998300, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1719, c_z = -7146.689400
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1718, c_z = -
+7159.425500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 17
+17, c_z = -7172.207300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1716, c_z = -7185.034400, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1715, c_z = -7197.907300, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1714, c_z = -7210.827300, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1713, c_z = -7223.793900
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1712, c_z = -
+7236.806100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 17
+11, c_z = -7249.866200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1710, c_z = -7262.973700, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1709, c_z = -7276.127600, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1708, c_z = -7289.329600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1707, c_z = -7302.580000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1706, c_z = -
+7315.878700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 17
+05, c_z = -7329.225800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1704, c_z = -7342.620900, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1703, c_z = -7356.066300, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1702, c_z = -7369.559900, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1701, c_z = -7383.104100
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1700, c_z = -
+7396.697600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+99, c_z = -7410.341400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1698, c_z = -7424.036500, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1697, c_z = -7437.780800, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1696, c_z = -7451.576100, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1695, c_z = -7465.423600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1694, c_z = -
+7479.322900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+93, c_z = -7493.273500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1692, c_z = -7507.276000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1691, c_z = -7521.331800, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1690, c_z = -7535.438500, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1689, c_z = -7549.599800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1688, c_z = -
+7563.812800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+87, c_z = -7578.081800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1686, c_z = -7592.403300, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1685, c_z = -7606.779800, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1684, c_z = -7621.209600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1683, c_z = -7635.695800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1682, c_z = -
+7650.236000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+81, c_z = -7664.832800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1680, c_z = -7679.483900, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1679, c_z = -7694.191800, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1678, c_z = -7708.957100, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1677, c_z = -7723.777600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1676, c_z = -
+7738.656300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+75, c_z = -7753.591600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1674, c_z = -7768.584800, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1673, c_z = -7783.637200, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1672, c_z = -7798.747600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1671, c_z = -7813.915600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1670, c_z = -
+7829.144300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+69, c_z = -7844.431400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1668, c_z = -7859.778200, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1667, c_z = -7875.186000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1666, c_z = -7890.654300, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1665, c_z = -7906.183200
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1664, c_z = -
+7921.772200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+63, c_z = -7937.424500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1662, c_z = -7953.137800, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1661, c_z = -7968.913900, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1660, c_z = -7984.753600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1659, c_z = -8000.655200
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1658, c_z = -
+8016.620600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+57, c_z = -8032.649400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1656, c_z = -8048.742100, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1655, c_z = -8064.900300, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1654, c_z = -8081.122700, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1653, c_z = -8097.411400
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1652, c_z = -
+8113.766400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+51, c_z = -8130.185900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1650, c_z = -8146.672700, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1649, c_z = -8163.226200, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1648, c_z = -8179.848300, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1647, c_z = -8196.538000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1646, c_z = -
+8213.295300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+45, c_z = -8230.121600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1644, c_z = -8247.016400, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1643, c_z = -8263.981100, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1642, c_z = -8281.015800, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1641, c_z = -8298.120100
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1640, c_z = -
+8315.295100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+39, c_z = -8332.543000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1638, c_z = -8349.862000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1637, c_z = -8367.252300, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1636, c_z = -8384.716400, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1635, c_z = -8402.252600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1634, c_z = -
+8419.862300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+33, c_z = -8437.546200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1632, c_z = -8455.305100, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1631, c_z = -8473.138600, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1630, c_z = -8491.047200, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1629, c_z = -8509.032500
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1628, c_z = -
+8527.092700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+27, c_z = -8545.230500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1626, c_z = -8563.445900, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1625, c_z = -8581.738500, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1624, c_z = -8600.109600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1623, c_z = -8618.559500
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1622, c_z = -
+8637.088800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+21, c_z = -8655.698900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1620, c_z = -8674.387700, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1619, c_z = -8693.158100, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1618, c_z = -8712.009900, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1617, c_z = -8730.945000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1616, c_z = -
+8749.959800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+15, c_z = -8769.058800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1614, c_z = -8788.242200, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1613, c_z = -8807.509600, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1612, c_z = -8826.860400, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1611, c_z = -8846.297300
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1610, c_z = -
+8865.821100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+09, c_z = -8885.430100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1608, c_z = -8905.125600, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1607, c_z = -8924.909200, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1606, c_z = -8944.780800, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1605, c_z = -8964.740800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1604, c_z = -
+8984.789300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 16
+03, c_z = -9004.930100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1602, c_z = -9025.160400, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1601, c_z = -9045.480900, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1600, c_z = -9065.893800, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1599, c_z = -9086.398400
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1598, c_z = -
+9106.997500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+97, c_z = -9127.688200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1596, c_z = -9148.473700, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1595, c_z = -9169.355500, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1594, c_z = -9190.331200, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1593, c_z = -9211.403000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1592, c_z = -
+9232.573500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+91, c_z = -9253.840300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1590, c_z = -9275.205000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1589, c_z = -9296.669000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1588, c_z = -9318.231700, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1587, c_z = -9339.896700
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1586, c_z = -
+9361.661400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+85, c_z = -9383.526800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1584, c_z = -9405.496200, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1583, c_z = -9427.569200, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1582, c_z = -9449.743400, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1581, c_z = -9472.024700
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1580, c_z = -
+9494.410100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+79, c_z = -9516.901800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1578, c_z = -9539.499400, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1577, c_z = -9562.206700, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1576, c_z = -9585.021600, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1575, c_z = -9607.944800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1574, c_z = -
+9630.977800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+73, c_z = -9654.122100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1572, c_z = -9677.378500, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1571, c_z = -9700.745400, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1570, c_z = -9724.226700, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1569, c_z = -9747.821500
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1568, c_z = -
+9771.531900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+67, c_z = -9795.357400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1566, c_z = -9819.299500, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1565, c_z = -9843.358500, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1564, c_z = -9867.536400, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1563, c_z = -9891.833000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1562, c_z = -
+9916.249000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 15
+61, c_z = -9940.786000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1560, c_z = -9965.445500, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1559, c_z = -9990.227100, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1558, c_z = -10015.132000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1557, c_z = -10040.1620
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1556, c_z =
+ -10065.317000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1555, c_z = -10090.599000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1554, c_z = -10116.007000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1553, c_z = -10141.545000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1552, c_z = -10167.211000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1551, c_z = -10193.
+007000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1550, c
+_z = -10218.936000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1549, c_z = -10244.995000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1548, c_z = -10271.189000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1547, c_z = -10297.517000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1546, c_z = -10323.9790
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1545, c_z =
+ -10350.579000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1544, c_z = -10377.315000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1543, c_z = -10404.191000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1542, c_z = -10431.206000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1541, c_z = -10458.361000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1540, c_z = -10485.
+658000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1539, c
+_z = -10513.099000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1538, c_z = -10540.683000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1537, c_z = -10568.412000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1536, c_z = -10596.287000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1535, c_z = -10624.3100
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1534, c_z =
+ -10652.482000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1533, c_z = -10680.803000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1532, c_z = -10709.275000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1531, c_z = -10737.900000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1530, c_z = -10766.679000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1529, c_z = -10795.
+610000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1528, c
+_z = -10824.699000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1527, c_z = -10853.945000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1526, c_z = -10883.349000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1525, c_z = -10912.913000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1524, c_z = -10942.6380
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1523, c_z =
+ -10972.525000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1522, c_z = -11002.576000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1521, c_z = -11032.792000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1520, c_z = -11063.174000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1519, c_z = -11093.725000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1518, c_z = -11124.
+445000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1517, c
+_z = -11155.335000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1516, c_z = -11186.397000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1515, c_z = -11217.634000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1514, c_z = -11249.044000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1513, c_z = -11280.6300
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1512, c_z =
+ -11312.395000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1511, c_z = -11344.339000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1510, c_z = -11376.464000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1509, c_z = -11408.772000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1508, c_z = -11441.264000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1507, c_z = -11473.
+941000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1506, c
+_z = -11506.806000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1505, c_z = -11539.858000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1504, c_z = -11573.102000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1503, c_z = -11606.539000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1502, c_z = -11640.1680
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1501, c_z =
+ -11673.992000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1500, c_z = -11708.014000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1499, c_z = -11742.235000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1498, c_z = -11776.658000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1497, c_z = -11811.282000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1496, c_z = -11846.
+110000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1495, c
+_z = -11881.144000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1494, c_z = -11916.386000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1493, c_z = -11951.839000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1492, c_z = -11987.501000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1491, c_z = -12023.3780
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1490, c_z =
+ -12059.470000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1489, c_z = -12095.780000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1488, c_z = -12132.308000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1487, c_z = -12169.058000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1486, c_z = -12206.032000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1485, c_z = -12243.
+232000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1484, c
+_z = -12280.658000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1483, c_z = -12318.313000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1482, c_z = -12356.200000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1481, c_z = -12394.321000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1480, c_z = -12432.6790
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1479, c_z =
+ -12471.275000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1478, c_z = -12510.110000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1477, c_z = -12549.189000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1476, c_z = -12588.511000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1475, c_z = -12628.082000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1474, c_z = -12667.
+902000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1473, c
+_z = -12707.974000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1472, c_z = -12748.301000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1471, c_z = -12788.882000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1470, c_z = -12829.724000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1469, c_z = -12870.8290
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1468, c_z =
+ -12912.198000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1467, c_z = -12953.833000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1466, c_z = -12995.736000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1465, c_z = -13037.913000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1464, c_z = -13080.364000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1463, c_z = -13123.
+092000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1462, c
+_z = -13166.100000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1461, c_z = -13209.392000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1460, c_z = -13252.968000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1459, c_z = -13296.833000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1458, c_z = -13340.9900
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1457, c_z =
+ -13385.441000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1456, c_z = -13430.188000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1455, c_z = -13475.236000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1454, c_z = -13520.589000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1453, c_z = -13566.246000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1452, c_z = -13612.
+213000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1451, c
+_z = -13658.493000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1450, c_z = -13705.088000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1449, c_z = -13752.002000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1448, c_z = -13799.239000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1447, c_z = -13846.8020
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1446, c_z =
+ -13894.692000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1445, c_z = -13942.916000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1444, c_z = -13991.475000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1443, c_z = -14040.376000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1442, c_z = -14089.617000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1441, c_z = -14139.
+206000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1440, c
+_z = -14189.145000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1439, c_z = -14239.439000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1438, c_z = -14290.089000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1437, c_z = -14341.102000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1436, c_z = -14392.4800
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1435, c_z =
+ -14444.228000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1434, c_z = -14496.349000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1433, c_z = -14548.847000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1432, c_z = -14601.728000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1431, c_z = -14654.992000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1430, c_z = -14708.
+648000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1429, c
+_z = -14762.699000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1428, c_z = -14817.147000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1427, c_z = -14872.000000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1426, c_z = -14927.260000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1425, c_z = -14982.9310
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1424, c_z =
+ -15039.019000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1423, c_z = -15095.531000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1422, c_z = -15152.467000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1421, c_z = -15209.833000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1420, c_z = -15267.637000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1419, c_z = -15325.
+882000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1418, c
+_z = -15384.574000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1417, c_z = -15443.713000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1416, c_z = -15503.314000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1415, c_z = -15563.374000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1414, c_z = -15623.9000
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1413, c_z =
+ -15684.900000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1412, c_z = -15746.379000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1411, c_z = -15808.339000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1410, c_z = -15870.793000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1409, c_z = -15933.740000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1408, c_z = -15997.
+188000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1407, c
+_z = -16061.144000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1406, c_z = -16125.613000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1405, c_z = -16190.601000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1404, c_z = -16256.115000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1403, c_z = -16322.1630
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1402, c_z =
+ -16388.749000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1401, c_z = -16455.880000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1400, c_z = -16523.564000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1399, c_z = -16591.806000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1398, c_z = -16660.617000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1397, c_z = -16729.
+998000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1396, c
+_z = -16799.958000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1395, c_z = -16870.510000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1394, c_z = -16941.654000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1393, c_z = -17013.401000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1392, c_z = -17085.7610
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1391, c_z =
+ -17158.733000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1390, c_z = -17232.337000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1389, c_z = -17306.573000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1388, c_z = -17381.452000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1387, c_z = -17456.981000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1386, c_z = -17533.
+170000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1385, c
+_z = -17610.025000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1384, c_z = -17687.556000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1383, c_z = -17765.776000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1382, c_z = -17844.690000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1381, c_z = -17924.3070
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1380, c_z =
+ -18004.639000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1379, c_z = -18085.693000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1378, c_z = -18167.481000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1377, c_z = -18250.014000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1376, c_z = -18333.297000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1375, c_z = -18417.
+345000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1374, c
+_z = -18502.166000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1373, c_z = -18587.774000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1372, c_z = -18674.176000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1371, c_z = -18761.385000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1370, c_z = -18849.4150
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1369, c_z =
+ -18938.274000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1368, c_z = -19027.970000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1367, c_z = -19118.525000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1366, c_z = -19209.946000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1365, c_z = -19302.245000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1364, c_z = -19395.
+433000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1363, c
+_z = -19489.528000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1362, c_z = -19584.535000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1361, c_z = -19680.479000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1360, c_z = -19777.365000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1359, c_z = -19875.2110
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1358, c_z =
+ -19974.029000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1357, c_z = -20073.835000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1356, c_z = -20174.642000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1355, c_z = -20276.467000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1354, c_z = -20379.326000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1353, c_z = -20483.
+234000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1352, c
+_z = -20588.209000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1351, c_z = -20694.262000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1350, c_z = -20801.413000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1349, c_z = -20909.680000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1348, c_z = -21019.0800
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1347, c_z =
+ -21129.633000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1346, c_z = -21241.352000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1345, c_z = -21354.263000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1344, c_z = -21468.376000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1343, c_z = -21583.719000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1342, c_z = -21700.
+303000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1341, c
+_z = -21818.159000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1340, c_z = -21937.299000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1339, c_z = -22057.750000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1338, c_z = -22179.528000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1337, c_z = -22302.6600
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1336, c_z =
+ -22427.164000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1335, c_z = -22553.067000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1334, c_z = -22680.394000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1333, c_z = -22809.164000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1332, c_z = -22939.409000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1331, c_z = -23071.
+146000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1330, c
+_z = -23204.407000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1329, c_z = -23339.214000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1328, c_z = -23475.595000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1327, c_z = -23613.580000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1326, c_z = -23753.2010
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1325, c_z =
+ -23894.480000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1324, c_z = -24037.455000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1323, c_z = -24182.140000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1322, c_z = -24328.584000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1321, c_z = -24476.815000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1320, c_z = -24626.
+859000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1319, c
+_z = -24778.758000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1318, c_z = -24932.537000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1317, c_z = -25088.243000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1316, c_z = -25245.899000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1315, c_z = -25405.5480
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1314, c_z =
+ -25567.236000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1313, c_z = -25730.991000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1312, c_z = -25896.861000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1311, c_z = -26064.879000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1310, c_z = -26235.099000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1309, c_z = -26407.
+551000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1308, c
+_z = -26582.281000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1307, c_z = -26759.347000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1306, c_z = -26938.781000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1305, c_z = -27120.644000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1304, c_z = -27304.9760
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1303, c_z =
+ -27491.827000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1302, c_z = -27681.262000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1301, c_z = -27873.323000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1300, c_z = -28068.059000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1299, c_z = -28265.544000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1298, c_z = -28465.
+821000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1297, c
+_z = -28668.968000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1296, c_z = -28875.024000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1295, c_z = -29084.069000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1294, c_z = -29296.158000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1293, c_z = -29511.3690
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1292, c_z =
+ -29729.758000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1291, c_z = -29951.408000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1290, c_z = -30176.387000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1289, c_z = -30404.773000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1288, c_z = -30636.644000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1287, c_z = -30872.
+079000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1286, c
+_z = -31111.159000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1285, c_z = -31353.964000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1284, c_z = -31600.595000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1283, c_z = -31851.143000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1282, c_z = -32105.6790
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1281, c_z =
+ -32364.324000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1280, c_z = -32627.180000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1279, c_z = -32894.334000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1278, c_z = -33165.896000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1277, c_z = -33441.980000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1276, c_z = -33722.
+700000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1275, c
+_z = -34008.176000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1274, c_z = -34298.516000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1273, c_z = -34593.869000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1272, c_z = -34894.339000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1271, c_z = -35200.0970
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1270, c_z =
+ -35511.233000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1269, c_z = -35827.932000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1268, c_z = -36150.338000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1267, c_z = -36478.582000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1266, c_z = -36812.854000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1265, c_z = -37153.
+315000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1264, c
+_z = -37500.119000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1263, c_z = -37853.462000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1262, c_z = -38213.522000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1261, c_z = -38580.512000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1260, c_z = -38954.6090
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1259, c_z =
+ -39336.034000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1258, c_z = -39724.998000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1257, c_z = -40121.730000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1256, c_z = -40526.479000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1255, c_z = -40939.460000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1254, c_z = -41360.
+952000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1253, c
+_z = -41791.214000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1252, c_z = -42230.529000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1251, c_z = -42679.185000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1250, c_z = -43137.454000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1249, c_z = -43605.6770
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1248, c_z =
+ -44084.187000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1247, c_z = -44573.304000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1246, c_z = -45073.401000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1245, c_z = -45584.848000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1244, c_z = -46108.023000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1243, c_z = -46643.
+370000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1242, c
+_z = -47191.296000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1241, c_z = -47752.223000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1240, c_z = -48326.640000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1239, c_z = -48915.066000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1238, c_z = -49518.0060
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1237, c_z =
+ -50135.981000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1236, c_z = -50769.563000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1235, c_z = -51419.377000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1234, c_z = -52086.048000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1233, c_z = -52770.226000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1232, c_z = -53472.
+619000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1231, c
+_z = -54193.952000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1230, c_z = -54935.035000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1229, c_z = -55696.653000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1228, c_z = -56479.660000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1227, c_z = -57285.0510
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1226, c_z =
+ -58113.712000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1225, c_z = -58966.706000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1224, c_z = -59845.108000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1223, c_z = -60750.106000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1222, c_z = -61682.827000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1221, c_z = -62644.
+699000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1220, c
+_z = -63637.032000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1219, c_z = -64661.251000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1218, c_z = -65719.028000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1217, c_z = -66811.989000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1216, c_z = -67941.9030
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1215, c_z =
+ -69110.770000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1214, c_z = -70320.465000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1213, c_z = -71573.264000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1212, c_z = -72871.620000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1211, c_z = -74217.784000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1210, c_z = -75614.
+738000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1209, c
+_z = -77065.245000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1208, c_z = -78572.477000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1207, c_z = -80139.952000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1206, c_z = -81771.124000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1205, c_z = -83470.0170
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1204, c_z =
+ -85241.063000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1203, c_z = -87088.978000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1202, c_z = -89018.802000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1201, c_z = -91036.195000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1200, c_z = -93146.800000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1199, c_z = -95358.
+007000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1198, c
+_z = -97676.302000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 " \+
+ t = 1197, c_z = -100110.590000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1196, c_z = -102668.730000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1195, c_z = -105361.560000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1194, c_z = -108199.38
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1193, c_z
+ = -111193.570000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1192, c_z = -114359.420000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1191, c_z = -117709.900000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1190, c_z = -121263.290000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1189, c_z = -125036.72
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1188, c_z
+ = -129054.160000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1187, c_z = -133336.710000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1186, c_z = -137914.150000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1185, c_z = -142817.430000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1184, c_z = -148081.82
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1183, c_z
+ = -153748.450000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1182, c_z = -159866.450000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1181, c_z = -166492.360000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1180, c_z = -173690.270000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1179, c_z = -181539.15
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1178, c_z
+ = -190131.690000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1177, c_z = -199576.280000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1176, c_z = -210011.070000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1175, c_z = -221595.530000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1174, c_z = -234532.49
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1173, c_z
+ = -249069.970000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1172, c_z = -265534.220000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1171, c_z = -284328.110000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1170, c_z = -305980.940000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1169, c_z = -331208.05
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1168, c_z
+ = -360969.030000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1167, c_z = -396604.880000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1166, c_z = -440046.720000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1165, c_z = -494173.970000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1164, c_z = -563495.15
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1163, c_z
+ = -655427.690000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  \+
+t = 1162, c_z = -783210.630000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  t = 1161, c_z = -972899.400000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 51 "  t = 1160, c_z = -1283795.100000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 51 "  t = 1159, c_z = -1886663.
+900000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 51 "  t = 1158, c
+_z = -3557223.700000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 52 
+"  t = 1157, c_z = -31039035.000000, iteraciones = 3 " }}{PARA 6 "" 1 
+"" {TEXT -1 50 "  t = 1156, c_z = 4614692.000000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1155, c_z = 2147548.300000, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1154, c_z = 1399483.60
+0000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  t = 1153, c_z
+ = 1037908.400000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  \+
+t = 1152, c_z = 824793.520000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1151, c_z = 684314.370000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1150, c_z = 584718.850000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1149, c_z = 510427.4100
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1148, c_z =
+ 452884.230000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1147, c_z = 407001.560000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1146, c_z = 369559.000000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1145, c_z = 338426.410000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1144, c_z = 312132.090000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1143, c_z = 289628.
+960000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1142, c
+_z = 270153.150000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1141, c_z = 253131.870000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1140, c_z = 238126.600000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1139, c_z = 224803.760000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1138, c_z = 212888.9700
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1137, c_z =
+ 202175.900000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1136, c_z = 192488.710000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1135, c_z = 183688.540000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1134, c_z = 175656.250000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1133, c_z = 168296.750000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1132, c_z = 161531.
+120000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1131, c
+_z = 155286.630000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1130, c_z = 149507.930000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1129, c_z = 144143.400000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1128, c_z = 139150.320000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1127, c_z = 134492.3100
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1126, c_z =
+ 130135.100000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t =
+ 1125, c_z = 126052.010000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT 
+-1 49 "  t = 1124, c_z = 122217.330000, iteraciones = 3 " }}{PARA 6 "
+" 1 "" {TEXT -1 49 "  t = 1123, c_z = 118608.980000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1122, c_z = 115207.730000, iter
+aciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1121, c_z = 111996.
+030000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1120, c
+_z = 108958.090000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 49 " \+
+ t = 1119, c_z = 106081.270000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 49 "  t = 1118, c_z = 103351.960000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 49 "  t = 1117, c_z = 100759.680000, iteracio
+nes = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1116, c_z = 98294.42700
+0, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1115, c_z = \+
+95947.130000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1
+114, c_z = 93709.048000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1113, c_z = 91573.190000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1112, c_z = 89532.266000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1111, c_z = 87580.194000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1110, c_z = 85711.621000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1109, c_z = 8
+3921.320000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 11
+08, c_z = 82204.188000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1107, c_z = 80555.785000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1106, c_z = 78972.157000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1105, c_z = 77449.592000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1104, c_z = 75984.812000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1103, c_z = 7
+4574.403000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 11
+02, c_z = 73215.089000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1101, c_z = 71904.734000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1100, c_z = 70640.466000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1099, c_z = 69419.669000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1098, c_z = 68240.633000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1097, c_z = 6
+7100.814000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+96, c_z = 65998.485000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1095, c_z = 64931.626000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1094, c_z = 63898.782000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1093, c_z = 62898.366000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1092, c_z = 61928.932000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1091, c_z = 6
+0988.582000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+90, c_z = 60076.713000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1089, c_z = 59191.370000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1088, c_z = 58331.932000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1087, c_z = 57497.214000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1086, c_z = 56685.817000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1085, c_z = 5
+5897.144000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+84, c_z = 55130.080000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1083, c_z = 54383.822000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1082, c_z = 53657.445000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1081, c_z = 52950.227000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1080, c_z = 52261.282000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1079, c_z = 5
+1590.203000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+78, c_z = 50936.156000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1077, c_z = 50298.387000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1076, c_z = 49676.427000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1075, c_z = 49069.715000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1074, c_z = 48477.553000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1073, c_z = 4
+7899.585000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+72, c_z = 47335.166000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1071, c_z = 46783.838000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1070, c_z = 46245.413000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1069, c_z = 45719.079000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1068, c_z = 45204.667000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1067, c_z = 4
+4701.573000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+66, c_z = 44209.647000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1065, c_z = 43728.523000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1064, c_z = 43257.650000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1063, c_z = 42796.804000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1062, c_z = 42345.697000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1061, c_z = 4
+1903.997000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+60, c_z = 41471.447000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1059, c_z = 41047.655000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1058, c_z = 40632.560000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1057, c_z = 40225.718000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1056, c_z = 39826.890000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1055, c_z = 3
+9435.932000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+54, c_z = 39052.620000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1053, c_z = 38676.563000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1052, c_z = 38307.823000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1051, c_z = 37945.937000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1050, c_z = 37590.896000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1049, c_z = 3
+7242.418000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+48, c_z = 36900.333000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1047, c_z = 36564.466000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1046, c_z = 36234.659000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1045, c_z = 35910.828000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1044, c_z = 35592.664000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1043, c_z = 3
+5280.045000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+42, c_z = 34972.950000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1041, c_z = 34671.108000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1040, c_z = 34374.453000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1039, c_z = 34082.796000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1038, c_z = 33796.080000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1037, c_z = 3
+3514.175000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+36, c_z = 33236.914000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1035, c_z = 32964.186000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1034, c_z = 32695.879000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1033, c_z = 32431.955000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1032, c_z = 32172.193000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1031, c_z = 3
+1916.606000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+30, c_z = 31665.050000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1029, c_z = 31417.379000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1028, c_z = 31173.613000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1027, c_z = 30933.554000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1026, c_z = 30697.233000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1025, c_z = 3
+0464.408000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+24, c_z = 30235.153000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1023, c_z = 30009.299000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1022, c_z = 29786.774000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1021, c_z = 29567.550000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1020, c_z = 29351.561000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1019, c_z = 2
+9138.647000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+18, c_z = 28928.828000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1017, c_z = 28722.004000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1016, c_z = 28518.114000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1015, c_z = 28317.098000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1014, c_z = 28118.904000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1013, c_z = 2
+7923.462000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+12, c_z = 27730.686000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1011, c_z = 27540.608000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1010, c_z = 27353.088000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1009, c_z = 27168.084000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1008, c_z = 26985.618000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1007, c_z = 2
+6805.535000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+06, c_z = 26627.861000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+48 "  t = 1005, c_z = 26452.545000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 48 "  t = 1004, c_z = 26279.486000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1003, c_z = 26108.702000, iteracion
+es = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1002, c_z = 25940.123000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 1001, c_z = 2
+5773.701000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  t = 10
+00, c_z = 25609.405000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 999, c_z = 25447.194000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 998, c_z = 25287.025000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 997, c_z = 25128.845000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 996, c_z = 24972.634000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 995, c_z = 2481
+8.367000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 994, \+
+c_z = 24665.981000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 993, c_z = 24515.470000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 992, c_z = 24366.770000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 991, c_z = 24219.860000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 990, c_z = 24074.727000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 989, c_z = 23931.2920
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 988, c_z = \+
+23789.583000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+87, c_z = 23649.543000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 986, c_z = 23511.143000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 985, c_z = 23374.360000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 984, c_z = 23239.132000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 983, c_z = 23105.472000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 982, c_z = 2297
+3.351000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 981, \+
+c_z = 22842.714000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 980, c_z = 22713.567000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 979, c_z = 22585.871000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 978, c_z = 22459.617000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 977, c_z = 22334.732000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 976, c_z = 22211.2530
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 975, c_z = \+
+22089.124000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+74, c_z = 21968.339000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 973, c_z = 21848.863000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 972, c_z = 21730.666000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 971, c_z = 21613.766000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 970, c_z = 21498.104000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 969, c_z = 2138
+3.678000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 968, \+
+c_z = 21270.458000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 967, c_z = 21158.417000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 966, c_z = 21047.566000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 965, c_z = 20937.888000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 964, c_z = 20829.317000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 963, c_z = 20721.8680
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 962, c_z = \+
+20615.544000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+61, c_z = 20510.284000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 960, c_z = 20406.119000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 959, c_z = 20302.989000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 958, c_z = 20200.884000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 957, c_z = 20099.829000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 956, c_z = 1999
+9.749000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 955, \+
+c_z = 19900.675000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 954, c_z = 19802.590000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 953, c_z = 19705.464000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 952, c_z = 19609.278000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 951, c_z = 19514.010000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 950, c_z = 19419.6810
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 949, c_z = \+
+19326.263000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+48, c_z = 19233.744000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 947, c_z = 19142.092000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 946, c_z = 19051.316000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 945, c_z = 18961.408000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 944, c_z = 18872.315000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 943, c_z = 1878
+4.089000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 942, \+
+c_z = 18696.658000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 941, c_z = 18610.055000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 940, c_z = 18524.247000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 939, c_z = 18439.212000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 938, c_z = 18354.970000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 937, c_z = 18271.4830
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 936, c_z = \+
+18188.756000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+35, c_z = 18106.783000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 934, c_z = 18025.533000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 933, c_z = 17945.025000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 932, c_z = 17865.223000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 931, c_z = 17786.125000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 930, c_z = 1770
+7.723000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 929, \+
+c_z = 17630.024000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 928, c_z = 17552.989000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 927, c_z = 17476.626000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 926, c_z = 17400.930000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 925, c_z = 17325.878000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 924, c_z = 17251.4750
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 923, c_z = \+
+17177.717000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+22, c_z = 17104.582000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 921, c_z = 17032.065000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 920, c_z = 16960.159000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 919, c_z = 16888.855000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 918, c_z = 16818.162000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 917, c_z = 1674
+8.048000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 916, \+
+c_z = 16678.506000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 915, c_z = 16609.557000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 914, c_z = 16541.170000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 913, c_z = 16473.336000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 912, c_z = 16406.066000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 911, c_z = 16339.3380
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 910, c_z = \+
+16273.153000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 9
+09, c_z = 16207.501000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 908, c_z = 16142.378000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 907, c_z = 16077.777000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 906, c_z = 16013.682000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 905, c_z = 15950.104000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 904, c_z = 1588
+7.032000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 903, \+
+c_z = 15824.455000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 902, c_z = 15762.365000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 901, c_z = 15700.755000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 900, c_z = 15639.640000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 899, c_z = 15578.988000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 898, c_z = 15518.8050
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 897, c_z = \+
+15459.088000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+96, c_z = 15399.836000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 895, c_z = 15341.030000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 894, c_z = 15282.664000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 893, c_z = 15224.744000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 892, c_z = 15167.266000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 891, c_z = 1511
+0.220000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 890, \+
+c_z = 15053.603000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 889, c_z = 14997.402000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 888, c_z = 14941.621000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 887, c_z = 14886.256000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 886, c_z = 14831.295000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 885, c_z = 14776.7460
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 884, c_z = \+
+14722.597000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+83, c_z = 14668.840000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 882, c_z = 14615.475000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 881, c_z = 14562.495000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 880, c_z = 14509.896000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 879, c_z = 14457.676000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 878, c_z = 1440
+5.834000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 877, \+
+c_z = 14354.364000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 876, c_z = 14303.252000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 875, c_z = 14252.512000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 874, c_z = 14202.124000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 873, c_z = 14152.098000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 872, c_z = 14102.4170
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 871, c_z = \+
+14053.090000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+70, c_z = 14004.098000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 869, c_z = 13955.453000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 868, c_z = 13907.143000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 867, c_z = 13859.166000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 866, c_z = 13811.516000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 865, c_z = 1376
+4.195000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 864, \+
+c_z = 13717.200000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 863, c_z = 13670.519000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 862, c_z = 13624.158000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 861, c_z = 13578.108000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 860, c_z = 13532.374000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 859, c_z = 13486.9390
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 858, c_z = \+
+13441.816000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+57, c_z = 13396.987000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 856, c_z = 13352.460000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 855, c_z = 13308.229000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 854, c_z = 13264.288000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 853, c_z = 13220.640000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 852, c_z = 1317
+7.271000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 851, \+
+c_z = 13134.194000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 850, c_z = 13091.389000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 849, c_z = 13048.873000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 848, c_z = 13006.626000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 847, c_z = 12964.649000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 846, c_z = 12922.9470
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 845, c_z = \+
+12881.504000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+44, c_z = 12840.333000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 843, c_z = 12799.425000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 842, c_z = 12758.779000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 841, c_z = 12718.385000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 840, c_z = 12678.250000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 839, c_z = 1263
+8.365000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 838, \+
+c_z = 12598.728000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 837, c_z = 12559.339000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 836, c_z = 12520.197000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 835, c_z = 12481.299000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 834, c_z = 12442.645000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 833, c_z = 12404.2200
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 832, c_z = \+
+12366.043000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+31, c_z = 12328.094000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 830, c_z = 12290.376000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 829, c_z = 12252.896000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 828, c_z = 12215.639000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 827, c_z = 12178.605000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 826, c_z = 1214
+1.798000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 825, \+
+c_z = 12105.210000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 824, c_z = 12068.844000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 823, c_z = 12032.696000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 822, c_z = 11996.766000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 821, c_z = 11961.044000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 820, c_z = 11925.5390
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 819, c_z = \+
+11890.241000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+18, c_z = 11855.154000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 817, c_z = 11820.276000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 816, c_z = 11785.600000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 815, c_z = 11751.122000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 814, c_z = 11716.849000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 813, c_z = 1168
+2.778000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 812, \+
+c_z = 11648.899000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 811, c_z = 11615.222000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 810, c_z = 11581.732000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 809, c_z = 11548.439000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 808, c_z = 11515.341000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 807, c_z = 11482.4300
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 806, c_z = \+
+11449.705000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 8
+05, c_z = 11417.159000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 804, c_z = 11384.806000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 803, c_z = 11352.632000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 802, c_z = 11320.643000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 801, c_z = 11288.832000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 800, c_z = 1125
+7.199000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 799, \+
+c_z = 11225.741000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 798, c_z = 11194.461000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 797, c_z = 11163.354000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 796, c_z = 11132.419000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 795, c_z = 11101.657000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 794, c_z = 11071.0620
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 793, c_z = \+
+11040.639000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 7
+92, c_z = 11010.376000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 791, c_z = 10980.283000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 790, c_z = 10950.358000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 789, c_z = 10920.589000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 788, c_z = 10890.981000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 787, c_z = 1086
+1.536000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 786, \+
+c_z = 10832.251000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 785, c_z = 10803.124000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 784, c_z = 10774.149000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 783, c_z = 10745.331000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 782, c_z = 10716.669000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 781, c_z = 10688.1540
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 780, c_z = \+
+10659.794000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 7
+79, c_z = 10631.583000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 778, c_z = 10603.522000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 777, c_z = 10575.608000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 776, c_z = 10547.844000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 775, c_z = 10520.224000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 774, c_z = 1049
+2.745000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 773, \+
+c_z = 10465.410000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 772, c_z = 10438.217000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 771, c_z = 10411.169000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 770, c_z = 10384.257000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 769, c_z = 10357.484000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 768, c_z = 10330.8500
+00, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 767, c_z = \+
+10304.350000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 7
+66, c_z = 10277.989000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 
+47 "  t = 765, c_z = 10251.761000, iteraciones = 3 " }}{PARA 6 "" 1 "
+" {TEXT -1 47 "  t = 764, c_z = 10225.666000, iteraciones = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 47 "  t = 763, c_z = 10199.705000, iteracione
+s = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 762, c_z = 10173.875000, \+
+iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 761, c_z = 1014
+8.174000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 760, \+
+c_z = 10122.605000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 47 " \+
+ t = 759, c_z = 10097.160000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  t = 758, c_z = 10071.848000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 47 "  t = 757, c_z = 10046.658000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "  t = 756, c_z = 10021.598000, iterac
+iones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 755, c_z = 9996.66140
+0, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 754, c_z = 9
+971.843800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 753
+, c_z = 9947.155500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "
+  t = 752, c_z = 9922.585300, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 751, c_z = 9898.138900, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 750, c_z = 9873.809800, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 749, c_z = 9849.604400, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 748, c_z = 9825.513800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 747, c_z = 98
+01.540200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 746,
+ c_z = 9777.685500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 745, c_z = 9753.947700, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 744, c_z = 9730.321000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 743, c_z = 9706.811700, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 742, c_z = 9683.413600, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 741, c_z = 9660.129300
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 740, c_z = 96
+36.956900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 739,
+ c_z = 9613.893900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 738, c_z = 9590.941100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 737, c_z = 9568.098500, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 736, c_z = 9545.363000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 735, c_z = 9522.737600, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 734, c_z = 9500.220200
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 733, c_z = 94
+77.807500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 732,
+ c_z = 9455.499700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 731, c_z = 9433.295800, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 730, c_z = 9411.195900, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 729, c_z = 9389.200300, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 728, c_z = 9367.309900, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 727, c_z = 9345.518200
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 726, c_z = 93
+23.829100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 725,
+ c_z = 9302.238500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 724, c_z = 9280.748100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 723, c_z = 9259.358300, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 722, c_z = 9238.066100, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 721, c_z = 9216.871400, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 720, c_z = 9195.775600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 719, c_z = 91
+74.773500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 718,
+ c_z = 9153.867800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 717, c_z = 9133.057500, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 716, c_z = 9112.342700, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 715, c_z = 9091.719600, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 714, c_z = 9071.191400, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 713, c_z = 9050.754300
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 712, c_z = 90
+30.409800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 711,
+ c_z = 9010.154300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 710, c_z = 8989.993500, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 709, c_z = 8969.920100, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 708, c_z = 8949.938000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 707, c_z = 8930.041900, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 706, c_z = 8910.237400
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 705, c_z = 88
+90.516600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 704,
+ c_z = 8870.887700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 703, c_z = 8851.343300, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 702, c_z = 8831.882300, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 701, c_z = 8812.508000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 700, c_z = 8793.218200, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 699, c_z = 8774.015100
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 698, c_z = 87
+54.894000, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 697,
+ c_z = 8735.855100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 696, c_z = 8716.899400, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 695, c_z = 8698.027500, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 694, c_z = 8679.237800, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 693, c_z = 8660.525100, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 692, c_z = 8641.898400
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 691, c_z = 86
+23.345900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 690,
+ c_z = 8604.875300, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 689, c_z = 8586.486200, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 688, c_z = 8568.171200, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 687, c_z = 8549.935300, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 686, c_z = 8531.777300, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 685, c_z = 8513.699000
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 684, c_z = 84
+95.693400, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 683,
+ c_z = 8477.763700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 682, c_z = 8459.911000, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 681, c_z = 8442.135100, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 680, c_z = 8424.432100, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 679, c_z = 8406.801800, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 678, c_z = 8389.248100
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 677, c_z = 83
+71.765100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 676,
+ c_z = 8354.354100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 675, c_z = 8337.016100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 674, c_z = 8319.751400, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 673, c_z = 8302.559000, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 672, c_z = 8285.434100, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 671, c_z = 8268.382700
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 670, c_z = 82
+51.398500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 669,
+ c_z = 8234.485500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 668, c_z = 8217.642700, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 667, c_z = 8200.866800, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 666, c_z = 8184.158900, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 665, c_z = 8167.522100, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 664, c_z = 8150.950600
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 663, c_z = 81
+34.446600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 662,
+ c_z = 8118.007100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 661, c_z = 8101.636300, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 660, c_z = 8085.331800, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 659, c_z = 8069.090700, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 658, c_z = 8052.916900, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 657, c_z = 8036.807200
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 656, c_z = 80
+20.761600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 655,
+ c_z = 8004.779900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 654, c_z = 7988.860700, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 653, c_z = 7973.004900, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 652, c_z = 7957.214100, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 651, c_z = 7941.483600, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 650, c_z = 7925.817900
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 649, c_z = 79
+10.211100, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 648,
+ c_z = 7894.665800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 647, c_z = 7879.183100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 646, c_z = 7863.758200, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 645, c_z = 7848.397500, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 644, c_z = 7833.094200, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 643, c_z = 7817.849900
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 642, c_z = 78
+02.666500, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 641,
+ c_z = 7787.541200, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 640, c_z = 7772.474800, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 639, c_z = 7757.467000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 638, c_z = 7742.515100, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 637, c_z = 7727.622100, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 636, c_z = 7712.785800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 635, c_z = 76
+98.006800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 634,
+ c_z = 7683.284900, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 633, c_z = 7668.619100, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 632, c_z = 7654.007600, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 631, c_z = 7639.451600, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 630, c_z = 7624.953500, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 629, c_z = 7610.507800
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 628, c_z = 75
+96.117700, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 627,
+ c_z = 7581.781800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 626, c_z = 7567.499800, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 625, c_z = 7553.271700, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 624, c_z = 7539.097900, iteraciones = 3 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 623, c_z = 7524.976400, iteraci
+ones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 622, c_z = 7510.907500
+, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 621, c_z = 74
+96.891600, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 "  t = 620,
+ c_z = 7482.927800, iteraciones = 3 " }}{PARA 6 "" 1 "" {TEXT -1 46 " \+
+ t = 619, c_z = 7469.015500, iteraciones = 3 " }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  t = 618, c_z = 7455.155000, iteraciones = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  t = 617, c_z = 7441.344600, iteraciones = 3 \+
+" }}{PARA 13 "" 1 "" {GLPLOT2D 385 385 385 {PLOTDATA 2 "6#-%'CURVESG6#
+7\\ao7$$\"%O<\"\"!$!)!4Ho)!\"\"7$$\"%N<F*$\")rqp>F*7$$\"%M<F*$!)=%4'p!
+\"%7$$\"%L<F*$!)P-tpF87$$\"%K<F*$!)y9&)pF87$$\"%J<F*$!)VJ(*pF87$$\"%I<
+F*$!)J_4qF87$$\"%H<F*$!)]x@qF87$$\"%G<F*$!)%pS.(F87$$\"%F<F*$!)wSYqF87
+$$\"%E<F*$!)!)yeqF87$$\"%D<F*$!)G@rqF87$$\"%C<F*$!)5o$3(F87$$\"%B<F*$!
+)W>'4(F87$$\"%A<F*$!).v3rF87$$\"%@<F*$!):N@rF87$$\"%?<F*$!)$)*R8(F87$$
+\"%><F*$!)%*oYrF87$$\"%=<F*$!)bUfrF87$$\"%<<F*$!)t?srF87$$\"%;<F*$!)W.
+&=(F87$$\"%:<F*$!)t!z>(F87$$\"%9<F*$!)t#3@(F87$$\"%8<F*$!)RzBsF87$$\"%
+7<F*$!)h!oB(F87$$\"%6<F*$!)i')\\sF87$$\"%5<F*$!)P(HE(F87$$\"%4<F*$!)w7
+wsF87$$\"%3<F*$!)'H$*G(F87$$\"%2<F*$!)+e-tF87$$\"%1<F*$!)(yeJ(F87$$\"%
+0<F*$!)eAHtF87$$\"%/<F*$!)4iUtF87$$\"%.<F*$!)j1ctF87$$\"%-<F*$!)*f&ptF
+87$$\"%,<F*$!)T5$Q(F87$$\"%+<F*$!)wp'R(F87$$\"%*p\"F*$!)9M5uF87$$\"%)p
+\"F*$!)l.CuF87$$\"%(p\"F*$!)3yPuF87$$\"%'p\"F*$!)hd^uF87$$\"%&p\"F*$!)
+OUluF87$$\"%%p\"F*$!)HKzuF87$$\"%$p\"F*$!)NF$\\(F87$$\"%#p\"F*$!)gF2vF
+87$$\"%\"p\"F*$!)=L@vF87$$\"%!p\"F*$!)&Qa`(F87$$\"%*o\"F*$!))*f\\vF87$
+$\"%)o\"F*$!)G\"Qc(F87$$\"%(o\"F*$!)=3yvF87$$\"%'o\"F*$!)LS#f(F87$$\"%
+&o\"F*$!))zng(F87$$\"%%o\"F*$!)'47i(F87$$\"%$o\"F*$!)epNwF87$$\"%#o\"F
+*$!)gB]wF87$$\"%\"o\"F*$!)G$[m(F87$$\"%!o\"F*$!)R[zwF87$$\"%z;F*$!)=>%
+p(F87$$\"%y;F*$!)r&*3xF87$$\"%x;F*$!)wxBxF87$$\"%w;F*$!)jlQxF87$$\"%v;
+F*$!);f`xF87$$\"%u;F*$!)[eoxF87$$\"%t;F*$!)sj$y(F87$$\"%s;F*$!)wu)z(F8
+7$$\"%r;F*$!)c\"R\"yF87$$\"%q;F*$!)V9HyF87$$\"%p;F*$!)9VWyF87$$\"%o;F*
+$!)#y(fyF87$$\"%n;F*$!)g=vyF87$$\"%m;F*$!)Vl!*yF87$$\"%l;F*$!)K=1zF87$
+$\"%k;F*$!)Ax@zF87$$\"%j;F*$!)XUPzF87$$\"%i;F*$!)y8`zF87$$\"%h;F*$!)R
+\"*ozF87$$\"%g;F*$!)Ov%)zF87$$\"%f;F*$!)_l+!)F87$$\"%e;F*$!)1i;!)F87$$
+\"%d;F*$!)%\\E.)F87$$\"%c;F*$!)@u[!)F87$$\"%b;F*$!).!\\1)F87$$\"%a;F*$
+!)F7\"3)F87$$\"%`;F*$!)9T(4)F87$$\"%_;F*$!)kw8\")F87$$\"%^;F*$!)f=I\")
+F87$$\"%];F*$!)FnY\")F87$$\"%\\;F*$!)iAj\")F87$$\"%[;F*$!)$[)z\")F87$$
+\"%Z;F*$!)!Ql>)F87$$\"%Y;F*$!)`H8#)F87$$\"%X;F*$!);7I#)F87$$\"%W;F*$!)
+k,Z#)F87$$\"%V;F*$!)6)RE)F87$$\"%U;F*$!)e,\"G)F87$$\"%T;F*$!),7)H)F87$
+$\"%S;F*$!)^H:$)F87$$\"%R;F*$!)IaK$)F87$$\"%Q;F*$!)?')\\$)F87$$\"%P;F*
+$!)BDn$)F87$$\"%O;F*$!)kr%Q)F87$$\"%N;F*$!)ED-%)F87$$\"%M;F*$!)B')>%)F
+87$$\"%L;F*$!)iaP%)F87$$\"%K;F*$!)^Ib%)F87$$\"%J;F*$!)'QJZ)F87$$\"%I;F
+*$!)s/\"\\)F87$$\"%H;F*$!)D.4&)F87$$\"%G;F*$!)F4F&)F87$$\"%F;F*$!)0BX&
+)F87$$\"%E;F*$!)fWj&)F87$$\"%D;F*$!)&Q<e)F87$$\"%C;F*$!)'4,g)F87$$\"%B
+;F*$!)&f&=')F87$$\"%A;F*$!)))3P')F87$$\"%@;F*$!)*)pb')F87$$\"%?;F*$!)x
+Qu')F87$$\"%>;F*$!)\"eJp)F87$$\"%=;F*$!)*4?r)F87$$\"%<;F*$!)]%4t)F87$$
+\"%;;F*$!))f*\\()F87$$\"%:;F*$!))e!p()F87$$\"%9;F*$!)AC)y)F87$$\"%8;F*
+$!)'4v!))F87$$\"%7;F*$!)/'o#))F87$$\"%6;F*$!)tHY))F87$$\"%5;F*$!)6#e')
+)F87$$\"%4;F*$!),V&)))F87$$\"%3;F*$!)c70*)F87$$\"%2;F*$!)#4\\#*)F87$$
+\"%1;F*$!)3yW*)F87$$\"%0;F*$!)3uk*)F87$$\"%/;F*$!)$*y%)*)F87$$\"%.;F*$
+!),$\\+*F87$$\"%-;F*$!)/;D!*F87$$\"%,;F*$!)4[X!*F87$$\"%+;F*$!)Q*e1*F8
+7$$\"%*f\"F*$!)%)R'3*F87$$\"%)f\"F*$!)v*p5*F87$$\"%(f\"F*$!)#)oF\"*F87
+$$\"%'f\"F*$!)PZ[\"*F87$$\"%&f\"F*$!)bNp\"*F87$$\"%%f\"F*$!)7L!>*F87$$
+\"%$f\"F*$!)IS6#*F87$$\"%#f\"F*$!)NdK#*F87$$\"%\"f\"F*$!).%QD*F87$$\"%
+!f\"F*$!)]?v#*F87$$\"%*e\"F*$!)!pmH*F87$$\"%)e\"F*$!)<B=$*F87$$\"%(e\"
+F*$!)n*)R$*F87$$\"%'e\"F*$!)9mh$*F87$$\"%&e\"F*$!)o_$Q*F87$$\"%%e\"F*$
+!)i\\0%*F87$$\"%$e\"F*$!)#pvU*F87$$\"%#e\"F*$!)Mu\\%*F87$$\"%\"e\"F*$!
+)Z-s%*F87$$\"%!e\"F*$!),T%\\*F87$$\"%z:F*$!)=!p^*F87$$\"%y:F*$!)%*\\R&
+*F87$$\"%x:F*$!)n?i&*F87$$\"%w:F*$!);-&e*F87$$\"%v:F*$!)[%zg*F87$$\"%u
+:F*$!)y(4j*F87$$\"%t:F*$!)@7a'*F87$$\"%s:F*$!)&ytn*F87$$\"%r:F*$!)au+(
+*F87$$\"%q:F*$!)nAC(*F87$$\"%p:F*$!):#yu*F87$$\"%o:F*$!)>`r(*F87$$\"%n
+:F*$!)uN&z*F87$$\"%m:F*$!)&*H>)*F87$$\"%l:F*$!)&eL%)*F87$$\"%k:F*$!)k`
+n)*F87$$\"%j:F*$!)I$=*)*F87$$\"%i:F*$!)!\\i\"**F87$$\"%h:F*$!)gyS**F87
+$$\"%g:F*$!)bWl**F87$$\"%f:F*$!)rA!***F87$$\"%e:F*$!)K^,5!\"$7$$\"%d:F
+*$!)i,/5Fccn7$$\"%c:F*$!)<`15Fccn7$$\"%b:F*$!)*f!45Fccn7$$\"%a:F*$!)2g
+65Fccn7$$\"%`:F*$!)X:95Fccn7$$\"%_:F*$!)6s;5Fccn7$$\"%^:F*$!)2I>5Fccn7
+$$\"%]:F*$!)O*=-\"Fccn7$$\"%\\:F*$!)&*\\C5Fccn7$$\"%[:F*$!)*=r-\"Fccn7
+$$\"%Z:F*$!)<vH5Fccn7$$\"%Y:F*$!)zRK5Fccn7$$\"%X:F*$!)z0N5Fccn7$$\"%W:
+F*$!):tP5Fccn7$$\"%V:F*$!)\">//\"Fccn7$$\"%U:F*$!)17V5Fccn7$$\"%T:F*$!
+)h$e/\"Fccn7$$\"%S:F*$!)ec[5Fccn7$$\"%R:F*$!)*480\"Fccn7$$\"%Q:F*$!)$o
+S0\"Fccn7$$\"%P:F*$!)7%o0\"Fccn7$$\"%O:F*$!)(G'f5Fccn7$$\"%N:F*$!)5Vi5
+Fccn7$$\"%M:F*$!)#[_1\"Fccn7$$\"%L:F*$!).3o5Fccn7$$\"%K:F*$!)v#42\"Fcc
+n7$$\"%J:F*$!)+zt5Fccn7$$\"%I:F*$!)zmw5Fccn7$$\"%H:F*$!)5cz5Fccn7$$\"%
+G:F*$!)*pC3\"Fccn7$$\"%F:F*$!)XR&3\"Fccn7$$\"%E:F*$!)\\L)3\"Fccn7$$\"%
+D:F*$!)8H\"4\"Fccn7$$\"%C:F*$!)QE%4\"Fccn7$$\"%B:F*$!)DD(4\"Fccn7$$\"%
+A:F*$!)wD+6Fccn7$$\"%@:F*$!)#zK5\"Fccn7$$\"%?:F*$!)uJ16Fccn7$$\"%>:F*$
+!)DP46Fccn7$$\"%=:F*$!)XW76Fccn7$$\"%<:F*$!)N`:6Fccn7$$\"%;:F*$!)(R'=6
+Fccn7$$\"%::F*$!)Mw@6Fccn7$$\"%9:F*$!)W!\\7\"Fccn7$$\"%8:F*$!)I1G6Fccn
+7$$\"%7:F*$!)&R78\"Fccn7$$\"%6:F*$!)RVM6Fccn7$$\"%5:F*$!)kkP6Fccn7$$\"
+%4:F*$!)s(39\"Fccn7$$\"%3:F*$!)k7W6Fccn7$$\"%2:F*$!)TRZ6Fccn7$$\"%1:F*
+$!)1o]6Fccn7$$\"%0:F*$!)e)R:\"Fccn7$$\"%/:F*$!)-Jd6Fccn7$$\"%.:F*$!)Rl
+g6Fccn7$$\"%-:F*$!)o,k6Fccn7$$\"%,:F*$!)#*Rn6Fccn7$$\"%+:F*$!)9!3<\"Fc
+cn7$$\"%*\\\"F*$!)NAu6Fccn7$$\"%)\\\"F*$!)emx6Fccn7$$\"%(\\\"F*$!)#G6=
+\"Fccn7$$\"%'\\\"F*$!)5h%=\"Fccn7$$\"%&\\\"F*$!)W6)=\"Fccn7$$\"%%\\\"F
+*$!)'Q;>\"Fccn7$$\"%$\\\"F*$!)R=&>\"Fccn7$$\"%#\\\"F*$!),v)>\"Fccn7$$
+\"%\"\\\"F*$!)yL-7Fccn7$$\"%!\\\"F*$!)q%f?\"Fccn7$$\"%*[\"F*$!)!y&47Fc
+cn7$$\"%)[\"F*$!)3B87Fccn7$$\"%([\"F*$!)e!p@\"Fccn7$$\"%'[\"F*$!)Kg?7F
+ccn7$$\"%&[\"F*$!)KKC7Fccn7$$\"%%[\"F*$!)e1G7Fccn7$$\"%$[\"F*$!)8$=B\"
+Fccn7$$\"%#[\"F*$!)+iN7Fccn7$$\"%\"[\"F*$!)@VR7Fccn7$$\"%![\"F*$!)zEV7
+Fccn7$$\"%z9F*$!)v7Z7Fccn7$$\"%y9F*$!)5,^7Fccn7$$\"%x9F*$!)*=\\D\"Fccn
+7$$\"%w9F*$!)6&)e7Fccn7$$\"%v9F*$!)#3GE\"Fccn7$$\"%u9F*$!)-zm7Fccn7$$
+\"%t9F*$!)uzq7Fccn7$$\"%s9F*$!),$[F\"Fccn7$$\"%r9F*$!)#)))y7Fccn7$$\"%
+q9F*$!)C(HG\"Fccn7$$\"%p9F*$!)H3(G\"Fccn7$$\"%o9F*$!))>7H\"Fccn7$$\"%n
+9F*$!)LQ&H\"Fccn7$$\"%m9F*$!)Od*H\"Fccn7$$\"%l9F*$!)8z.8Fccn7$$\"%k9F*
+$!)k.38Fccn7$$\"%j9F*$!)#4BJ\"Fccn7$$\"%i9F*$!)+h;8Fccn7$$\"%h9F*$!)#R
+4K\"Fccn7$$\"%g9F*$!)oHD8Fccn7$$\"%f9F*$!)LoH8Fccn7$$\"%e9F*$!)!*4M8Fc
+cn7$$\"%d9F*$!)TaQ8Fccn7$$\"%c9F*$!))=IM\"Fccn7$$\"%b9F*$!)O_Z8Fccn7$$
+\"%a9F*$!)*e?N\"Fccn7$$\"%`9F*$!)Yic8Fccn7$$\"%_9F*$!)8Ah8Fccn7$$\"%^9
+F*$!)$\\eO\"Fccn7$$\"%]9F*$!))30P\"Fccn7$$\"%\\9F*$!)-?v8Fccn7$$\"%[9F
+*$!)R#*z8Fccn7$$\"%Z9F*$!)-o%Q\"Fccn7$$\"%Y9F*$!)#p%*Q\"Fccn7$$\"%X9F*
+$!);H%R\"Fccn7$$\"%W9F*$!)v9*R\"Fccn7$$\"%V9F*$!)w./9Fccn7$$\"%U9F*$!)
+<'*39Fccn7$$\"%T9F*$!)1#RT\"Fccn7$$\"%S9F*$!)X\"*=9Fccn7$$\"%R9F*$!)R%
+RU\"Fccn7$$\"%Q9F*$!)*3!H9Fccn7$$\"%P9F*$!)-6M9Fccn7$$\"%O9F*$!)![#R9F
+ccn7$$\"%N9F*$!)GUW9Fccn7$$\"%M9F*$!)\\j\\9Fccn7$$\"%L9F*$!)Z)[X\"Fccn
+7$$\"%K9F*$!)G<g9Fccn7$$\"%J9F*$!)#*\\l9Fccn7$$\"%I9F*$!)['3Z\"Fccn7$$
+\"%H9F*$!)*piZ\"Fccn7$$\"%G9F*$!)Zr\"[\"Fccn7$$\"%F9F*$!)+?([\"Fccn7$$
+\"%E9F*$!)gs#\\\"Fccn7$$\"%D9F*$!)JH)\\\"Fccn7$$\"%C9F*$!)>!R]\"Fccn7$
+$\"%B9F*$!)Jb4:Fccn7$$\"%A9F*$!)nC::Fccn7$$\"%@9F*$!)L)4_\"Fccn7$$\"%?
+9F*$!)PwE:Fccn7$$\"%>9F*$!)#)eK:Fccn7$$\"%=9F*$!)uXQ:Fccn7$$\"%<9F*$!)
+8PW:Fccn7$$\"%;9F*$!)9L]:Fccn7$$\"%:9F*$!)uLc:Fccn7$$\"%99F*$!)+Ri:Fcc
+n7$$\"%89F*$!)+\\o:Fccn7$$\"%79F*$!)zju:Fccn7$$\"%69F*$!)R$3e\"Fccn7$$
+\"%59F*$!)$zqe\"Fccn7$$\"%49F*$!)SP$f\"Fccn7$$\"%39F*$!))=(*f\"Fccn7$$
+\"%29F*$!)W61;Fccn7$$\"%19F*$!)8c7;Fccn7$$\"%09F*$!),1>;Fccn7$$\"%/9F*
+$!):hD;Fccn7$$\"%.9F*$!)j@K;Fccn7$$\"%-9F*$!)\\()Q;Fccn7$$\"%,9F*$!)!)
+eX;Fccn7$$\"%+9F*$!)kN_;Fccn7$$\"%*R\"F*$!)1=f;Fccn7$$\"%)R\"F*$!)<1m;
+Fccn7$$\"%(R\"F*$!))**Hn\"Fccn7$$\"%'R\"F*$!)e**z;Fccn7$$\"%&R\"F*$!)5
+0(o\"Fccn7$$\"%%R\"F*$!)a;%p\"Fccn7$$\"%$R\"F*$!),M,<Fccn7$$\"%#R\"F*$
+!)hd3<Fccn7$$\"%\"R\"F*$!)L(er\"Fccn7$$\"%!R\"F*$!)PBB<Fccn7$$\"%*Q\"F
+*$!)tlI<Fccn7$$\"%)Q\"F*$!)_9Q<Fccn7$$\"%(Q\"F*$!)\")pX<Fccn7$$\"%'Q\"
+F*$!)qJ`<Fccn7$$\"%&Q\"F*$!)D+h<Fccn7$$\"%%Q\"F*$!)cvo<Fccn7$$\"%$Q\"F
+*$!)wdw<Fccn7$$\"%#Q\"F*$!)!pWy\"Fccn7$$\"%\"Q\"F*$!)2V#z\"Fccn7$$\"%!
+Q\"F*$!)RY+=Fccn7$$\"%z8F*$!)$p&3=Fccn7$$\"%y8F*$!)\"[n\"=Fccn7$$\"%x8
+F*$!)9+D=Fccn7$$\"%w8F*$!)(HL$=Fccn7$$\"%v8F*$!)XtT=Fccn7$$\"%u8F*$!)m
+@]=Fccn7$$\"%t8F*$!)uxe=Fccn7$$\"%s8F*$!)wTn=Fccn7$$\"%r8F*$!)&Qh(=Fcc
+n7$$\"%q8F*$!):%\\)=Fccn7$$\"%p8F*$!)u#Q*=Fccn7$$\"%o8F*$!)qz->Fccn7$$
+\"%n8F*$!)D&=\">Fccn7$$\"%m8F*$!)Y*4#>Fccn7$$\"%l8F*$!)XAI>Fccn7$$\"%k
+8F*$!)LaR>Fccn7$$\"%j8F*$!)G&*[>Fccn7$$\"%i8F*$!)NXe>Fccn7$$\"%h8F*$!)
+z/o>Fccn7$$\"%g8F*$!)ltx>Fccn7$$\"%f8F*$!)6_()>Fccn7$$\"%e8F*$!)HS(*>F
+ccn7$$\"%d8F*$!)NQ2?Fccn7$$\"%c8F*$!)UY<?Fccn7$$\"%b8F*$!)nkF?Fccn7$$
+\"%a8F*$!)E$z.#Fccn7$$\"%`8F*$!)MK[?Fccn7$$\"%_8F*$!)4#)e?Fccn7$$\"%^8
+F*$!)iUp?Fccn7$$\"%]8F*$!)89!3#Fccn7$$\"%\\8F*$!)!o44#Fccn7$$\"%[8F*$!
+)!3>5#Fccn7$$\"%Z8F*$!)L'H6#Fccn7$$\"%Y8F*$!)_8C@Fccn7$$\"%X8F*$!)jUN@
+Fccn7$$\"%W8F*$!)w$o9#Fccn7$$\"%V8F*$!)>Pe@Fccn7$$\"%U8F*$!)..q@Fccn7$
+$\"%T8F*$!)f\"==#Fccn7$$\"%S8F*$!)*HP>#Fccn7$$\"%R8F*$!)]x0AFccn7$$\"%
+Q8F*$!)G&z@#Fccn7$$\"%P8F*$!)gEIAFccn7$$\"%O8F*$!)krUAFccn7$$\"%N8F*$!
+)nIbAFccn7$$\"%M8F*$!)%R!oAFccn7$$\"%L8F*$!)k\"4G#Fccn7$$\"%K8F*$!)4%R
+H#Fccn7$$\"%J8F*$!)Y62BFccn7$$\"%I8F*$!)2W?BFccn7$$\"%H8F*$!)9#RL#Fccn
+7$$\"%G8F*$!)&fvM#Fccn7$$\"%F8F*$!)!e8O#Fccn7$$\"%E8F*$!),KvBFccn7$$\"
+%D8F*$!)![%*Q#Fccn7$$\"%C8F*$!)bu.CFccn7$$\"%B8F*$!)S@=CFccn7$$\"%A8F*
+$!)%eGV#Fccn7$$\"%@8F*$!):oZCFccn7$$\"%?8F*$!)foiCFccn7$$\"%>8F*$!)e(y
+Z#Fccn7$$\"%=8F*$!)PD$\\#Fccn7$$\"%<8F*$!)V#)3DFccn7$$\"%;8F*$!)**eCDF
+ccn7$$\"%:8F*$!)[bSDFccn7$$\"%98F*$!)OscDFccn7$$\"%88F*$!)\"*4tDFccn7$
+$\"%78F*$!)ho*e#Fccn7$$\"%68F*$!)z[1EFccn7$$\"%58F*$!)*4Ni#Fccn7$$\"%4
+8F*$!)^vSEFccn7$$\"%38F*$!)\"G#eEFccn7$$\"%28F*$!)Z$fn#Fccn7$$\"%18F*$
+!)\"yQp#Fccn7$$\"%08F*$!)W17FFccn7$$\"%/8F*$!)w\\IFFccn7$$\"%.8F*$!)F=
+\\FFccn7$$\"%-8F*$!)i7oFFccn7$$\"%,8F*$!)BL(y#Fccn7$$\"%+8F*$!)f!o!GFc
+cn7$$\"%*H\"F*$!)WbEGFccn7$$\"%)H\"F*$!)@eYGFccn7$$\"%(H\"F*$!)o*o'GFc
+cn7$$\"%'H\"F*$!)C]()GFccn7$$\"%&H\"F*$!)pS3HFccn7$$\"%%H\"F*$!)ehHHFc
+cn7$$\"%$H\"F*$!)p8^HFccn7$$\"%#H\"F*$!)e(H(HFccn7$$\"%\"H\"F*$!)39&*H
+Fccn7$$\"%!H\"F*$!)(Qw,$Fccn7$$\"%*G\"F*$!)tZSIFccn7$$\"%)G\"F*$!)WmjI
+Fccn7$$\"%(G\"F*$!)z?(3$Fccn7$$\"%'G\"F*$!)f66JFccn7$$\"%&G\"F*$!)kRNJ
+Fccn7$$\"%%G\"F*$!)&f+;$Fccn7$$\"%$G\"F*$!)V6&=$Fccn7$$\"%#G\"F*$!)zc5
+KFccn7$$\"%\"G\"F*$!)CVOKFccn7$$\"%!G\"F*$!)!=FE$Fccn7$$\"%z7F*$!)MV*G
+$Fccn7$$\"%y7F*$!)'*e;LFccn7$$\"%x7F*$!)!)>WLFccn7$$\"%w7F*$!)+FsLFccn
+7$$\"%v7F*$!)w\"3S$Fccn7$$\"%u7F*$!);&)HMFccn7$$\"%t7F*$!)pQfMFccn7$$
+\"%s7F*$!)RV*[$Fccn7$$\"%r7F*$!)(4+_$Fccn7$$\"%q7F*$!)L7^NFccn7$$\"%p7
+F*$!)Kz#e$Fccn7$$\"%o7F*$!)Q.:OFccn7$$\"%n7F*$!)#eyk$Fccn7$$\"%m7F*$!)
+aG\"o$Fccn7$$\"%l7F*$!):L:PFccn7$$\"%k7F*$!)>,]PFccn7$$\"%j7F*$!)iM&y$
+Fccn7$$\"%i7F*$!)AN@QFccn7$$\"%h7F*$!)70eQFccn7$$\"%g7F*$!)4Y&*QFccn7$
+$\"%f7F*$!)MgLRFccn7$$\"%e7F*$!))*\\sRFccn7$$\"%d7F*$!)I<7SFccn7$$\"%c
+7F*$!)zk_SFccn7$$\"%b7F*$!)g%R4%Fccn7$$\"%a7F*$!)_4OTFccn7$$\"%`7F*$!)
+97zTFccn7$$\"%_7F*$!)H0BUFccn7$$\"%^7F*$!)&=zE%Fccn7$$\"%]7F*$!)au8VFc
+cn7$$\"%\\7F*$!)xcgVFccn7$$\"%[7F*$!)(=%3WFccn7$$\"%Z7F*$!)/LdWFccn7$$
+\"%Y7F*$!),M2XFccn7$$\"%X7F*$!)[[eXFccn7$$\"%W7F*$!)B!3h%Fccn7$$\"%V7F
+*$!)qLkYFccn7$$\"%U7F*$!)'H\">ZFccn7$$\"%T7F*$!)BAvZFccn7$$\"%S7F*$!)S
+mK[Fccn7$$\"%R7F*$!)m]\"*[Fccn7$$\"%Q7F*$!)1!=&\\Fccn7$$\"%P7F*$!)\")f
+8]Fccn7$$\"%O7F*$!)j&p2&Fccn7$$\"%N7F*$!)x$>9&Fccn7$$\"%M7F*$!)[g3_Fcc
+n7$$\"%L7F*$!)E-x_Fccn7$$\"%K7F*$!)>EZ`Fccn7$$\"%J7F*$!)_R>aFccn7$$\"%
+I7F*$!)N]$\\&Fccn7$$\"%H7F*$!)`mpbFccn7$$\"%G7F*$!)g'zk&Fccn7$$\"%F7F*
+$!)^]GdFccn7$$\"%E7F*$!)7P6eFccn7$$\"%D7F*$!)1n'*eFccn7$$\"%C7F*$!)3^%
+)fFccn7$$\"%B7F*$!)1,vgFccn7$$\"%A7F*$!)FGohFccn7$$\"%@7F*$!)*pWE'Fccn
+7$$\"%?7F*$!)KqjjFccn7$$\"%>7F*$!)^7mkFccn7$$\"%=7F*$!)G!>d'Fccn7$$\"%
+<7F*$!)*)>\"o'Fccn7$$\"%;7F*$!).>%z'Fccn7$$\"%:7F*$!)q26pFccn7$$\"%97F
+*$!)l/KqFccn7$$\"%87F*$!)kKdrFccn7$$\"%77F*$!)?;(G(Fccn7$$\"%67F*$!)%y
+<U(Fccn7$$\"%57F*$!)QZhvFccn7$$\"%47F*$!)X_1xFccn7$$\"%37F*$!)xCdyFccn
+7$$\"%27F*$!)_*R,)Fccn7$$\"%17F*$!)C6x\")Fccn7$$\"%07F*$!)<+Z$)Fccn7$$
+\"%/7F*$!)j5C&)Fccn7$$\"%.7F*$!)y*)3()Fccn7$$\"%-7F*$!)-)=!*)Fccn7$$\"
+%,7F*$!)&>O5*Fccn7$$\"%+7F*$!)+o9$*Fccn7$$\"%*>\"F*$!)2!e`*Fccn7$$\"%)
+>\"F*$!)-jn(*Fccn7$$\"%(>\"F*$!)f5,5!\"#7$$\"%'>\"F*$!)toE5Fadu7$$\"%&
+>\"F*$!)ch`5Fadu7$$\"%%>\"F*$!)Q*>3\"Fadu7$$\"%$>\"F*$!)d$>6\"Fadu7$$
+\"%#>\"F*$!)UfV6Fadu7$$\"%\">\"F*$!)!*4x6Fadu7$$\"%!>\"F*$!)Hj77Fadu7$
+$\"%*=\"F*$!)sO]7Fadu7$$\"%)=\"F*$!);a!H\"Fadu7$$\"%(=\"F*$!)rOL8Fadu7
+$$\"%'=\"F*$!):9z8Fadu7$$\"%&=\"F*$!)V<G9Fadu7$$\"%%=\"F*$!)#=3[\"Fadu
+7$$\"%$=\"F*$!)X[P:Fadu7$$\"%#=\"F*$!)Xm)f\"Fadu7$$\"%\"=\"F*$!)O#\\m
+\"Fadu7$$\"%!=\"F*$!)F!pt\"Fadu7$$\"%z6F*$!):R:=Fadu7$$\"%y6F*$!)pJ,>F
+adu7$$\"%x6F*$!)Gw&*>Fadu7$$\"%w6F*$!)26+@Fadu7$$\"%v6F*$!)`&f@#Fadu7$
+$\"%u6F*$!)\\KXBFadu7$$\"%t6F*$!)(*p!\\#Fadu7$$\"%s6F*$!)AMbEFadu7$$\"
+%r6F*$!)6GVGFadu7$$\"%q6F*$!)%4)fIFadu7$$\"%p6F*$!)037LFadu7$$\"%o6F*$
+!).p4OFadu7$$\"%n6F*$!))[g'RFadu7$$\"%m6F*$!)sY+WFadu7$$\"%l6F*$!)(R<%
+\\Fadu7$$\"%k6F*$!):&\\j&Fadu7$$\"%j6F*$!)pFalFadu7$$\"%i6F*$!)j5KyFad
+u7$$\"%h6F*$!)S**G(*Fadu7$$\"%g6F*$!)^z$G\"F-7$$\"%f6F*$!)Rm')=F-7$$\"
+%e6F*$!)PAdNF-7$$\"%d6F*$!)N!R5$F*7$$\"%c6F*$\")?p9YF-7$$\"%b6F*$\")$[
+v9#F-7$$\"%a6F*$\")O[*R\"F-7$$\"%`6F*$\")%3z.\"F-7$$\"%_6F*$\")_$zC)Fa
+du7$$\"%^6F*$\")P9VoFadu7$$\"%]6F*$\")&)=ZeFadu7$$\"%\\6F*$\")TF/^Fadu
+7$$\"%[6F*$\")B%)GXFadu7$$\"%Z6F*$\")c,qSFadu7$$\"%Y6F*$\")+f&p$Fadu7$
+$\"%X6F*$\")TE%Q$Fadu7$$\"%W6F*$\")4K@JFadu7$$\"%V6F*$\")'*G'*GFadu7$$
+\"%U6F*$\"):`,FFadu7$$\"%T6F*$\")(=8`#Fadu7$$\"%S6F*$\")gE\"Q#Fadu7$$
+\"%R6F*$\")w.[AFadu7$$\"%Q6F*$\")(*))G@Fadu7$$\"%P6F*$\")!f<-#Fadu7$$
+\"%O6F*$\")r)[#>Fadu7$$\"%N6F*$\")a)o$=Fadu7$$\"%M6F*$\")Dcc<Fadu7$$\"
+%L6F*$\")v'Ho\"Fadu7$$\"%K6F*$\")7J:;Fadu7$$\"%J6F*$\")j'Gb\"Fadu7$$\"
+%I6F*$\")$z]\\\"Fadu7$$\"%H6F*$\")SVT9Fadu7$$\"%G6F*$\")K]\"R\"Fadu7$$
+\"%F6F*$\")J#\\M\"Fadu7$$\"%E6F*$\")5N,8Fadu7$$\"%D6F*$\"),_g7Fadu7$$
+\"%C6F*$\")L<A7Fadu7$$\"%B6F*$\"))*3'=\"Fadu7$$\"%A6F*$\")t2_6Fadu7$$
+\"%@6F*$\").'*>6Fadu7$$\"%?6F*$\")4e*3\"Fadu7$$\"%>6F*$\")F\"31\"Fadu7
+$$\"%=6F*$\")'>N.\"Fadu7$$\"%<6F*$\")of25Fadu7$$\"%;6F*$\")FWH)*Fccn7$
+$\"%:6F*$\")Ir%f*Fccn7$$\"%96F*$\")[!4P*Fccn7$$\"%86F*$\")!>t:*Fccn7$$
+\"%76F*$\")mA`*)Fccn7$$\"%66F*$\")%>!e()Fccn7$$\"%56F*$\")@;r&)Fccn7$$
+\"%46F*$\")?8#R)Fccn7$$\"%36F*$\"))=/A)Fccn7$$\"%26F*$\")&yb0)Fccn7$$
+\"%16F*$\")d@(*yFccn7$$\"%06F*$\")#f\\u(Fccn7$$\"%/6F*$\")7[)f(Fccn7$$
+\"%.6F*$\").WduFccn7$$\"%-6F*$\")*3:K(Fccn7$$\"%,6F*$\")MZ!>(Fccn7$$\"
+%+6F*$\")m/kqFccn7$$\"%*4\"F*$\")p'>%pFccn7$$\"%)4\"F*$\")L1CoFccn7$$
+\"%(4\"F*$\")935nFccn7$$\"%'4\"F*$\")&[)*f'Fccn7$$\"%&4\"F*$\")E;$\\'F
+ccn7$$\"%%4\"F*$\")#y)*Q'Fccn7$$\"%$4\"F*$\")m$)*G'Fccn7$$\"%#4\"F*$\"
+)K*G>'Fccn7$$\"%\"4\"F*$\")#e))4'Fccn7$$\"%!4\"F*$\")8n2gFccn7$$\"%*3
+\"F*$\")q8>fFccn7$$\"%)3\"F*$\")K>LeFccn7$$\"%(3\"F*$\")9s\\dFccn7$$\"
+%'3\"F*$\")<eocFccn7$$\"%&3\"F*$\")Wr*e&Fccn7$$\"%%3\"F*$\")!3I^&Fccn7
+$$\"%$3\"F*$\")AQQaFccn7$$\"%#3\"F*$\")Xul`Fccn7$$\"%\"3\"F*$\")F-&H&F
+ccn7$$\"%!3\"F*$\")#GhA&Fccn7$$\"%z5F*$\").-f^Fccn7$$\"%y5F*$\")ch$4&F
+ccn7$$\"%x5F*$\")(Q)H]Fccn7$$\"%w5F*$\")Fkn\\Fccn7$$\"%v5F*$\"):(p!\\F
+ccn7$$\"%u5F*$\")`vZ[Fccn7$$\"%t5F*$\")&e**y%Fccn7$$\"%s5F*$\")m^LZFcc
+n7$$\"%r5F*$\")QQyYFccn7$$\"%q5F*$\")8aCYFccn7$$\"%p5F*$\")z!>d%Fccn7$
+$\"%o5F*$\")nY?XFccn7$$\"%n5F*$\")t:qWFccn7$$\"%m5F*$\")Z'4U%Fccn7$$\"
+%l5F*$\")B&GP%Fccn7$$\"%k5F*$\")]wDVFccn7$$\"%j5F*$\")/ozUFccn7$$\"%i5
+F*$\")(pXB%Fccn7$$\"%h5F*$\")(*R!>%Fccn7$$\"%g5F*$\")Z9ZTFccn7$$\"%f5F
+*$\")bw/TFccn7$$\"%e5F*$\")gDjSFccn7$$\"%d5F*$\")=dASFccn7$$\"%c5F*$\"
+)!*o#)RFccn7$$\"%b5F*$\")KfVRFccn7$$\"%a5F*$\")?E0RFccn7$$\"%`5F*$\")j
+lnQFccn7$$\"%_5F*$\")ByIQFccn7$$\"%^5F*$\")Pf%z$Fccn7$$\"%]5F*$\")'*3f
+PFccn7$$\"%\\5F*$\")=CCPFccn7$$\"%[5F*$\")L.!p$Fccn7$$\"%Z5F*$\")mWcOF
+ccn7$$\"%Y5F*$\")fYBOFccn7$$\"%X5F*$\")G3\"f$Fccn7$$\"%W5F*$\")kEfNFcc
+n7$$\"%V5F*$\")X+GNFccn7$$\"%U5F*$\")]H(\\$Fccn7$$\"%T5F*$\")36nMFccn7
+$$\"%S5F*$\")`WPMFccn7$$\"%R5F*$\")'z#3MFccn7$$\"%Q5F*$\")!3'zLFccn7$$
+\"%P5F*$\")vT^LFccn7$$\"%O5F*$\")9pBLFccn7$$\"%N5F*$\")'=kH$Fccn7$$\"%
+M5F*$\")zepKFccn7$$\"%L5F*$\")b>VKFccn7$$\"%K5F*$\")$>s@$Fccn7$$\"%J5F
+*$\")1m\">$Fccn7$$\"%I5F*$\")]]mJFccn7$$\"%H5F*$\")ztTJFccn7$$\"%G5F*$
+\")8O<JFccn7$$\"%F5F*$\")aN$4$Fccn7$$\"%E5F*$\")LspIFccn7$$\"%D5F*$\")
+3WYIFccn7$$\"%C5F*$\")`^BIFccn7$$\"%B5F*$\")*H4+$Fccn7$$\"%A5F*$\")uny
+HFccn7$$\"%@5F*$\")]vcHFccn7$$\"%?5F*$\")h:NHFccn7$$\"%>5F*$\")Z'Q\"HF
+ccn7$$\"%=5F*$\")G)G*GFccn7$$\"%<5F*$\")/?sGFccn7$$\"%;5F*$\")9\"=&GFc
+cn7$$\"%:5F*$\"))4<$GFccn7$$\"%95F*$\")/*=\"GFccn7$$\"%85F*$\")iM#z#Fc
+cn7$$\"%75F*$\")'oIx#Fccn7$$\"%65F*$\")31aFFccn7$$\"%55F*$\"))3`t#Fccn
+7$$\"%45F*$\")%3or#Fccn7$$\"%35F*$\")=c)p#Fccn7$$\"%25F*$\")Nb!o#Fccn7
+$$\"%15F*$\")hyiEFccn7$$\"%05F*$\")XDXEFccn7$$\"%/5F*$\")'[zi#Fccn7$$
+\"%.5F*$\")-(3h#Fccn7$$\"%-5F*$\")B,%f#Fccn7$$\"%,5F*$\"),PxDFccn7$$\"
+%+5F*$\")0%4c#Fccn7$$\"$***F*$\")%>Za#Fccn7$$\"$)**F*$\")DqGDFccn7$$\"
+$(**F*$\")X)G^#Fccn7$$\"$'**F*$\")ME(\\#Fccn7$$\"$&**F*$\")n$=[#Fccn7$
+$\"$%**F*$\")\")fmCFccn7$$\"$$**F*$\")qa^CFccn7$$\"$#**F*$\")qnOCFccn7
+$$\"$\"**F*$\")g)>U#Fccn7$$\"$!**F*$\")FZ2CFccn7$$\"$*)*F*$\")#HJR#Fcc
+n7$$\"$))*F*$\")$e*yBFccn7$$\"$()*F*$\")V&\\O#Fccn7$$\"$')*F*$\")V6^BF
+ccn7$$\"$&)*F*$\")gVPBFccn7$$\"$%)*F*$\")K\"RK#Fccn7$$\"$$)*F*$\")sa5B
+Fccn7$$\"$#)*F*$\")^L(H#Fccn7$$\"$\")*F*$\")9F%G#Fccn7$$\"$!)*F*$\")nN
+rAFccn7$$\"$z*F*$\")reeAFccn7$$\"$y*F*$\")<'fC#Fccn7$$\"$x*F*$\")KZLAF
+ccn7$$\"$w*F*$\")`7@AFccn7$$\"$v*F*$\")C\"*3AFccn7$$\"$u*F*$\")R$o>#Fc
+cn7$$\"$t*F*$\")j)[=#Fccn7$$\"$s*F*$\")m1t@Fccn7$$\"$r*F*$\")mPh@Fccn7
+$$\"$q*F*$\")/\")\\@Fccn7$$\"$p*F*$\")yOQ@Fccn7$$\"$o*F*$\")e/F@Fccn7$
+$\"$n*F*$\")<%e6#Fccn7$$\"$m*F*$\")mv/@Fccn7$$\"$l*F*$\")))y$4#Fccn7$$
+\"$k*F*$\")<$H3#Fccn7$$\"$j*F*$\")o=s?Fccn7$$\"$i*F*$\")Wbh?Fccn7$$\"$
+h*F*$\")%G50#Fccn7$$\"$g*F*$\")>hS?Fccn7$$\"$f*F*$\")*)HI?Fccn7$$\"$e*
+F*$\")%)3??Fccn7$$\"$d*F*$\")H)*4?Fccn7$$\"$c*F*$\")\\(***>Fccn7$$\"$b
+*F*$\")v1!*>Fccn7$$\"$a*F*$\")!f-)>Fccn7$$\"$`*F*$\")kaq>Fccn7$$\"$_*F
+*$\")y#4'>Fccn7$$\"$^*F*$\")5S^>Fccn7$$\"$]*F*$\")\"o>%>Fccn7$$\"$\\*F
+*$\")jiK>Fccn7$$\"$[*F*$\")WPB>Fccn7$$\"$Z*F*$\")#4U\">Fccn7$$\"$Y*F*$
+\");80>Fccn7$$\"$X*F*$\")39'*=Fccn7$$\"$W*F*$\"):B()=Fccn7$$\"$V*F*$\"
+)*3%y=Fccn7$$\"$U*F*$\")emp=Fccn7$$\"$T*F*$\")b+h=Fccn7$$\"$S*F*$\")ZU
+_=Fccn7$$\"$R*F*$\")7#R%=Fccn7$$\"$Q*F*$\")q\\N=Fccn7$$\"$P*F*$\")$[r#
+=Fccn7$$\"$O*F*$\")c()==Fccn7$$\"$N*F*$\")$y1\"=Fccn7$$\"$M*F*$\")Lb-=
+Fccn7$$\"$L*F*$\")D]%z\"Fccn7$$\"$K*F*$\")B_'y\"Fccn7$$\"$J*F*$\")Dhy<
+Fccn7$$\"$I*F*$\")Bxq<Fccn7$$\"$H*F*$\")C+j<Fccn7$$\"$G*F*$\")*)Hb<Fcc
+n7$$\"$F*F*$\")EmZ<Fccn7$$\"$E*F*$\")I4S<Fccn7$$\"$D*F*$\")yeK<Fccn7$$
+\"$C*F*$\")v9D<Fccn7$$\"$B*F*$\")<x<<Fccn7$$\"$A*F*$\")#e/r\"Fccn7$$\"
+$@*F*$\")l?.<Fccn7$$\"$?*F*$\")f,'p\"Fccn7$$\"$>*F*$\")b)))o\"Fccn7$$
+\"$=*F*$\")i\"=o\"Fccn7$$\"$<*F*$\")[![n\"Fccn7$$\"$;*F*$\")1&ym\"Fccn
+7$$\"$:*F*$\")d&4m\"Fccn7$$\"$9*F*$\")q6a;Fccn7$$\"$8*F*$\")OLZ;Fccn7$
+$\"$7*F*$\")mgS;Fccn7$$\"$6*F*$\")Q$Rj\"Fccn7$$\"$5*F*$\")`JF;Fccn7$$
+\"$4*F*$\"),v?;Fccn7$$\"$3*F*$\")yB9;Fccn7$$\"$2*F*$\")xx2;Fccn7$$\"$1
+*F*$\")#o8g\"Fccn7$$\"$0*F*$\")/,&f\"Fccn7$$\"$/*F*$\")Kq)e\"Fccn7$$\"
+$.*F*$\")bW#e\"Fccn7$$\"$-*F*$\")lBw:Fccn7$$\"$,*F*$\")b2q:Fccn7$$\"$+
+*F*$\")S'Rc\"Fccn7$$\"$**)F*$\")))*yb\"Fccn7$$\"$)*)F*$\")0)=b\"Fccn7$
+$\"$(*)F*$\"))3fa\"Fccn7$$\"$'*)F*$\")O)*R:Fccn7$$\"$&*)F*$\")I5M:Fccn
+7$$\"$%*)F*$\")kEG:Fccn7$$\"$$*)F*$\")WZA:Fccn7$$\"$#*)F*$\")ms;:Fccn7
+$$\"$\"*)F*$\")?-6:Fccn7$$\"$!*)F*$\").O0:Fccn7$$\"$*))F*$\")-u*\\\"Fc
+cn7$$\"$)))F*$\")@;%\\\"Fccn7$$\"$())F*$\")ci)[\"Fccn7$$\"$'))F*$\")&H
+J[\"Fccn7$$\"$&))F*$\")Ynx9Fccn7$$\"$%))F*$\")(fAZ\"Fccn7$$\"$$))F*$\"
+)S)oY\"Fccn7$$\"$#))F*$\")vah9Fccn7$$\"$\"))F*$\")&\\iX\"Fccn7$$\"$!))
+F*$\")'*)4X\"Fccn7$$\"$z)F*$\")wwX9Fccn7$$\"$y)F*$\")MeS9Fccn7$$\"$x)F
+*$\")kVN9Fccn7$$\"$w)F*$\")_KI9Fccn7$$\"$v)F*$\")7DD9Fccn7$$\"$u)F*$\"
+)C@?9Fccn7$$\"$t)F*$\"))4_T\"Fccn7$$\"$s)F*$\")<C59Fccn7$$\"$r)F*$\")!
+4`S\"Fccn7$$\"$q)F*$\"))4/S\"Fccn7$$\"$p)F*$\")`a&R\"Fccn7$$\"$o)F*$\"
+)Vr!R\"Fccn7$$\"$n)F*$\")m\"fQ\"Fccn7$$\"$m)F*$\");:\"Q\"Fccn7$$\"$l)F
+*$\")&>kP\"Fccn7$$\"$k)F*$\")+sr8Fccn7$$\"$j)F*$\")>0n8Fccn7$$\"$i)F*$
+\")eTi8Fccn7$$\"$h)F*$\")3\"yN\"Fccn7$$\"$g)F*$\")uB`8Fccn7$$\"$f)F*$
+\")Rp[8Fccn7$$\"$e)F*$\");=W8Fccn7$$\"$d)F*$\")()pR8Fccn7$$\"$c)F*$\")
+gCN8Fccn7$$\"$b)F*$\")H#3L\"Fccn7$$\"$a)F*$\"))GkK\"Fccn7$$\"$`)F*$\")
+S1A8Fccn7$$\"$_)F*$\")rs<8Fccn7$$\"$^)F*$\")%>MJ\"Fccn7$$\"$])F*$\")*Q
+\"48Fccn7$$\"$\\)F*$\")t)[I\"Fccn7$$\"$[)F*$\")Em+8Fccn7$$\"$Z)F*$\")
+\\Y'H\"Fccn7$$\"$Y)F*$\")ZH#H\"Fccn7$$\"$X)F*$\")/:)G\"Fccn7$$\"$W)F*$
+\")L.%G\"Fccn7$$\"$V)F*$\")D%*z7Fccn7$$\"$U)F*$\")z(eF\"Fccn7$$\"$T)F*
+$\")&Q=F\"Fccn7$$\"$S)F*$\")]#yE\"Fccn7$$\"$R)F*$\")l$QE\"Fccn7$$\"$Q)
+F*$\")G()f7Fccn7$$\"$P)F*$\")R$fD\"Fccn7$$\"$O)F*$\")(>?D\"Fccn7$$\"$N
+)F*$\")*H\"[7Fccn7$$\"$M)F*$\")XEW7Fccn7$$\"$L)F*$\")?US7Fccn7$$\"$K)F
+*$\")VgO7Fccn7$$\"$J)F*$\")%4GB\"Fccn7$$\"$I)F*$\")w.H7Fccn7$$\"$H)F*$
+\")'*GD7Fccn7$$\"$G)F*$\")Rc@7Fccn7$$\"$F)F*$\")0'y@\"Fccn7$$\"$E)F*$
+\"))zT@\"Fccn7$$\"$D)F*$\")5_57Fccn7$$\"$C)F*$\")W)o?\"Fccn7$$\"$B)F*$
+\")'pK?\"Fccn7$$\"$A)F*$\")mn*>\"Fccn7$$\"$@)F*$\")W5'>\"Fccn7$$\"$?)F
+*$\")Rb#>\"Fccn7$$\"$>)F*$\")T-*=\"Fccn7$$\"$=)F*$\")a^&=\"Fccn7$$\"$<
+)F*$\")w-#=\"Fccn7$$\"$;)F*$\")+cy6Fccn7$$\"$:)F*$\")A6v6Fccn7$$\"$9)F
+*$\")\\or6Fccn7$$\"$8)F*$\")yFo6Fccn7$$\"$7)F*$\")**)[;\"Fccn7$$\"$6)F
+*$\")A_h6Fccn7$$\"$5)F*$\")K<e6Fccn7$$\"$4)F*$\")R%[:\"Fccn7$$\"$3)F*$
+\")T`^6Fccn7$$\"$2)F*$\")IC[6Fccn7$$\"$1)F*$\")0(\\9\"Fccn7$$\"$0)F*$
+\")frT6Fccn7$$\"$/)F*$\")1[Q6Fccn7$$\"$.)F*$\")KEN6Fccn7$$\"$-)F*$\")V
+1K6Fccn7$$\"$,)F*$\")K))G6Fccn7$$\"$+)F*$\")*>d7\"Fccn7$$\"$*zF*$\")Td
+A6Fccn7$$\"$)zF*$\")hW>6Fccn7$$\"$(zF*$\")aL;6Fccn7$$\"$'zF*$\")>C86Fc
+cn7$$\"$&zF*$\")d;56Fccn7$$\"$%zF*$\")i526Fccn7$$\"$$zF*$\")R1/6Fccn7$
+$\"$#zF*$\")w.,6Fccn7$$\"$\"zF*$\")$G!)4\"Fccn7$$\"$!zF*$\")e.&4\"Fccn
+7$$\"$*yF*$\")*e?4\"Fccn7$$\"$)yF*$\")\")4*3\"Fccn7$$\"$(yF*$\")O:'3\"
+Fccn7$$\"$'yF*$\")^A$3\"Fccn7$$\"$&yF*$\")CJ!3\"Fccn7$$\"$%yF*$\")\\Tx
+5Fccn7$$\"$$yF*$\")J`u5Fccn7$$\"$#yF*$\")pmr5Fccn7$$\"$\"yF*$\")a\")o5
+Fccn7$$\"$!yF*$\")%zf1\"Fccn7$$\"$z(F*$\")$eJ1\"Fccn7$$\"$y(F*$\")ANg5
+Fccn7$$\"$x(F*$\")3cd5Fccn7$$\"$w(F*$\")Wya5Fccn7$$\"$v(F*$\")C-_5Fccn
+7$$\"$u(F*$\")XF\\5Fccn7$$\"$t(F*$\")5aY5Fccn7$$\"$s(F*$\")<#Q/\"Fccn7
+$$\"$r(F*$\")p6T5Fccn7$$\"$q(F*$\")dUQ5Fccn7$$\"$p(F*$\")%[d.\"Fccn7$$
+\"$o(F*$\")]3L5Fccn7$$\"$n(F*$\")]VI5Fccn7$$\"$m(F*$\")*)zF5Fccn7$$\"$
+l(F*$\")h<D5Fccn7$$\"$k(F*$\")mcA5Fccn7$$\"$j(F*$\")0(*>5Fccn7$$\"$i(F
+*$\")vQ<5Fccn7$$\"$h(F*$\")u\"[,\"Fccn7$$\"$g(F*$\")0E75Fccn7$$\"$f(F*
+$\")gr45Fccn7$$\"$e(F*$\")[=25Fccn7$$\"$d(F*$\")em/5Fccn7$$\"$c(F*$\")
+)f@+\"Fccn7$$\"$b(F*$\")9m'***F87$$\"$a(F*$\")Q%=(**F87$$\"$`(F*$\")b:
+Z**F87$$\"$_(F*$\")`eA**F87$$\"$^(F*$\")*Q\")*)*F87$$\"$](F*$\"))4Q()*
+F87$$\"$\\(F*$\")Wg\\)*F87$$\"$[(F*$\")Q^D)*F87$$\"$Z(F*$\")-a,)*F87$$
+\"$Y(F*$\")box(*F87$$\"$X(F*$\")x%Rv*F87$$\"$W(F*$\")5KI(*F87$$\"$V(F*
+$\")<\"oq*F87$$\"$U(F*$\")OT$o*F87$$\"$T(F*$\")$H,m*F87$$\"$S(F*$\")p&
+pj*F87$$\"$R(F*$\")R*Qh*F87$$\"$Q(F*$\")6%4f*F87$$\"$P(F*$\")&)4o&*F87
+$$\"$O(F*$\")IOX&*F87$$\"$N(F*$\")wtA&*F87$$\"$M(F*$\")-A+&*F87$$\"$L(
+F*$\")v!yZ*F87$$\"$K(F*$\")(*\\b%*F87$$\"$J(F*$\")eHL%*F87$$\"$I(F*$\"
+)f>6%*F87$$\"$H(F*$\").?*Q*F87$$\"$G(F*$\")*4tO*F87$$\"$F(F*$\")#=bM*F
+87$$\"$E(F*$\")\"HQK*F87$$\"$D(F*$\")&QAI*F87$$\"$C(F*$\")\"[2G*F87$$
+\"$B(F*$\")$e$f#*F87$$\"$A(F*$\")h1Q#*F87$$\"$@(F*$\")9(o@*F87$$\"$?(F
+*$\")cx&>*F87$$\"$>(F*$\")Nxu\"*F87$$\"$=(F*$\")y'Q:*F87$$\"$<(F*$\")v
+0L\"*F87$$\"$;(F*$\")FM7\"*F87$$\"$:(F*$\")'><4*F87$$\"$9(F*$\")9>r!*F
+87$$\"$8(F*$\")Vv]!*F87$$\"$7(F*$\"))4/.*F87$$\"$6(F*$\")V:5!*F87$$\"$
+5(F*$\")N***)*)F87$$\"$4(F*$\"),#*p*)F87$$\"$3(F*$\")!Q*\\*)F87$$\"$2(
+F*$\")>/I*)F87$$\"$1(F*$\")uB5*)F87$$\"$0(F*$\")m^!*))F87$$\"$/(F*$\")
+x)3())F87$$\"$.(F*$\")LM^))F87$$\"$-(F*$\")B)=$))F87$$\"$,(F*$\")!3D\"
+))F87$$\"$+(F*$\")#=Kz)F87$$\"$*pF*$\")^,u()F87$$\"$)pF*$\")S*[v)F87$$
+\"$(pF*$\")^&et)F87$$\"$'pF*$\")%**or)F87$$\"$&pF*$\")v-)p)F87$$\"$%pF
+*$\")yBz')F87$$\"$$pF*$\")^_g')F87$$\"$#pF*$\")%)*=k)F87$$\"$\"pF*$\")
+fMB')F87$$\"$!pF*$\")`([g)F87$$\"$*oF*$\")i['e)F87$$\"$)oF*$\")7<o&)F8
+7$$\"$(oF*$\")`$*\\&)F87$$\"$'oF*$\")txJ&)F87$$\"$&oF*$\")!*p8&)F87$$
+\"$%oF*$\")Mp&\\)F87$$\"$$oF*$\")Pwx%)F87$$\"$#oF*$\")5\"*f%)F87$$\"$
+\"oF*$\")^8U%)F87$$\"$!oF*$\")@VC%)F87$$\"$z'F*$\")=!oS)F87$$\"$y'F*$
+\")\"[#*Q)F87$$\"$x'F*$\")^wr$)F87$$\"$w'F*$\")TNa$)F87$$\"$v'F*$\")h,
+P$)F87$$\"$u'F*$\")9v>$)F87$$\"$t'F*$\")!fDI)F87$$\"$s'F*$\")TV&G)F87$
+$\"$r'F*$\")FQo#)F87$$\"$q'F*$\")&)R^#)F87$$\"$p'F*$\")b[M#)F87$$\"$o'
+F*$\")Fk<#)F87$$\"$n'F*$\")o'3?)F87$$\"$m'F*$\")*eT=)F87$$\"$l'F*$\")@
+_n\")F87$$\"$k'F*$\")1&4:)F87$$\"$j'F*$\")mWM\")F87$$\"$i'F*$\")r+=\")
+F87$$\"$h'F*$\")jj,\")F87$$\"$g'F*$\")=L&3)F87$$\"$f'F*$\")24p!)F87$$
+\"$e'F*$\")p\"H0)F87$$\"$d'F*$\")s!o.)F87$$\"$c'F*$\");w?!)F87$$\"$b'F
+*$\")*zZ+)F87$$\"$a'F*$\")2')))zF87$$\"$`'F*$\")\\+tzF87$$\"$_'F*$\")T
+@dzF87$$\"$^'F*$\")O[TzF87$$\"$]'F*$\")z\"e#zF87$$\"$\\'F*$\")6@5zF87$
+$\"$['F*$\")em%*yF87$$\"$Z'F*$\")J=zyF87$$\"$Y'F*$\")#eP'yF87$$\"$X'F*
+$\")vR[yF87$$\"$W'F*$\")U4LyF87$$\"$V'F*$\")*\\y\"yF87$$\"$U'F*$\")lm-
+yF87$$\"$T'F*$\")7a(y(F87$$\"$S'F*$\")[ZsxF87$$\"$R'F*$\")qYdxF87$$\"$
+Q'F*$\")^^UxF87$$\"$P'F*$\")@iFxF87$$\"$O'F*$\")ey7xF87$$\"$N'F*$\")o+
+)p(F87$$\"$M'F*$\")\\G$o(F87$$\"$L'F*$\")\">'owF87$$\"$K'F*$\")w+awF87
+$$\"$J'F*$\");XRwF87$$\"$I'F*$\")N&\\i(F87$$\"$H'F*$\")y]5wF87$$\"$G'F
+*$\")x6'f(F87$$\"$F'F*$\")=y\"e(F87$$\"$E'F*$\"))*\\nvF87$$\"$D'F*$\")
+<F`vF87$$\"$C'F*$\")z4RvF87$$\"$B'F*$\")k(\\_(F87$$\"$A'F*$\")v!4^(F87
+$$\"$@'F*$\");*o\\(F87$$\"$?'F*$\")y#H[(F87$$\"$>'F*$\")b,puF87$$\"$='
+F*$\")]:buF87$$\"$<'F*$\")YMTuF8" 1 2 0 1 10 0 2 9 1 4 2 1.000000 
+45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{MARK "7 0 0" 17 }{VIEWOPTS 1 1 0 1 1 1803 1 1 
+1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

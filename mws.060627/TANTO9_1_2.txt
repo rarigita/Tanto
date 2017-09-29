@@ -1,0 +1,194 @@
+> restart;Digits:=40;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 40
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, v, s )
+>   global k,sq,a,ca,b,cb,c,cc,d,cd,x1,x2,x3,x4;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+>   circle(circ,[p3,p5,p6],[x,y]);
+
+>   line(l0,y=0,[x,y]);line(l1,x=0,[x,y]);
+
+>   line(r1,[p5,point(k1,sq/v,0)]);
+
+>   a := slope(r1)/v; ca := -(a*sq);
+>   line(r2,a*x+ca=y,[x,y]);
+
+>   intersection(Q,r1,l1);  
+>   line(r3,[p3,point(r3p,VerticalCoord(Q),HorizontalCoord(Q))]);
+>   rotation(P2,r3,Pi/2,'clockwise',p3);
+>   line(P2,slope(P2)*x-slope(P2)*sq+0=y,[x,y]);
+>   b := slope(r3)/v; cb := -(b*k);
+>   line(r4,b*x+cb=y,[x,y]);
+
+>   
+>   rotation(P1,r1,Pi/2,'clockwise',p5);
+>   intersection(Q,r3,l0);
+>   
+
+>   #line(P1,slope(P1)*x+(VerticalCoord(p4)-slope(P1)*HorizontalCoord(p4))=y,[x,y]);
+
+>   #line(P2,slope(P2)*x+(VerticalCoord(p6)-slope(P2)*HorizontalCoord(p6))=y,[x,y]);
+>   #line(P2,slope(P2)*x-slope(P2)*k+k=y,[x,y]);
+
+>   rotation(P3,r2,Pi/2,'clockwise',a2);
+>   #line(P3,slope(P3)*x+(VerticalCoord(p6)-slope(P3)*HorizontalCoord(p6))=y,[x,y]);
+>   line(P3,slope(P3)*x-slope(P3)*sq+sq=y,[x,y]);
+
+>   x1 := VerticalCoord(intersection(Q,r1,l1));
+>   x2 := VerticalCoord(intersection(Q,P3,l1));
+>   x3 := HorizontalCoord(intersection(Q,P3,l0));
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),r1(colour=brown),r2(colour=magenta),r3(colour=blue),r4(colour=yellow),P2(colour=blue),P3(colour=magenta),circ(colour=green)],colour=green,axes=normal,view=[0..k/s,-k/s..k/s]);
+> end proc:
+> tanto9(3,11,2,2);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));VerticalCoord(intersection(Q,r3,y));
+
+           12.02377363898978940729459076880102781250
+           2.999999999999999999999999999999999999986
+           -6.279210992451760747443979300582098494272
+       difer := 5.744562646538028659850611468218929318228
+                               Q
+           -12.02377363898978940729459076880102781255
+           -2.093070330817253582481326433527366164767
+                               Q
+           5.744562646538028659850611468218929318220
+                               Q
+           -2.627718676730985670074694265890535340820
+           26.28566045848468411094188615320154171941
+           8.250000000000000000000000000000000000032
+> tanto9(7,23,4,4);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));VerticalCoord(intersection(Q,r3,y));
+
+           28.30233021439618554652854832250364157553
+           6.999999999999999999999999999999999999981
+           -15.61375267394666516633477557641415178379
+       difer := 12.68857754044952038019377274608948979174
+                               Q
+           -28.30233021439618554652854832250364157563
+           -2.230536096278095023762110796630593111976
+                               Q
+           12.68857754044952038019377274608948979174
+                               Q
+           -5.155711229775239809903113626955255104026
+           69.65407787519332470642495956438137275852
+           20.12500000000000000000000000000000000005
+const2 - const3 = -const4/2 ; const2 + const4 = sq ; const4 - const5*2 = -sq
+> tanto9(23,61,12,5);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));VerticalCoord(intersection(Q,r3,y));
+
+           97.04881941157950398110358882995556791552
+           22.99999999999999999999999999999999999964
+           -59.59217781092341953385873021457341085188
+       difer := 37.45664160065608444724485861538215706364
+                               Q
+           -97.04881941157950398110358882995556791790
+           -2.590964252648844327559075226720583080557
+                               Q
+           37.45664160065608444724485861538215706359
+                               Q
+           -24.72650046291617941417294682591183686883
+           147.0132359376184695775242390041949954953
+           58.45833333333333333333333333333333333423
+> tanto9(59,127,30,10);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));VerticalCoord(intersection(Q,r3,y));
+
+           271.8586586175463607378497284532010930582
+           58.99999999999999999999999999999999999970
+           -185.2965421924034274293947557381012951987
+       difer := 86.5621164251429333084549727150997978595
+                               Q
+           -271.8586586175463607378497284532010930611
+           -3.140619359193278431006690775222055850842
+                               Q
+           86.56211642514293330845497271509979785954
+                               Q
+           -101.8750451264537725519464737982235531899
+           230.9953416877018595201339397951773823322
+           124.8833333333333333333333333333333333340
+> tanto9(101,103,51,30);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));
+
+           10454.24754295311626487184117801227759951
+           101.0000000000000000000000000000000000084
+           -10352.25244503169653157335882504116541481
+        difer := 101.99509792141973329848235297111218470
+                               Q
+           -10454.24754295311626487184117801227751203
+           -102.4975489607098666492411764855560932074
+                               Q
+           101.9950979214197332984823529711121846926
+                               Q
+           -10352.75489607098666492411764855560932335
+           102.9950010931808571545839095617243412591
+> tanto9(1237,9743,619,20);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);VerticalCoord(intersection(Q,r3,l1));VerticalCoord(intersection(Q,r3,y));
+
+           5393.370360882944141530174735151439330074
+           1237.000000000000000000000000000000002638
+           -1921.758199364898070724912875642238582106
+       difer := 3471.612161518046070805261859509200747968
+                               Q
+           -5393.370360882944141530174735151439323707
+           -1.553563621151898197837439673114178316902
+                               Q
+           3471.612161518046070805261859509200747969
+                               Q
+           1548.300398531996101882511544193847987541
+           -12093.06033516807307888671920325436830843
+           9735.130048465266558966074313408723727216
+
+
+

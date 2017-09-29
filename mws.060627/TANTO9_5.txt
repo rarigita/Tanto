@@ -1,0 +1,177 @@
+> restart;Digits:=20;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 20
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, s, v )
+>   global k,sq,a,ca,b,cb,c,cc;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq/2):
+>   line(B,[b1,b2]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+>   circle(circ,[p3,p5,p6],[x,y]);
+
+>   line(l0,x=0,[x,y]);
+>   intersection(Q,l0,p2l);
+>   line(r1,[point(r1y,0,-VerticalCoord(Q)),b1]);
+>   line(r2,[point(r2y,0,VerticalCoord(Q)),a1]);
+>   line(r3,[p5,point(r3x,sq/s,0)]);intersection(ppp,r3,y);line(pppl,[ppp,p1m2]);
+>   line(r4,[p5,point(r5y,0,-VerticalCoord(Q))]); print(solve({Equation(r3),Equation(y)}));
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),r1(colour=magenta),r2(colour=magenta),r3(colour=blue),r4(colour=yellow),circ(colour=green),pppl(colour=brown)],colour=green,axes=normal,view=[0..k/v,-k/v..k/v]);
+> end proc:
+> tanto9(3,11,3,1);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);coordinates(intersection(Q,r3,l1));
+     {y = 5.0854311651542980520, x = 5.0854311651542980520}
+
+                               l1
+                  [0., -12.023773638989789408]
+         [5.7445626465380286597, 9.9307033081725358252]
+         [13.910660458484684111, 6.9553302292423420553]
+                  [0., -3.0713209169693682219]
+                  [4.5655333037323950882, 0.]
+                     1.6039450377411962628
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [3.5622290792246857576, 2.6422987379504571875]
+                  [1.9148542155126762200, 0.]
+> point(V,v1,v2);distance(V,p5);distance(V,p5)/slope(r3);
+                               V
+/                            2                               2\      
+\(v1 - 3.5622290792246857576)  + (v2 - 2.6422987379504571875) /^(1/2)
+                            /                            2
+     0.62346275992616306362 \(v1 - 3.5622290792246857576) 
+
+                                      2\      
+        + (v2 - 2.6422987379504571875) /^(1/2)
+> tanto9(7,23,4,3);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);coordinates(intersection(Q,r3,l1));coordinates(intersection(ppl,pppl,l1));
+     {y = 8.7608772571844463233, x = 8.7608772571844463233}
+
+                               l1
+                  [0., -28.302330214396185546]
+         [12.688577540449520380, 26.071794118118090522]
+         [41.880308588417246781, 20.940154294208623391]
+                  [0., -4.9726419630667992644]
+                  [9.0086983852080459293, 0.]
+                     1.5675963510376696292
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [7.065855074562747312, 6.1037666687787644827]
+                  [3.1721443851123800950, 0.]
+                           [23., 0.]
+> tanto9(23,61,12,20);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);
+   {x = -0.34486002418212472905, y = -0.34486002418212472905}
+
+                               l1
+                  [0., -97.048819411579503981]
+         [37.456641600656084448, 94.457855158930659657]
+         [170.50866562519851659, 85.254332812599258297]
+                 [0., -0.31054958920463825688]
+                  [35.566727521945228485, 0.]
+                    0.099490902312779281550
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [34.425332174725180308, 3.1144577712759221988]
+> tanto9(59,127,30,30);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);
+
+                               l1
+                  [0., -271.85865861754636073]
+         [86.562116425142933307, 268.71803925835308229]
+         [506.93258170291988655, 253.46629085145994326]
+                  [0., -3.0180374238290835083]
+                  [52.306315027633919159, 0.]
+                     1.0459670633535229175
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [44.02675094305634489, 43.032493969076507242]
+> tanto9(101,103,51,50);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);
+
+                               l1
+                  [0., -10454.247542953116281]
+         [101.99509792141973330, 10351.749993992406414]
+         [6946.6843975964434771, 3473.3421987982217386]
+                  [0., -2.0403000752801570938]
+                  [51.996299440140088783, 0.]
+                     1.0201990679930081212
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [51.74389024914604628, 50.748768531231140107]
+> tanto9(1237,9743,619,500);line(l1,y=0,[x,y]);coordinates(intersection(Q,l0,p2l));coordinates(intersection(Q,r1,sqv));coordinates(intersection(Q,r1,r2));coordinates(intersection(Q,l0,r3));coordinates(intersection(Q,r4,l1));slope(r3);detail(p5);
+
+                               l1
+                  [0., -5393.3703608829441415]
+         [3471.6121615180460708, 5391.8167972617922433]
+         [10777.095114979556003, 5388.5475574897780013]
+                  [0., -5.6233524415311098596]
+                  [2560.5153483458085490, 0.]
+                     1.0026624517255030032
+name of the object:  p5
+
+  form of the object:  point2d
+
+  coordinates of the point:  [1736.5559727555995986, 1735.5561167601641810]
+
+

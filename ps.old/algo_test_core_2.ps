@@ -1,0 +1,1395 @@
+%!PS-Adobe-2.0
+%%Title: algo_test_core_2.mws - [Server 1]
+%%Creator: Maple 8.00 IBM INTEL LINUX
+%%DocumentFonts: Times-Roman Courier 
+%%Pages: 3
+%%EndComments
+/sc { setrgbcolor } def % color
+/stc { setrgbcolor } def % color
+% /sc { 11 mul exch 59 mul add exch 30 mul add 100 div setgray } def % b&w
+% /stc { pop pop pop 0 setgray } def % b&w
+/fsf    %% stk: size font 
+{ findfont exch scalefont setfont } def 
+/line   %% stk: width x1 y1 x2 y2 
+{ gsave newpath 4 2 roll moveto lineto setlinewidth 
+  stroke grestore } def 
+/underline   %% stk: string ulOffset ulThickness 
+{ gsave setlinewidth 0 exch rmoveto  %% stk: string 
+  dup stringwidth pop 0 rlineto stroke       %% stk: string 
+  grestore show } def 
+/pagenum   %% stk: x y string 
+{ gsave 10 /Times-Roman fsf 
+  3 1 roll moveto 
+  dup stringwidth pop       %% stk: string wx 
+  2 div neg -14 rmoveto     %% stk: string 
+  show grestore 
+} def 
+/solid { [] 0 setdash } def 
+/dot { [1 3] 0 setdash } def 
+/dash { [5 5] 0 setdash } def 
+/dashdot { [5 3 1 3] 0 setdash } def 
+% ReEncodeSmall is copied from the Postscript Tutorial and Cookbook 
+% Adobe Systems Inc., Addison-Wesley, page 211-212 
+/reencsmalldict 12 dict def 
+/ReEncodeSmall 
+{ reencsmalldict begin 
+  /newcodesandnames exch def 
+  /newfontname exch def 
+  /basefontname exch def 
+  /basefontdict basefontname findfont def 
+  /newfont basefontdict maxlength dict def 
+  basefontdict 
+  { exch dup /FID ne 
+    { dup /Encoding eq 
+      { exch dup length array copy newfont 3 1 roll put } 
+      { exch newfont 3 1 roll put } 
+      ifelse 
+    } 
+    {pop pop} 
+    ifelse 
+  } forall 
+  newfont /FontName newfontname put 
+  newcodesandnames aload pop 
+  newcodesandnames length 2 idiv 
+  { newfont /Encoding get 3 1 roll put } repeat 
+  newfontname newfont definefont pop 
+  end 
+} def 
+/ExtraChars [ 
+] def
+/Times-Roman /Times-Roman-Maple ExtraChars ReEncodeSmall
+/Courier /Courier-Maple ExtraChars ReEncodeSmall
+%%EndProlog
+%%Page: 1 1
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(distancia := proc\( i \)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(  local r, s, t; global p4;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  r := \(c_a*clave\)/\(clave-i*c_a\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 659 moveto
+(  s := -\(r - raiz\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 646 moveto
+(  t := \(\(s*clave\)-\(c_a*clave\)\)/\(c_a*s\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  s := \(c_a*clave\)/\(clave-t*c_a\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(#  p4 := round\(t\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  p4 := \(t\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 581 moveto
+(  point\(P1,[i,r]\):) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(  point\(P2,[t,s]\):) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 542 moveto
+(  return distance\(P1,P2\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 529 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 516 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 516 moveto
+(end proc:) show
+grestore
+newpath
+59 718 moveto
+56 718 lineto
+56 515 lineto
+59 515 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 503 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 503 moveto
+(higher := proc\( i \)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 490 moveto
+(  local p1, p2, p3;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 477 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 477 moveto
+(  p1 := distancia\( i-1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 464 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 464 moveto
+(  p2 := distancia\( i \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 451 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 451 moveto
+(  p3 := distancia\( i+1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 438 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 438 moveto
+(  if\( \(p1 > p2\) and \(p1 > p3\) \) then) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 425 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 425 moveto
+(    return [i-1,p1];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 412 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 412 moveto
+(  elif\( \(p2 > p1\) and \(p2 > p3\) \) then) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 399 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 399 moveto
+(    return [i,p2];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 386 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 386 moveto
+(  else return [i+1,p3];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 373 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 373 moveto
+(  end if;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 360 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 360 moveto
+(end proc:) show
+grestore
+newpath
+59 510 moveto
+56 510 lineto
+56 359 lineto
+59 359 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 347 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 347 moveto
+(tanto16 := proc\( p1, p2, p3 \)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 334 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 334 moveto
+(  local d1, d2, t, i, low_below, low_over, div, low_div, over_div, ) show
+grestore
+gsave
+1 0 0 stc
+78 321 moveto
+(top, temp, LT1, LT2, TopPointT2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 308 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 308 moveto
+(  global clave, raiz, a, c_a;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 295 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 295 moveto
+(  with\(geometry\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 282 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 282 moveto
+(  _EnvHorizontalName := x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 269 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 269 moveto
+(  _EnvVerticalName := y;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 256 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 243 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 243 moveto
+(  clave := p1 * p2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 230 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 230 moveto
+(  raiz := evalf\(sqrt\(clave\)\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 217 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 204 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 204 moveto
+(  # Input parameters) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 191 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 191 moveto
+(  print\(p1,p2,clave,raiz\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 178 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 165 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 165 moveto
+(  a  := evalf\( clave / \( clave - raiz \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 152 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 152 moveto
+(  c_a:= a * raiz;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 139 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 126 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 126 moveto
+(  # Original Triangle T1) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 113 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 100 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 100 moveto
+(  low_below := [p1-1,distancia\( p1-1 \)];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 87 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 87 moveto
+(  top       := higher\( trunc\( raiz \) \);) show
+grestore
+newpath
+59 354 moveto
+56 354 lineto
+56 -799 lineto
+59 -799 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 2 2
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(  low_over  := [p2-1,distancia\( p2-1 \)];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  point\( PT1, low_below \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  point\( PT2, top \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 659 moveto
+(  point\( PT3, low_over \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  triangle\( T1, [PT1,PT2,PT3] \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  centroid\( C1, T1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 594 moveto
+(  orthocenter\( O1, T1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(  incircle\( inc1, T1, 'centername'=i1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 555 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 542 moveto
+(  circumcircle\( circ1, T1, 'centername'=c1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 529 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 529 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 516 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 516 moveto
+(  point\(inc1center,coordinates\( center\( inc1 \) \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 503 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 503 moveto
+(  point\(circ1center,coordinates\( center\( circ1 \) \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 477 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 477 moveto
+(  line\(LineT11,[PT1,PT2]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 464 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 464 moveto
+(  line\(LineT12,[PT3,PT2]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 451 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 451 moveto
+(  line\(CENTRES1,[C1,O1]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 438 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 425 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 425 moveto
+(  # Guess Triangle T2) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 412 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 399 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 399 moveto
+(  low_below := [p3-1,distancia\( p3-1 \)];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 386 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 386 moveto
+(  div       := p4;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 373 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 373 moveto
+(  top       := higher\( trunc\(raiz\) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 360 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 360 moveto
+(  low_over  := [div,distancia\( div \)];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 347 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 334 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 334 moveto
+(  if\( low_below[2] > low_over[2] \) then) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 321 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 321 moveto
+(    temp := low_below[2];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 308 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 308 moveto
+(    low_below[2] := low_over[2];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 295 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 295 moveto
+(    low_over[2] := temp;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 282 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 282 moveto
+(  end if;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 269 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 256 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 256 moveto
+(  point\( PT4, low_below \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 243 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 243 moveto
+(  point\( PT5, top \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 230 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 230 moveto
+(  point\( PT6, low_over \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 217 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 217 moveto
+(  triangle\( T2, [PT4,PT5,PT6] \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 204 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 191 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 191 moveto
+(  centroid\( C2, T2 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 178 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 178 moveto
+(  orthocenter\( O2, T2 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 165 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 152 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 152 moveto
+(  incircle\( inc2, T2,'centername'=i2 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 139 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 139 moveto
+(  circumcircle\( circ2, T2, 'centername'=c2 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 126 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 113 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 113 moveto
+(  point\(inc2center,coordinates\( center\( inc2 \) \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 100 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 100 moveto
+(  point\(circ2center,coordinates\( center\( circ2 \) \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 87 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+newpath
+59 991 moveto
+56 991 lineto
+56 -162 lineto
+59 -162 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 3 3
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(  line\(LineT21,[PT4,PT5]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(  line\(LineT22,[PT5,PT6]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  line\(CENTRES2,[C2,O2]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 659 moveto
+(  line\(THL,y=VerticalCoord\(PT5\),[x,y]\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  print\( "CENTRES, y=0" \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(  print\( solve\({Equation\(CENTRES1\),y=0}\) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  print\( solve\({Equation\(CENTRES2\),y=0}\) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(draw\( [THL, T1\(colour=green\), T2\(colour=red\), C1\(colour=green\), ) show
+grestore
+gsave
+1 0 0 stc
+78 555 moveto
+(C2\(colour=red\), O1\(colour=magenta\), O2\(colour=black\), ) show
+grestore
+gsave
+1 0 0 stc
+78 542 moveto
+(inc1center\(colour=green\), circ1center\(colour=green\), ) show
+grestore
+gsave
+1 0 0 stc
+78 529 moveto
+(inc2center\(colour=red\), circ2center\(colour=red\), ) show
+grestore
+gsave
+1 0 0 stc
+78 516 moveto
+(CENTRES1\(colour=green\), CENTRES2\(colour=red\)], axes=normal, ) show
+grestore
+gsave
+1 0 0 stc
+78 503 moveto
+(scaling=unconstrained \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 476 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 476 moveto
+(end proc:) show
+grestore
+12 /Times-Roman-Maple fsf
+newpath
+59 1628 moveto
+56 1628 lineto
+56 475 lineto
+59 475 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 463 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 463 moveto
+(save distancia, higher, tanto16, `algo_test_core_2.m`;) show
+grestore
+newpath
+59 470 moveto
+56 470 lineto
+56 462 lineto
+59 462 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 450 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+newpath
+59 457 moveto
+56 457 lineto
+56 449 lineto
+59 449 lineto
+stroke
+grestore
+ grestore showpage
+%%Trailer
+%% END of Maple Session Output

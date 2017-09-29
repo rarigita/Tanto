@@ -1,0 +1,190 @@
+> restart;Digits:=30;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 30
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+> tanto12 := proc( p1, p2, s, t, v )
+>   global k,sq,a,ca,b,cb,c,cc,xx,yy;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   line(lv,x=0,[x,y]);
+>   line(lh,y=0,[x,y]);
+>   line(lk,x=k,[x,y]);
+
+>   line(sqv,x=sq*s,[x,y]);
+>   line(sqh,y=sq*t,[x,y]);
+
+>   point(c1,k,0),point(c2,k,k):
+>   line(kk,[c1,c2]);
+
+>   point(a1,k,k),point(a2,sq*s,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq*s,sq*t):
+>   line(B,[b1,b2]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+
+>   line(blue1,[point(OO,sq,0),p3]);
+>   line(blue2,[point(OK,0,k),p3]);   
+
+>   #xx:=rand(1..trunc(sq));
+>   #yy:=xx();
+>   line(p1l,[point(psqO,sq,0),point(pr,s,s)]);
+>   #print(yy);
+>   yy:=abs(slope(p1l))+1;
+>   line(p2l,y=yy*x-yy*sq,[x,y]);
+>   line(p1m,y=(slope(p1l)/2)*x+abs(yy*sq/2),[x,y]);  
+>   yy:=slope(p2l)/2;
+>   line(p2m,y=yy*x-(yy*sq-sq/2),[x,y]);
+
+> #  triangle(T1,[p1l,p2l,blue1]);
+> #  print(detail(T1));
+> #  print(sides(T1));
+> #  print(`area T1=`, area(T1));
+
+> #  triangle(T2,[blue1,p2m,p1m]);
+> #  print(sides(T2));
+> #  print(`area T2=`, area(T2));
+
+> #  triangle(T3,[p2l,p1m,p2m]);  
+> #  print(sides(T3));
+> #  print(`area T3 =`,area(T3));
+
+> #  triangle(T4,[p1l,p1m,p2m]);
+> #  print(sides(T4));
+> #  print(`area T4 =`,area(T4));
+
+> #  triangle(T5,[p1m,p2m,sqh]);
+> #  print(sides(T5));
+> #  print(`area T5 =`,area(T5));
+
+>  # print(HorizontalCoord(intersection(Q,lk,p2l)));
+>  # print(HorizontalCoord(intersection(Q,lh,blue2)));
+>  # print(distance(OO,p3));
+
+>   print(coordinates(intersection(Q,B,lv)));
+>   print(coordinates(intersection(Q,p2l,sqv)));
+>   print(coordinates(intersection(Q,blue1,lk)));
+>   print(coordinates(intersection(Q,blue1,lv)));
+>   print(sides(triangle(T,[blue1,B,lv])));
+>   print(coordinates(intersection(Q,A,p1l)));
+>   print(coordinates(intersection(Q,B,p2l)));
+
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p3(colour=black),blue1(colour=blue),blue2(colour=blue),p1l(colour=red),p2l(colour=red)],colour=green,axes=normal,view=[-k/v..k/v,-k/v..k/v]);
+
+> end proc:
+> tanto12(3,11,3,1,1);
+             [0., 12.0237736389897894072945907688]
+[17.2336879396140859795518344047, 24.0475472779795788145891815377]
+             [33., 9.64479346394760171773601230765]
+             [0., -2.03280980407859742339598153833]
+[20.7605657992777349031610225899, 14.0565834430683868306905723071, 
+
+  20.8299533448354910852085055912]
+[13.2921099245176074744397930058, -8.24999999999999999999999999996]
+[9.78566045848468411094188615319, 8.45830193411606573138276692270]
+
+> tanto12(7,23,7,1,1);
+             [0., 28.3023302143961855465285483225]
+[88.8200427831466426613564092227, 169.813981286377113279171289936]
+            [161., 21.4286047281853148215939167756]
+             [0., -1.83329448378379937480709709492]
+[95.0700999834346147630495786915, 30.1356246981799849213356454174, 
+
+  95.5358395232197589463099426644]
+[61.7525588268266336593650626815, -60.3750000000000000000000000001]
+[23.5232623001546597651399676515, 24.1671554483164716305389071983]
+
+> tanto12(23,61,23,1,1);
+             [0., 97.0488194115795039811035888300]
+[861.502756815089942286631748154, 2135.07402705474908758427895426]
+            [1403., 59.4404466001166140259333107792]
+             [0., -1.63044219078717624561517509447]
+[876.412593549303418302078977524, 98.6792616023666802267187639245, 
+
+  877.675730675602408723060022273]
+[548.004352865931487820997497088, -812.263157894736842105263157893]
+[72.9652898227111076740150308664, 92.0016382032275081357622493797]
+
+> tanto12(59,127,59,1,1);
+             [0., 271.858658617546360737849728453]
+[5107.16486908343306519884339019, 15767.8021998176889227952842502]
+[7492.99999999999999999999999999, 125.557430049977565272519623778]
+             [0., -1.46744184571247670554038270874]
+[5135.14994022311156109032497357, 273.326100463258837443390111162, 
+
+  5137.79047092927494012253096084]
+[3072.18784565459656198609216417, -6391.08823529411764705882352942]
+[171.147073778322477116992287922, 265.649154559933523331871275636]
+
+> tanto12(101,103,101,1,1);
+             [0., 10454.2475429531162648718411798]
+[                                                                   6]
+[10301.5048900633930631467176501, 1.04542475429531162648718411792 10 ]
+           [10403., 102.000049016050065673612738860]
+             [0., -1.00995049378943366965113374740]
+[10302.9953865818667844769712038, 10455.2574934469056985414923135, 
+
+  14605.8530073463595412881234968]
+[                                                                    5]
+[5226.74939323304622048260015440, -5.20150000000000000000000000076 10 ]
+[202.009614242747449625862702938, 10251.2427834270036660471566733]
+
+> tanto12(1237,9743,1237,1,1);
+             [0., 5393.37036088294414153017473514]
+[                                  6                                    6]
+[4.29438424379782298958610892021 10 , 6.66620576605131895893129597262 10 ]
+        [            7                                 ]
+        [1.2052091 10 , 9740.19579103299823079657949518]
+             [0., -2.80647774448316222057537579130]
+[                                  6                                   
+[4.29661961643224919298135001078 10 , 5396.17683862742730375075011093, 
+
+                                    6]
+  4.29661864268512315208055786945 10 ]
+[                                  6                                     6]
+[3.16711813156341306895695663071 10 , -1.75127962332471196802257230191 10 ]
+[6941.22489897141315531786755815, 5390.26412839280320847060891774]
+
+
+

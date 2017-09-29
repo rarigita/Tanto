@@ -1,0 +1,240 @@
+{VERSION 5 0 "IBM INTEL LINUX" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "distancia := proc( i
+ )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "  local r, s, t; global p4;" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 33 "  r := (c_a*clave)/(clave-i*c_a);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 19 "  s := -(r - raiz);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "  t \+
+:= ((s*clave)-(c_a*clave))/(c_a*s);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+33 "  s := (c_a*clave)/(clave-t*c_a);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 12 "  p4 := (t);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 18 "  point(P1,[i,r]):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "  point(P2,[t,s]):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  return distance(P1,P2);" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+9 "end proc:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "lower := pr
+oc( left, right )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 69 "  local l, m_1
+, m, m1, r, new_left, middle, new_right, diff, divisor;" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  new_le
+ft := left;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  new_right:= right;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "  diff := new_right - new_left;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "  divisor := div;" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  if( d
+iff < 4 ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "    new_right := \+
+right + (4-diff);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "    diff := ne
+w_right - new_left;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "  end if;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+54 "  middle := ceil( new_left+((new_right-new_left)/2) );" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  l  \+
+:= distancia( new_left );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  m_1:
+= distancia( middle-1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "  m  :=
+ distancia( middle );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  m1 := di
+stancia( middle+1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "  r  := dis
+tancia( new_right );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 21 "  if( diff = 4 ) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "    if( l < m_1 ) then " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "      return [new_left,l]; " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "    elif( m_1 < m ) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "      return [middle-1,m_1];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "    elif( m < m1 ) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "      return [middle,m];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "    elif( m1 < r ) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "      return [middle+1,m1]" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "    else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "      r
+eturn [new_right,r];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "    end if;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "  elif( (l < m_1) or (m_1 < m) \+
+) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "    new_right:= middle-1;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "    return lower( new_left, new
+_right );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "  elif( (m_1 > m) and \+
+(m < m1) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "    return [midd
+le,m];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  elif( (m > m1) and ( (m
+1 < r) or ( r < m1) ) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "   \+
+ new_left := middle+1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "    retur
+n lower( new_left, new_right );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 " \+
+ end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "end proc:" }{TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "higher := proc( i )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 19 "  local p1, p2, p3;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  p1 :
+= distancia( i-1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "  p2 := dist
+ancia( i );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  p3 := distancia( i
++1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "  if( (p1 > p2) and (p1 > \+
+p3) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "    return [i-1,p1];
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "  elif( (p2 > p1) and (p2 > p3)
+ ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "    return [i,p2];" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "  else return [i+1,p3];" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 9 "  end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+9 "end proc:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "ask_one := \+
+proc( low, up, div )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  local res
+, l, u;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "  l := distancia( low );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "  u := distancia( up );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  if( l < u ) t
+hen" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "    res := evalf(u/l);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "  else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "    res := evalf(l/u);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 9 "  end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 13 "  return res;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "end proc:" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 29 "tanto13 := proc( p1, p2, p3 )" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 99 "  local d1, d2, t, i, low_below, low_over, \+
+div, low_div, over_div, top, temp, LT1, LT2, TopPointT2;" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 29 "  global clave, raiz, a, c_a;" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 17 "  with(geometry);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "  _EnvHorizontalName := x;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "  _EnvVerticalName := y;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  clave := p1 *
+ p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "  raiz := evalf(sqrt(clave)
+);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "  # Input parameters" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 26 "  print(p1,p2,clave,raiz);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "  a  := evalf( clave / ( clave \+
+- raiz ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "  c_a:= a * raiz;" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "  # Original Triangle T1" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "  low_below := [p1-1,distancia( p1-
+1 )];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "  top       := higher( tru
+nc( raiz ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "  low_over  := [p2
+-1,distancia( p2-1 )];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "  point( PT1, low_below );" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 20 "  point( PT2, top );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "  point( PT3, low_over );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "  triangle( T1,
+ [PT1,PT2,PT3] );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 21 "  centroid( C1, T1 );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "  orthocenter( O1, T1 );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "  incircle( inc
+1, T1, 'centername'=i1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "  circumcircle( circ1, T1, 'centern
+ame'=c1 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 51 "  point(inc1center,coordinates( center( inc1 ) ) );
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  point(circ1center,coordinates
+( center( circ1 ) ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "  line(LineT11,[PT1,PT2]);" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 26 "  line(LineT12,[PT3,PT2]);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 25 "  line(CENTRES1,[C1,O1]);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "  # T1 Details \+
+(Primes triangle, not known!)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  \+
+print( \"T1 Details:\" );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "  prin
+t( \"incircle center\", coordinates(center(inc1)) );" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 43 "  print( \"incircle radius\", radius(inc1) );" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "  print( \"circumcircle center\", \+
+coordinates(center(circ1)) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 48 "  \+
+print( \"circumcircle radius\", radius(circ1) );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "  print( low_below );" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 15 "  print( top );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  print(
+ low_over );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  print( abs( low_b
+elow[2]-low_over[2] ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "  print
+( area( T1 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "  print( coordin
+ates( C1 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "  print( \"----->
+\", coordinates( O1 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  printf(\"\\n\");" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  # Guess \+
+Triangle T2" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 40 "  low_below := [p3-1,distancia( p3-1 )];" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 18 "  div       := p4;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "  top       := higher( trunc(raiz) );" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 38 "  low_over  := [div,distancia( div )];" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+39 "  if( low_below[2] > low_over[2] ) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "    temp := low_below[2];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 32 "    low_below[2] := low_over[2];" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 24 "    low_over[2] := temp;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "  end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "  point( PT4, low_below );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  point( PT5, top );" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 25 "  point( PT6, low_over );" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 32 "  triangle( T2, [PT4,PT5,PT6] );" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  centroid( \+
+C2, T2 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "  orthocenter( O2, T2 \+
+);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 39 "  incircle( inc2, T2,'centername'=i2 );" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "  circumcircle( circ2, T2, 'centern
+ame'=c2 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  TopPointT2 := coord
+inates(center(circ2));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "  TopPoin
+tT2[2] := TopPointT2[2]+radius(circ2);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 2 "  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 51 "  point(inc2center,coordinates( center( inc2 ) ) );" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  point(circ2center,coordinates( \+
+center( circ2 ) ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 26 "  line(LineT21,[PT4,PT5]);" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 26 "  line(LineT22,[PT5,PT6]);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "  line(CENTRES2,[C2,O2]);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "  line(THL,y=Ve
+rticalCoord(PT5),[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "#  line
+(THL,y=TopPointT2[2],[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "  TangentLine(TLine2,PT2,circ2,[TLi
+ne21,TLine22]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "#  tangentpc(TLi
+ne21,PT5,circ2);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 14 "  # T2 Details" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 25 "  print( \"T2 Details:\" );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+56 "  print( \"incircle center\", coordinates(center(inc2)) );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  print( \"incircle radius\", radiu
+s(inc2) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "  print( \"circumcirc
+le center\", coordinates(center(circ2)) );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 48 "  print( \"circumcircle radius\", radius(circ2) );" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  print( p3-1, div );" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 21 "  print( low_below );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "  print( top );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 
+"  print( low_over );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  print( a
+bs( low_below[2]-low_over[2] ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+22 "  print( area( T2 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "  pri
+nt( coordinates( C2 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "  print
+( \"---->\", coordinates( O2 ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+31 "  print( \"coordinates of T2\" );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 52 "  print( \"slopes\", slope(LineT21), slope(LineT22) );" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "  print( slope(TLine21) );" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 36 "  print( FindAngle( THL,TLine21 ) );" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  p
+rintf(\"\\n\");" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 18 "  # Rotation of T2" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "#  rotation(T3,
+T2,slope(TLine21),'clockwise',PT5);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+57 "  rotation(T3,T2,FindAngle(THL,TLine21),'clockwise',PT5);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  centroid( C3, T3 );" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 24 "  orthocenter( O3, T3 );" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "  incircle( i
+nc3, T3,'centername'=i3 );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+45 "  circumcircle( circ3, T3, 'centername'=c3 );" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 51 "  point(inc3center,coordinates( center( inc
+3 ) ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  point(circ3center,coo
+rdinates( center( circ3 ) ) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  \+
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "  line(CENTRES3,[C3,O3]); " }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+14 "  # T3 Details" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  print( \"T3
+ Details:\" );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "  print( \"incirc
+le center\", coordinates(center(inc3)) );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 43 "  print( \"incircle radius\", radius(inc3) );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "  print( \"circumcircle center\", c
+oordinates(center(circ3)) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 48 "  p
+rint( \"circumcircle radius\", radius(circ3) );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 29 "  print( coordinates( C3 ) );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 38 "  print( \"---->\", coordinates( O3 ) );" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "  prin
+t(\"\\n\");" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 26 "  print( \"CENTRES, y=0\" );" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 43 "  print( solve(\{Equation(CENTRES1),y=0\}) );" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  print( solve(\{Equation(CENTRES2)
+,y=0\}) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  print( solve(\{Equa
+tion(CENTRES3),y=0\}) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "  print
+( \"Intersection CENTRES2|CENTRES3\" );" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 58 "  print( solve(\{Equation(CENTRES2),Equation(CENTRES3)\}) );" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 450 "draw( [THL, T1(colour=gre
+en), T2(colour=red), C1(colour=green), C2(colour=red), O1(colour=magen
+ta), O2(colour=black), inc1center(colour=green), circ1center(colour=gr
+een), inc2center(colour=red), circ2center(colour=red), TLine21(colour=
+red), T3(colour=blue), C3(colour=blue), O3(colour=blue), inc3center(co
+lour=blue), circ3center(colour=blue), CENTRES1(colour=green), CENTRES2
+(colour=red), CENTRES3(colour=blue)], axes=normal, scaling=unconstrain
+ed );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "end proc:" }{TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 59 "save distancia, lower, higher, tanto13, `algo_test_co
+re.m`;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}}{MARK "6 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }
+{PAGENUMBERS 0 1 2 33 1 1 }

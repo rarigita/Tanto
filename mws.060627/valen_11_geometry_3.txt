@@ -1,0 +1,140 @@
+> restart;Digits:=20;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                               20
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               x
+                               y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, s, v )
+>   global k,sq,a,ca,b,cb,c,cc;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   line(Y,y=k-x,[x,y]);
+>   line(x,x=0,[x,y]);
+>   line(X,y=0,[x,y]);
+>   line(K,x=k,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   line(C,[point(k0,0,k),b2]);
+>   line(D,[a1,point(aa,0,sq)]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,sq,0),point(p2h,p2,sq):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,sq,0),point(p1h,p1,sq):
+>   line(p1l,[p1v,p1h]);
+>   print(VerticalCoord(intersection(Q,A,x)));
+>   print(VerticalCoord(intersection(Q,p1l,x)));
+>   print(VerticalCoord(intersection(Q,p2l,x)));
+> 
+>   intersection(p3,A,B);
+>   #intersection(p4,D,B);
+> 
+>   #line(invers,[point(OO,0,0),p3]);
+>   #print(VerticalCoord(intersection(Q,invers,Y)));
+>   
+>   point(p4,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p5,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p4),-VerticalCoord(p4));
+>   
+>   line(b_sk,[p3,point(sk0,k/s,0)]);
+>   line(b_k,[intersection(Q,b_sk,x),c2]);
+>   #line(b_k,[point(sk,VerticalCoord(intersection(Q,b_sk,x)),0),c2]);
+>   
+>   print(sq);
+>   #print(VerticalCoord(intersection(Q,b_k,x)));
+>   print(VerticalCoord(intersection(Q,b_sk,x)));
+>   print(HorizontalCoord(intersection(Q,b_k,X)));
+>   #print(VerticalCoord(intersection(Q,b_k,Y)));
+>   draw([y(colour=black),Y(colour=black),A,B,sqh(colour=black),sqv(colour=black),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),p1l(colour=red),p2l(colour=red),b_sk(colour=blue),b_k(colour=blue)],colour=green,axes=normal,view=[-k/v..k/v,-k/v..k/v]);
+> end proc:
+> tanto9(3,11,-1,1);
+                     -6.9553302292423420557
+                     12.023773638989789407
+                     -6.2792109924517607477
+                     5.7445626465380286599
+                     3.7737736389897894073
+                              -11.
+
+> tanto9(7,23,-3,1);
+
+                     -13.774131150077329882
+                     28.302330214396185547
+                     -15.613752673946665166
+                     12.688577540449520380
+                     8.1773302143961855461
+                     -22.999999999999999998
+
+> tanto9(23,61,12,1);
+                     -38.484071444879091638
+                     97.048819411579503983
+                     -59.592177810923419533
+                     37.456641600656084447
+                     97.048819411579503970
+                     61.000000000000000003
+
+> tanto9(59,127,30,1);
+           -87.57380384057608105716138688657805463983
+           271.8586586175463607378497284532010930612
+           -185.2965421924034274293947557381012952016
+           86.56211642514293330845497271509979785955
+           271.8586586175463607378497284532010930610
+           127.0000000000000000000000000000000000001
+
+> tanto9(101,103,51,1);
+           -103.0049993920908945879746123782426511591
+           10454.24754295311626487184117801227751132
+           -10352.25244503169653157335882504116532733
+           101.9950979214197332984823529711121846926
+           10454.24754295311626487184117801227751126
+                              103.
+
+> tanto9(1237,9743,619,1);
+           -3472.612449651652899002368818158020953361
+           5393.370360882944141530174735151439323707
+           -1921.758199364898070724912875642238575739
+           3471.612161518046070805261859509200747968
+           5393.370360882944141530174735151439323706
+           9743.000000000000000000000000000000000002
+
+> 

@@ -1,0 +1,237 @@
+> restart;Digits:=40;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 40
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, v, s )
+>   global k,sq,a,ca,b,cb,c,cc,d,cd;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+>   circle(circ,[p3,p5,p6],[x,y]);
+> #  tangentpc(tan,p3,circ);
+
+
+>   line(r1,[p5,point(k1,sq/v,0)]);
+>   a := slope(r1)/v; ca := -(a*sq);
+>   line(r2,a*x+ca=y,[x,y]);
+>   b := slope(r2)/2; cb := (sq/2)-(b*sq);
+>   line(r3,b*x+cb=y,[x,y]);
+>   c := -(slope(r2)+1); cc := -(c*sq);
+>   line(r4,c*x+cc=y,[x,y]);
+>   d := slope(r4)/2; cd := (sq/2)-(d*sq);
+>   line(r5,d*x+cd=y,[x,y]);
+
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),r1(colour=brown),r2(colour=blue),r3(colour=blue),r4(colour=blue),r5(colour=blue),circ(colour=green) ],colour=green,axes=normal,view=[0..k/s,-k/s..k/s]);
+> end proc:
+> tanto9(3,11,2,1);line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);constr2:=VerticalCoord(Q);intersection(Q,l0,r3);constr3:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);constr4:=VerticalCoord(Q);intersection(Q,l0,r5);constr5:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+                               l0
+                               Q
+           6.279210992451760747443979300582098494333
+                               Q
+           -12.02377363898978940729459076880102781255
+                               Q
+           -3.139605496225880373721989650291049247166
+                               Q
+           6.011886819494894703647295384400513906276
+                               Q
+      constr2 := 12.02377363898978940729459076880102781249
+                               Q
+      constr3 := 8.884168142763909033572601118509978565359
+                               Q
+        v1 := 2.999999999999999999999999999999999999985
+                               Q
+     constr4 := -6.279210992451760747443979300582098494272
+                               Q
+     constr5 := -0.2673241729568660437966839161815845880260
+                               Q
+        v2 := 11.00000000000000000000000000000000000005
+> tanto9(7,23,4,1);line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);constr2:=VerticalCoord(Q);intersection(Q,l0,r3);constr3:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);constr4:=VerticalCoord(Q);intersection(Q,l0,r5);constr5:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+                               l0
+                               Q
+           15.61375267394666516633477557641415178389
+                               Q
+           -28.30233021439618554652854832250364157563
+                               Q
+           -7.806876336973332583167387788207075891943
+                               Q
+           14.15116510719809277326427416125182078781
+                               Q
+      constr2 := 28.30233021439618554652854832250364157553
+                               Q
+      constr3 := 20.49545387742285296336116053429656568363
+                               Q
+        v1 := 6.999999999999999999999999999999999999982
+                               Q
+     constr4 := -15.61375267394666516633477557641415178379
+                               Q
+     constr5 := -1.462587566748572393070501415162330996024
+                               Q
+        v2 := 23.00000000000000000000000000000000000007
+const2 - const3 = -const4/2 ; const2 + const4 = sq ; const4 - const5*2 = -sq
+> constr2-constr3;constr2+constr4;constr4-constr5*2;constr2-constr5;constr2-constr4;
+            7.80687633697333258316738778820707589190
+           12.68857754044952038019377274608948979174
+           -12.68857754044952038019377274608948979174
+           29.76491778114475793959904973766597257155
+           43.91608288834285071286332389891779335932
+> tanto9(101,103,51,40);line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);const1:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);const2:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+                               l0
+                               Q
+           10352.25244503169653157335882504116532662
+                               Q
+           -10454.24754295311626487184117801227751203
+                               Q
+           -5176.126222515848265786679412520582663312
+                               Q
+           5227.123771476558132435920589006138756012
+                               Q
+      const1 := 10454.24754295311626487184117801227759950
+                               Q
+        v1 := 101.0000000000000000000000000000000000084
+                               Q
+      const2 := -10352.25244503169653157335882504116541481
+                               Q
+        v2 := 102.9999999999999999999999999999999999916
+> tanto9(23,61,12,4);k;sq;line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);constr2:=VerticalCoord(Q);intersection(Q,l0,r3);constr3:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);constr4:=VerticalCoord(Q);intersection(Q,l0,r5);constr5:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+
+                              1403
+           37.45664160065608444724485861538215706360
+                               l0
+                               Q
+           59.59217781092341953385873021457341085429
+                               Q
+           -97.04881941157950398110358882995556791790
+                               Q
+           -29.79608890546170976692936510728670542714
+                               Q
+           48.52440970578975199055179441497778395895
+                               Q
+      constr2 := 97.04881941157950398110358882995556791548
+                               Q
+      constr3 := 67.25273050611779421417422372266886248952
+                               Q
+        v1 := 22.99999999999999999999999999999999999964
+                               Q
+     constr4 := -59.59217781092341953385873021457341085188
+                               Q
+     constr5 := -11.06776810513366754330693579959562689414
+                               Q
+        v2 := 61.00000000000000000000000000000000000094
+> v1:=round(v1);v2:=trunc(v2*10^20)/(10^20);
+                            v1 := 23
+                            v2 := 61
+> evalf(v1*v2);
+                             1403.
+> tanto9(59,127,30,10);k;sq;line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);constr2:=VerticalCoord(Q);intersection(Q,l0,r3);constr3:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);constr4:=VerticalCoord(Q);intersection(Q,l0,r5);constr5:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+                              7493
+           86.56211642514293330845497271509979785955
+                               l0
+                               Q
+           185.2965421924034274293947557381012952017
+                               Q
+           -271.8586586175463607378497284532010930611
+                               Q
+           -92.64827109620171371469737786905064760086
+                               Q
+           135.9293293087731803689248642266005465306
+                               Q
+      constr2 := 271.8586586175463607378497284532010930583
+                               Q
+      constr3 := 179.2103875213446470231523505841504454589
+                               Q
+        v1 := 58.99999999999999999999999999999999999971
+                               Q
+     constr4 := -185.2965421924034274293947557381012951987
+                               Q
+     constr5 := -49.36721288363024706046989151150074866959
+                               Q
+        v2 := 127.0000000000000000000000000000000000006
+> tanto9(1237,9743,619,100);k;sq;line(l0,x=0,[x,y]);intersection(Q,l0,p1l);VerticalCoord(Q);intersection(Q,l0,p2l);VerticalCoord(Q);intersection(Q,l0,p1m);VerticalCoord(Q);intersection(Q,l0,p2m);VerticalCoord(Q);intersection(Q,l0,r2);constr2:=VerticalCoord(Q);intersection(Q,l0,r3);constr3:=VerticalCoord(Q);intersection(Q,sqh,r2);v1:=HorizontalCoord(Q);intersection(Q,l0,r4);constr4:=VerticalCoord(Q);intersection(Q,l0,r5);constr5:=VerticalCoord(Q);intersection(Q,sqh,r4);v2:=HorizontalCoord(Q);
+
+                            12052091
+           3471.612161518046070805261859509200747968
+                               l0
+                               Q
+           1921.758199364898070724912875642238575739
+                               Q
+           -5393.370360882944141530174735151439323707
+                               Q
+           -960.8790996824490353624564378211192878694
+                               Q
+           2696.685180441472070765087367575719661854
+                               Q
+      constr2 := 5393.370360882944141530174735151439330074
+                               Q
+      constr3 := 4432.491261200495106167718297330320039021
+                               Q
+        v1 := 1237.000000000000000000000000000000002638
+                               Q
+     constr4 := -1921.758199364898070724912875642238582106
+                               Q
+      constr5 := 774.9269810765740000401744919334810829309
+                               Q
+        v2 := 9742.999999999999999999999999999999979223
+
+

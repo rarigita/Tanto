@@ -1,0 +1,288 @@
+> restart;Digits:=30;with(plots);
+                          Digits := 30
+Warning, the name changecoords has been redefined
+
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, listcontplot, listcontplot3d, 
+
+  listdensityplot, listplot, listplot3d, loglogplot, logplot, matrixplot, 
+
+  odeplot, pareto, plotcompare, pointplot, pointplot3d, polarplot, 
+
+  polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, replot, 
+
+  rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+Tanto toma como parámetros el primo menor, el primo mayor y una supuesta fracción de k que nos ayuda a encontrar n(x) (negativa), que resulta ser el número de ciclos (+2) que necesita el algoritmo para encontrar la constante de d(x) a partir de a(x). Por otro lado, encontramos la constante de e(x) si nos pasamos con n(x) y la hacemos positiva, entonce la fracción de k es k + ((p2-p1)/2). 
+> tanto3 := proc( p1, p2, s )
+>   global k,sq,a,c_a,b,c_b,p3_x,p3_y,p4_x,p4_y,p5_x,p5_y,p6_x,p6_y,
+>          c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,n,c_n,m,c_m,l,c_l,o,c_o,t,
+>          Py,Psq,Pa,Pb,Pp3,Pc,Pd,Pe,Pf,Pg,Pn,Pl,Pm,Po,Pz,xrange,yrange;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   a :=  k / ( k - sq );
+>   c_a := (a * sq);
+>   b := (a-1);
+>   c_b := (c_a);
+>   p3_x :=(c_b+c_a)/(a+b);
+>   p3_y := a * p3_x - c_a;
+>   m := b;
+>   c_m := sq - ( c_a - sq );
+>   l := -a;
+>   c_l := c_a;
+>   p6_x := (c_l-c_m) / (m-l);
+>   p6_y := m*p6_x + c_m;
+>   c := c_a / ( (k/2) - c_a );
+>   c_c := c * (k/2);
+>   d := p2 / (p2-sq);
+>   c_d := d * sq;
+>   e := p1 / (sq-p1);
+>   c_e := e * sq;
+>   f := d/2;
+>   c_f := c_e/2;
+>   g := e/2;
+>   c_g := c_d/2;
+>   n:= p3_y / (p3_x - k/s);
+>   c_n := -(n * (k/s));
+>   o := (k/2 - p6_y) / (p6_x);
+>   c_o := k/2;
+>   z:=c;
+>   c_z:=c_c;
+>   printf("    p1=%d, p2=%d, k=%d, sq(k)=%f \n", p1,p2,k,sq);
+>   printf("  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)\n"); 
+>   printf("    a(x) = %f x - %f \n", a, c_a);
+>   printf("    b(x) = -%f x + %f \n", b, c_b);
+
+>   printf("    m(x) = %f x + %f \n", m, c_m);
+>   printf("    l(x) = %f x + %f \n", l, c_l);
+>   printf("  c(x) pasa por la intersección de a(x) con b(x) y k/2\n");
+>   printf("    c(x) = -%f x + %f \n", c, c_c);
+>   printf("  d(x) y e(x) vienen sq(k) y van a los primos en y=x\n");
+>   printf("    d(x) = %f x - %f \n", d, c_d);
+>   printf("    e(x) = %f x - %f \n", e, c_e);
+>   printf("  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2\n");
+>   printf("    f(x) = %f x - %f \n", f, c_f);
+>   printf("    g(x) = -%f x + %f \n", g, c_g);
+>   printf("  n(x) pasa por p3 y (%d/%d,0)\n", k,s);
+>   printf("    n(x) = %f x + %f \n",n,c_n);
+>   printf("    o(x) = -%f x + %f \n",o,c_o);
+>   t:=0;
+>   while true do
+>     if( abs(trunc(c_z)) <> abs(trunc(c_d)) 
+>         and abs(trunc(c_z)) <> abs(trunc(c_e))
+>         and abs(trunc(c_z)) <> abs(trunc(c_f))
+>         and abs(trunc(c_z)) <> abs(trunc(c_g)) ) then 
+>       z := c_z / ( (k/2) - c_z );
+>       c_z := z * (k/2);
+>       t:=t+1;
+>     else break;
+>     end if;
+>   end do;
+>   p4_x := (c_z+c_a) / (a+z);
+>   p4_y := a*p4_x - c_a;
+>   p5_x := (c_z-c_b) / (z-b);
+>   p5_y := -b*p5_x + c_b;
+>   printf("\n  Good: z(x) = -%f x + %f \n", z, c_z);
+>   printf("  p3 = intersección a(x) con b(x) = ( %f , %f ) \n", p3_x, p3_y);
+>   printf("  p4 = intersección a(x) con z(x) = ( %f , %f ) \n", p4_x, p4_y);
+>   printf("  p5 = intersección b(x) con z(x) = ( %f , %f ) \n", p5_x, p5_y);
+>   printf("  p6 = intersección m(x) con l(x) = ( %f , %f ) \n", p6_x, p6_y);
+>   printf("  total cycles = %d \n", t);
+>   xrange:=0..k/2;
+>   yrange:=-k/2..k/2;
+>   Py:=implicitplot(x=y,x=xrange,y=yrange,colour=black);
+>   Psq:=implicitplot({x=sq,y=sq},x=xrange,y=0..sq,colour=black);
+>   Pa:=plot(a*x-c_a,x=xrange,y=yrange,colour=green);
+>   Pb:=plot(-b*x+c_b,x=xrange,y=yrange,colour=green);
+>   Pp3:=pointplot({[p3_x,p3_y],[p4_x,p4_y],[p5_x,p5_y],[0,c_z],[0,-c_z],
+>        [p6_x,p6_y],[0,0],[p1,0],[p2,0],[sq,sq/2]},colour=black);
+>   Pc:=plot(-c*x+c_c,x=xrange,y=yrange,colour=blue);
+>   Pd:=plot(d*x-c_d,x=xrange,y=yrange,colour=red);
+>   Pe:=plot(-e*x+c_e,x=xrange,y=yrange,colour=red);
+>   Pf:=plot(f*x-c_f,x=xrange,y=yrange,colour=red);
+>   Pg:=plot(-g*x+c_g,x=xrange,y=yrange,colour=red);
+>   Pn:=plot(n*x+c_n,x=xrange,y=yrange,colour=blue);
+>   Pm:=plot(m*x+c_m,x=xrange,y=yrange,colour=green);
+>   Pl:=plot(l*x+c_l,x=xrange,y=yrange,colour=green);
+>   Po:=plot(-o*x+c_o,x=xrange,y=yrange,colour=blue);
+>   Pz:=plot(-z*x+c_z,x=xrange,y=yrange,colour=blue);
+>   display({Py,Psq,Pa,Pb,Pp3,Pc,Pd,Pe,Pf,Pg,Pn,Pm,Pl,Po,Pz});
+> end proc:
+Con argv[3] = 2: c_n = c_d; argv[3]=3: n(x)=0 => x=p2; argv[3]=6: c_n=c_e; argv[3]=11: n(x)=0 => x=p1.
+6-4 = (p2-p1)/2
+> tanto3(3,11,2);
+    p1=3, p2=11, k=33, sq(k)=5.744563 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.210768 x - 6.955330 
+    b(x) = -.210768 x + 6.955330 
+    m(x) = .210768 x + 4.533795 
+    l(x) = -1.210768 x + 6.955330 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.728714 x + 12.023774 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.093070 x - 12.023774 
+    e(x) = 1.093070 x - 6.279211 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.046535 x - 3.139605 
+    g(x) = -.546535 x + 6.011887 
+  n(x) pasa por p3 y (33/2,0)
+    n(x) = -.728714 x + 12.023774 
+    o(x) = -6.813859 x + 16.500000 
+
+  Good: z(x) = -.728714 x + 12.023774 
+  p3 = intersección a(x) con b(x) = ( 9.785660 , 4.892830 ) 
+  p4 = intersección a(x) con z(x) = ( 9.785660 , 4.892830 ) 
+  p5 = intersección b(x) con z(x) = ( 9.785660 , 4.892830 ) 
+  p6 = intersección m(x) con l(x) = ( 1.703465 , 4.892830 ) 
+  total cycles = 0 
+
+> tanto3(7,23,4);
+    p1=7, p2=23, k=161, sq(k)=12.688578 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.085554 x - 13.774131 
+    b(x) = -.085554 x + 13.774131 
+    m(x) = .085554 x + 11.603024 
+    l(x) = -1.085554 x + 13.774131 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.206429 x + 16.617506 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.230536 x - 28.302330 
+    e(x) = 1.230536 x - 15.613753 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.115268 x - 7.806876 
+    g(x) = -.615268 x + 14.151165 
+  n(x) pasa por p3 y (161/4,0)
+    n(x) = -.703163 x + 28.302330 
+    o(x) = -37.077856 x + 80.500000 
+
+  Good: z(x) = -.351582 x + 28.302330 
+  p3 = intersección a(x) con b(x) = ( 23.523262 , 11.761631 ) 
+  p4 = intersección a(x) con z(x) = ( 29.278009 , 18.008717 ) 
+  p5 = intersección b(x) con z(x) = ( 54.611514 , 9.101919 ) 
+  p6 = intersección m(x) con l(x) = ( 1.853893 , 11.761631 ) 
+  total cycles = 2 
+
+> o:=(p6_y)/(sq/8-p6_x);c_o:=o * sq/8;
+             o := -43.9160828883428507128633239143
+            c_o := -69.6540778751933247064249595889
+> o:=(p6_y)/(sq/7-p6_x);c_o:=o * sq/7;
+             o := -285.207569522613294324704165618
+            c_o := -516.982623001546597651399677660
+> tanto3(101,103,51);
+    p1=101, p2=103, k=10403, sq(k)=101.995098 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.009901 x - 103.004999 
+    b(x) = -.009901 x + 103.004999 
+    m(x) = .009901 x + 100.985196 
+    l(x) = -1.009901 x + 103.004999 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.020203 x + 105.086012 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 102.497549 x - 10454.247543 
+    e(x) = 101.497549 x - 10352.252445 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 51.248774 x - 5176.126223 
+    g(x) = -50.748774 x + 5227.123771 
+  n(x) pasa por p3 y (10403/51,0)
+    n(x) = -51.251238 x + 10454.247543 
+    o(x) = -2575.251226 x + 5201.500000 
+
+  Good: z(x) = -2.009852 x + 10454.247543 
+  p3 = intersección a(x) con b(x) = ( 202.009614 , 101.004807 ) 
+  p4 = intersección a(x) con z(x) = ( 3496.063853 , 3427.675027 ) 
+  p5 = intersección b(x) con z(x) = ( 5175.748119 , 51.757481 ) 
+  p6 = intersección m(x) con l(x) = ( 1.980582 , 101.004807 ) 
+  total cycles = 49 
+
+> o:=(p6_y)/(sq/51-p6_x);c_o:=o * sq/51;
+              o := 5227.37499699620319911129993252
+             c_o := 10454.2475429531162648718410415
+Hay que disminuir o(x) al mismo tiempo que aumentamos n(x), disminuyendo igualmente las dos rectas, osea n(x) se modifica dividiendo k entre la misma constante que o(x), pero al hacer esto o(x)->c_o disminuye cuando x=0 mientras que n(x)->c_n aumenta, lo que resulta en una convergencia en d(x)->c_d.
+> tanto3(23,61,12);
+    p1=23, p2=61, k=1403, sq(k)=37.456642 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.027430 x - 38.484071 
+    b(x) = -.027430 x + 38.484071 
+    m(x) = .027430 x + 36.429212 
+    l(x) = -1.027430 x + 38.484071 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.058044 x + 40.717839 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.590964 x - 97.048819 
+    e(x) = 1.590964 x - 59.592178 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.295482 x - 29.796089 
+    g(x) = -.795482 x + 48.524410 
+  n(x) pasa por p3 y (1403/12,0)
+    n(x) = -.830068 x + 97.048819 
+    o(x) = -341.385840 x + 701.500000 
+
+  Good: z(x) = -.138345 x + 97.048819 
+  p3 = intersección a(x) con b(x) = ( 72.965290 , 36.482645 ) 
+  p4 = intersección a(x) con z(x) = ( 116.259949 , 80.964870 ) 
+  p5 = intersección b(x) con z(x) = ( 528.015280 , 24.000695 ) 
+  p6 = intersección m(x) con l(x) = ( 1.947993 , 36.482645 ) 
+  total cycles = 10 
+
+> tanto3(59,127,30);
+    p1=59, p2=127, k=7493, sq(k)=86.562116 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.011687 x - 87.573804 
+    b(x) = -.011687 x + 87.573804 
+    m(x) = .011687 x + 85.550429 
+    l(x) = -1.011687 x + 87.573804 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.023934 x + 89.669821 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 3.140619 x - 271.858659 
+    e(x) = 2.140619 x - 185.296542 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.570310 x - 92.648271 
+    g(x) = -1.070310 x + 135.929329 
+  n(x) pasa por p3 y (7493/30,0)
+    n(x) = -1.088451 x + 271.858659 
+    o(x) = -1851.609471 x + 3746.500000 
+
+  Good: z(x) = -.072563 x + 271.858659 
+  p3 = intersección a(x) con b(x) = ( 171.147074 , 85.573537 ) 
+  p4 = intersección a(x) con z(x) = ( 331.503069 , 247.803679 ) 
+  p5 = intersección b(x) con z(x) = ( 3027.219233 , 52.193435 ) 
+  p6 = intersección m(x) con l(x) = ( 1.977159 , 85.573537 ) 
+  total cycles = 28 
+
+> tanto3(1237,9743,627);
+    p1=1237, p2=9743, k=12052091, sq(k)=3471.612162 
+  a(x) y b(x) vienen de k y van a sq(k) y cambian de dirección en m(x), l(x)
+    a(x) = 1.000288 x - 3472.612450 
+    b(x) = -.000288 x + 3472.612450 
+    m(x) = .000288 x + 3470.611873 
+    l(x) = -1.000288 x + 3472.612450 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.000577 x + 3474.614756 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 1.553564 x - 5393.370361 
+    e(x) = .553564 x - 1921.758199 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = .776782 x - 960.879100 
+    g(x) = -.276782 x + 2696.685180 
+  n(x) pasa por p3 y (12052091/627,0)
+    n(x) = -.282609 x + 5432.265814 
+    o(x) = -3012154.846960 x + 6026045.500000 
+
+  Good: z(x) = -.000895 x + 5393.370361 
+  p3 = intersección a(x) con b(x) = ( 6941.224899 , 3470.612449 ) 
+  p4 = intersección a(x) con z(x) = ( 8855.505477 , 5385.444596 ) 
+  p5 = intersección b(x) con z(x) = ( 3164990.860686 , 2560.672217 ) 
+  p6 = intersección m(x) con l(x) = ( 1.999424 , 3470.612449 ) 
+  total cycles = 617 
+
+
+

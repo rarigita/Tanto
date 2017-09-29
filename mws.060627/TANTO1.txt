@@ -1,0 +1,197 @@
+> restart;with(plots);Digits:=30;
+Warning, the name changecoords has been redefined
+
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, listcontplot, listcontplot3d, 
+
+  listdensityplot, listplot, listplot3d, loglogplot, logplot, matrixplot, 
+
+  odeplot, pareto, plotcompare, pointplot, pointplot3d, polarplot, 
+
+  polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, replot, 
+
+  rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+                          Digits := 30
+> tanto1 := proc( p1, p2 )
+>   local k,sq,a,c_a,b,c_b,c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,t,
+>         Py,Psq,Pa,Pb,Pc,Pd,Pe,Pf,Pg,Pz,xrange,yrange;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   a := evalf( k / ( k - sq ));
+>   c_a := (a * sq);
+>   b := (a-1);
+>   c_b := (c_a);
+>   c := c_a / ( (k/2) - c_a );
+>   c_c := c * (k/2);
+>   d := p2 / (p2-sq);
+>   c_d := d * sq;
+>   e := p1 / (sq-p1);
+>   c_e := e * sq;
+>   f := d/2;
+>   c_f := c_e/2;
+>   g := e/2;
+>   c_g := c_d/2;
+>   z:=c;
+>   c_z:=c_c;
+>   printf("    p1=%d, p2=%d, k=%d, sq(k)=%f \n", p1,p2,k,sq);
+>   printf("  a(x) y b(x) vienen de k y van a sq(k)\n"); 
+>   printf("    a(x) = %g x - %f \n", a, c_a);
+>   printf("    b(x) = -%f x + %f \n", b, c_b);
+>   printf("  c(x) pasa por la intersección de a(x) con b(x) y k/2\n");
+>   printf("    c(x) = -%f x + %f \n", c, c_c);
+>   printf("  d(x) y e(x) vienen sq(k) y van a los primos en y=x\n");
+>   printf("    d(x) = %f x - %f \n", d, c_d);
+>   printf("    e(x) = %f x - %f \n", e, c_e);
+>   printf("  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2\n");
+>   printf("    f(x) = %f x - %f \n", f, c_f);
+>   printf("    g(x) = -%f x + %f \n", g, c_g);
+>   t:=0;
+>   while true do
+>     if( abs(trunc(c_z)) <> abs(trunc(c_d)) 
+>         and abs(trunc(c_z)) <> abs(trunc(c_e))
+>         and abs(trunc(c_z)) <> abs(trunc(c_f))
+>         and abs(trunc(c_z)) <> abs(trunc(c_g)) ) then 
+>       z := c_z / ( (k/2) - c_z );
+>       c_z := z * (k/2);
+>       t:=t+1;
+>     else break;
+>     end if;
+>   end do;
+>   printf("\n\n    z(x) = -%f x + %f \n", z, c_z);
+>   printf("    total cycles = %d \n", t);
+>   xrange:=0..k/2;
+>   yrange:=-k/2..k/2;
+>   Py:=implicitplot(x=y,x=xrange,y=yrange,colour=black);
+>   Psq:=implicitplot({x=sq,y=sq},x=xrange,y=0..sq,colour=black);
+>   Pa:=plot(a*x-c_a,x=xrange,y=yrange,colour=green);
+>   Pb:=plot(-b*x+c_b,x=xrange,y=yrange,colour=green);
+>   Pc:=plot(-c*x+c_c,x=xrange,y=yrange,colour=sienna);
+>   Pd:=plot(d*x-c_d,x=xrange,y=yrange,colour=red);
+>   Pe:=plot(-e*x+c_e,x=xrange,y=yrange,colour=red);
+>   Pf:=plot(f*x-c_f,x=xrange,y=yrange,colour=red);
+>   Pg:=plot(-g*x+c_g,x=xrange,y=yrange,colour=red);
+>   Pz:=plot(-z*x+c_z,x=xrange,y=yrange,colour=sienna);
+>   display({Py,Psq,Pa,Pb,Pc,Pd,Pe,Pf,Pg,Pz});
+> end proc:
+> n1:=nextprime(2);n2:=nextprime(10);
+                            n1 := 3
+                            n2 := 11
+> tanto1(n1,n2);
+    p1=3, p2=11, k=33, sq(k)=5.744563 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.210768 x - 6.955330 
+    b(x) = -.210768 x + 6.955330 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.728714 x + 12.023774 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.093070 x - 12.023774 
+    e(x) = 1.093070 x - 6.279211 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.046535 x - 3.139605 
+    g(x) = -.546535 x + 6.011887 
+
+
+    z(x) = -.728714 x + 12.023774 
+    total cycles = 0 
+
+> tanto1(7,23);
+    p1=7, p2=23, k=161, sq(k)=12.688578 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.085554 x - 13.774131 
+    b(x) = -.085554 x + 13.774131 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.206429 x + 16.617506 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.230536 x - 28.302330 
+    e(x) = 1.230536 x - 15.613753 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.115268 x - 7.806876 
+    g(x) = -.615268 x + 14.151165 
+
+
+    z(x) = -.351582 x + 28.302330 
+    total cycles = 2 
+
+> tanto1(23,61);
+    p1=23, p2=61, k=1403, sq(k)=37.456642 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.02743  x - 38.484071 
+    b(x) = -.027430 x + 38.484071 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.058044 x + 40.717839 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 2.590964 x - 97.048819 
+    e(x) = 1.590964 x - 59.592178 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.295482 x - 29.796089 
+    g(x) = -.795482 x + 48.524410 
+
+
+    z(x) = -.138345 x + 97.048819 
+    total cycles = 10 
+
+> tanto1(59,127);
+    p1=59, p2=127, k=7493, sq(k)=86.562116 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.011687 x - 87.573804 
+    b(x) = -.011687 x + 87.573804 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.023934 x + 89.669821 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 3.140619 x - 271.858659 
+    e(x) = 2.140619 x - 185.296542 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 1.570310 x - 92.648271 
+    g(x) = -1.070310 x + 135.929329 
+
+
+    z(x) = -.072563 x + 271.858659 
+    total cycles = 28 
+
+> tanto1(101,103);
+    p1=101, p2=103, k=10403, sq(k)=101.995098 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.009901 x - 103.004999 
+    b(x) = -.009901 x + 103.004999 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.020203 x + 105.086012 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 102.497549 x - 10454.247543 
+    e(x) = 101.497549 x - 10352.252445 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = 51.248774 x - 5176.126223 
+    g(x) = -50.748774 x + 5227.123771 
+
+
+    z(x) = -2.009852 x + 10454.247543 
+    total cycles = 49 
+
+> tanto1(1237,9743);
+    p1=1237, p2=9743, k=12052091, sq(k)=3471.612162 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.000288 x - 3472.612450 
+    b(x) = -.000288 x + 3472.612450 
+  c(x) pasa por la intersección de a(x) con b(x) y k/2
+    c(x) = -.000577 x + 3474.614756 
+  d(x) y e(x) vienen sq(k) y van a los primos en y=x
+    d(x) = 1.553564 x - 5393.370361 
+    e(x) = .553564 x - 1921.758199 
+  f(x) y g(x) vienen de los primos por abajo y pasan por sq(k)/2
+    f(x) = .776782 x - 960.879100 
+    g(x) = -.276782 x + 2696.685180 
+
+
+    z(x) = -.000895 x + 5393.370361 
+    total cycles = 617 
+
+
+

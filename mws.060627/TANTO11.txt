@@ -1,0 +1,342 @@
+> restart;Digits:=30;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 30
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+> tanto11 := proc( p1, p2, s, v )
+>   global k,sq,a,ca,b,cb,c,cc,xx,yy;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   line(lv,x=0,[x,y]);
+>   line(lh,y=0,[x,y]);
+
+>   point(c1,sq*s,0),point(c2,sq*s,sq*v):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq*v),point(c4,sq*s,sq*v):
+>   line(sqh,[c3,c4]);
+
+>   point(c1,k,0),point(c2,k,k):
+>   line(kk,[c1,c2]);
+>   point(c3,0,sq),point(c4,-sq*s,sq*v):
+>   line(sqhn,[c3,c4]);
+
+>   point(a1,k,k),point(a2,sq*s,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq*s,sq*v):
+>   line(B,[b1,b2]);
+
+>   
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+
+>   line(blue1,[point(OO,0,0),p3]);
+>   line(blue2,[point(OK,0,k),p3]);   
+
+>   intersection(Q,line(A1,[c1,point(dd,sq*(s+1),sq)]),lv);
+>   line(w,[point(aa,HorizontalCoord(Q),-VerticalCoord(Q)),p2h]);
+>   xx:=VerticalCoord(intersection(Q,w,y));
+>   print(xx);
+>   triangle(T1,[p1l,p2l,blue1]);
+>   print(detail(T1));
+>   print(sides(T1));
+>   print(`area T1=`, area(T1));
+
+>   triangle(T2,[blue1,p2m,p1m]);
+>   print(sides(T2));
+>   print(`area T2=`, area(T2));
+
+>   triangle(T3,[p2l,p1m,p2m]);  
+>   #print(detail(T3));
+>   print(sides(T3));
+>   print(`area T3 =`,area(T3));
+
+>   triangle(T4,[p1l,p1m,p2m]);
+>   print(sides(T4));
+>   print(`area T4 =`,area(T4));
+
+>   triangle(T5,[p1m,p2m,sqh]);
+>   print(sides(T5));
+>   print(`area T5 =`,area(T5));
+>   print( VerticalCoord(intersection(Q,A,blue1)) );print( VerticalCoord(intersection(Q,sqv,blue1)) );print( VerticalCoord(intersection(Q,blue1,kk)) );print( HorizontalCoord(intersection(Q,blue1,sqh)) );print(VerticalCoord(intersection(Q,A,p2m)));
+>  
+>  
+>  
+>  
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),kk(colour=black),A,B,p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),blue1(colour=blue),blue2(colour=blue)],colour=green,axes=normal,view=[-k..k,-k..k]);  
+> end proc:
+> tanto11(3,11,2,1);
+                              11.
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[5.74456264653802865985061146823, .217597069944622297\
+
+  721614070766e-28], [4.40212763768451587731100642794, 1.46737587922817195910\
+
+  366880932], [6.83271060174414369634488675370, 2.277570200581381232114962251\
+
+  25]]
+[1.98879956856797956265371025483, 2.56205940281053463196720444852, 
+
+  2.52416164121784452619642383373]
+           area T1=, 2.32710601744143696344886753716
+[2.56205940281053463196720444852, 1.94316521677677408374997821965, 
+
+  1.24005939045984177518389280586]
+           area T2=, 1.16355300872071848172443376858
+[3.84236206648731315518681489476, 1.24005939045984177518389280586, 
+
+  3.97273509320365181090302024961]
+           area T3 =, 2.37884449075053239124137393148
+[5.79706080625016698728705188105, 5.98912529307605731970122293642, 
+
+  1.94316521677677408374997821964]
+           area T4 =, 5.61962177616336948328654769910
+[3.97273509320365181090302024963, 7.99999999999999999999999999999, 
+
+  5.98912529307605731970122293642]
+           area T5 =, 11.4891252930760573197012229365
+                4.89283022924234205547094307661
+                3.82970843102535243990040764549
+                11.0000000000000000000000000001
+                17.2336879396140859795518344046
+               -0.197104502542625575975492735414
+
+> tanto11(7,23,6,1);
+                23.0000000000000000000000000001
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[12.6885775404495203801937727461, 0.], [11.3687414711\
+
+  447990907291230889, 1.62410592444925701296130329841], [13.55684032164949657\
+
+  40160590411, 1.93669147452135665343086557728]]
+[2.09277024626902434066228032744, 2.21031362156908755213115876334, 
+
+  2.12241704777850490693289753070]
+           area T1=, 1.98313299505695122700782640184
+[10.7456275345659571941767642582, 6.98070629874594999166202586515, 
+
+  7.01820406555434979298756956896]
+           area T2=, 24.1029240244902329356726172362
+[8.45588129262825405254632661100, 2.61751963195405512409350834470, 
+
+  8.52114513628929540000288346965]
+           area T3 =, 10.9731744572636874041714630952
+[12.0617147290261942156726888919, 12.1068341501534604325550665769, 
+
+  4.05121669116164954248792991130]
+           area T4 =, 24.1301732557288250044345814720
+[8.52114513628929540000288346965, 16.0000000000000000000000000000, 
+
+  12.1068341501534604325550665769]
+           area T5 =, 50.7543101617980815207750909850
+                11.7616311500773298825699838257
+                10.8759236060995888973089480680
+                22.9999999999999999999999999999
+                88.8200427831466426613564092232
+                -24.6842769748858081566983415888
+
+> tanto11(23,61,22,1);
+                              61.
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[37.4566416006560844472448586156, 0.], [36.4602470371\
+
+  633556857587990756, 1.58522813205058068198951300331], [38.09591877040950145\
+
+  92271382672, 1.65634429436563049822726688120]]
+[1.87236491016106119272105720715, 1.63721700683900519040734623968, 
+
+  1.77543001023569429964207203746]
+           area T1=, 1.33188630192445273050302624844
+[34.0721767774193049374848072425, 22.3517806385618838453589938630, 
+
+  26.0443936098561684918029997461]
+           area T2=, 291.038259460301592833416331752
+[24.7904369027282466747452448489, 7.06675514183934019042020761072, 
+
+  23.6589198056424400955723129310]
+           area T3 =, 83.5869855667721518021583637680
+[32.0487187673735418837171728261, 30.0838781529236635325153289864, 
+
+  10.6184919836463459882233345857]
+           area T4 =, 159.705683626445131058761433303
+[23.6589198056424400955723129309, 37.9999999999999999999999999999, 
+
+  30.0838781529236635325153289863]
+           area T5 =, 355.838095206232802248826156845
+                36.4826449113555538370075154335
+                35.8280919658449503408429082411
+                61.0000000000000000000000000007
+                861.502756815089942286631748146
+                -456.981294158642385415896960391
+
+> tanto11(101,103,2,70);
+                3467.66666666666666666666666642
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[101.995097921419733298482352971, 0.], [101.027379348\
+
+  301139408020037158, 98.2210632552927744244639250143], [102.9718187451050430\
+
+  25749683998, 100.111490446629902941701081664]]
+[98.2258303412955787516468525829, 2.71192911662342547652071861470, 
+
+  100.116254939011231641394895022]
+           area T1=, 96.4071532468724506395629960250
+[2.63491739168799140583568680645, 49.1050749294290243301564365373, 
+
+  47.2681594362084614880132411342]
+           area T2=, 45.4965856979869647352246844802
+[67.8890355764158040365605937220, 16.8915342006807156615405713489, 
+
+  51.0072565413315860459801900416]
+           area T3 =, 16.8882558037566027923686211490
+[68.1113278119658534342776964750, 51.0074487519963591887023151099, 
+
+  17.1137303239702037551935919304]
+           area T4 =, 17.1104732792255273592297635021
+[7090.00865924509046039124641579, 278.000000000000000000000000000, 
+
+  7090.03537652749392722962180570]
+                                                      5
+         area T5 =, 9.85323643469875333529988770875 10 
+
+> tanto11(59,127,59,1);
+                124.883333333333333333333333333
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[86.5621164251429333084549727149, .169888202371513281\
+
+  628451206842e-27], [85.8933585863005137626133026779, 1.43155597643834189604\
+
+  355504463], [87.0239358194860053137248921633, 1.450398930324766755228748202\
+
+  72]]
+[1.58005998642124916347354476331, 1.13073424689823880470578647861, 
+
+  1.52214789362881209353640047569]
+           area T1=, 0.815542984055154086771485988905
+[65.4288666041185631718012090066, 50.1336896239017608419938873567, 
+
+  56.3800084629312365567668187212]
+           area T2=, 1368.52805558977436206946203730
+[56.9672331362322495111432307467, 15.0553398738023692658601541112, 
+
+  51.3119894550302334075356141879]
+           area T3 =, 374.031619656083826039242009724
+[67.9854944026032191224552601463, 59.2323596357066880919721907882, 
+
+  21.7130839416075915074444945033]
+           area T4 =, 622.700831542352357679318476235
+[51.3119894550302334075356141886, 67.9999999999999999999999999994, 
+
+  59.2323596357066880919721907873]
+           area T5 =, 1471.55597922742986624373453614
+
+> tanto11(1237,9743,1237,1);
+                9735.13004846526655896607431346
+name of the object:  T1
+
+  form of the object:  triangle2d
+
+  method to define the triangle:  points
+
+  the three vertices:  [[3471.61216151804607080526185951, 0.], [3466.55380123\
+
+  814422340838164889, 2.80012423363339598013601102496], [3473.418118402024852\
+
+  98444625587, 2.80566891631827532551247678180]]
+[5.78166969352882602889460294551, 6.86431940325130019346724803810, 
+
+  3.33665376309633270705677192037]
+           area T1=, 9.62449392029283365271067973265
+[8476.36406812959957204582918026, 2827.94795781832970903588114696, 
+
+  6477.75817207497610176473423306]
+                                                     6
+         area T2=, 7.34477499691802567369108405785 10 
+[2376.47708133680473110538061708, 984.004266602853054655694699598, 
+
+  2829.57846019585645644005616440]
+                                                      6
+         area T3 =, 1.11635179352229838114867203871 10 
+[5676.79905344502534809655349993, 6507.17512985929665337506215044, 
+
+  1652.17621458130261031090776936]
+                                                      6
+         area T4 =, 4.31053536881834026663088099717 10 
+[2829.57846019585645644005616438, 8505.99999999999999999999999992, 
+
+  6507.17512985929665337506215030]
+                                                      6
+         area T5 =, 7.38238326146812496956738934410 10 
+
+
+

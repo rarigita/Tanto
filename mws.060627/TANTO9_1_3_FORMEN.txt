@@ -1,0 +1,118 @@
+> restart;Digits:=40;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 40
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9_1 := proc( p1, p2 )
+>   global k,sq,x1;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+>   circle(circ,[p3,p5,p6],[x,y]);
+
+>   line(l0,y=0,[x,y]);line(l1,x=0,[x,y]);
+>   x1 := VerticalCoord(intersection(Q,B,l1));
+
+> end proc:
+> tanto9_2 := proc( v, s )
+>   global a,ca,b,cb,c,cc,d,cd,x2,x3,x4;
+
+>   line(r1,[p3,point(r3p,v,0)]);
+>   #rotation(P1,r1,Pi/2,'clockwise',p3);
+>   
+>   line(P1,[p3,point(k2,VerticalCoord(intersection(Q,y,r1)),0)]);
+>   #line(P1,slope(P1)*x-slope(P1)*sq+0=y,[x,y]);
+>   #a := slope(r1)/3; ca := -a*HorizontalCoord(p6)-VerticalCoord(p6);
+>   #line(P1,a*x+ca=y,[x,y]);
+
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),r1(colour=magenta),P1(colour=magenta),circ(colour=green)],colour=green,axes=normal,view=[-k/s..k/s,-k/s..k/s]);
+> end proc:
+> tanto9_1(3,11);
+           6.955330229242342055470943076600770859416
+> tanto9_2(x1,2);VerticalCoord(intersection(Q,p2l,l1));x1:=-VerticalCoord(intersection(Q,l1,r1));x2:=VerticalCoord(intersection(Q,P1,l1));
+
+           -12.02377363898978940729459076880102781255
+        x1 := 12.02377363898978940729459076880102781254
+        x2 := 12.02377363898978940729459076880102781253
+> tanto9_1(7,23);
+           13.77413115007732988256998382575254910293
+> tanto9_2(x1,3);VerticalCoord(intersection(Q,p2l,l1));x1:=-VerticalCoord(intersection(Q,l1,r1));x2:=VerticalCoord(intersection(Q,P1,l1));VerticalCoord(intersection(Q,y,r1));
+
+           -28.30233021439618554652854832250364157563
+        x1 := 28.30233021439618554652854832250364157534
+        x2 := 28.30233021439618554652854832250364157531
+           40.25000000000000000000000000000000000031
+> tanto9_1(23,61);
+           38.48407144487909164014588918500796459361
+> tanto9_2(x1,5);VerticalCoord(intersection(Q,p2l,l1));x1:=-VerticalCoord(intersection(Q,l1,r1));x2:=VerticalCoord(intersection(Q,P1,l1));VerticalCoord(intersection(Q,y,r1));
+
+           -97.04881941157950398110358882995556791790
+        x1 := 217.2956293342092454286980466909076161978
+        x2 := 217.2956293342092454286980466909076161979
+           87.68750000000000000000000000000000000018
+> tanto9_1(59,127);
+           87.57380384057608105716138688657805463983
+> tanto9_2(x1,10);VerticalCoord(intersection(Q,p2l,l1));x1:=-VerticalCoord(intersection(Q,l1,r1));x2:=VerticalCoord(intersection(Q,P1,l1));VerticalCoord(intersection(Q,y,r1));
+
+           -271.8586586175463607378497284532010930611
+        x1 := 89.66982073404543015503114785599182059881
+        x2 := 89.66982073404543015503114785599182059880
+           3746.500000000000000000000000000000000028
+
+

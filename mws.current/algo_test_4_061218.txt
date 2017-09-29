@@ -1,0 +1,198 @@
+> with(geometry);Digits:=20;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               20
+                               x
+                               y
+> tanto := proc( p1, p2, c, z )
+>   local sq, k, a, c_a, b, c_b, i;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+>   
+>   line(Y_X,y=x,[x,y]);
+>   line(Y_1,y=-x,[x,y]);
+>   line(l0,y=0,[x,y]);
+>   line(l1,x=0,[x,y]);
+>   line(sqv,x=sq*z,[x,y]);
+>   line(sqh,y=sq*z,[x,y]);
+>   line(sqv_1,x=-sq,[x,y]);
+>   line(sqh_1,y=-sq,[x,y]);
+>   line(_sqh,y=k-sq,[x,y]);
+>   line(top,y=k,[x,y]);
+>   line(right,x=k,[x,y]);
+> 
+>   line(A,[point(P1,k,0),point(P2,sq*z,sq*z)]);
+>   line(B,[point(P3,k,k),point(P4,-sq,k-sq)]);
+> 
+>   #intersection(p3,A,B);
+>   intersection(Q1,A,Y_1);
+>   intersection(Q2,A,Y_X);
+>   point(K,k,0);
+>   point(_K,-k,0);
+>   point(KK,k,k);
+>   point(_KK,-k,k);
+>   point(K_K,k,-k);
+>   point(_K_K,-k,-k);
+> 
+>   line(blue,[Q1,_K]);
+>   line(red,[Q1,KK]);
+> 
+>   
+>     
+>   i := 1;
+>   while( i < c ) do
+>     intersection(T1,B,Y_1);
+>     line(B,[point(N,0,VerticalCoord(T1)),P3]);
+>     if( slope(blue) > 0 ) then
+>       line(blue,[intersection(Q1,blue,Y_X),K]);
+>       line(red,[intersection(Q2,blue,Y_1),KK]);
+>     else
+>       line(blue,[intersection(Q1,blue,Y_1),_K]);
+>       line(red,[intersection(Q2,blue,Y_X),_KK]);
+>     end if;
+>     i := i+1;
+>   end do;
+> 
+>   print(coordinates(intersection(Q1,A,l1)));
+>   print(coordinates(intersection(Q2,blue,l1)));
+>   print(coordinates(intersection(Q3,red,l1)));
+>   
+>   if( slope(blue) > 0 ) then
+>       line(yell,[intersection(Q4,blue,Y_1),Q3]);
+>       
+>     else
+>       line(yell,[intersection(Q4,blue,Y_X),Q3]);
+>       
+>     end if;
+> 
+>   line(mag,[intersection(Q5,B,Y_1),K]);
+> 
+>   print(coordinates(intersection(Q6,mag,l1)));
+>   print(distance(Q4,Q3));
+>   draw([mag(colour=magenta),B(colour=green),Y_X,Y_1,l0,l1,sqv,sqh,sqv_1,sqh_1,_sqh,top,right,blue(colour=blue),red(colour=red),yell(colour=yellow)],colour=black,axes=normal,view=[-k..k,-k..k]);
+> end proc:
+> tanto(3,11,3,1);print(coordinates(intersection(A,red,sqv)));print(coordinates(intersection(A,blue,sqh)));print(coordinates(intersection(A,yell,l1)));print(coordinates(intersection(Z,B,Y_1)));slope(yell);slope(red);
+                  [0., 6.9553302292423420557]
+                  [0., -26.285660458484684105]
+                  [0., -52.571320916969368210]
+                  [0., 9.7269920781464769677]
+                     40.663493761035860584
+
+        [5.7445626465380286601, -67.467375879228171945]
+        [-40.211938525766200621, 5.7445626465380286599]
+                  [0., -52.571320916969368210]
+        [-13.792404473743211813, 13.792404473743211813]
+                     -2.5930703308172535821
+                     -2.5930703308172535821
+> tanto(7,23,7,1);print("doble del tanto",coordinates(intersection(Z,red,l0)));print(coordinates(intersection(Z,blue,sqh)));print(coordinates(intersection(Z,blue,red)));print(coordinates(intersection(Z,yell,blue)));print(coordinates(intersection(Z,yell,l0)));print(coordinates(intersection(Z,yell,top)));slope(yell);slope(red);slope(blue);print(coordinates(intersection(Z,blue,right)));print(coordinates(intersection(Z,B,Y_1)));print(coordinates(intersection(Z,B,l1)));
+                  [0., 13.774131150077329882]
+                  [0., -516.98262300154659754]
+                  [0., -1033.9652460030931950]
+                  [0., 13.319199869986258960]
+                     919.43094339781698599
+
+         "doble del tanto", [139.30815575038664941, 0.]
+         [164.95150802584376494, 12.688577540449520380]
+        [122.76745668606779373, -122.76745668606779380]
+        [122.76745668606779374, -122.76745668606779376]
+                  [139.30815575038664941, 0.]
+                          [161., 161.]
+                     7.4221443851123800932
+                     7.4221443851123800931
+                     3.2110721925561900469
+                  [160.99999999999999999, 0.]
+        [-14.520446646957018803, 14.520446646957018803]
+                  [0., 26.638399739972517920]
+> tanto(23,61,19,1);print("doble del tanto",coordinates(intersection(Z,red,l0)));print(coordinates(intersection(Z,blue,sqh)));print(coordinates(intersection(Z,blue,red)));print(coordinates(intersection(Z,yell,blue)));print(coordinates(intersection(Z,yell,l0)));print(coordinates(intersection(Z,yell,top)));slope(yell);slope(red);slope(blue);print(coordinates(intersection(Z,blue,right)));
+                  [0., 38.484071444879091638]
+                  [0., -909.05650987898717578]
+                  [0., -1818.1130197579743515]
+                  [0., 0.10022003241357773497]
+                     1381.4017682862655590
+
+        "doble del tanto", [-791.90408752316896832, 0.]
+        [-1460.8090224255872933, 37.456641600656084447]
+        [-551.63283332853038903, -551.63283332853038905]
+        [-551.63283332853038907, -551.63283332853038901]
+                  [-791.90408752316896834, 0.]
+                        [-1403., 1403.]
+                     -2.2958752813670522819
+                     -2.2958752813670522819
+                    -0.64793764068352614097
+                [1403., -1818.1130197579743516]
+> tanto(59,127,34,1);print("doble del tanto",coordinates(intersection(Z,red,l0)));print(coordinates(intersection(Z,blue,sqh)));print(coordinates(intersection(Z,blue,red)));print(coordinates(intersection(Z,yell,blue)));print(coordinates(intersection(Z,yell,l0)));print(coordinates(intersection(Z,yell,top)));slope(yell);slope(red);slope(blue);print(coordinates(intersection(Z,blue,right)));
+                  [0., 87.573803840576081057]
+                  [0., 426.65700526119912121]
+                  [0., 853.31401052239824241]
+                [0., 0.000037754066977501620836]
+                     604.25909526154979287
+
+        "doble del tanto", [-962.97955821663621462, 0.]
+         [5972.7860333348623981, 86.562116425142933307]
+        [-452.41802482591438453, 452.41802482591438455]
+         [403.67164112011014256, 403.67164112011014259]
+                  [766.07252887722769584, 0.]
+                [-5960.8549422455446084, 7493.]
+                     -1.1138814907943945339
+                     0.88611850920560546610
+                    -0.056940745397197266943
+                  [7492.9999999999999999, 0.]
+> tanto(1237,9743,619,1);print("doble del tanto",coordinates(intersection(Z,red,l0)));print(coordinates(intersection(Z,blue,sqh)));print(coordinates(intersection(Z,blue,red)));print(coordinates(intersection(Z,yell,blue)));print(coordinates(intersection(Z,yell,l0)));print(coordinates(intersection(Z,yell,top)));slope(yell);slope(red);slope(blue);print(coordinates(intersection(Z,blue,right)));
+                  [0., 3472.6124496516528989]
+                  [0., 5398.2018049231089896]
+                  [0., 10796.403609846217980]
+               [                            -176]
+               [0., 1.9232081346029494858 10    ]
+                     7634.2109700498215696
+
+         "doble del tanto", [10806.083825704539769, 0.]
+      [                         6                       ]
+      [-4.3013274681208591039 10 , 3471.6121615180460708]
+         [5400.6207744456854403, 5400.6207744456854402]
+        [-5395.7850013714779446, 5395.7850013714779447]
+                  [-10786.740721765888313, 0.]
+           [                        7              7]
+           [1.2030517518556468221 10 , 1.2052091 10 ]
+                     1.0008958116570681569
+                    -0.99910418834293184335
+                   0.00044790582853407835948
+             [            7                       ]
+             [1.2052091 10 , 10796.403609846217980]
+> 
+
+

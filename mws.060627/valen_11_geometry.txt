@@ -1,0 +1,187 @@
+> restart;Digits:=20;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                               20
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               x
+                               y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, s, v )
+>   global k,sq,a,ca,b,cb,c,cc;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   line(x,x=0,[x,y]);
+>   line(X,y=0,[x,y]);
+>   point(a1,k/s,k/s),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k/s,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   line(C,[point(k0,0,k/s),b2]);
+>   line(D,[a1,point(aa,0,sq)]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   print(VerticalCoord(intersection(Q,p1l,x)));
+>   print(VerticalCoord(intersection(Q,p2l,x)));
+>   #line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   #line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+> 
+>   intersection(p3,A,B);
+>   intersection(p4,D,B);
+> 
+>   
+>   line(b_sk,[p3,point(sk0,k/v,k/v)]);
+> 
+>   point(p4,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p5,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p4),-VerticalCoord(p4));
+>   
+> #  line(b_k,[p4,point(sk,k/v,0)]);
+>   line(b_k,[p4,intersection(Q,b_sk,X)]);
+>   
+>   circle(circ,[p3,p5,p6],[x,y]);
+> 
+>   line(r1,[p3,point(k1,k/v,0)]);
+>   line(r2,[p5,point(k2,sq/v,0)]);
+>   a := slope(r1)/v; ca := -(a * k);
+>   line(r3,a*x+ca=y,[x,y]);
+>   b := slope(r2)/v; cb := -(b * sq);
+>   line(r4,b*x+cb=y,[x,y]);
+>   c := slope(r4)/2; cc := -(c*sq);#-(sq/2);
+>   line(r5,c*x+cc=y,[x,y]);
+>   print(VerticalCoord(intersection(Q,b_k,x)));
+>   print(VerticalCoord(intersection(Q,b_sk,x)));
+>   print(HorizontalCoord(intersection(Q,b_k,X)));
+>   print(HorizontalCoord(intersection(Q,b_sk,X)));
+>   print(solve({Equation(b_k),Equation(b_sk)}) );
+>   print(solve({Equation(b_k),Equation(A)}) );
+>   print(solve({Equation(b_k),Equation(B)}) );
+>   print(AreParallel(r3,r4));
+> 
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),p1l(colour=red),p2l(colour=red),b_k(colour=blue),b_sk(colour=blue),circ,r1,r2,r3(colour=pink),r4(colour=pink),r5],colour=green,axes=normal,view=[-k/s..k/s,-k/s..k/s]);
+> end proc:
+> tanto9(3,11,1,2);
+                     6.2792109924517607475
+                     -12.023773638989789408
+                     6.4798404838518650193
+                     -12.023773638989789407
+                     6.9553302292423420557
+                     6.9553302292423420556
+  /                                                       -20\ 
+ { x = 6.9553302292423420556, y = 6.2895913954660597571 10    }
+  \                                                          / 
+    {x = 6.2710718041088487451, y = 0.63748021998370628084}
+    {y = 7.0943538469750682678, x = -0.65960626368127468830}
+                             false
+
+> tanto9(7,23,1,4);
+                     15.613752673946665167
+                     -28.302330214396185546
+                     13.238559734927375016
+                     -28.302330214396185547
+                     16.617506473765610403
+                     16.617506473765610403
+  /                            -20                           \ 
+ { y = 5.0841954909485067911 10   , x = 16.617506473765610403 }
+  \                                                          / 
+     {y = 1.8052220546560945244, x = 14.351528166420935044}
+    {y = 13.838565737186846566, x = -0.75314866771643489247}
+                             false
+
+> tanto9(101,103,1,52);
+                     10352.252445031696516
+                     -10454.247542953116281
+                     101.99504985953862116
+                     10352.252445031696602
+                     204.00000047122910603
+                     204.00000047122910603
+ /                                                        -18\ 
+{ x = 204.00000047122910603, y = -1.1249889200015293948 10    }
+ \                                                           / 
+     {x = 135.77266329473568255, y = 34.112012946203070257}
+    {y = 103.02540443360277386, x = -2.0608091655828818426}
+                             false
+
+> tanto9(59,127,1,30);
+                     185.29654219240342743
+                     -271.85865861754636073
+                     86.893339925948279039
+                     -271.85865861754636075
+                     130.17242008021587482
+                     130.17242008021587482
+ /                             -18                           \ 
+{ y = -2.5270027763859216677 10   , x = 130.17242008021587482 }
+ \                                                           / 
+     {y = 17.538697710309989686, x = 103.89820012328887106}
+    {y = 87.585930112523137946, x = -1.0375494921370262480}
+                             false
+
+> tanto9(23,61,1,12);
+                     59.592177810923419534
+                     -97.048819411579503981
+                     37.873892622961752449
+                     -97.048819411579503984
+                     53.030162375757009735
+                     53.030162375757009735
+  /                            -20                           \ 
+ { y = 6.4094619477447463912 10   , x = 53.030162375757009735 }
+  \                                                          / 
+     {x = 43.842938537685539667, y = 6.5614720671740411529}
+    {x = -0.88848211354795427763, y = 38.508442370848640213}
+                             false
+
+> tanto9(1237,9743,1,619);
+                     1921.7581993648980707
+                     -5393.3703608829441415
+                     3472.2562504401585133
+                     -5393.3703608829441414
+                     4223.4509519291531466
+                     4223.4509519291531466
+ /                                                        -18\ 
+{ x = 4223.4509519291531466, y = -4.3703026865158912591 10    }
+ \                                                           / 
+     {x = 3810.7836147439809681, y = 339.26917992008604710}
+    {y = 3472.6125745321990810, x = -0.43341194231654325500}
+                             false
+
+> 3

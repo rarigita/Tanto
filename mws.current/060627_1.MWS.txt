@@ -1,0 +1,143 @@
+> restart;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               x
+                               y
+> tanto_060627 := proc(p1,p2, sc)
+>   local k,sq;
+>   k := p1*p2;
+>   sq:= evalf(sqrt(k));
+>   line(Y,y=x,[x,y]);
+>   line(lx,y=0,[x,y]);
+>   line(ly,x=0,[x,y]);
+>   line(sqv,x=sq,[x,y]);
+>   line(sqh,y=sq,[x,y]);
+>   
+>   point(p1x,p1,0);
+>   point(p1y,0,p1);
+>   line(P1,[p1x,p1y]);
+> 
+>   point(p2x,p2,0);
+>   point(p2y,0,p2);
+>   line(P2,[p2x,p2y]);
+>   
+>   print(k,sq);
+>   
+>   print(solve({Equation(P1),Equation(Y)}));
+>   print(solve({Equation(P2),Equation(Y)}));
+>   print(solve({Equation(P1),Equation(sqh)}));
+>   print(solve({Equation(P2),Equation(sqh)}));
+>   print(solve({Equation(P1),Equation(sqv)}));
+>   print(solve({Equation(P2),Equation(sqv)}));
+>   
+>   point(i1,coordinates(intersection(Q,sqv,P1)));
+>   point(i2,coordinates(intersection(Q,lx,P2)));
+>   line(L1,[i1,i2]);
+>   
+>   print(solve({Equation(P1),Equation(L1)}));
+>   print(solve({Equation(P2),Equation(L1)}));
+> 
+>   print(solve({Equation(L1),Equation(ly)}));
+>   print(solve({Equation(L1),Equation(Y)}));
+>   print(solve({Equation(L1),x=k}));
+> 
+>   draw( [Y, sqv, sqh, P1(colour=magenta), P2(colour=red), L1(colour=green)], colour=black, view=[-k/sc..k/sc,-k/sc..k/sc], axes=normal );
+> 
+> end proc:
+> tanto_060627(3,11,1);
+                        33, 5.744562647
+                         /    3      3\ 
+                        { y = -, x = - }
+                         \    2      2/ 
+                        /    11      11\ 
+                       { y = --, x = -- }
+                        \    2       2 / 
+              {x = -2.744562647, y = 5.744562647}
+               {y = 5.744562647, x = 5.255437353}
+              {y = -2.744562647, x = 5.744562647}
+               {x = 5.744562647, y = 5.255437353}
+              {y = -2.744562647, x = 5.744562647}
+           /                   -10                 \ 
+          { y = -3.750000000 10   , x = 11.00000000 }
+           \                                       / 
+                   {x = 0., y = -5.744562649}
+              {y = -12.02377365, x = -12.02377365}
+                   {x = 33., y = 11.48912530}
+
+> tanto_060627(7,23,1);
+                        161, 12.68857754
+                         /    7      7\ 
+                        { x = -, y = - }
+                         \    2      2/ 
+                        /    23      23\ 
+                       { y = --, x = -- }
+                        \    2       2 / 
+              {x = -5.688577540, y = 12.68857754}
+               {y = 12.68857754, x = 10.31142246}
+              {x = 12.68857754, y = -5.688577540}
+               {y = 10.31142246, x = 12.68857754}
+                   {x = 0., y = -12.68857754}
+              {y = -28.30233020, x = -28.30233020}
+                  {x = 161., y = 76.13146524}
+
+> tanto_060627(23,61,1);
+                       1403, 37.45664160
+                        /    23      23\ 
+                       { y = --, x = -- }
+                        \    2       2 / 
+                        /    61      61\ 
+                       { y = --, x = -- }
+                        \    2       2 / 
+              {x = -14.45664160, y = 37.45664160}
+               {x = 23.54335840, y = 37.45664160}
+              {x = 37.45664160, y = -14.45664160}
+               {x = 37.45664160, y = 23.54335840}
+                   {x = 0., y = -37.45664160}
+              {y = -97.04881939, x = -97.04881939}
+                  {x = 1403., y = 824.0461152}
+
+> tanto_060627(59,127,1);
+                       7493, 86.56211643
+                        /    59      59\ 
+                       { y = --, x = -- }
+                        \    2       2 / 
+                       /    127      127\ 
+                      { y = ---, x = --- }
+                       \     2        2 / 
+
+> 

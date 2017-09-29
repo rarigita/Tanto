@@ -1,0 +1,6083 @@
+%!PS-Adobe-2.0
+%%Title: tanto8.mws - [Server 1]
+%%Creator: Maple 8.00 IBM INTEL LINUX
+%%DocumentFonts: Times-Roman Courier Times-Italic Symbol Times-Bold 
+%%Pages: 7
+%%EndComments
+/sc { setrgbcolor } def % color
+/stc { setrgbcolor } def % color
+% /sc { 11 mul exch 59 mul add exch 30 mul add 100 div setgray } def % b&w
+% /stc { pop pop pop 0 setgray } def % b&w
+/fsf    %% stk: size font 
+{ findfont exch scalefont setfont } def 
+/line   %% stk: width x1 y1 x2 y2 
+{ gsave newpath 4 2 roll moveto lineto setlinewidth 
+  stroke grestore } def 
+/underline   %% stk: string ulOffset ulThickness 
+{ gsave setlinewidth 0 exch rmoveto  %% stk: string 
+  dup stringwidth pop 0 rlineto stroke       %% stk: string 
+  grestore show } def 
+/pagenum   %% stk: x y string 
+{ gsave 10 /Times-Roman fsf 
+  3 1 roll moveto 
+  dup stringwidth pop       %% stk: string wx 
+  2 div neg -14 rmoveto     %% stk: string 
+  show grestore 
+} def 
+/solid { [] 0 setdash } def 
+/dot { [1 3] 0 setdash } def 
+/dash { [5 5] 0 setdash } def 
+/dashdot { [5 3 1 3] 0 setdash } def 
+% ReEncodeSmall is copied from the Postscript Tutorial and Cookbook 
+% Adobe Systems Inc., Addison-Wesley, page 211-212 
+/reencsmalldict 12 dict def 
+/ReEncodeSmall 
+{ reencsmalldict begin 
+  /newcodesandnames exch def 
+  /newfontname exch def 
+  /basefontname exch def 
+  /basefontdict basefontname findfont def 
+  /newfont basefontdict maxlength dict def 
+  basefontdict 
+  { exch dup /FID ne 
+    { dup /Encoding eq 
+      { exch dup length array copy newfont 3 1 roll put } 
+      { exch newfont 3 1 roll put } 
+      ifelse 
+    } 
+    {pop pop} 
+    ifelse 
+  } forall 
+  newfont /FontName newfontname put 
+  newcodesandnames aload pop 
+  newcodesandnames length 2 idiv 
+  { newfont /Encoding get 3 1 roll put } repeat 
+  newfontname newfont definefont pop 
+  end 
+} def 
+/ExtraChars [ 
+ 8#260 /oacute
+] def
+/Times-Roman /Times-Roman-Maple ExtraChars ReEncodeSmall
+/Courier /Courier-Maple ExtraChars ReEncodeSmall
+/Times-Italic /Times-Italic-Maple ExtraChars ReEncodeSmall
+/Times-Bold /Times-Bold-Maple ExtraChars ReEncodeSmall
+%%EndProlog
+%%Page: 1 1
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(Digits:=100;with\(plots\);) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+308 694 moveto
+( := ) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+279 694 moveto
+(Digits) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+324 694 moveto
+(100) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 683 moveto
+(Warning, the name changecoords has been redefined\12) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+68 659 moveto
+(animate) show
+grestore
+gsave
+0 0 1 stc
+112 659 moveto
+(animate3d) show
+grestore
+gsave
+0 0 1 stc
+168 659 moveto
+(animatecurve) show
+grestore
+gsave
+0 0 1 stc
+239 659 moveto
+(arrow) show
+grestore
+gsave
+0 0 1 stc
+274 659 moveto
+(changecoords) show
+grestore
+gsave
+0 0 1 stc
+347 659 moveto
+(complexplot) show
+grestore
+gsave
+0 0 1 stc
+411 659 moveto
+(complexplot3d) show
+grestore
+gsave
+0 0 1 stc
+487 659 moveto
+(conformal) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+106 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+162 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+233 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+268 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+341 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+405 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+481 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+536 659 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+([) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 641 moveto
+(conformal3d) show
+grestore
+gsave
+0 0 1 stc
+151 641 moveto
+(contourplot) show
+grestore
+gsave
+0 0 1 stc
+213 641 moveto
+(contourplot3d) show
+grestore
+gsave
+0 0 1 stc
+287 641 moveto
+(coordplot) show
+grestore
+gsave
+0 0 1 stc
+339 641 moveto
+(coordplot3d) show
+grestore
+gsave
+0 0 1 stc
+403 641 moveto
+(cylinderplot) show
+grestore
+gsave
+0 0 1 stc
+466 641 moveto
+(densityplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+145 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+207 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+281 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+333 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+397 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+460 641 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+518 641 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 623 moveto
+(display) show
+grestore
+gsave
+0 0 1 stc
+124 623 moveto
+(display3d) show
+grestore
+gsave
+0 0 1 stc
+176 623 moveto
+(fieldplot) show
+grestore
+gsave
+0 0 1 stc
+222 623 moveto
+(fieldplot3d) show
+grestore
+gsave
+0 0 1 stc
+280 623 moveto
+(gradplot) show
+grestore
+gsave
+0 0 1 stc
+327 623 moveto
+(gradplot3d) show
+grestore
+gsave
+0 0 1 stc
+386 623 moveto
+(graphplot3d) show
+grestore
+gsave
+0 0 1 stc
+451 623 moveto
+(implicitplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+118 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+170 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+216 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+274 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+321 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+380 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+445 623 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+506 623 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 605 moveto
+(implicitplot3d) show
+grestore
+gsave
+0 0 1 stc
+157 605 moveto
+(inequal) show
+grestore
+gsave
+0 0 1 stc
+199 605 moveto
+(interactive) show
+grestore
+gsave
+0 0 1 stc
+256 605 moveto
+(listcontplot) show
+grestore
+gsave
+0 0 1 stc
+316 605 moveto
+(listcontplot3d) show
+grestore
+gsave
+0 0 1 stc
+388 605 moveto
+(listdensityplot) show
+grestore
+gsave
+0 0 1 stc
+461 605 moveto
+(listplot) show
+grestore
+gsave
+0 0 1 stc
+500 605 moveto
+(listplot3d) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+151 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+193 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+250 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+310 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+382 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+455 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+494 605 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+545 605 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 587 moveto
+(loglogplot) show
+grestore
+gsave
+0 0 1 stc
+139 587 moveto
+(logplot) show
+grestore
+gsave
+0 0 1 stc
+179 587 moveto
+(matrixplot) show
+grestore
+gsave
+0 0 1 stc
+235 587 moveto
+(odeplot) show
+grestore
+gsave
+0 0 1 stc
+277 587 moveto
+(pareto) show
+grestore
+gsave
+0 0 1 stc
+314 587 moveto
+(plotcompare) show
+grestore
+gsave
+0 0 1 stc
+380 587 moveto
+(pointplot) show
+grestore
+gsave
+0 0 1 stc
+429 587 moveto
+(pointplot3d) show
+grestore
+gsave
+0 0 1 stc
+490 587 moveto
+(polarplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+133 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+173 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+229 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+271 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+308 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+374 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+423 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+484 587 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+534 587 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 569 moveto
+(polygonplot) show
+grestore
+gsave
+0 0 1 stc
+147 569 moveto
+(polygonplot3d) show
+grestore
+gsave
+0 0 1 stc
+222 569 moveto
+(polyhedra_supported) show
+grestore
+gsave
+0 0 1 stc
+330 569 moveto
+(polyhedraplot) show
+grestore
+gsave
+0 0 1 stc
+403 569 moveto
+(replot) show
+grestore
+gsave
+0 0 1 stc
+437 569 moveto
+(rootlocus) show
+grestore
+gsave
+0 0 1 stc
+488 569 moveto
+(semilogplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+141 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+216 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+324 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+397 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+431 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+482 569 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+544 569 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 551 moveto
+(setoptions) show
+grestore
+gsave
+0 0 1 stc
+138 551 moveto
+(setoptions3d) show
+grestore
+gsave
+0 0 1 stc
+204 551 moveto
+(spacecurve) show
+grestore
+gsave
+0 0 1 stc
+263 551 moveto
+(sparsematrixplot) show
+grestore
+gsave
+0 0 1 stc
+350 551 moveto
+(sphereplot) show
+grestore
+gsave
+0 0 1 stc
+406 551 moveto
+(surfdata) show
+grestore
+gsave
+0 0 1 stc
+452 551 moveto
+(textplot) show
+grestore
+gsave
+0 0 1 stc
+494 551 moveto
+(textplot3d) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+132 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+198 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+257 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+344 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+400 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+446 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+488 551 moveto
+(,) show
+grestore
+gsave
+0 0 1 stc
+542 551 moveto
+(,) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+84 533 moveto
+(tubeplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+124 533 moveto
+(]) show
+grestore
+newpath
+59 718 moveto
+56 718 lineto
+56 532 lineto
+59 532 lineto
+stroke
+12 /Times-Roman-Maple fsf
+gsave
+0 0 0 stc
+64 519 moveto
+(Ahora jugamos solo con las rectas o\(x\) y n\(x\) por que convergen hacia d\(x\)->c_d, osea la constante de ) show
+grestore
+gsave
+0 0 0 stc
+64 506 moveto
+(la recta d\(x\) que pasa por raiz de k y se junta con el primo mayor en y\(x\)=x.) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 493 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 493 moveto
+(tanto6 := proc\( p1, p2, s, v \)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 480 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 480 moveto
+(  global ) show
+grestore
+gsave
+1 0 0 stc
+78 467 moveto
+(k,sq,p3_x,p3_y,p4_x,p4_y,p5_x,p5_y,p6_x,p6_y,p7_x,p7_y,p8_x,p8_y,a) show
+grestore
+gsave
+1 0 0 stc
+78 454 moveto
+(,c_a,b,c_b,c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,h,c_h,i,c_i,j,c_j,z,c_z,n) show
+grestore
+gsave
+1 0 0 stc
+78 441 moveto
+(,c_n,m,c_m,l,c_l,o,c_o,t,Py,Psq,Pssq,Pa,Pb,Pp3,Pc,Pd,Pe,Pf,Pg,Ph,P) show
+grestore
+gsave
+1 0 0 stc
+78 428 moveto
+(ii,Pj,Pn,Pl,Pm,Po,Pz,Ptext,xrange,yrange,a1,c_a1,a2,c_a2,a3,c_a3,a) show
+grestore
+gsave
+1 0 0 stc
+78 415 moveto
+(4,c_a4,Pa1,Pa2,Pa3,Pa4,b1,c_b1,b2,c_b2,b3,c_b3,b4,c_b4,Pb1,Pb2,Pb3) show
+grestore
+gsave
+1 0 0 stc
+78 402 moveto
+(,Pb4,c1,c_c1,c2,c_c2,c3,c_c3,c4,c_c4,Pc1,Pc2,Pc3,Pc4,d1,c_d1,d2,c_) show
+grestore
+gsave
+1 0 0 stc
+78 389 moveto
+(d2,d3,c_d3,d4,c_d4,Pd1,Pd2,Pd3,Pd4;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 376 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 376 moveto
+(  k := p1 * p2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 363 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 363 moveto
+(  sq := evalf\( sqrt\(k\) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 350 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 350 moveto
+(  a :=  k / \( k - sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 337 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 337 moveto
+(  c_a := \(a * sq\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 324 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 324 moveto
+(  b := sq / \( k - sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 311 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 311 moveto
+(  c_b := b * k;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 298 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 285 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 285 moveto
+(  printf\("  p1=%d, p2=%d, k=%d, sq\(k\)=%f \\n", p1,p2,k,sq\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 272 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 272 moveto
+(  printf\("  a\(x\) = %f x - %f\\n", a, c_a\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 259 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 259 moveto
+(  Pa:=plot\(a*x-c_a,x=xrange,y=yrange,colour=green\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 246 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 246 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 233 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 233 moveto
+(  p3_x :=\(c_b+c_a\)/\(a+b\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 220 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 220 moveto
+(  p3_y := a * p3_x - c_a;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 207 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 207 moveto
+(  p4_x := p3_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 194 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 194 moveto
+(  p4_y := -p3_y;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 181 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 181 moveto
+(  p5_x := sq - \(p3_x - sq\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 168 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 168 moveto
+(  p5_y := p3_y;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 155 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 155 moveto
+(  p6_x := p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 142 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 142 moveto
+(  p6_y := -p5_y;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 129 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 116 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 116 moveto
+(  c := p2 / \( p2 - sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 103 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 103 moveto
+(  c_c := c * sq;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 90 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 90 moveto
+(  d := p1 / \( sq - p1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 77 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 77 moveto
+(  c_d := d * sq;) show
+grestore
+newpath
+59 527 moveto
+56 527 lineto
+56 -2017 lineto
+59 -2017 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 2 2
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(  e := \(sq/2\) / \(sq - p1\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(  c_e := e * p1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  f := \(sq/2\) / \(p2 - sq\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  c_f := f * p2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 646 moveto
+(  g := \(c_e - p4_y\) / p4_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  c_g := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(  h := \(c_e - p6_y\) / p6_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  c_h := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 594 moveto
+(  i := \(p3_y + c_f\) / p3_x; ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 581 moveto
+(  c_i := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(  j := \(p5_y + c_f\) / p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 555 moveto
+(  c_j := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 529 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 529 moveto
+(  a := \(k/v\) / \( \(k/v\) - sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 516 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 516 moveto
+(  c_a := a * sq;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 503 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 503 moveto
+(  l := p3_y / \( p3_x - c_a \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 490 moveto
+(  c_l := l * c_a;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 477 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 477 moveto
+(  z := p6_y / \( p6_x - a \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 464 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 464 moveto
+(  c_z := z * a;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 451 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 438 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 438 moveto
+(  o := p6_y / \( \(sq/s\) - p6_x \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 425 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 425 moveto
+(  c_o := o * \(sq/s\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 412 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 412 moveto
+(  n := p3_y / \( \(k/s\) - p3_x\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 399 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 399 moveto
+(  c_n := n * \(k/s\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 386 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 386 moveto
+(  m := c_o - c_n;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 373 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 360 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 360 moveto
+(  a1 := \(c_c - p3_y\) / p3_x; ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 347 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 347 moveto
+(  c_a1 := c_c;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 334 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 334 moveto
+(  a2 := \(p3_y + c_d\) / p3_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 321 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 321 moveto
+(  c_a2 := c_d;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 308 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 308 moveto
+(  a3 := \(c_e - p3_y\) / p3_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 295 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 295 moveto
+(  c_a3 := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 282 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 282 moveto
+(  a4 := \(p3_y + c_f\) / p3_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 269 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 269 moveto
+(  c_a4 := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 256 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 243 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 243 moveto
+(  b1 := \(c_c - p4_y\) / p4_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 230 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 230 moveto
+(  c_b1 := c_c;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 217 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 217 moveto
+(  b2 := \(p4_y + c_d\) / p4_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 204 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 204 moveto
+(  c_b2 := c_d;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 191 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 191 moveto
+(  b3 := \(c_e - p4_y\) / p4_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 178 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 178 moveto
+(  c_b3 := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 165 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 165 moveto
+(  b4 := \(p4_y + c_f\) / p4_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 152 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 152 moveto
+(  c_b4 := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 139 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 126 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 126 moveto
+(  c1 := \(c_c - p5_y\) / p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 113 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 113 moveto
+(  c_c1 := c_c;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 100 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 100 moveto
+(  c2 := \(p5_y + c_d\) / p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 87 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 87 moveto
+(  c_c2 := c_d;) show
+grestore
+newpath
+59 1174 moveto
+56 1174 lineto
+56 -1370 lineto
+59 -1370 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 3 3
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(  c3 := \(c_e - p5_y\) / p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(  c_c3 := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  c4 := \(p5_y + c_f\) / p5_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  c_c4 := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 646 moveto
+(  d1 := \(c_c - p6_y\) / p6_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  c_d1 := c_c;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(  d2 := \(p6_y + c_d\) / p6_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  c_d2 := c_d;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 594 moveto
+(  d3 := \(c_e - p6_y\) / p6_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 581 moveto
+(  c_d3 := c_e;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(  d4 := \(p6_y + c_f\) / p6_x;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 555 moveto
+(  c_d4 := c_f;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 542 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 529 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 529 moveto
+(  printf\("  b\(x\) = -%f x + %f\\n\\n", b, c_b\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 516 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 516 moveto
+(  printf\("  p3 = \( %f , %f \) \\n  p4 = \( %f , %f \) \\n", p3_x, p3_y, ) show
+grestore
+gsave
+1 0 0 stc
+78 503 moveto
+(p4_x, p4_y\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 490 moveto
+(  printf\("  p5 = \( %f , %f \) \\n  p6 = \( %f , %f \) \\n\\n", p5_x, ) show
+grestore
+gsave
+1 0 0 stc
+78 477 moveto
+(p5_y, p6_x, p6_y\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 464 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 451 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 451 moveto
+(  printf\("  c\(x\) = %f x - %f <--\\n", c, c_c\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 438 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 438 moveto
+(  printf\("  d\(x\) = -%f x + %f <--\\n\\n", d, c_d\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 425 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 425 moveto
+(  printf\("  e\(x\) = %f x - %f <--\\n", e, c_e\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 412 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 412 moveto
+(  printf\("  f\(x\) = -%f x + %f <--\\n\\n", f, c_f\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 399 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 386 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 386 moveto
+(  printf\("  a1\(x\) = -%f x + %f , a1\(%f\)= 0 \\n", a1, c_a1, ) show
+grestore
+gsave
+1 0 0 stc
+78 373 moveto
+(c_a1/a1\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 360 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 360 moveto
+(  printf\("  a2\(x\) = %f x - %f , a2\(%f\)= 0 \\n", a2, c_a2, c_a2/a2\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 347 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 347 moveto
+(  printf\("  a3\(x\) = -%f x + %f , a3\(%f\)= 0 \\n", a3, c_a3, ) show
+grestore
+gsave
+1 0 0 stc
+78 334 moveto
+(c_a3/a3\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 321 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 321 moveto
+(  printf\("  a4\(x\) = %f x - %f , a4\(%f\)= 0 \\n\\n", a4, c_a4, ) show
+grestore
+gsave
+1 0 0 stc
+78 308 moveto
+(c_a4/a4\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 295 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 282 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 282 moveto
+(  printf\("  b1\(x\) = -%f x + %f , b1\(%f\)= 0 \\n", b1, c_b1, ) show
+grestore
+gsave
+1 0 0 stc
+78 269 moveto
+(c_b1/b1\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 256 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 256 moveto
+(  printf\("  b2\(x\) = %f x - %f , b2\(%f\)= 0 \\n", b2, c_b2, c_b2/b2\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 243 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 243 moveto
+(  printf\("  b3\(x\) = -%f x + %f , b3\(%f\)= 0 \\n", b3, c_b3, ) show
+grestore
+gsave
+1 0 0 stc
+78 230 moveto
+(c_b3/b3\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 217 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 217 moveto
+(  printf\("  b4\(x\) = %f x - %f , b4\(%f\)= 0 \\n\\n", b4, c_b4, ) show
+grestore
+gsave
+1 0 0 stc
+78 204 moveto
+(c_b4/b4\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 191 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 178 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 178 moveto
+(  printf\("  c1\(x\) = -%f x + %f , c1\(%f\)= 0 \\n", c1, c_c1, ) show
+grestore
+gsave
+1 0 0 stc
+78 165 moveto
+(c_c1/c1\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 152 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 152 moveto
+(  printf\("  c2\(x\) = %f x - %f , c2\(%f\)= 0 \\n", c2, c_c2, c_c2/c2\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 139 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 139 moveto
+(  printf\("  c3\(x\) = -%f x + %f , c3\(%f\)= 0 \\n", c3, c_c3, ) show
+grestore
+gsave
+1 0 0 stc
+78 126 moveto
+(c_c3/c3\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 113 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 113 moveto
+(  printf\("  c4\(x\) = %f x - %f , c4\(%f\)= 0 \\n\\n", c4, c_c4, ) show
+grestore
+gsave
+1 0 0 stc
+78 100 moveto
+(c_c4/c4\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 87 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+newpath
+59 1811 moveto
+56 1811 lineto
+56 -733 lineto
+59 -733 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 4 4
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(  printf\("  d1\(x\) = -%f x + %f , d1\(%f\)= 0 \\n", d1, c_d1, ) show
+grestore
+gsave
+1 0 0 stc
+78 698 moveto
+(c_d1/d1\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  printf\("  d2\(x\) = %f x - %f , d2\(%f\)= 0 \\n", d2, c_d2, c_d2/d2\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  printf\("  d3\(x\) = -%f x + %f , d3\(%f\)= 0 \\n", d3, c_d3, ) show
+grestore
+gsave
+1 0 0 stc
+78 659 moveto
+(c_d3/d3\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 646 moveto
+(  printf\("  d4\(x\) = %f x - %f , d4\(%f\)= 0 \\n\\n", d4, c_d4, ) show
+grestore
+gsave
+1 0 0 stc
+78 633 moveto
+(c_d4/d4\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  printf\("  n\(x\) = -%f x + %f , n\(%f\)= 0 \\n", n,c_n,c_n/n\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 594 moveto
+(  printf\("  o\(x\) = -%f x + %f , o\(%f\)= 0 \\n", o, c_o, c_o/o\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 581 moveto
+(  printf\("  l\(x\) = -%f x + %f , l\(%f\)= 0 \\n", l, c_l,c_l/l\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 568 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 568 moveto
+(  printf\("  z\(x\) = -%f x + %f , z\(%f\)= 0 \\n", z, c_z, c_z/z\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 555 moveto
+(  xrange:=0..p2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 542 moveto
+(  yrange:=-c_c..c_c;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 529 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 529 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 516 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 516 moveto
+(  Py:=implicitplot\(x=y,x=xrange,y=yrange,colour=black\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 503 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 503 moveto
+(  Psq:=implicitplot\({x=sq,y=sq},x=0..sq,y=0..sq,colour=black\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 477 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 477 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 464 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 464 moveto
+(  Pb:=plot\(-b*x+c_b,x=xrange,y=yrange,colour=green\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 451 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 451 moveto
+(  Pc:=plot\(c*x-c_c,x=xrange,y=yrange,colour=red\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 438 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 438 moveto
+(  Pd:=plot\(-d*x+c_d,x=xrange,y=yrange,colour=red\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 425 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 425 moveto
+(  Pe:=plot\(e*x-c_e,x=xrange,y=yrange,colour=red\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 412 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 412 moveto
+(  Pf:=plot\(-f*x+c_f,x=xrange,y=yrange,colour=red\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 399 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 386 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 386 moveto
+(  Pg:=plot\(-g*x+c_g,x=xrange,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 373 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 373 moveto
+(  Ph:=plot\(-h*x+c_h,x=xrange,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 360 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 360 moveto
+(  Pii:=plot\(i*x-c_i,x=xrange,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 347 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 347 moveto
+(  Pj:=plot\(j*x-c_j,x=xrange,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 334 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 321 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 321 moveto
+(  Pn:=plot\(-n*x+c_n,x=0..p4_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 308 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 308 moveto
+(  Po:=plot\(-o*x+c_o,x=0..p5_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 295 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 295 moveto
+(  Pl:=plot\(-l*x+c_l,x=0..p3_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 282 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 282 moveto
+(  Pz:=plot\(-z*x+c_z,x=0..p6_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 269 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 256 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 256 moveto
+(  Pa1:=plot\(-a1*x+c_a1,x=0..p3_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 243 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 243 moveto
+(  Pa2:=plot\(a2*x-c_a2,x=0..p3_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 230 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 230 moveto
+(  Pa3:=plot\(-a3*x+c_a3,x=0..p3_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 217 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 217 moveto
+(  Pa4:=plot\(a4*x-c_a4,x=0..p3_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 204 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 191 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 191 moveto
+(  Pb1:=plot\(-b1*x+c_b1,x=0..p4_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 178 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 178 moveto
+(  Pb2:=plot\(b2*x-c_b2,x=0..p4_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 165 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 165 moveto
+(  Pb3:=plot\(-b3*x+c_b3,x=0..p4_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 152 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 152 moveto
+(  Pb4:=plot\(b4*x-c_b4,x=0..p4_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 139 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 126 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 126 moveto
+(  Pc1:=plot\(-c1*x+c_c1,x=0..p5_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 113 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 113 moveto
+(  Pc2:=plot\(c2*x-c_c2,x=0..p5_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 100 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 100 moveto
+(  Pc3:=plot\(-c3*x+c_c3,x=0..p5_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 87 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 87 moveto
+(  Pc4:=plot\(c4*x-c_c4,x=0..p5_x,y=yrange,colour=blue\);) show
+grestore
+newpath
+59 2448 moveto
+56 2448 lineto
+56 -96 lineto
+59 -96 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 5 5
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(  Pd1:=plot\(-d1*x+c_d1,x=0..p6_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  Pd2:=plot\(d2*x-c_d2,x=0..p6_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  Pd3:=plot\(-d3*x+c_d3,x=0..p6_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 659 moveto
+(  Pd4:=plot\(d4*x-c_d4,x=0..p6_x,y=yrange,colour=blue\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(  Pp3:=pointplot\({[p3_x,p3_y],[p4_x,p4_y],[p5_x,p5_y],) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(                  [p6_x,p6_y],[0,0],[p1,0],[p2,0]},colour=black\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 607 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 607 moveto
+(  ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 594 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 594 moveto
+(  Ptext:=textplot\({[p5_x,p5_y,"C"],[p3_x,p3_y,"A"],) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 581 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 581 moveto
+(                   ) show
+grestore
+gsave
+1 0 0 stc
+78 568 moveto
+([p6_x,p6_y,"D"],[p4_x,p4_y,"B"]},font=[TIMES,ITALIC,10]\): ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 555 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 555 moveto
+(  display\({Py,Psq,Pa,Pb,Pc,Pd,Pp3,Pa2,Pb2,Pc2,Pd2,Ptext}\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 542 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 542 moveto
+(end proc:) show
+grestore
+newpath
+59 3085 moveto
+56 3085 lineto
+56 541 lineto
+59 541 lineto
+stroke
+12 /Times-Roman-Maple fsf
+gsave
+0 0 0 stc
+64 528 moveto
+(a1 y a2, c1 y c2 son igual a cero en fracciones enteras de k y sq respectivamente, en este caso de 2 y 6.) show
+grestore
+gsave
+0 0 0 stc
+64 515 moveto
+(b1 y b2, d1 y d2 son igual a las constantes y gradientes respectivamente de dos rectas que pasan por ) show
+grestore
+gsave
+0 0 0 stc
+64 502 moveto
+(una fracci\260n de k y sq, en este caso k/1 y k/5.) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 490 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 490 moveto
+(tanto6\(3,11,2,1\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 479 moveto
+(  p1=3, p2=11, k=33, sq\(k\)=5.744563 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  a\(x\) = 1.210768 x - 6.955330) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  b\(x\) = -.210768 x + 6.955330) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  p3 = \( 9.785660 , 4.892830 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  p4 = \( 9.785660 , -4.892830 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  p5 = \( 1.703465 , 4.892830 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  p6 = \( 1.703465 , -4.892830 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  c\(x\) = 2.093070 x - 12.023774 <--) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  d\(x\) = -1.093070 x + 6.279211 <--) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  e\(x\) = 1.046535 x - 3.139605 <--) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  f\(x\) = -.546535 x + 6.011887 <--) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  a1\(x\) = -.728714 x + 12.023774 , a1\(16.500000\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  a2\(x\) = 1.141675 x - 6.279211 , a2\(5.500000\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  a3\(x\) = --.179163 x + 3.139605 , a3\(-17.523774\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  a4\(x\) = 1.114357 x - 6.011887 , a4\(5.394939\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  b1\(x\) = -1.728714 x + 12.023774 , b1\(6.955330\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  b2\(x\) = .141675 x - 6.279211 , b2\(44.321321\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  b3\(x\) = -.820837 x + 3.139605 , b3\(3.824881\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  b4\(x\) = .114357 x - 6.011887 , b4\(52.571321\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  c1\(x\) = -4.186141 x + 12.023774 , c1\(2.872281\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  c2\(x\) = 6.558422 x - 6.279211 , c2\(.957427\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  c3\(x\) = --1.029211 x + 3.139605 , c3\(-3.050497\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  c4\(x\) = 6.401492 x - 6.011887 , c4\(.939138\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  d1\(x\) = -9.930703 x + 12.023774 , d1\(1.210768\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  d2\(x\) = .813859 x - 6.279211 , d2\(7.715352\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  d3\(x\) = -4.715352 x + 3.139605 , d3\(.665826\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  d4\(x\) = .656930 x - 6.011887 , d4\(9.151492\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  n\(x\) = -.728714 x + 12.023774 , n\(16.500000\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  o\(x\) = --4.186141 x + -12.023774 , o\(2.872281\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  l\(x\) = -1.728714 x + 12.023774 , l\(6.955330\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  z\(x\) = --9.930703 x + -12.023774 , z\(1.210768\)= 0 ) show
+grestore
+newpath
+59 536 moveto
+56 536 lineto
+56 -133 lineto
+59 -133 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 6 6
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+25.000000 189.000000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 73 287 499 504 
+%%DocumentNeededResources: font Helvetica
+%%+ font Times-Italic
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+%%IncludeResource: font Times-Italic
+64.500000 260.500000 translate
+/defaultTitleFont {/Helvetica findfont 378 scalefont setfont} def
+/defaultFont {/Helvetica findfont 193 scalefont setfont} def
+/userFont1 {/Times-Italic findfont 193 scalefont setfont} def
+0.0542 0.0542 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+    1     1     0     0 Y
+NP 1971 1681 m 1995 1686 l
+S
+NP 1948 1676 m 1971 1681 l
+S
+NP 1925 1671 m 1948 1676 l
+S
+NP 1903 1667 m 1925 1671 l
+S
+NP 1879 1661 m 1903 1667 l
+S
+NP 1857 1657 m 1879 1661 l
+S
+NP 1834 1652 m 1857 1657 l
+S
+NP 1811 1647 m 1834 1652 l
+S
+NP 1788 1642 m 1811 1647 l
+S
+NP 1764 1637 m 1788 1642 l
+S
+NP 1741 1633 m 1764 1637 l
+S
+NP 1718 1628 m 1741 1633 l
+S
+NP 1696 1623 m 1718 1628 l
+S
+NP 1672 1618 m 1696 1623 l
+S
+NP 1651 1614 m 1672 1618 l
+S
+NP 1627 1609 m 1651 1614 l
+S
+NP 1604 1604 m 1627 1609 l
+S
+NP 1580 1599 m 1604 1604 l
+S
+NP 1557 1594 m 1580 1599 l
+S
+NP 1534 1589 m 1557 1594 l
+S
+NP 1510 1585 m 1534 1589 l
+S
+NP 1488 1580 m 1510 1585 l
+S
+NP 1466 1575 m 1488 1580 l
+S
+NP 1442 1570 m 1466 1575 l
+S
+NP 1419 1565 m 1442 1570 l
+S
+NP 1397 1561 m 1419 1565 l
+S
+NP 1373 1556 m 1397 1561 l
+S
+NP 1351 1551 m 1373 1556 l
+S
+NP 1327 1546 m 1351 1551 l
+S
+NP 1305 1542 m 1327 1546 l
+S
+NP 1281 1536 m 1305 1542 l
+S
+NP 1259 1532 m 1281 1536 l
+S
+NP 1235 1527 m 1259 1532 l
+S
+NP 1214 1523 m 1235 1527 l
+S
+NP 1191 1518 m 1214 1523 l
+S
+NP 1167 1513 m 1191 1518 l
+S
+NP 1143 1508 m 1167 1513 l
+S
+NP 1122 1503 m 1143 1508 l
+S
+NP 1098 1498 m 1122 1503 l
+S
+NP 1074 1493 m 1098 1498 l
+S
+NP 1051 1489 m 1074 1493 l
+S
+NP 1028 1484 m 1051 1489 l
+S
+NP 1006 1479 m 1028 1484 l
+S
+NP 983 1474 m 1006 1479 l
+S
+NP 959 1469 m 983 1474 l
+S
+NP 936 1464 m 959 1469 l
+S
+NP 915 1460 m 936 1464 l
+S
+NP 891 1455 m 915 1460 l
+S
+NP 7095 1681 m 7232 1686 l
+S
+NP 6966 1676 m 7095 1681 l
+S
+NP 6832 1671 m 6966 1676 l
+S
+NP 6707 1667 m 6832 1671 l
+S
+NP 6566 1661 m 6707 1667 l
+S
+NP 6444 1657 m 6566 1661 l
+S
+NP 6310 1652 m 6444 1657 l
+S
+NP 6176 1647 m 6310 1652 l
+S
+NP 6044 1642 m 6176 1647 l
+S
+NP 5908 1637 m 6044 1642 l
+S
+NP 5777 1633 m 5908 1637 l
+S
+NP 5644 1628 m 5777 1633 l
+S
+NP 5516 1623 m 5644 1628 l
+S
+NP 5381 1618 m 5516 1623 l
+S
+NP 5256 1614 m 5381 1618 l
+S
+NP 5120 1609 m 5256 1614 l
+S
+NP 4991 1604 m 5120 1609 l
+S
+NP 4849 1599 m 4991 1604 l
+S
+NP 4720 1594 m 4849 1599 l
+S
+NP 4587 1589 m 4720 1594 l
+S
+NP 4451 1585 m 4587 1589 l
+S
+NP 4320 1580 m 4451 1585 l
+S
+NP 4198 1575 m 4320 1580 l
+S
+NP 4058 1570 m 4198 1575 l
+S
+NP 3924 1565 m 4058 1570 l
+S
+NP 3799 1561 m 3924 1565 l
+S
+NP 3663 1556 m 3799 1561 l
+S
+NP 3533 1551 m 3663 1556 l
+S
+NP 3396 1546 m 3533 1551 l
+S
+NP 3271 1542 m 3396 1546 l
+S
+NP 3131 1536 m 3271 1542 l
+S
+NP 3009 1532 m 3131 1536 l
+S
+NP 2867 1527 m 3009 1532 l
+S
+NP 2746 1523 m 2867 1527 l
+S
+NP 2614 1518 m 2746 1523 l
+S
+NP 2477 1513 m 2614 1518 l
+S
+NP 2340 1508 m 2477 1513 l
+S
+NP 2218 1503 m 2340 1508 l
+S
+NP 2080 1498 m 2218 1503 l
+S
+NP 1946 1493 m 2080 1498 l
+S
+NP 1812 1489 m 1946 1493 l
+S
+NP 1682 1484 m 1812 1489 l
+S
+NP 1556 1479 m 1682 1484 l
+S
+NP 1421 1474 m 1556 1479 l
+S
+NP 1284 1469 m 1421 1474 l
+S
+NP 1149 1464 m 1284 1469 l
+S
+NP 1029 1460 m 1149 1464 l
+S
+NP 891 1455 m 1029 1460 l
+S
+NP 7095 3273 m 7232 3313 l
+S
+NP 6966 3235 m 7095 3273 l
+S
+NP 6832 3196 m 6966 3235 l
+S
+NP 6707 3159 m 6832 3196 l
+S
+NP 6566 3118 m 6707 3159 l
+S
+NP 6444 3082 m 6566 3118 l
+S
+NP 6310 3043 m 6444 3082 l
+S
+NP 6176 3004 m 6310 3043 l
+S
+NP 6044 2965 m 6176 3004 l
+S
+NP 5908 2925 m 6044 2965 l
+S
+NP 5777 2887 m 5908 2925 l
+S
+NP 5644 2848 m 5777 2887 l
+S
+NP 5516 2810 m 5644 2848 l
+S
+NP 5381 2771 m 5516 2810 l
+S
+NP 5256 2734 m 5381 2771 l
+S
+NP 5120 2694 m 5256 2734 l
+S
+NP 4991 2657 m 5120 2694 l
+S
+NP 4849 2615 m 4991 2657 l
+S
+NP 4720 2577 m 4849 2615 l
+S
+NP 4587 2538 m 4720 2577 l
+S
+NP 4451 2498 m 4587 2538 l
+S
+NP 4320 2460 m 4451 2498 l
+S
+NP 4198 2424 m 4320 2460 l
+S
+NP 4058 2383 m 4198 2424 l
+S
+NP 3924 2344 m 4058 2383 l
+S
+NP 3799 2307 m 3924 2344 l
+S
+NP 3663 2267 m 3799 2307 l
+S
+NP 3533 2229 m 3663 2267 l
+S
+NP 3396 2189 m 3533 2229 l
+S
+NP 3271 2153 m 3396 2189 l
+S
+NP 3131 2111 m 3271 2153 l
+S
+NP 3009 2076 m 3131 2111 l
+S
+NP 2867 2034 m 3009 2076 l
+S
+NP 2746 1999 m 2867 2034 l
+S
+NP 2614 1960 m 2746 1999 l
+S
+NP 2477 1920 m 2614 1960 l
+S
+NP 2340 1880 m 2477 1920 l
+S
+NP 2218 1844 m 2340 1880 l
+S
+NP 2080 1804 m 2218 1844 l
+S
+NP 1946 1764 m 2080 1804 l
+S
+NP 1812 1725 m 1946 1764 l
+S
+NP 1682 1687 m 1812 1725 l
+S
+NP 1556 1650 m 1682 1687 l
+S
+NP 1421 1610 m 1556 1650 l
+S
+NP 1284 1570 m 1421 1610 l
+S
+NP 1149 1531 m 1284 1570 l
+S
+NP 1029 1496 m 1149 1531 l
+S
+NP 891 1455 m 1029 1496 l
+S
+NP 1971 3273 m 1995 3313 l
+S
+NP 1948 3235 m 1971 3273 l
+S
+NP 1925 3196 m 1948 3235 l
+S
+NP 1903 3159 m 1925 3196 l
+S
+NP 1879 3118 m 1903 3159 l
+S
+NP 1857 3082 m 1879 3118 l
+S
+NP 1834 3043 m 1857 3082 l
+S
+NP 1811 3004 m 1834 3043 l
+S
+NP 1788 2965 m 1811 3004 l
+S
+NP 1764 2925 m 1788 2965 l
+S
+NP 1741 2887 m 1764 2925 l
+S
+NP 1718 2848 m 1741 2887 l
+S
+NP 1696 2810 m 1718 2848 l
+S
+NP 1672 2771 m 1696 2810 l
+S
+NP 1651 2734 m 1672 2771 l
+S
+NP 1627 2694 m 1651 2734 l
+S
+NP 1604 2657 m 1627 2694 l
+S
+NP 1580 2615 m 1604 2657 l
+S
+NP 1557 2577 m 1580 2615 l
+S
+NP 1534 2538 m 1557 2577 l
+S
+NP 1510 2498 m 1534 2538 l
+S
+NP 1488 2460 m 1510 2498 l
+S
+NP 1466 2424 m 1488 2460 l
+S
+NP 1442 2383 m 1466 2424 l
+S
+NP 1419 2344 m 1442 2383 l
+S
+NP 1397 2307 m 1419 2344 l
+S
+NP 1373 2267 m 1397 2307 l
+S
+NP 1351 2229 m 1373 2267 l
+S
+NP 1327 2189 m 1351 2229 l
+S
+NP 1305 2153 m 1327 2189 l
+S
+NP 1281 2111 m 1305 2153 l
+S
+NP 1259 2076 m 1281 2111 l
+S
+NP 1235 2034 m 1259 2076 l
+S
+NP 1214 1999 m 1235 2034 l
+S
+NP 1191 1960 m 1214 1999 l
+S
+NP 1167 1920 m 1191 1960 l
+S
+NP 1143 1880 m 1167 1920 l
+S
+NP 1122 1844 m 1143 1880 l
+S
+NP 1098 1804 m 1122 1844 l
+S
+NP 1074 1764 m 1098 1804 l
+S
+NP 1051 1725 m 1074 1764 l
+S
+NP 1028 1687 m 1051 1725 l
+S
+NP 1006 1650 m 1028 1687 l
+S
+NP 983 1610 m 1006 1650 l
+S
+NP 959 1570 m 983 1610 l
+S
+NP 936 1531 m 959 1570 l
+S
+NP 915 1496 m 936 1531 l
+S
+NP 891 1455 m 915 1496 l
+S
+    1     0     1     0 Y
+NP 7865 3279 m 8019 3271 l
+S
+NP 7720 3287 m 7865 3279 l
+S
+NP 7570 3295 m 7720 3287 l
+S
+NP 7429 3303 m 7570 3295 l
+S
+NP 7271 3311 m 7429 3303 l
+S
+NP 7133 3319 m 7271 3311 l
+S
+NP 6983 3327 m 7133 3319 l
+S
+NP 6832 3335 m 6983 3327 l
+S
+NP 6684 3343 m 6832 3335 l
+S
+NP 6530 3351 m 6684 3343 l
+S
+NP 6384 3359 m 6530 3351 l
+S
+NP 6234 3367 m 6384 3359 l
+S
+NP 6090 3375 m 6234 3367 l
+S
+NP 5938 3383 m 6090 3375 l
+S
+NP 5798 3391 m 5938 3383 l
+S
+NP 5644 3399 m 5798 3391 l
+S
+NP 5500 3407 m 5644 3399 l
+S
+NP 5340 3416 m 5500 3407 l
+S
+NP 5195 3424 m 5340 3416 l
+S
+NP 5046 3432 m 5195 3424 l
+S
+NP 4893 3440 m 5046 3432 l
+S
+NP 4745 3448 m 4893 3440 l
+S
+NP 4609 3455 m 4745 3448 l
+S
+NP 4451 3464 m 4609 3455 l
+S
+NP 4300 3472 m 4451 3464 l
+S
+NP 4160 3480 m 4300 3472 l
+S
+NP 4007 3488 m 4160 3480 l
+S
+NP 3861 3496 m 4007 3488 l
+S
+NP 3707 3504 m 3861 3496 l
+S
+NP 3567 3512 m 3707 3504 l
+S
+NP 3409 3520 m 3567 3512 l
+S
+NP 3272 3528 m 3409 3520 l
+S
+NP 3112 3536 m 3272 3528 l
+S
+NP 2977 3544 m 3112 3536 l
+S
+NP 2828 3552 m 2977 3544 l
+S
+NP 2673 3560 m 2828 3552 l
+S
+NP 2520 3568 m 2673 3560 l
+S
+NP 2383 3576 m 2520 3568 l
+S
+NP 2228 3584 m 2383 3576 l
+S
+NP 2077 3592 m 2228 3584 l
+S
+NP 1926 3600 m 2077 3592 l
+S
+NP 1780 3608 m 1926 3600 l
+S
+NP 1639 3616 m 1780 3608 l
+S
+NP 1486 3624 m 1639 3616 l
+S
+NP 1333 3632 m 1486 3624 l
+S
+NP 1181 3641 m 1333 3632 l
+S
+NP 1046 3648 m 1181 3641 l
+S
+NP 891 3656 m 1046 3648 l
+S
+    0     1     1     0 Y
+NP 7865 4246 m 8019 4329 l
+S
+NP 7720 4169 m 7865 4246 l
+S
+NP 7570 4088 m 7720 4169 l
+S
+NP 7429 4012 m 7570 4088 l
+S
+NP 7271 3927 m 7429 4012 l
+S
+NP 7133 3853 m 7271 3927 l
+S
+NP 6983 3772 m 7133 3853 l
+S
+NP 6832 3691 m 6983 3772 l
+S
+NP 6684 3612 m 6832 3691 l
+S
+NP 6530 3529 m 6684 3612 l
+S
+NP 6384 3450 m 6530 3529 l
+S
+NP 6234 3370 m 6384 3450 l
+S
+NP 6090 3293 m 6234 3370 l
+S
+NP 5938 3211 m 6090 3293 l
+S
+NP 5798 3136 m 5938 3211 l
+S
+NP 5644 3053 m 5798 3136 l
+S
+NP 5500 2976 m 5644 3053 l
+S
+NP 5340 2890 m 5500 2976 l
+S
+NP 5195 2812 m 5340 2890 l
+S
+NP 5046 2732 m 5195 2812 l
+S
+NP 4893 2650 m 5046 2732 l
+S
+NP 4745 2570 m 4893 2650 l
+S
+NP 4609 2497 m 4745 2570 l
+S
+NP 4451 2412 m 4609 2497 l
+S
+NP 4300 2331 m 4451 2412 l
+S
+NP 4160 2256 m 4300 2331 l
+S
+NP 4007 2174 m 4160 2256 l
+S
+NP 3861 2095 m 4007 2174 l
+S
+NP 3707 2012 m 3861 2095 l
+S
+NP 3567 1937 m 3707 2012 l
+S
+NP 3409 1852 m 3567 1937 l
+S
+NP 3272 1779 m 3409 1852 l
+S
+NP 3112 1693 m 3272 1779 l
+S
+NP 2977 1620 m 3112 1693 l
+S
+NP 2828 1540 m 2977 1620 l
+S
+NP 2673 1457 m 2828 1540 l
+S
+NP 2520 1375 m 2673 1457 l
+S
+NP 2383 1301 m 2520 1375 l
+S
+NP 2228 1218 m 2383 1301 l
+S
+NP 2077 1137 m 2228 1218 l
+S
+NP 1926 1056 m 2077 1137 l
+S
+NP 1780 977 m 1926 1056 l
+S
+NP 1639 901 m 1780 977 l
+S
+NP 1486 820 m 1639 901 l
+S
+NP 1333 737 m 1486 820 l
+S
+NP 1181 656 m 1333 737 l
+S
+NP 1046 583 m 1181 656 l
+S
+NP 891 500 m 1046 583 l
+S
+    0     0     0     1 Y
+NP 4613 3455 m 4465 3455 l
+4316 3455 l
+4167 3455 l
+4018 3455 l
+3869 3455 l
+3720 3455 l
+3571 3455 l
+3422 3455 l
+3273 3455 l
+3124 3455 l
+2975 3455 l
+2827 3455 l
+2678 3455 l
+2529 3455 l
+2380 3455 l
+2231 3455 l
+2082 3455 l
+1933 3455 l
+1784 3455 l
+1635 3455 l
+1486 3455 l
+1337 3455 l
+1188 3455 l
+1040 3455 l
+891 3455 l
+S
+NP 4613 3455 m 4613 3417 l
+4613 3379 l
+4613 3340 l
+4613 3302 l
+4613 3264 l
+4613 3226 l
+4613 3187 l
+4613 3149 l
+4613 3111 l
+4613 3073 l
+4613 3035 l
+4613 2996 l
+4613 2958 l
+4613 2920 l
+4613 2882 l
+4613 2843 l
+4613 2805 l
+4613 2767 l
+4613 2729 l
+4613 2691 l
+4613 2652 l
+4613 2614 l
+4613 2576 l
+4613 2538 l
+4613 2500 l
+S
+    1     0     1     0 Y
+NP 7865 3510 m 8019 3558 l
+S
+NP 7720 3465 m 7865 3510 l
+S
+NP 7570 3418 m 7720 3465 l
+S
+NP 7429 3374 m 7570 3418 l
+S
+NP 7271 3325 m 7429 3374 l
+S
+NP 7133 3282 m 7271 3325 l
+S
+NP 6983 3236 m 7133 3282 l
+S
+NP 6832 3189 m 6983 3236 l
+S
+NP 6684 3143 m 6832 3189 l
+S
+NP 6530 3095 m 6684 3143 l
+S
+NP 6384 3050 m 6530 3095 l
+S
+NP 6234 3003 m 6384 3050 l
+S
+NP 6090 2958 m 6234 3003 l
+S
+NP 5938 2911 m 6090 2958 l
+S
+NP 5798 2868 m 5938 2911 l
+S
+NP 5644 2820 m 5798 2868 l
+S
+NP 5500 2775 m 5644 2820 l
+S
+NP 5340 2725 m 5500 2775 l
+S
+NP 5195 2680 m 5340 2725 l
+S
+NP 5046 2634 m 5195 2680 l
+S
+NP 4893 2586 m 5046 2634 l
+S
+NP 4745 2541 m 4893 2586 l
+S
+NP 4609 2498 m 4745 2541 l
+S
+NP 4451 2449 m 4609 2498 l
+S
+NP 4300 2402 m 4451 2449 l
+S
+NP 4160 2359 m 4300 2402 l
+S
+NP 4007 2311 m 4160 2359 l
+S
+NP 3861 2266 m 4007 2311 l
+S
+NP 3707 2218 m 3861 2266 l
+S
+NP 3567 2174 m 3707 2218 l
+S
+NP 3409 2125 m 3567 2174 l
+S
+NP 3272 2083 m 3409 2125 l
+S
+NP 3112 2033 m 3272 2083 l
+S
+NP 2977 1991 m 3112 2033 l
+S
+NP 2828 1945 m 2977 1991 l
+S
+NP 2673 1897 m 2828 1945 l
+S
+NP 2520 1849 m 2673 1897 l
+S
+NP 2383 1806 m 2520 1849 l
+S
+NP 2228 1758 m 2383 1806 l
+S
+NP 2077 1711 m 2228 1758 l
+S
+NP 1926 1664 m 2077 1711 l
+S
+NP 1780 1619 m 1926 1664 l
+S
+NP 1639 1575 m 1780 1619 l
+S
+NP 1486 1528 m 1639 1575 l
+S
+NP 1333 1480 m 1486 1528 l
+S
+NP 1181 1433 m 1333 1480 l
+S
+NP 1046 1391 m 1181 1433 l
+S
+NP 891 1343 m 1046 1391 l
+S
+    0     0     0     1 Y
+NP 8019 4329 m 7836 4282 l
+S
+NP 7734 4256 m 7836 4282 l
+S
+NP 7734 4256 m 7641 4232 l
+S
+NP 7449 4183 m 7641 4232 l
+S
+NP 7449 4183 m 7445 4182 l
+S
+NP 7436 4180 m 7445 4182 l
+S
+NP 7436 4180 m 7249 4132 l
+S
+NP 7164 4110 m 7249 4132 l
+S
+NP 7164 4110 m 7054 4081 l
+S
+NP 6879 4036 m 7054 4081 l
+S
+NP 6879 4036 m 6858 4031 l
+S
+NP 6813 4020 m 6858 4031 l
+S
+NP 6813 4020 m 6662 3981 l
+S
+NP 6594 3963 m 6662 3981 l
+S
+NP 6594 3963 m 6467 3931 l
+S
+NP 6308 3890 m 6467 3931 l
+S
+NP 6308 3890 m 6271 3880 l
+S
+NP 6189 3860 m 6271 3880 l
+S
+NP 6189 3860 m 6075 3830 l
+S
+NP 6023 3817 m 6075 3830 l
+S
+NP 6023 3817 m 5880 3780 l
+S
+NP 5738 3744 m 5880 3780 l
+S
+NP 5738 3744 m 5684 3730 l
+S
+NP 5566 3700 m 5684 3730 l
+S
+NP 5566 3700 m 5488 3680 l
+S
+NP 5453 3671 m 5488 3680 l
+S
+NP 5453 3671 m 5293 3629 l
+S
+NP 5168 3597 m 5293 3629 l
+S
+NP 5168 3597 m 5097 3579 l
+S
+NP 4943 3540 m 5097 3579 l
+S
+NP 4943 3540 m 4902 3529 l
+S
+NP 4883 3524 m 4902 3529 l
+S
+NP 4883 3524 m 4706 3479 l
+S
+NP 4598 3451 m 4706 3479 l
+S
+NP 4598 3451 m 4510 3429 l
+S
+NP 4319 3380 m 4510 3429 l
+S
+NP 4319 3380 m 4315 3378 l
+S
+NP 4312 3378 m 4315 3378 l
+S
+NP 4312 3378 m 4119 3328 l
+S
+NP 4027 3305 m 4119 3328 l
+S
+NP 4027 3305 m 3923 3278 l
+S
+NP 3742 3231 m 3923 3278 l
+S
+NP 3742 3231 m 3728 3228 l
+S
+NP 3696 3220 m 3728 3228 l
+S
+NP 3696 3220 m 3532 3177 l
+S
+NP 3457 3158 m 3532 3177 l
+S
+NP 3457 3158 m 3336 3127 l
+S
+NP 3172 3085 m 3336 3127 l
+S
+NP 3172 3085 m 3141 3077 l
+S
+NP 3072 3060 m 3141 3077 l
+S
+NP 3072 3060 m 2945 3027 l
+S
+NP 2887 3012 m 2945 3027 l
+S
+NP 2887 3012 m 2749 2977 l
+S
+NP 2602 2939 m 2749 2977 l
+S
+NP 2602 2939 m 2554 2926 l
+S
+NP 2449 2900 m 2554 2926 l
+S
+NP 2449 2900 m 2358 2876 l
+S
+NP 2316 2865 m 2358 2876 l
+S
+NP 2316 2865 m 2162 2826 l
+S
+NP 2031 2792 m 2162 2826 l
+S
+NP 2031 2792 m 1967 2776 l
+S
+NP 1826 2740 m 1967 2776 l
+S
+NP 1826 2740 m 1771 2725 l
+S
+NP 1746 2719 m 1771 2725 l
+S
+NP 1746 2719 m 1575 2675 l
+S
+NP 1461 2646 m 1575 2675 l
+S
+NP 1461 2646 m 1380 2625 l
+S
+NP 1202 2580 m 1380 2625 l
+S
+NP 1202 2580 m 1184 2575 l
+S
+NP 1176 2573 m 1184 2575 l
+S
+NP 1176 2573 m 988 2525 l
+S
+NP 891 2500 m 988 2525 l
+S
+    0     1     1     0 Y
+NP 7865 1587 m 8019 1544 l
+S
+NP 7720 1628 m 7865 1587 l
+S
+NP 7570 1670 m 7720 1628 l
+S
+NP 7429 1710 m 7570 1670 l
+S
+NP 7271 1754 m 7429 1710 l
+S
+NP 7133 1793 m 7271 1754 l
+S
+NP 6983 1835 m 7133 1793 l
+S
+NP 6832 1877 m 6983 1835 l
+S
+NP 6684 1919 m 6832 1877 l
+S
+NP 6530 1962 m 6684 1919 l
+S
+NP 6384 2003 m 6530 1962 l
+S
+NP 6234 2045 m 6384 2003 l
+S
+NP 6090 2085 m 6234 2045 l
+S
+NP 5938 2128 m 6090 2085 l
+S
+NP 5798 2167 m 5938 2128 l
+S
+NP 5644 2210 m 5798 2167 l
+S
+NP 5500 2251 m 5644 2210 l
+S
+NP 5340 2296 m 5500 2251 l
+S
+NP 5195 2336 m 5340 2296 l
+S
+NP 5046 2378 m 5195 2336 l
+S
+NP 4893 2421 m 5046 2378 l
+S
+NP 4745 2462 m 4893 2421 l
+S
+NP 4609 2501 m 4745 2462 l
+S
+NP 4451 2545 m 4609 2501 l
+S
+NP 4300 2587 m 4451 2545 l
+S
+NP 4160 2627 m 4300 2587 l
+S
+NP 4007 2670 m 4160 2627 l
+S
+NP 3861 2711 m 4007 2670 l
+S
+NP 3707 2754 m 3861 2711 l
+S
+NP 3567 2793 m 3707 2754 l
+S
+NP 3409 2838 m 3567 2793 l
+S
+NP 3272 2876 m 3409 2838 l
+S
+NP 3112 2921 m 3272 2876 l
+S
+NP 2977 2959 m 3112 2921 l
+S
+NP 2828 3000 m 2977 2959 l
+S
+NP 2673 3044 m 2828 3000 l
+S
+NP 2520 3087 m 2673 3044 l
+S
+NP 2383 3125 m 2520 3087 l
+S
+NP 2228 3169 m 2383 3125 l
+S
+NP 2077 3211 m 2228 3169 l
+S
+NP 1926 3253 m 2077 3211 l
+S
+NP 1780 3294 m 1926 3253 l
+S
+NP 1639 3334 m 1780 3294 l
+S
+NP 1486 3377 m 1639 3334 l
+S
+NP 1333 3420 m 1486 3377 l
+S
+NP 1181 3462 m 1333 3420 l
+S
+NP 1046 3500 m 1181 3462 l
+S
+NP 891 3544 m 1046 3500 l
+S
+    0     0     0     1 Y
+NP
+8004 2500 m
+8034 2500 l
+8019 2485 m
+8019 2515 l
+S
+NP
+2820 2500 m
+2850 2500 l
+2835 2485 m
+2835 2515 l
+S
+NP
+1980 3313 m
+2010 3313 l
+1995 3298 m
+1995 3328 l
+S
+NP
+1980 1686 m
+2010 1686 l
+1995 1671 m
+1995 1701 l
+S
+NP
+7217 1686 m
+7247 1686 l
+7232 1671 m
+7232 1701 l
+S
+NP
+7217 3313 m
+7247 3313 l
+7232 3298 m
+7232 3328 l
+S
+NP
+876 2500 m
+906 2500 l
+891 2485 m
+891 2515 l
+S
+userFont1
+(C) dup 0 stringbbox 2 idiv 3313 exch sub exch 2 idiv 1995 exch sub exch m show
+(B) dup 0 stringbbox 2 idiv 1686 exch sub exch 2 idiv 7232 exch sub exch m show
+(D) dup 0 stringbbox 2 idiv 1686 exch sub exch 2 idiv 1995 exch sub exch m show
+(A) dup 0 stringbbox 2 idiv 3313 exch sub exch 2 idiv 7232 exch sub exch m show
+medium setlinewidth
+NP 891 500 m 891 4500 l
+S
+thin setlinewidth
+NP 859 503 m 891 503 l
+S
+NP 859 670 m 891 670 l
+S
+NP 827 836 m 891 836 l
+S
+NP 859 1002 m 891 1002 l
+S
+NP 859 1169 m 891 1169 l
+S
+NP 859 1335 m 891 1335 l
+S
+NP 859 1501 m 891 1501 l
+S
+NP 827 1668 m 891 1668 l
+S
+NP 859 1834 m 891 1834 l
+S
+NP 859 2000 m 891 2000 l
+S
+NP 859 2167 m 891 2167 l
+S
+NP 859 2333 m 891 2333 l
+S
+NP 827 2500 m 891 2500 l
+S
+NP 859 2666 m 891 2666 l
+S
+NP 859 2832 m 891 2832 l
+S
+NP 859 2999 m 891 2999 l
+S
+NP 859 3165 m 891 3165 l
+S
+NP 827 3331 m 891 3331 l
+S
+NP 859 3498 m 891 3498 l
+S
+NP 859 3664 m 891 3664 l
+S
+NP 859 3830 m 891 3830 l
+S
+NP 859 3997 m 891 3997 l
+S
+NP 827 4163 m 891 4163 l
+S
+NP 859 4329 m 891 4329 l
+S
+NP 859 4496 m 891 4496 l
+S
+medium setlinewidth
+NP 891 2500 m 8019 2500 l
+S
+thin setlinewidth
+NP 1150 2476 m 1150 2500 l
+S
+NP 1409 2476 m 1409 2500 l
+S
+NP 1668 2476 m 1668 2500 l
+S
+NP 1928 2476 m 1928 2500 l
+S
+NP 2187 2452 m 2187 2500 l
+S
+NP 2446 2476 m 2446 2500 l
+S
+NP 2705 2476 m 2705 2500 l
+S
+NP 2964 2476 m 2964 2500 l
+S
+NP 3224 2476 m 3224 2500 l
+S
+NP 3483 2452 m 3483 2500 l
+S
+NP 3742 2476 m 3742 2500 l
+S
+NP 4001 2476 m 4001 2500 l
+S
+NP 4261 2476 m 4261 2500 l
+S
+NP 4520 2476 m 4520 2500 l
+S
+NP 4779 2452 m 4779 2500 l
+S
+NP 5038 2476 m 5038 2500 l
+S
+NP 5297 2476 m 5297 2500 l
+S
+NP 5557 2476 m 5557 2500 l
+S
+NP 5816 2476 m 5816 2500 l
+S
+NP 6075 2452 m 6075 2500 l
+S
+NP 6334 2476 m 6334 2500 l
+S
+NP 6594 2476 m 6594 2500 l
+S
+NP 6853 2476 m 6853 2500 l
+S
+NP 7112 2476 m 7112 2500 l
+S
+NP 7371 2452 m 7371 2500 l
+S
+NP 7631 2476 m 7631 2500 l
+S
+NP 7890 2476 m 7890 2500 l
+defaultFont
+S
+medium setlinewidth
+(\26110) dup 0 stringbbox 2 idiv 836 exch sub exch 800 exch sub exch m show
+(\2615) dup 0 stringbbox 2 idiv 1668 exch sub exch 800 exch sub exch m show
+(0) dup 0 stringbbox 2500 exch sub exch 800 exch sub exch m show
+(5) dup 0 stringbbox 2 idiv 3331 exch sub exch 800 exch sub exch m show
+(10) dup 0 stringbbox 2 idiv 4163 exch sub exch 800 exch sub exch m show
+(y) dup 0 stringbbox 2 idiv 3500 exch sub exch 257 exch sub exch m show
+(2) dup 0 stringbbox 2431 exch sub exch 2 idiv 2187 exch sub exch m show
+(4) dup 0 stringbbox 2431 exch sub exch 2 idiv 3483 exch sub exch m show
+(6) dup 0 stringbbox 2431 exch sub exch 2 idiv 4779 exch sub exch m show
+(8) dup 0 stringbbox 2431 exch sub exch 2 idiv 6075 exch sub exch m show
+(10) dup 0 stringbbox 2431 exch sub exch 2 idiv 7371 exch sub exch m show
+(x) dup 0 stringbbox 2179 exch sub exch 2 idiv 4455 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+8911 bd sub 5000 bd sub l 
+8911 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 1121 moveto
+56 1121 lineto
+56 452 lineto
+59 452 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 440 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 440 moveto
+(tanto6\(5,29,3,2\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 429 moveto
+(  p1=5, p2=29, k=145, sq\(k\)=12.041595 ) show
+grestore
+gsave
+0 0 1 stc
+64 420 moveto
+(  a\(x\) = 1.090567 x - 13.132161) show
+grestore
+gsave
+0 0 1 stc
+64 411 moveto
+(  b\(x\) = -.090567 x + 13.132161) show
+grestore
+gsave
+0 0 1 stc
+64 393 moveto
+(  p3 = \( 22.236545 , 11.118272 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 384 moveto
+(  p4 = \( 22.236545 , -11.118272 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 375 moveto
+(  p5 = \( 1.846645 , 11.118272 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 366 moveto
+(  p6 = \( 1.846645 , -11.118272 \) ) show
+grestore
+gsave
+0 0 1 stc
+64 348 moveto
+(  c\(x\) = 1.710066 x - 20.591927 <--) show
+grestore
+gsave
+0 0 1 stc
+64 339 moveto
+(  d\(x\) = -.710066 x + 8.550332 <--) show
+grestore
+gsave
+0 0 1 stc
+64 321 moveto
+(  e\(x\) = .855033 x - 4.275166 <--) show
+grestore
+gsave
+0 0 1 stc
+64 312 moveto
+(  f\(x\) = -.355033 x + 10.295963 <--) show
+grestore
+gsave
+0 0 1 stc
+64 294 moveto
+(  a1\(x\) = -.426040 x + 20.591927 , a1\(48.333333\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 285 moveto
+(  a2\(x\) = .884517 x - 8.550332 , a2\(9.666667\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 276 moveto
+(  a3\(x\) = --.307741 x + 4.275166 , a3\(-13.892072\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 267 moveto
+(  a4\(x\) = .963020 x - 10.295963 , a4\(10.691329\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 249 moveto
+(  b1\(x\) = -1.426040 x + 20.591927 , b1\(14.439938\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 240 moveto
+(  b2\(x\) = -.115483 x - 8.550332 , b2\(-74.039828\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 231 moveto
+(  b3\(x\) = -.692259 x + 4.275166 , b3\(6.175678\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 222 moveto
+(  b4\(x\) = -.036980 x - 10.295963 , b4\(-278.419268\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 204 moveto
+(  c1\(x\) = -5.130199 x + 20.591927 , c1\(4.013865\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 195 moveto
+(  c2\(x\) = 10.650997 x - 8.550332 , c2\(.802773\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 186 moveto
+(  c3\(x\) = --3.705698 x + 4.275166 , c3\(-1.153674\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 177 moveto
+(  c4\(x\) = 11.596296 x - 10.295963 , c4\(.887867\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 159 moveto
+(  d1\(x\) = -17.171794 x + 20.591927 , d1\(1.199172\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 150 moveto
+(  d2\(x\) = -1.390598 x - 8.550332 , d2\(-6.148673\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 141 moveto
+(  d3\(x\) = -8.335897 x + 4.275166 , d3\(.512862\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 132 moveto
+(  d4\(x\) = -.445299 x - 10.295963 , d4\(-23.121462\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 114 moveto
+(  n\(x\) = -.426040 x + 20.591927 , n\(48.333333\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 105 moveto
+(  o\(x\) = --5.130199 x + -20.591927 , o\(4.013865\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 96 moveto
+(  l\(x\) = -1.426040 x + 20.591927 , l\(14.439938\)= 0 ) show
+grestore
+gsave
+0 0 1 stc
+64 87 moveto
+(  z\(x\) = --17.171794 x + -20.591927 , z\(1.199172\)= 0 ) show
+grestore
+newpath
+59 447 moveto
+56 447 lineto
+56 -396 lineto
+59 -396 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 7 7
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+27.500000 82.500000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 68 202 499 589 
+%%DocumentNeededResources: font Helvetica
+%%+ font Times-Italic
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+%%IncludeResource: font Times-Italic
+64.500000 154.500000 translate
+/defaultTitleFont {/Helvetica findfont 212 scalefont setfont} def
+/defaultFont {/Helvetica findfont 129 scalefont setfont} def
+/userFont1 {/Times-Italic findfont 108 scalefont setfont} def
+0.0966 0.0966 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+    1     0     1     0 Y
+NP 4413 3525 m 4500 3520 l
+S
+NP 4332 3531 m 4413 3525 l
+S
+NP 4247 3536 m 4332 3531 l
+S
+NP 4168 3541 m 4247 3536 l
+S
+NP 4079 3547 m 4168 3541 l
+S
+NP 4002 3552 m 4079 3547 l
+S
+NP 3918 3557 m 4002 3552 l
+S
+NP 3833 3562 m 3918 3557 l
+S
+NP 3750 3568 m 3833 3562 l
+S
+NP 3664 3573 m 3750 3568 l
+S
+NP 3582 3578 m 3664 3573 l
+S
+NP 3498 3584 m 3582 3578 l
+S
+NP 3417 3589 m 3498 3584 l
+S
+NP 3331 3594 m 3417 3589 l
+S
+NP 3253 3599 m 3331 3594 l
+S
+NP 3167 3605 m 3253 3599 l
+S
+NP 3086 3610 m 3167 3605 l
+S
+NP 2996 3616 m 3086 3610 l
+S
+NP 2915 3621 m 2996 3616 l
+S
+NP 2831 3626 m 2915 3621 l
+S
+NP 2745 3632 m 2831 3626 l
+S
+NP 2662 3637 m 2745 3632 l
+S
+NP 2586 3642 m 2662 3637 l
+S
+NP 2498 3648 m 2586 3642 l
+S
+NP 2413 3653 m 2498 3648 l
+S
+NP 2334 3658 m 2413 3653 l
+S
+NP 2248 3663 m 2334 3658 l
+S
+NP 2166 3669 m 2248 3663 l
+S
+NP 2080 3674 m 2166 3669 l
+S
+NP 2001 3679 m 2080 3674 l
+S
+NP 1912 3685 m 2001 3679 l
+S
+NP 1836 3690 m 1912 3685 l
+S
+NP 1746 3695 m 1836 3690 l
+S
+NP 1670 3700 m 1746 3695 l
+S
+NP 1587 3706 m 1670 3700 l
+S
+NP 1500 3711 m 1587 3706 l
+S
+NP 1414 3717 m 1500 3711 l
+S
+NP 1337 3722 m 1414 3717 l
+S
+NP 1250 3727 m 1337 3722 l
+S
+NP 1165 3733 m 1250 3727 l
+S
+NP 1081 3738 m 1165 3733 l
+S
+NP 998 3743 m 1081 3738 l
+S
+NP 919 3748 m 998 3743 l
+S
+NP 834 3754 m 919 3748 l
+S
+NP 748 3759 m 834 3754 l
+S
+NP 663 3765 m 748 3759 l
+S
+NP 587 3769 m 663 3765 l
+S
+NP 500 3775 m 587 3769 l
+S
+    1     1     0     0 Y
+NP 749 3599 m 754 3579 l
+S
+NP 744 3618 m 749 3599 l
+S
+NP 738 3637 m 744 3618 l
+S
+NP 733 3656 m 738 3637 l
+S
+NP 727 3676 m 733 3656 l
+S
+NP 723 3694 m 727 3676 l
+S
+NP 717 3713 m 723 3694 l
+S
+NP 712 3733 m 717 3713 l
+S
+NP 706 3752 m 712 3733 l
+S
+NP 701 3772 m 706 3752 l
+S
+NP 696 3790 m 701 3772 l
+S
+NP 690 3810 m 696 3790 l
+S
+NP 685 3828 m 690 3810 l
+S
+NP 680 3848 m 685 3828 l
+S
+NP 675 3866 m 680 3848 l
+S
+NP 669 3886 m 675 3866 l
+S
+NP 664 3905 m 669 3886 l
+S
+NP 658 3925 m 664 3905 l
+S
+NP 653 3944 m 658 3925 l
+S
+NP 648 3963 m 653 3944 l
+S
+NP 643 3983 m 648 3963 l
+S
+NP 637 4002 m 643 3983 l
+S
+NP 632 4020 m 637 4002 l
+S
+NP 627 4040 m 632 4020 l
+S
+NP 621 4059 m 627 4040 l
+S
+NP 616 4078 m 621 4059 l
+S
+NP 611 4097 m 616 4078 l
+S
+NP 606 4116 m 611 4097 l
+S
+NP 600 4136 m 606 4116 l
+S
+NP 595 4154 m 600 4136 l
+S
+NP 589 4175 m 595 4154 l
+S
+NP 585 4192 m 589 4175 l
+S
+NP 579 4213 m 585 4192 l
+S
+NP 574 4230 m 579 4213 l
+S
+NP 569 4249 m 574 4230 l
+S
+NP 563 4269 m 569 4249 l
+S
+NP 558 4289 m 563 4269 l
+S
+NP 553 4307 m 558 4289 l
+S
+NP 547 4327 m 553 4307 l
+S
+NP 542 4346 m 547 4327 l
+S
+NP 536 4366 m 542 4346 l
+S
+NP 531 4385 m 536 4366 l
+S
+NP 526 4403 m 531 4385 l
+S
+NP 521 4423 m 526 4403 l
+S
+NP 515 4442 m 521 4423 l
+S
+NP 510 4462 m 515 4442 l
+S
+NP 505 4479 m 510 4462 l
+S
+NP 500 4500 m 505 4479 l
+S
+NP 3500 1425 m 3567 1420 l
+S
+NP 3438 1430 m 3500 1425 l
+S
+NP 3373 1435 m 3438 1430 l
+S
+NP 3312 1440 m 3373 1435 l
+S
+NP 3244 1446 m 3312 1440 l
+S
+NP 3185 1451 m 3244 1446 l
+S
+NP 3121 1456 m 3185 1451 l
+S
+NP 3056 1461 m 3121 1456 l
+S
+NP 2992 1466 m 3056 1461 l
+S
+NP 2926 1472 m 2992 1466 l
+S
+NP 2863 1477 m 2926 1472 l
+S
+NP 2798 1482 m 2863 1477 l
+S
+NP 2737 1487 m 2798 1482 l
+S
+NP 2671 1492 m 2737 1487 l
+S
+NP 2611 1497 m 2671 1492 l
+S
+NP 2545 1503 m 2611 1497 l
+S
+NP 2483 1508 m 2545 1503 l
+S
+NP 2414 1513 m 2483 1508 l
+S
+NP 2352 1518 m 2414 1513 l
+S
+NP 2287 1524 m 2352 1518 l
+S
+NP 2222 1529 m 2287 1524 l
+S
+NP 2158 1534 m 2222 1529 l
+S
+NP 2099 1539 m 2158 1534 l
+S
+NP 2032 1544 m 2099 1539 l
+S
+NP 1966 1550 m 2032 1544 l
+S
+NP 1906 1555 m 1966 1550 l
+S
+NP 1840 1560 m 1906 1555 l
+S
+NP 1777 1565 m 1840 1560 l
+S
+NP 1711 1571 m 1777 1565 l
+S
+NP 1651 1575 m 1711 1571 l
+S
+NP 1583 1581 m 1651 1575 l
+S
+NP 1524 1586 m 1583 1581 l
+S
+NP 1455 1591 m 1524 1586 l
+S
+NP 1397 1596 m 1455 1591 l
+S
+NP 1333 1601 m 1397 1596 l
+S
+NP 1267 1607 m 1333 1601 l
+S
+NP 1200 1612 m 1267 1607 l
+S
+NP 1142 1617 m 1200 1612 l
+S
+NP 1075 1622 m 1142 1617 l
+S
+NP 1010 1628 m 1075 1622 l
+S
+NP 945 1633 m 1010 1628 l
+S
+NP 882 1638 m 945 1633 l
+S
+NP 821 1643 m 882 1638 l
+S
+NP 756 1648 m 821 1643 l
+S
+NP 690 1654 m 756 1648 l
+S
+NP 625 1659 m 690 1654 l
+S
+NP 566 1664 m 625 1659 l
+S
+NP 500 1669 m 566 1664 l
+S
+NP 749 3538 m 754 3579 l
+S
+NP 744 3499 m 749 3538 l
+S
+NP 738 3459 m 744 3499 l
+S
+NP 733 3421 m 738 3459 l
+S
+NP 727 3379 m 733 3421 l
+S
+NP 723 3342 m 727 3379 l
+S
+NP 717 3302 m 723 3342 l
+S
+NP 712 3261 m 717 3302 l
+S
+NP 706 3221 m 712 3261 l
+S
+NP 701 3180 m 706 3221 l
+S
+NP 696 3141 m 701 3180 l
+S
+NP 690 3101 m 696 3141 l
+S
+NP 685 3062 m 690 3101 l
+S
+NP 680 3022 m 685 3062 l
+S
+NP 675 2984 m 680 3022 l
+S
+NP 669 2943 m 675 2984 l
+S
+NP 664 2904 m 669 2943 l
+S
+NP 658 2861 m 664 2904 l
+S
+NP 653 2823 m 658 2861 l
+S
+NP 648 2783 m 653 2823 l
+S
+NP 643 2742 m 648 2783 l
+S
+NP 637 2702 m 643 2742 l
+S
+NP 632 2665 m 637 2702 l
+S
+NP 627 2623 m 632 2665 l
+S
+NP 621 2583 m 627 2623 l
+S
+NP 616 2545 m 621 2583 l
+S
+NP 611 2504 m 616 2545 l
+S
+NP 606 2465 m 611 2504 l
+S
+NP 600 2424 m 606 2465 l
+S
+NP 595 2386 m 600 2424 l
+S
+NP 589 2344 m 595 2386 l
+S
+NP 585 2307 m 589 2344 l
+S
+NP 579 2264 m 585 2307 l
+S
+NP 574 2228 m 579 2264 l
+S
+NP 569 2188 m 574 2228 l
+S
+NP 563 2147 m 569 2188 l
+S
+NP 558 2106 m 563 2147 l
+S
+NP 553 2069 m 558 2106 l
+S
+NP 547 2027 m 553 2069 l
+S
+NP 542 1987 m 547 2027 l
+S
+NP 536 1947 m 542 1987 l
+S
+NP 531 1907 m 536 1947 l
+S
+NP 526 1869 m 531 1907 l
+S
+NP 521 1829 m 526 1869 l
+S
+NP 515 1788 m 521 1829 l
+S
+NP 510 1747 m 515 1788 l
+S
+NP 505 1711 m 510 1747 l
+S
+NP 500 1669 m 505 1711 l
+S
+    0     0     0     1 Y
+NP 2160 3669 m 2160 3622 l
+2160 3575 l
+2160 3529 l
+2160 3482 l
+2160 3435 l
+2160 3388 l
+2160 3342 l
+2160 3295 l
+2160 3248 l
+2160 3201 l
+2160 3154 l
+2160 3108 l
+2160 3061 l
+2160 3014 l
+2160 2967 l
+2160 2921 l
+2160 2874 l
+2160 2827 l
+2160 2780 l
+2160 2733 l
+2160 2687 l
+2160 2640 l
+2160 2593 l
+2160 2546 l
+2160 2500 l
+S
+NP 2160 3669 m 2094 3669 l
+2028 3669 l
+1961 3669 l
+1895 3669 l
+1828 3669 l
+1762 3669 l
+1695 3669 l
+1629 3669 l
+1562 3669 l
+1496 3669 l
+1430 3669 l
+1363 3669 l
+1297 3669 l
+1230 3669 l
+1164 3669 l
+1097 3669 l
+1031 3669 l
+965 3669 l
+898 3669 l
+832 3669 l
+765 3669 l
+699 3669 l
+632 3669 l
+566 3669 l
+500 3669 l
+S
+    1     1     0     0 Y
+NP 749 1425 m 754 1420 l
+S
+NP 744 1430 m 749 1425 l
+S
+NP 738 1435 m 744 1430 l
+S
+NP 733 1440 m 738 1435 l
+S
+NP 727 1446 m 733 1440 l
+S
+NP 723 1451 m 727 1446 l
+S
+NP 717 1456 m 723 1451 l
+S
+NP 712 1461 m 717 1456 l
+S
+NP 706 1466 m 712 1461 l
+S
+NP 701 1472 m 706 1466 l
+S
+NP 696 1477 m 701 1472 l
+S
+NP 690 1482 m 696 1477 l
+S
+NP 685 1487 m 690 1482 l
+S
+NP 680 1492 m 685 1487 l
+S
+NP 675 1497 m 680 1492 l
+S
+NP 669 1503 m 675 1497 l
+S
+NP 664 1508 m 669 1503 l
+S
+NP 658 1513 m 664 1508 l
+S
+NP 653 1518 m 658 1513 l
+S
+NP 648 1524 m 653 1518 l
+S
+NP 643 1529 m 648 1524 l
+S
+NP 637 1534 m 643 1529 l
+S
+NP 632 1539 m 637 1534 l
+S
+NP 627 1544 m 632 1539 l
+S
+NP 621 1550 m 627 1544 l
+S
+NP 616 1555 m 621 1550 l
+S
+NP 611 1560 m 616 1555 l
+S
+NP 606 1565 m 611 1560 l
+S
+NP 600 1571 m 606 1565 l
+S
+NP 595 1575 m 600 1571 l
+S
+NP 589 1581 m 595 1575 l
+S
+NP 585 1586 m 589 1581 l
+S
+NP 579 1591 m 585 1586 l
+S
+NP 574 1596 m 579 1591 l
+S
+NP 569 1601 m 574 1596 l
+S
+NP 563 1607 m 569 1601 l
+S
+NP 558 1612 m 563 1607 l
+S
+NP 553 1617 m 558 1612 l
+S
+NP 547 1622 m 553 1617 l
+S
+NP 542 1628 m 547 1622 l
+S
+NP 536 1633 m 542 1628 l
+S
+NP 531 1638 m 536 1633 l
+S
+NP 526 1643 m 531 1638 l
+S
+NP 521 1648 m 526 1643 l
+S
+NP 515 1654 m 521 1648 l
+S
+NP 510 1659 m 515 1654 l
+S
+NP 505 1664 m 510 1659 l
+S
+NP 500 1669 m 505 1664 l
+S
+NP 3500 3538 m 3567 3579 l
+S
+NP 3438 3499 m 3500 3538 l
+S
+NP 3373 3459 m 3438 3499 l
+S
+NP 3312 3421 m 3373 3459 l
+S
+NP 3244 3379 m 3312 3421 l
+S
+NP 3185 3342 m 3244 3379 l
+S
+NP 3121 3302 m 3185 3342 l
+S
+NP 3056 3261 m 3121 3302 l
+S
+NP 2992 3221 m 3056 3261 l
+S
+NP 2926 3180 m 2992 3221 l
+S
+NP 2863 3141 m 2926 3180 l
+S
+NP 2798 3101 m 2863 3141 l
+S
+NP 2737 3062 m 2798 3101 l
+S
+NP 2671 3022 m 2737 3062 l
+S
+NP 2611 2984 m 2671 3022 l
+S
+NP 2545 2943 m 2611 2984 l
+S
+NP 2483 2904 m 2545 2943 l
+S
+NP 2414 2861 m 2483 2904 l
+S
+NP 2352 2823 m 2414 2861 l
+S
+NP 2287 2783 m 2352 2823 l
+S
+NP 2222 2742 m 2287 2783 l
+S
+NP 2158 2702 m 2222 2742 l
+S
+NP 2099 2665 m 2158 2702 l
+S
+NP 2032 2623 m 2099 2665 l
+S
+NP 1966 2583 m 2032 2623 l
+S
+NP 1906 2545 m 1966 2583 l
+S
+NP 1840 2504 m 1906 2545 l
+S
+NP 1777 2465 m 1840 2504 l
+S
+NP 1711 2424 m 1777 2465 l
+S
+NP 1651 2386 m 1711 2424 l
+S
+NP 1583 2344 m 1651 2386 l
+S
+NP 1524 2307 m 1583 2344 l
+S
+NP 1455 2264 m 1524 2307 l
+S
+NP 1397 2228 m 1455 2264 l
+S
+NP 1333 2188 m 1397 2228 l
+S
+NP 1267 2147 m 1333 2188 l
+S
+NP 1200 2106 m 1267 2147 l
+S
+NP 1142 2069 m 1200 2106 l
+S
+NP 1075 2027 m 1142 2069 l
+S
+NP 1010 1987 m 1075 2027 l
+S
+NP 945 1947 m 1010 1987 l
+S
+NP 882 1907 m 945 1947 l
+S
+NP 821 1869 m 882 1907 l
+S
+NP 756 1829 m 821 1869 l
+S
+NP 690 1788 m 756 1829 l
+S
+NP 625 1747 m 690 1788 l
+S
+NP 566 1711 m 625 1747 l
+S
+NP 500 1669 m 566 1711 l
+S
+    0     1     1     0 Y
+NP 4413 1373 m 4500 1330 l
+S
+NP 4332 1414 m 4413 1373 l
+S
+NP 4247 1456 m 4332 1414 l
+S
+NP 4168 1496 m 4247 1456 l
+S
+NP 4079 1540 m 4168 1496 l
+S
+NP 4002 1579 m 4079 1540 l
+S
+NP 3918 1621 m 4002 1579 l
+S
+NP 3833 1663 m 3918 1621 l
+S
+NP 3750 1705 m 3833 1663 l
+S
+NP 3664 1748 m 3750 1705 l
+S
+NP 3582 1789 m 3664 1748 l
+S
+NP 3498 1831 m 3582 1789 l
+S
+NP 3417 1871 m 3498 1831 l
+S
+NP 3331 1914 m 3417 1871 l
+S
+NP 3253 1953 m 3331 1914 l
+S
+NP 3167 1996 m 3253 1953 l
+S
+NP 3086 2037 m 3167 1996 l
+S
+NP 2996 2082 m 3086 2037 l
+S
+NP 2915 2122 m 2996 2082 l
+S
+NP 2831 2164 m 2915 2122 l
+S
+NP 2745 2207 m 2831 2164 l
+S
+NP 2662 2248 m 2745 2207 l
+S
+NP 2586 2287 m 2662 2248 l
+S
+NP 2498 2331 m 2586 2287 l
+S
+NP 2413 2373 m 2498 2331 l
+S
+NP 2334 2413 m 2413 2373 l
+S
+NP 2248 2456 m 2334 2413 l
+S
+NP 2166 2497 m 2248 2456 l
+S
+NP 2080 2540 m 2166 2497 l
+S
+NP 2001 2579 m 2080 2540 l
+S
+NP 1912 2624 m 2001 2579 l
+S
+NP 1836 2662 m 1912 2624 l
+S
+NP 1746 2707 m 1836 2662 l
+S
+NP 1670 2745 m 1746 2707 l
+S
+NP 1587 2786 m 1670 2745 l
+S
+NP 1500 2830 m 1587 2786 l
+S
+NP 1414 2873 m 1500 2830 l
+S
+NP 1337 2911 m 1414 2873 l
+S
+NP 1250 2955 m 1337 2911 l
+S
+NP 1165 2997 m 1250 2955 l
+S
+NP 1081 3039 m 1165 2997 l
+S
+NP 998 3080 m 1081 3039 l
+S
+NP 919 3120 m 998 3080 l
+S
+NP 834 3163 m 919 3120 l
+S
+NP 748 3206 m 834 3163 l
+S
+NP 663 3248 m 748 3206 l
+S
+NP 587 3286 m 663 3248 l
+S
+NP 500 3330 m 587 3286 l
+S
+    1     1     0     0 Y
+NP 749 1487 m 754 1420 l
+S
+NP 744 1549 m 749 1487 l
+S
+NP 738 1614 m 744 1549 l
+S
+NP 733 1675 m 738 1614 l
+S
+NP 727 1743 m 733 1675 l
+S
+NP 723 1803 m 727 1743 l
+S
+NP 717 1867 m 723 1803 l
+S
+NP 712 1933 m 717 1867 l
+S
+NP 706 1997 m 712 1933 l
+S
+NP 701 2063 m 706 1997 l
+S
+NP 696 2126 m 701 2063 l
+S
+NP 690 2191 m 696 2126 l
+S
+NP 685 2253 m 690 2191 l
+S
+NP 680 2319 m 685 2253 l
+S
+NP 675 2379 m 680 2319 l
+S
+NP 669 2446 m 675 2379 l
+S
+NP 664 2508 m 669 2446 l
+S
+NP 658 2577 m 664 2508 l
+S
+NP 653 2640 m 658 2577 l
+S
+NP 648 2704 m 653 2640 l
+S
+NP 643 2770 m 648 2704 l
+S
+NP 637 2834 m 643 2770 l
+S
+NP 632 2893 m 637 2834 l
+S
+NP 627 2961 m 632 2893 l
+S
+NP 621 3026 m 627 2961 l
+S
+NP 616 3087 m 621 3026 l
+S
+NP 611 3153 m 616 3087 l
+S
+NP 606 3216 m 611 3153 l
+S
+NP 600 3283 m 606 3216 l
+S
+NP 595 3343 m 600 3283 l
+S
+NP 589 3412 m 595 3343 l
+S
+NP 585 3470 m 589 3412 l
+S
+NP 579 3540 m 585 3470 l
+S
+NP 574 3598 m 579 3540 l
+S
+NP 569 3663 m 574 3598 l
+S
+NP 563 3729 m 569 3663 l
+S
+NP 558 3796 m 563 3729 l
+S
+NP 553 3855 m 558 3796 l
+S
+NP 547 3922 m 553 3855 l
+S
+NP 542 3987 m 547 3922 l
+S
+NP 536 4052 m 542 3987 l
+S
+NP 531 4115 m 536 4052 l
+S
+NP 526 4176 m 531 4115 l
+S
+NP 521 4242 m 526 4176 l
+S
+NP 515 4308 m 521 4242 l
+S
+NP 510 4374 m 515 4308 l
+S
+NP 505 4432 m 510 4374 l
+S
+NP 500 4500 m 505 4432 l
+S
+NP 3500 1487 m 3567 1420 l
+S
+NP 3438 1549 m 3500 1487 l
+S
+NP 3373 1614 m 3438 1549 l
+S
+NP 3312 1675 m 3373 1614 l
+S
+NP 3244 1743 m 3312 1675 l
+S
+NP 3185 1803 m 3244 1743 l
+S
+NP 3121 1867 m 3185 1803 l
+S
+NP 3056 1933 m 3121 1867 l
+S
+NP 2992 1997 m 3056 1933 l
+S
+NP 2926 2063 m 2992 1997 l
+S
+NP 2863 2126 m 2926 2063 l
+S
+NP 2798 2191 m 2863 2126 l
+S
+NP 2737 2253 m 2798 2191 l
+S
+NP 2671 2319 m 2737 2253 l
+S
+NP 2611 2379 m 2671 2319 l
+S
+NP 2545 2446 m 2611 2379 l
+S
+NP 2483 2508 m 2545 2446 l
+S
+NP 2414 2577 m 2483 2508 l
+S
+NP 2352 2640 m 2414 2577 l
+S
+NP 2287 2704 m 2352 2640 l
+S
+NP 2222 2770 m 2287 2704 l
+S
+NP 2158 2834 m 2222 2770 l
+S
+NP 2099 2893 m 2158 2834 l
+S
+NP 2032 2961 m 2099 2893 l
+S
+NP 1966 3026 m 2032 2961 l
+S
+NP 1906 3087 m 1966 3026 l
+S
+NP 1840 3153 m 1906 3087 l
+S
+NP 1777 3216 m 1840 3153 l
+S
+NP 1711 3283 m 1777 3216 l
+S
+NP 1651 3343 m 1711 3283 l
+S
+NP 1583 3412 m 1651 3343 l
+S
+NP 1524 3470 m 1583 3412 l
+S
+NP 1455 3540 m 1524 3470 l
+S
+NP 1397 3598 m 1455 3540 l
+S
+NP 1333 3663 m 1397 3598 l
+S
+NP 1267 3729 m 1333 3663 l
+S
+NP 1200 3796 m 1267 3729 l
+S
+NP 1142 3855 m 1200 3796 l
+S
+NP 1075 3922 m 1142 3855 l
+S
+NP 1010 3987 m 1075 3922 l
+S
+NP 945 4052 m 1010 3987 l
+S
+NP 882 4115 m 945 4052 l
+S
+NP 821 4176 m 882 4115 l
+S
+NP 756 4242 m 821 4176 l
+S
+NP 690 4308 m 756 4242 l
+S
+NP 625 4374 m 690 4308 l
+S
+NP 566 4432 m 625 4374 l
+S
+NP 500 4500 m 566 4432 l
+S
+    0     0     0     1 Y
+NP 3340 4500 m 3269 4450 l
+S
+NP 3219 4415 m 3269 4450 l
+S
+NP 3219 4415 m 3175 4384 l
+S
+NP 3113 4340 m 3175 4384 l
+S
+NP 3113 4340 m 3081 4318 l
+S
+NP 3059 4302 m 3081 4318 l
+S
+NP 3059 4302 m 2988 4251 l
+S
+NP 2899 4189 m 2988 4251 l
+S
+NP 2899 4189 m 2894 4185 l
+S
+NP 2885 4180 m 2894 4185 l
+S
+NP 2885 4180 m 2800 4119 l
+S
+NP 2740 4077 m 2800 4119 l
+S
+NP 2740 4077 m 2706 4053 l
+S
+NP 2658 4020 m 2706 4053 l
+S
+NP 2658 4020 m 2612 3987 l
+S
+NP 2579 3964 m 2612 3987 l
+S
+NP 2579 3964 m 2518 3921 l
+S
+NP 2431 3860 m 2518 3921 l
+S
+NP 2431 3860 m 2424 3855 l
+S
+NP 2419 3851 m 2424 3855 l
+S
+NP 2419 3851 m 2330 3789 l
+S
+NP 2259 3739 m 2330 3789 l
+S
+NP 2259 3739 m 2236 3723 l
+S
+NP 2204 3700 m 2236 3723 l
+S
+NP 2204 3700 m 2143 3656 l
+S
+NP 2100 3626 m 2143 3656 l
+S
+NP 2100 3626 m 2049 3590 l
+S
+NP 1976 3540 m 2049 3590 l
+S
+NP 1976 3540 m 1955 3524 l
+S
+NP 1939 3513 m 1955 3524 l
+S
+NP 1939 3513 m 1861 3458 l
+S
+NP 1779 3401 m 1861 3458 l
+S
+NP 1780 3401 m 1767 3392 l
+S
+NP 1749 3380 m 1767 3392 l
+S
+NP 1749 3380 m 1673 3326 l
+S
+NP 1619 3288 m 1673 3326 l
+S
+NP 1619 3288 m 1579 3260 l
+S
+NP 1522 3220 m 1579 3260 l
+S
+NP 1522 3220 m 1485 3194 l
+S
+NP 1460 3175 m 1485 3194 l
+S
+NP 1460 3175 m 1391 3128 l
+S
+NP 1300 3063 m 1391 3128 l
+S
+NP 1300 3063 m 1298 3061 l
+S
+NP 1295 3060 m 1298 3061 l
+S
+NP 1295 3060 m 1204 2995 l
+S
+NP 1140 2950 m 1204 2995 l
+S
+NP 1140 2950 m 1110 2929 l
+S
+NP 1068 2900 m 1110 2929 l
+S
+NP 1068 2900 m 1016 2863 l
+S
+NP 980 2837 m 1016 2863 l
+S
+NP 979 2837 m 922 2797 l
+S
+NP 840 2740 m 922 2797 l
+S
+NP 840 2740 m 828 2731 l
+S
+NP 820 2725 m 828 2731 l
+S
+NP 820 2725 m 734 2665 l
+S
+NP 659 2612 m 734 2665 l
+S
+NP 659 2612 m 640 2599 l
+S
+NP 613 2580 m 640 2599 l
+S
+NP 613 2580 m 546 2533 l
+S
+NP 500 2500 m 546 2533 l
+S
+    1     1     0     0 Y
+NP 3500 3599 m 3567 3579 l
+S
+NP 3438 3618 m 3500 3599 l
+S
+NP 3373 3637 m 3438 3618 l
+S
+NP 3312 3656 m 3373 3637 l
+S
+NP 3244 3676 m 3312 3656 l
+S
+NP 3185 3694 m 3244 3676 l
+S
+NP 3121 3713 m 3185 3694 l
+S
+NP 3056 3733 m 3121 3713 l
+S
+NP 2992 3752 m 3056 3733 l
+S
+NP 2926 3772 m 2992 3752 l
+S
+NP 2863 3790 m 2926 3772 l
+S
+NP 2798 3810 m 2863 3790 l
+S
+NP 2737 3828 m 2798 3810 l
+S
+NP 2671 3848 m 2737 3828 l
+S
+NP 2611 3866 m 2671 3848 l
+S
+NP 2545 3886 m 2611 3866 l
+S
+NP 2483 3905 m 2545 3886 l
+S
+NP 2414 3925 m 2483 3905 l
+S
+NP 2352 3944 m 2414 3925 l
+S
+NP 2287 3963 m 2352 3944 l
+S
+NP 2222 3983 m 2287 3963 l
+S
+NP 2158 4002 m 2222 3983 l
+S
+NP 2099 4020 m 2158 4002 l
+S
+NP 2032 4040 m 2099 4020 l
+S
+NP 1966 4059 m 2032 4040 l
+S
+NP 1906 4078 m 1966 4059 l
+S
+NP 1840 4097 m 1906 4078 l
+S
+NP 1777 4116 m 1840 4097 l
+S
+NP 1711 4136 m 1777 4116 l
+S
+NP 1651 4154 m 1711 4136 l
+S
+NP 1583 4175 m 1651 4154 l
+S
+NP 1524 4192 m 1583 4175 l
+S
+NP 1455 4213 m 1524 4192 l
+S
+NP 1397 4230 m 1455 4213 l
+S
+NP 1333 4249 m 1397 4230 l
+S
+NP 1267 4269 m 1333 4249 l
+S
+NP 1200 4289 m 1267 4269 l
+S
+NP 1142 4307 m 1200 4289 l
+S
+NP 1075 4327 m 1142 4307 l
+S
+NP 1010 4346 m 1075 4327 l
+S
+NP 945 4366 m 1010 4346 l
+S
+NP 882 4385 m 945 4366 l
+S
+NP 821 4403 m 882 4385 l
+S
+NP 756 4423 m 821 4403 l
+S
+NP 690 4442 m 756 4423 l
+S
+NP 625 4462 m 690 4442 l
+S
+NP 566 4479 m 625 4462 l
+S
+NP 500 4500 m 566 4479 l
+S
+    0     1     1     0 Y
+NP 3750 4414 m 3821 4500 l
+S
+NP 3664 4310 m 3750 4414 l
+S
+NP 3582 4211 m 3664 4310 l
+S
+NP 3498 4110 m 3582 4211 l
+S
+NP 3417 4013 m 3498 4110 l
+S
+NP 3331 3910 m 3417 4013 l
+S
+NP 3253 3815 m 3331 3910 l
+S
+NP 3167 3711 m 3253 3815 l
+S
+NP 3086 3614 m 3167 3711 l
+S
+NP 2996 3506 m 3086 3614 l
+S
+NP 2915 3408 m 2996 3506 l
+S
+NP 2831 3307 m 2915 3408 l
+S
+NP 2745 3204 m 2831 3307 l
+S
+NP 2662 3104 m 2745 3204 l
+S
+NP 2586 3012 m 2662 3104 l
+S
+NP 2498 2905 m 2586 3012 l
+S
+NP 2413 2803 m 2498 2905 l
+S
+NP 2334 2708 m 2413 2803 l
+S
+NP 2248 2605 m 2334 2708 l
+S
+NP 2166 2506 m 2248 2605 l
+S
+NP 2080 2402 m 2166 2506 l
+S
+NP 2001 2308 m 2080 2402 l
+S
+NP 1912 2201 m 2001 2308 l
+S
+NP 1836 2109 m 1912 2201 l
+S
+NP 1746 2000 m 1836 2109 l
+S
+NP 1670 1909 m 1746 2000 l
+S
+NP 1587 1808 m 1670 1909 l
+S
+NP 1500 1704 m 1587 1808 l
+S
+NP 1414 1600 m 1500 1704 l
+S
+NP 1337 1508 m 1414 1600 l
+S
+NP 1250 1403 m 1337 1508 l
+S
+NP 1165 1301 m 1250 1403 l
+S
+NP 1081 1199 m 1165 1301 l
+S
+NP 998 1100 m 1081 1199 l
+S
+NP 919 1005 m 998 1100 l
+S
+NP 834 902 m 919 1005 l
+S
+NP 748 799 m 834 902 l
+S
+NP 663 696 m 748 799 l
+S
+NP 587 604 m 663 696 l
+S
+NP 500 500 m 587 604 l
+S
+    1     0     1     0 Y
+NP 4413 4229 m 4500 4296 l
+S
+NP 4332 4167 m 4413 4229 l
+S
+NP 4247 4102 m 4332 4167 l
+S
+NP 4168 4041 m 4247 4102 l
+S
+NP 4079 3973 m 4168 4041 l
+S
+NP 4002 3914 m 4079 3973 l
+S
+NP 3918 3849 m 4002 3914 l
+S
+NP 3833 3784 m 3918 3849 l
+S
+NP 3750 3720 m 3833 3784 l
+S
+NP 3664 3654 m 3750 3720 l
+S
+NP 3582 3591 m 3664 3654 l
+S
+NP 3498 3526 m 3582 3591 l
+S
+NP 3417 3465 m 3498 3526 l
+S
+NP 3331 3399 m 3417 3465 l
+S
+NP 3253 3339 m 3331 3399 l
+S
+NP 3167 3272 m 3253 3339 l
+S
+NP 3086 3210 m 3167 3272 l
+S
+NP 2996 3141 m 3086 3210 l
+S
+NP 2915 3079 m 2996 3141 l
+S
+NP 2831 3015 m 2915 3079 l
+S
+NP 2745 2949 m 2831 3015 l
+S
+NP 2662 2885 m 2745 2949 l
+S
+NP 2586 2826 m 2662 2885 l
+S
+NP 2498 2758 m 2586 2826 l
+S
+NP 2413 2693 m 2498 2758 l
+S
+NP 2334 2633 m 2413 2693 l
+S
+NP 2248 2567 m 2334 2633 l
+S
+NP 2166 2504 m 2248 2567 l
+S
+NP 2080 2438 m 2166 2504 l
+S
+NP 2001 2377 m 2080 2438 l
+S
+NP 1912 2309 m 2001 2377 l
+S
+NP 1836 2250 m 1912 2309 l
+S
+NP 1746 2181 m 1836 2250 l
+S
+NP 1670 2123 m 1746 2181 l
+S
+NP 1587 2059 m 1670 2123 l
+S
+NP 1500 1992 m 1587 2059 l
+S
+NP 1414 1926 m 1500 1992 l
+S
+NP 1337 1867 m 1414 1926 l
+S
+NP 1250 1800 m 1337 1867 l
+S
+NP 1165 1735 m 1250 1800 l
+S
+NP 1081 1670 m 1165 1735 l
+S
+NP 998 1607 m 1081 1670 l
+S
+NP 919 1546 m 998 1607 l
+S
+NP 834 1481 m 919 1546 l
+S
+NP 748 1415 m 834 1481 l
+S
+NP 663 1349 m 748 1415 l
+S
+NP 587 1291 m 663 1349 l
+S
+NP 500 1224 m 587 1291 l
+S
+    0     0     0     1 Y
+NP
+739 1420 m
+769 1420 l
+754 1405 m
+754 1435 l
+S
+NP
+739 3579 m
+769 3579 l
+754 3564 m
+754 3594 l
+S
+NP
+4485 2500 m
+4515 2500 l
+4500 2485 m
+4500 2515 l
+S
+NP
+1174 2500 m
+1204 2500 l
+1189 2485 m
+1189 2515 l
+S
+NP
+3552 1420 m
+3582 1420 l
+3567 1405 m
+3567 1435 l
+S
+NP
+485 2500 m
+515 2500 l
+500 2485 m
+500 2515 l
+S
+NP
+3552 3579 m
+3582 3579 l
+3567 3564 m
+3567 3594 l
+S
+userFont1
+(C) dup 0 stringbbox 2 idiv 3579 exch sub exch 2 idiv 754 exch sub exch m show
+(B) dup 0 stringbbox 2 idiv 1420 exch sub exch 2 idiv 3567 exch sub exch m show
+(D) dup 0 stringbbox 2 idiv 1420 exch sub exch 2 idiv 754 exch sub exch m show
+(A) dup 0 stringbbox 2 idiv 3579 exch sub exch 2 idiv 3567 exch sub exch m show
+medium setlinewidth
+NP 500 500 m 500 4500 l
+S
+thin setlinewidth
+NP 457 557 m 500 557 l
+S
+NP 478 751 m 500 751 l
+S
+NP 478 945 m 500 945 l
+S
+NP 478 1140 m 500 1140 l
+S
+NP 478 1334 m 500 1334 l
+S
+NP 457 1528 m 500 1528 l
+S
+NP 478 1722 m 500 1722 l
+S
+NP 478 1917 m 500 1917 l
+S
+NP 478 2111 m 500 2111 l
+S
+NP 478 2305 m 500 2305 l
+S
+NP 457 2500 m 500 2500 l
+S
+NP 478 2694 m 500 2694 l
+S
+NP 478 2888 m 500 2888 l
+S
+NP 478 3082 m 500 3082 l
+S
+NP 478 3277 m 500 3277 l
+S
+NP 457 3471 m 500 3471 l
+S
+NP 478 3665 m 500 3665 l
+S
+NP 478 3859 m 500 3859 l
+S
+NP 478 4054 m 500 4054 l
+S
+NP 478 4248 m 500 4248 l
+S
+NP 457 4442 m 500 4442 l
+S
+medium setlinewidth
+NP 500 2500 m 4500 2500 l
+S
+thin setlinewidth
+NP 637 2483 m 637 2500 l
+S
+NP 775 2483 m 775 2500 l
+S
+NP 913 2483 m 913 2500 l
+S
+NP 1051 2483 m 1051 2500 l
+S
+NP 1189 2467 m 1189 2500 l
+S
+NP 1327 2483 m 1327 2500 l
+S
+NP 1465 2483 m 1465 2500 l
+S
+NP 1603 2483 m 1603 2500 l
+S
+NP 1741 2483 m 1741 2500 l
+S
+NP 1879 2467 m 1879 2500 l
+S
+NP 2017 2483 m 2017 2500 l
+S
+NP 2155 2483 m 2155 2500 l
+S
+NP 2293 2483 m 2293 2500 l
+S
+NP 2431 2483 m 2431 2500 l
+S
+NP 2568 2467 m 2568 2500 l
+S
+NP 2706 2483 m 2706 2500 l
+S
+NP 2844 2483 m 2844 2500 l
+S
+NP 2982 2483 m 2982 2500 l
+S
+NP 3120 2483 m 3120 2500 l
+S
+NP 3258 2467 m 3258 2500 l
+S
+NP 3396 2483 m 3396 2500 l
+S
+NP 3534 2483 m 3534 2500 l
+S
+NP 3672 2483 m 3672 2500 l
+S
+NP 3810 2483 m 3810 2500 l
+S
+NP 3948 2467 m 3948 2500 l
+S
+NP 4086 2483 m 4086 2500 l
+S
+NP 4224 2483 m 4224 2500 l
+S
+NP 4362 2483 m 4362 2500 l
+S
+NP 4500 2483 m 4500 2500 l
+defaultFont
+S
+medium setlinewidth
+(\26120) dup 0 stringbbox 2 idiv 557 exch sub exch 439 exch sub exch m show
+(\26110) dup 0 stringbbox 2 idiv 1528 exch sub exch 439 exch sub exch m show
+(0) dup 0 stringbbox 2500 exch sub exch 439 exch sub exch m show
+(10) dup 0 stringbbox 2 idiv 3471 exch sub exch 439 exch sub exch m show
+(20) dup 0 stringbbox 2 idiv 4442 exch sub exch 439 exch sub exch m show
+(y) dup 0 stringbbox 2 idiv 3500 exch sub exch 106 exch sub exch m show
+(5) dup 0 stringbbox 2454 exch sub exch 2 idiv 1189 exch sub exch m show
+(10) dup 0 stringbbox 2454 exch sub exch 2 idiv 1879 exch sub exch m show
+(15) dup 0 stringbbox 2454 exch sub exch 2 idiv 2568 exch sub exch m show
+(20) dup 0 stringbbox 2454 exch sub exch 2 idiv 3258 exch sub exch m show
+(25) dup 0 stringbbox 2454 exch sub exch 2 idiv 3948 exch sub exch m show
+(x) dup 0 stringbbox 2179 exch sub exch 2 idiv 2500 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 1082 moveto
+56 1082 lineto
+56 239 lineto
+59 239 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 227 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+newpath
+59 234 moveto
+56 234 lineto
+56 226 lineto
+59 226 lineto
+stroke
+grestore
+ grestore showpage
+%%Trailer
+%% END of Maple Session Output

@@ -1,0 +1,296 @@
+> restart;with(geometry);with(plots);Digits:=30;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+[Interactive, animate, animate3d, animatecurve, arrow, changecoords, 
+
+  complexplot, complexplot3d, conformal, conformal3d, contourplot, 
+
+  contourplot3d, coordplot, coordplot3d, cylinderplot, densityplot, display, 
+
+  display3d, fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, 
+
+  implicitplot, implicitplot3d, inequal, interactive, interactiveparams, 
+
+  listcontplot, listcontplot3d, listdensityplot, listplot, listplot3d, 
+
+  loglogplot, logplot, matrixplot, multiple, odeplot, pareto, plotcompare, 
+
+  pointplot, pointplot3d, polarplot, polygonplot, polygonplot3d, 
+
+  polyhedra_supported, polyhedraplot, replot, rootlocus, semilogplot, 
+
+  setoptions, setoptions3d, spacecurve, sparsematrixplot, sphereplot, 
+
+  surfdata, textplot, textplot3d, tubeplot]
+                               30
+                               x
+                               y
+> tanto_test10 := proc( p1, p2, p3, p4 )
+>   local k, sq, a, c_a, c_z, c_q, d1, d2, d3, d4, t, i, L, L1, L2, temp1, temp2, p, s1, s2, S, N1, N2;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+> 
+>   print(p1,p2,k,sq);
+> 
+>   a  := evalf( k / ( k - sq ) );
+>   c_a:= a * sq;
+> 
+>   #line(Y,y=x,[x,y]);
+>   #line(l0,y=0,[x,y]);
+>   #line(l1,x=0,[x,y]);
+>   #line(sqv,x=sq,[x,y]);
+>   #line(sqh,y=sq,[x,y]);
+> 
+>   L  := [];
+>   L1 := [[1,1],[1,1],[1,1]];
+>   L2 := [[1,1],[1,1],[1,1]];
+>   S  := [];
+>   N1 := [];
+>   N2 := [];
+> 
+>   temp1 := k^2;
+>   temp2 := k^2;
+> 
+>   p := 1;
+>   i := 1;
+> 
+>   while( i <= p4 ) do
+> 
+>     c_z := (c_a*k)/(k-i*c_a);
+>     c_q := -(c_z - sq);
+>     t   := (((c_q*k)-(c_a*k))/(c_a*c_q));
+>     c_q := (c_a*k)/(k-t*c_a);
+> 
+>     point(P3,[t*p3,c_z]):
+>     point(P4,[i*p3,c_q]):
+>     line( Lin2,[P3,P4] );
+>     s2 := slope( Lin2 );
+> 
+>     point(P5,[t,c_z]):
+>     point(P6,[i,c_q]):
+>     line( Lin1,[P5,P6] );
+>     s1 := slope( Lin1 );
+> 
+> #    point(P7,[c_z,t]):
+> #    point(P8,[c_q,i]):
+> #    line( Lin3,[P7,P8] );
+> 
+>     d1 := distance(P5,P6);
+>     d2 := distance(P3,P4);
+> 
+>     L := [op(L),[i,d1]];
+>     S := [op(S),[i,s1]];
+>     N1:= [op(N1),[i,d2]];
+> 
+>     if( i = (p1-1) or i = (p2-1) ) then
+>       print(i,d1,d2,s1);
+>     end if;
+> 
+> #    print(i,d1,d2,s1);
+> 
+>     if( p = 1 ) then
+>       if( d1 < temp1 ) then
+>         L1 := subsop( p=[i,d1], L1 );
+>         L2 := subsop( p=[i,d2], L2 );
+>         temp1 := d1;
+>       else
+>         p := 2;
+>       end if;
+>     elif( p = 2 ) then
+>       if( d1 > temp1 or d1 = 0 ) then
+>         L1 := subsop( p=[i,d1], L1 );
+>         L2 := subsop( p=[i,d2], L2 );
+>         temp1 := d1;
+>       else
+>         p := 3;
+>       end if;
+>     elif( p = 3 ) then
+>       if( d1 < temp1 ) then
+>         L1 := subsop( p=[i,d1], L1 );
+>         L2 := subsop( p=[i,d2], L2 );
+>         temp1 := d1;
+> #      else
+> #        break;
+>       end if;
+>     end if;
+> 
+> #    temp1 := d1;
+> 
+>     i := i + 1;
+> 
+>   end do;
+> 
+>   print("L1",L1);
+>   print("L2",L2);
+> 
+>   line( Blue2, [point(PB1,L1[2]), point(PB2,L1[3])] );
+> 
+>   display(pointplot(L1,connect=true,colour=blue),
+>           pointplot(L2,connect=true,colour=red),
+>           pointplot(L,connect=true,colour=magenta),
+>           pointplot(S,connect=true,colour=green),
+>           pointplot(N1,connect=true,colour=brown),
+>           scaling=unconstrained);
+> 
+> end proc:
+> 
+> tanto_test10(3,11,2,33);
+           3, 11, 33, 5.74456264653802865985061146822
+2, 19.9749654923052514782560513392, 24.3104760631869481609614716768, 
+
+  2.28787307893019376934232125868
+10, 19.9749654923052514782560513392, 24.3104760631869481609614716768, 
+
+  2.28787307893019376934232125868
+"L1", [[1, 18.7458798622261846211370513706], 
+
+  [5, 264.125414130823295189417437639], [13, 18.0090063375233911030601527744]]
+"L2", [[1, 31.3394003102965771876458969665], 
+
+  [5, 264.126833907081296431204387513], [13, 27.0368762362055509791496460118]]
+
+> tanto_test10(7,23,2.74,161);
+          7, 23, 161, 12.6885775404495203801937727461
+6, 46.7399436911920096206188636506, 62.0529446219581085013537798976, 
+
+  2.74475518052142816955395774362
+22, 46.7399436911920096206188636512, 62.0529446219581085013537798977, 
+
+  2.74475518052142816955395774369
+"L1", [[4, 39.8998391171804467708017077028], 
+
+  [12, 1046.65400445254223659782786624], [30, 39.7799120098461906170283128862]
+
+  ]
+"L2", [[4, 80.0411140950504444809625349918], 
+
+  [12, 1046.65518173518366782442808392], [30, 76.9176633512173798596634183016]
+
+  ]
+
+> tanto_test10(23,61,4,1403);
+         23, 61, 1403, 37.4566416006560844472448586154
+22, 161.184372725336399464929337969, 218.266813810208373140690946934, 
+
+  4.12213150585534009249900839606
+60, 161.184372725336399464929337966, 218.266813810208373140690946935, 
+
+  4.12213150585534009249900839587
+"L1", [[14, 117.570848466956976150545373010], 
+
+  [36, 6107.40626080718289310952758531], [90, 117.422395193439249441632912127]
+
+  ]
+"L2", [[14, 326.090740555304370046544914433], 
+
+  [36, 6107.40729775953852881534441356], [90, 315.402198164515686862639282671]
+
+  ]
+
+> tanto_test10(59,127,6.72,140);
+         59, 127, 7493, 86.5621164251429333084549727151
+58, 462.184895499177380305720693868, 646.377072015696976528029474659, 
+
+  6.72287060014632041422418359126
+126, 462.184895499177380305720693864, 646.377072015696976528029474661, 
+
+  6.72287060014632041422418359114
+"L1", [[35, 271.401290737714583171310237415], 
+
+  [86, 34310.2710321142204129911891253], [140, 372.361766119557858597569390341]
+
+  ]
+"L2", [[35, 1175.64935599748760979053270943], 
+
+  [86, 34310.2715231892606764031754704], [140, 692.469803545749300185272263697]
+
+  ]
+
+> tanto_test10(101,103,1,300);
+        101, 103, 10403, 101.995097921419733298482352971
+100, 20806.5000841086200939268703764, 20806.5000841086200939268703764, 
+
+  10403.2499939924063982225999993
+102, 20806.5000841086200939268703764, 20806.5000841086200939268703764, 
+
+  10403.2499939924063982225999993
+               [                                       
+         "L1", [[41, 319.742965812389263787815226925], 
+
+           [                                       6]  
+           [101, 4.24442400245098040206424544184 10 ], 
+
+                                                 ]
+           [247, 319.744369838580114883980469256]]
+               [                                       
+         "L2", [[41, 319.742965812389263787815226925], 
+
+           [                                       6]  
+           [101, 4.24442400245098040206424544184 10 ], 
+
+                                                 ]
+           [247, 319.744369838580114883980469256]]
+
+> tanto_test10(1237,9743,0.66666,10000);
+     1237, 9743, 12052091, 3471.61216151804607080526185951
+1236, 11218.8743576596698104508332840, 9255.64277462159137377683525863, 
+
+  0.859996303814700471697047685263
+9742, 11218.8743576596698104508332840, 9255.64277462159137377683525863, 
+
+  0.859996303814700471697047685257
+              [                                         
+        "L1", [[1429, 10883.1036053368815906287831556], 
+
+          [                                        7]  
+          [3471, 6.21535240735964945809238949526 10 ], 
+
+                                                 ]
+          [8426, 10883.1031739459585212486170706]]
+              [                                         
+        "L2", [[1429, 9551.67852138644568782775931308], 
+
+          [                                        7]  
+          [3471, 6.21535240735964918921643587109 10 ], 
+
+                                                 ]
+          [8426, 9552.17105936154178523112417055]]
+
+> 
+
+

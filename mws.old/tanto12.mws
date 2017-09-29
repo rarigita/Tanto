@@ -1,0 +1,851 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 
+11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 
+0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 12 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 
+1 2 2 2 2 2 2 1 1 1 1 }3 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 73 "Digits:=20;with(geom
+etry);_EnvHorizontalName := x; _EnvVerticalName := y;" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%'DigitsG\"#?" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#
+7]r%+ApolloniusG%-AreCollinearG%.AreConcurrentG%-AreConcyclicG%-AreCon
+jugateG%,AreHarmonicG%.AreOrthogonalG%,AreParallelG%1ArePerpendicularG
+%+AreSimilarG%+AreTangentG%3CircleOfSimilitudeG%-CrossProductG%+CrossR
+atioG%*DefinedAsG%)EquationG%,EulerCircleG%*EulerLineG%.ExteriorAngleG
+%1ExternalBisectorG%*FindAngleG%.GergonnePointG%0GlideReflectionG%0Hor
+izontalCoordG%/HorizontalNameG%.InteriorAngleG%.IsEquilateralG%+IsOnCi
+rcleG%)IsOnLineG%0IsRightTriangleG%*MajorAxisG%+MakeSquareG%*MinorAxis
+G%+NagelPointG%*OnSegmentG%-ParallelLineG%.PedalTriangleG%/PerpenBisec
+torG%2PerpendicularLineG%&PolarG%%PoleG%,RadicalAxisG%.RadicalCenterG%
+/RegularPolygonG%3RegularStarPolygonG%0SensedMagnitudeG%+SimsonLineG%/
+SpiralRotationG%2StretchReflectionG%0StretchRotationG%,TangentLineG%.V
+erticalCoordG%-VerticalNameG%)altitudeG%(apothemG%%areaG%+asymptotesG%
+)bisectorG%'centerG%)centroidG%'circleG%-circumcircleG%&conicG%+convex
+hullG%,coordinatesG%'detailG%)diagonalG%)diameterG%+dilatationG%*direc
+trixG%)distanceG%%drawG%)dsegmentG%(ellipseG%)excircleG%*expansionG%%f
+ociG%&focusG%%formG%)homologyG%*homothetyG%*hyperbolaG%)incircleG%)inr
+adiusG%-intersectionG%*inversionG%%lineG%'medialG%'medianG%'methodG%)m
+idpointG%,orthocenterG%)parabolaG%*perimeterG%&pointG%(powerpcG%+proje
+ctionG%'radiusG%*randpointG%.reciprocationG%+reflectionG%)rotationG%(s
+egmentG%&sidesG%+similitudeG%&slopeG%'squareG%(stretchG%*tangentpcG%,t
+ranslationG%)triangleG%'vertexG%)verticesG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%3_EnvHorizontalNameG%\"xG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%1_EnvVerticalNameG%\"yG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "tanto12 := proc( p1, p2, s, t, v )" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 35 "  global k,sq,a,ca,b,cb,c,cc,xx,yy;" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 15 "  k := p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 25 "  sq := evalf( sqrt(k) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+20 "  line(y,y=x,[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  line(
+lv,x=0,[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  line(lh,y=0,[x,
+y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "  line(lk,x=k,[x,y]);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+25 "  line(sqv,x=sq*s,[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  \+
+line(sqh,y=sq*t,[x,y]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  point(c1,k,0),point(c2,k,k):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  line(kk,[c1,c2]);" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "  point(
+a1,k,k),point(a2,sq*s,0):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  line
+(A,[a1,a2]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "  point(b1,k,0),poi
+nt(b2,sq*s,sq*t):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  line(B,[b1,b
+2]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "  intersection(p3,A,B);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 51 "  point(p4,HorizontalCoord(p3),-VerticalCoord(p3));" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "  point(p5,sq-(HorizontalCoord(p3
+)-sq),VerticalCoord(p3));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "  poin
+t(p6,HorizontalCoord(p5),-VerticalCoord(p5));" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "  line(blue1,[p
+oint(OO,sq,0),p3]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "  line(blue2
+,[point(OK,0,k),p3]);   " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "  #xx:=rand(1..trunc(sq));" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "  #yy:=xx();" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 45 "  line(p1l,[point(psqO,sq,0),point(pr,s,s)]);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "  #print(yy);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "  yy:=abs(slope(p1l))+1;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 31 "  line(p2l,y=yy*x-yy*sq,[x,y]);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 52 "  line(p1m,y=(slope(p1l)/2)*x+abs(yy*sq/2),[x,y]);  \+
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  yy:=slope(p2l)/2;" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 38 "  line(p2m,y=yy*x-(yy*sq-sq/2),[x,y]);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+32 "#  triangle(T1,[p1l,p2l,blue1]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 21 "#  print(detail(T1));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "#  p
+rint(sides(T1));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "#  print(`area \+
+T1=`, area(T1));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 32 "#  triangle(T2,[blue1,p2m,p1m]);" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 20 "#  print(sides(T2));" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 31 "#  print(`area T2=`, area(T2));" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "#  triangle(T3,
+[p2l,p1m,p2m]);  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "#  print(sides
+(T3));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "#  print(`area T3 =`,area
+(T3));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 30 "#  triangle(T4,[p1l,p1m,p2m]);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "#  print(sides(T4));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 31 "#  print(`area T4 =`,area(T4));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "#  triangle(T5,[p1m,p2m,sq
+h]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "#  print(sides(T5));" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "#  print(`area T5 =`,area(T5));" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+50 " # print(HorizontalCoord(intersection(Q,lk,p2l)));" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 52 " # print(HorizontalCoord(intersection(Q,lh,blu
+e2)));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 " # print(distance(OO,p3))
+;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 45 "  print(VerticalCoord(intersection(Q,B,lv)));" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 48 "  print(VerticalCoord(intersection(Q,p2l,sqv)));
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 49 "  print(VerticalCoord(intersect
+ion(Q,blue1,lk)));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "  print" }
+{TEXT -1 0 "" }{MPLTEXT 1 0 42 "(VerticalCoord(intersection(Q,blue1,lv
+)));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "  print(sides(triangle(T,[b
+lue1,B,lv])));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 205 "  draw([y(colour=black),sqv(colour=black),sqh(c
+olour=black),A,B,p3(colour=black),blue1(colour=blue),blue2(colour=blue
+),p1l(colour=red),p2l(colour=red)],colour=green,axes=normal,view=[-k/v
+..k/v,-k/v..k/v]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 9 "end proc:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+20 "tanto12(3,11,3,1,1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"53%*y*)
+*QOxB?\"!#=" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5:)y&zzFZv/C!#=" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5!=<gZRY$zW'*!#>" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#$!5NU(fyS!)4G.#!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#7%$\"5.\\tx#*zl0w?!#=$\"5KoQoIW$ecS\"F&$\"5&3\"\\N[M`*H3#F&" }}{PARA 
+13 "" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6/-%'POINTSG6%7$$\"5A#o$
+pp\"4Kr&>!#=$\"5d0UBCH-$G*[!#>-%&STYLEG6#%%LINEG-%'COLOURG6&%$RGBG\"\"
+!F5F5-%'CURVESG6%7U7$$\"#LF5$\"5+++++++++LF)7$$\"5++++++++oJF)F@7$$\"5
+++++++++OIF)FC7$$\"5++++++++/HF)FF7$$\"5++++++++sFF)FI7$$\"5++++++++SE
+F)FL7$$\"5++++++++3DF)FO7$$\"5++++++++wBF)FR7$$\"5++++++++WAF)FU7$$\"5
+++++++++7@F)FX7$$\"5++++++++!)>F)Fen7$$\"5++++++++[=F)Fhn7$$\"5+++++++
++;<F)F[o7$$\"5++++++++%e\"F)F^o7$$\"5++++++++_9F)Fao7$$\"5++++++++?8F)
+Fdo7$$\"5++++++++)=\"F)Fgo7$$\"5++++++++c5F)Fjo7$$\"4++++++++C*F)$\"5+
++++++++S#*F,7$$\"4++++++++#zF)$\"5++++++++?zF,7$$\"4++++++++g'F)$\"5++
++++++++mF,7$$\"4++++++++G&F)$\"5++++++++!G&F,7$$\"4++++++++'RF)$\"5+++
++++++gRF,7$$\"4++++++++k#F)$FMF,7$$\"4++++++++K\"F)$FeoF,7$$F5F5$!\"!F
+57$$!4++++++++K\"F)$!5++++++++?8F,7$$!4++++++++k#F)$!5++++++++SEF,7$$!
+4++++++++'RF)$!5++++++++gRF,7$$!4++++++++G&F)$!5++++++++!G&F,7$$!4++++
+++++g'F)$!5+++++++++mF,7$$!4++++++++#zF)$!5++++++++?zF,7$$!4++++++++C*
+F)$!5++++++++S#*F,7$$!5++++++++c5F)Fet7$$!5++++++++)=\"F)Fht7$$FerF)F[
+u7$$!5++++++++_9F)F]u7$$!5++++++++%e\"F)F`u7$$!5++++++++;<F)Fcu7$$!5++
+++++++[=F)Ffu7$$!5++++++++!)>F)Fiu7$$!5++++++++7@F)F\\v7$$!5++++++++WA
+F)F_v7$$!5++++++++wBF)Fbv7$$!5++++++++3DF)Fev7$$FjrF)Fhv7$$!5++++++++s
+FF)Fjv7$$!5++++++++/HF)F]w7$$!5++++++++OIF)F`w7$$!5++++++++oJF)Fcw7$$!
+5+++++++++LF)FfwF-F1-F76%7U7$$\"5!)f39'RzoLs\"F)F;7$F\\xF@7$F\\xFC7$F
+\\xFF7$F\\xFI7$F\\xFL7$F\\xFO7$F\\xFR7$F\\xFU7$F\\xFX7$F\\xFen7$F\\xFh
+n7$F\\xF[o7$F\\xF^o7$F\\xFao7$F\\xFdo7$F\\xFgo7$F\\xFjo7$F\\xF]p7$F\\x
+Fbp7$F\\xFgp7$F\\xF\\q7$F\\xFaq7$F\\xFfq7$F\\xFjq7$F\\xF^r7$F\\xFbr7$F
+\\xFgr7$F\\xF\\s7$F\\xFas7$F\\xFfs7$F\\xF[t7$F\\xF`t7$F\\xFet7$F\\xFht
+7$F\\xF[u7$F\\xF]u7$F\\xF`u7$F\\xFcu7$F\\xFfu7$F\\xFiu7$F\\xF\\v7$F\\x
+F_v7$F\\xFbv7$F\\xFev7$F\\xFhv7$F\\xFjv7$F\\xF]w7$F\\xF`w7$F\\xFcw7$F
+\\xFfwF-F1-F76%7U7$F;$\"5*f'G!QlkiXu&F,7$F@Fd[l7$FCFd[l7$FFFd[l7$FIFd[
+l7$FLFd[l7$FOFd[l7$FRFd[l7$FUFd[l7$FXFd[l7$FenFd[l7$FhnFd[l7$F[oFd[l7$
+F^oFd[l7$FaoFd[l7$FdoFd[l7$FgoFd[l7$FjoFd[l7$F]pFd[l7$FbpFd[l7$FgpFd[l
+7$F\\qFd[l7$FaqFd[l7$FfqFd[l7$FjqFd[l7$F^rFd[l7$FbrFd[l7$FgrFd[l7$F\\s
+Fd[l7$FasFd[l7$FfsFd[l7$F[tFd[l7$F`tFd[l7$FetFd[l7$FhtFd[l7$F[uFd[l7$F
+]uFd[l7$F`uFd[l7$FcuFd[l7$FfuFd[l7$FiuFd[l7$F\\vFd[l7$F_vFd[l7$FbvFd[l
+7$FevFd[l7$FhvFd[l7$FjvFd[l7$F]wFd[l7$F`wFd[l7$FcwFd[l7$FfwFd[lF-F1-F7
+6%7UF:7$F@$\"5r_A@L;ZrBIF)7$FC$\"5U0XUmK%Huu#F)7$FF$\"58enj**[T9rCF)7$
+FI$\"5%3,\\G`')e[>#F)7$FL$\"5bj71m\"et&=>F)7$FO$\"5E;NF*zH)GU;F)7$FR$
+\"5(*od[K9I+m8F)7$FU$\"5o@!)plIxr*3\"F)7$FX$\"5%Ru-\"*)pWKM\")F,7$Fen$
+\"50r_A@L;Zr`F,7$Fhn$\"5:)zZLlz='3EF,7$F[o$!5XZnHX,/MU:!#?7$F^o$!5kZrS
+#o(o3<HF,7$Fao$!5a?YG]8(R*zcF,7$Fdo$!5V$4i\"=]DzU%)F,7$Fgo$!5jcRgoQXc?
+6F)7$Fjo$!5#Rq\"RNA)\\oR\"F)7$F]p$!5@^%z@g5NJn\"F)7$Fbp$!5])>n*o*Q?%\\
+>F)7$Fgp$!5zX\\vNtcqDAF)7$F\\q$!53$pUDq&4*>]#F)7$Faq$!5PS/LpSiFyFF)7$F
+fq$!5m(==hV_hX0$F)7$Fjq$!5&\\$f!H!3o%3L$F)7$F^r$!5C#o$pp\"4Krg$F)7$Fbr
+$!5`H9[OvtT$)QF)7$Fgr$!5#o<pK!fEqfTF)7$F\\s$!56Cp0qUz)fV%F)7$Fas$!5SrY
+%ojAtAr%F)7$Ffs$!5p=Cj.5&e&))\\F)7$F[t$!5)f;?/PzV[E&F)7$F`t$!5F8z?Px!H
+6a&F)7$Fet$!5bgc*R5O9u\"eF)7$Fht$!5%yS$yqW'*p$4'F)7$F[u$!56b6dPG\\)*pj
+F)7$F]u$!5S-*eV?@qik'F)7$F`u$!5p\\m9r&\\bD#pF)7$Fcu$!5)pRMz$z2%))>(F)7
+$Ffu$!5FW@s/jg7vuF)7$Fiu$!5c\"*)4:nM69v(F)7$F\\v$!5&)QwHQImpF!)F)7$F_v
+$!59'Q&309>)RI)F)7$Fbv$!5ULJ(=x>n-e)F)7$Fev$!5r!)3mQ\"[_l&))F)7$Fhv$!5
++G'[a]wPG8*F)7$Fjv$!5HvjBs[I74%*F)7$F]w$!5eAT-RK$3ao*F)7$F`w$!5()p=\"e
+gh$ph**F)7$Fcw$!5sh*fs**)yzB5!#<7$Ffw$!5XO(QR$=kU^5F_hlF--F26&F4F^r$\"
+*++++\"!\")F^r-F76%7U7$F;F^r7$F@$\"5Cw:ffb%4&4[F_al7$FC$\"57`J=>6*=!>'
+*F_al7$FF$\"5%HZxym$G&GW\"F,7$FI$\"5cIm$QAy.Q#>F,7$FL$\"5=)y&zzFZv/CF,
+7$FO$\"5\"e%\\vNtcq&)GF,7$FR$\"5V.Tr\"*=mlmLF,7$FU$\"51hKnZkvgZQF,7$FX
+$\"5o=Cj.5&e&GVF,7$Fen$\"5Jw:ffb%4&4[F,7$Fhn$\"5*Rt]b6Sg/H&F,7$F[o$\"5
+f\"*)4:nM69x&F,7$F^o$\"5A\\!puAHiBD'F,7$Fao$\"5(o?GMyB8Lt'F,7$Fdo$\"5
+\\ktQR$=kU@(F,7$Fgo$\"56AlM&*G^@&p(F,7$Fjo$\"5uzcI^ug;w\")F,7$F]p$\"5O
+P[E2?q6d')F,7$Fbp$\"5*\\*RAjlz1Q\"*F,7$Fgp$\"5h_J=>6*=!>'*F,7$F\\q$\"5
+.JU^n&)p**45F)7$Faq$\"5zY,6B!3#4e5F)7$Ffq$\"5bigqyur=16F)7$Fjq$\"5Ky>I
+MpAGa6F)7$F^r$\"53%*y*)*QOxB?\"F)7$Fbr$\"5%)4Q\\XeCZ]7F)7$Fgr$\"5gD(*3
+,`vc)H\"F)7$F\\s$\"5PTcocZEmY8F)7$Fas$\"58d:G7Uxv%R\"F)7$Ffs$\"5!HZxym
+$G&GW\"F)7$F[t$\"5m)QtM7$z%4\\\"F)7$F`t$\"5U/$p!zDI/R:F)7$Fet$\"5>?_mM
+?\"Qre\"F)7$Fht$\"5&f8h-\\@L_j\"F)7$F[u$\"5r^q&e%4$GLo\"F)7$F]u$\"5ZnH
+X,/MUJ<F)7$F`u$\"5B$))[q&)\\=&z<F)7$Fcu$\"5+*zWEJf8w#=F)7$Ffu$\"5w92Co
+(o3d(=F)7$Fiu$\"5`Im$QAy.Q#>F)7$F\\v$\"5HYDVzw))*=(>F)7$F_v$\"50i%G]8(
+R**>?F)7$Fbv$\"5#yPC1f1*3o?F)7$Fev$\"5e$H?i/;%=;@F)7$Fhv$\"5M4i\"=]DzU
+;#F)7$Fjv$\"55D@Td\\VP7AF)7$F]w$\"5(3/3ITWp/E#F)7$F`w$\"5jcRgoQXc3BF)7
+$Fcw$\"5Ss)*>CL'fmN#F)7$Ffw$\"5;)y&zzFZv/CF)F-Fchl-F76%7U7$F;$\"5!=<gZ
+RY$zW'*F,7$F@$\"5>v`lAL$*ox\"*F,7$FC$\"5ly0b]-_e5()F,7$FF$\"56#yX%yr5[
+V#)F,7$FI$\"5\\&)4M1TpPwxF,7$FL$\"5&*)=OU.\"GF4tF,7$FO$\"5W#RJ@'z'o@%o
+F,7$FR$\"5$efE+*[X1vjF,7$FU$\"5H*z@z\"=/'z!fF,7$FX$\"5u-q\"euGc3W&F,7$
+Fen$\"5:1Artc@vt\\F,7$Fhn$\"5e4ug,E![m]%F,7$F[o$\"5-8E]H&*QaRSF,7$F^o$
+\"5X;yRdk(RCd$F,7$Fao$\"5*)>IH&QjN`5$F,7$Fdo$\"5KB#)=8.:BQEF,7$Fgo$\"5
+vEM3Tst7r@F,7$Fjo$\"5=I'y*oTK-/<F,7$F]p$\"5iLQ(o46>pB\"F,7$Fbp$\"5\\q.
+pZ-)\\\")p(F_al7$Fgp$\"5'[SUm_\\3r-$F_al7$F\\q$!5%3c0W>\"G$Rk\"F_al7$F
+aq$!5ZENX:>T(\\J'F_al7$Ffq$!5A\\,ljU:g)4\"F,7$Fjq$!5yX\\vNtcql:F,7$F^r
+$!5NU(fyS!)4G.#F,7$Fbr$!5#*QX'*zMR\"**\\#F,7$Fgr$!5[N$p?b1=q'HF,7$F\\s
+$!50KT<C'>ATV$F,7$Fas$!5iG*yipKE7!RF,7$Ffs$!5>DPQod/LoVF,7$F[t$!5v@&)[
+S)eMa$[F,7$F`t$!5K=Lf7>(QDI&F,7$Fet$!5)[6)p%)\\GkpdF,7$Fht$!5X6H!o0)pu
+OiF,7$F[u$!5-3x!*G66&Qq'F,7$F]u$!5f/D,,U_&4<(F,7$F`u$!5;,t6ts$f!QwF,7$
+Fcu$!5r(4A_M]j^5)F,7$Ffu$!5K%*oK<MwEs&)F,7$Fiu$!5'3pJ%*[wr$R!*F,7$F\\v
+$!5[([O:c*eZ1&*F,7$F_v$!5-%GTOj-!et**F,7$Fbv$!513Ydq:%oS/\"F)7$Fev$!5s
+(3&yxG)y24\"F)7$Fhv$!5Pnb*\\=C*[P6F)7$Fjv$!5.Zg?#\\l*>%=\"F)7$F]w$!5pE
+lT*z154B\"F)7$F`w$!5M1qi1\"[?wF\"F)7$Fcw$!5+'[PQT*3LC8F)7$Ffw$!5mlz/@2
+8/r8F)F--F26&F4F^rF^rFehl-F76%7U7$F;$!5UktQR$=k#R9F)7$F@$!5&)p=\"egh$p
+\\7F)7$FC$!5FvjBs[I7g5F)7$FF$!5\"p!)3mQ\"[_0()F,7$FI$!5<hQ&309>)4oF,7$
+FL$!5Q:*)4:nM69\\F,7$FO$!5kpRMz$z2%=IF,7$FR$!5&Q-*eV?@qA6F,7$FU$\"5T>#
+f;#Hb.IxF_al7$FX$\"5on3#ziA4(oEF,7$Fen$\"5Z8enj**[TkXF,7$Fhn$\"5@f2V*H
+d?,Y'F,7$F[o$\"5+0d=NYi#eN)F,7$F^o$\"53lS4(>>`^-\"F)7$Fao$\"5lf&p1$fPs
+97F)7$Fdo$\"5Ba]CkEVH/9F)7$Fgo$\"5\")[0#yR*['Qf\"F)7$Fjo$\"5RVgRJhaV$y
+\"F)7$F]p$\"5'z`r\\'Gg+t>F)7$Fbp$\"5aKqa)ffwD;#F)7$Fgp$\"57FD7Kjr9_BF)
+7$F\\q$\"5q@!)plIxrTDF)7$Faq$\"5F;NF*zH)GJFF)7$Ffq$\"5&3,\\G`')e3#HF)7
+$Fjq$\"5U0XUmK%H/6$F)7$F^rF=7$Fbr$\"5e%\\vNtcq&*[$F)7$Fgr$\"5;*)4:nM69
+zOF)7$F\\s$\"5t$[E2?q6(oQF)7$Fas$\"5Jy>IMpAGeSF)7$Ffs$\"5*GZxym$G&yC%F
+)7$F[t$\"5ZnHX,/MUPWF)7$F`t$\"5/i%G]8(R*pi%F)7$Fet$\"5icRgoQXc;[F)7$Fh
+t$\"5>^%z@g5Nh+&F)7$F[u$\"5yX\\vNtcq&>&F)7$F]u$\"5OS/LpSiF&Q&F)7$F`u$
+\"5&\\$f!H!3o%[d&F)7$Fcu$\"5[H9[OvtTkdF)7$Ffu$\"51Cp0qUz)R&fF)7$Fiu$\"
+5l=Cj.5&eN9'F)7$F\\v$\"5B8z?Px!HJL'F)7$F_v$\"5#yS$yqW'*pAlF)7$Fbv$\"5S
+-*eV?@qAr'F)7$Fev$\"5)pRMz$z2%=!pF)7$Fhv$\"5_\"*)4:nM694(F)7$Fjv$\"55'
+Q&309>)4G(F)7$F]w$\"5o!)3mQ\"[_0Z(F)7$F`w$\"5FvjBs[I7gwF)7$Fcw$\"5&)p=
+\"egh$p\\yF)7$Ffw$\"5WktQR$=k#R!)F)F-F^\\n-F76%7U7$F;$!5uug<X#*4@zHF)7
+$F@$!5XF$)Qy3d#\\$GF)7$FC$!5;!e+;^US1p#F)7$FF$!5(G$G\"[99bja#F)7$FI$!5
+e&3D!yd)p?S#F)7$FL$!5HQtB6uXydAF)7$FO$!5,\"f\\W/H*\\8@F)7$FR$!5sV=mx1S
+@p>F)7$FU$!5V'4u3JsG\\#=F)7$FX$!59\\j3WRMk!o\"F)7$Fen$!5&=g)Hxb\"ej`\"
+F)7$Fhn$!5ca3^5sG2#R\"F)7$F[o$!5G2JsV)e(yZ7F)7$F^o$!5**f`$pZI-N5\"F)7$
+Fao$!5)p7w95@q@f*F,7$Fdo$!55a')fLutJ\\\")F,7$Fgo$!5A\"=@dw`kkq'F,7$Fjo
+$!5L3P%y4q6OE&F,7$F]p$!5XNi'*Hk)e2#QF,7$Fbp$!5ci()3iFg!zP#F,7$Fgp$!5v'
+*G6U4>`]$*F_al7$F\\q$\"55K=mOdk*z2&F_al7$Faq$\"54cOaT#[_1&>F,7$Ffq$\"5
+)*G6U4>`]$R$F,7$Fjq$\"5'=g)Hxb\"ej$[F,7$F^r$\"5vug<X#*4@ziF,7$Fbr$\"5j
+ZN08HQ1AxF,7$Fgr$\"5_?5$4em;\\;*F,7$F\\s$\"5M\\3)[-&pxg5F)7$Fas$\"5j'f
+o;RBi]?\"F)7$Ffs$\"5#RMc%e<vM\\8F)7$F[t$\"5@\"4W_7!Gj$\\\"F)7$F`t$\"5
+\\Q=.#\\3=zj\"F)7$Fet$\"5y&e>)eoL?#y\"F)7$Fht$\"52LtgD_')[E>F)7$F[u$\"
+5O!3&R#f$Rxq?F)7$F]u$\"5lFG=f>#f]@#F)7$F`u$\"5%\\dqfK]W$fBF)7$Fcu$\"5B
+A$eFpyHO]#F)7$Ffu$\"5^pgafq]\"zk#F)7$Fiu$\"5!o\"QLEa.?#z#F)7$F\\v$\"54
+k:7$zj&[OHF)7$F_v$\"5Q6$4*f@4x!3$F)7$Fbv$\"5neqpE0i0DKF)7$Fev$\"5'f![[
+$*)[T$pLF)7$Fhv$\"5C`DFgsni8NF)7$Fjv$\"5`+.1Fc?\"zl$F)7$F]w$\"5#y/[Q*R
+t>-QF)7$F`w$\"56&zN1Oi#[YRF)7$Fcw$\"5SUNUF2zw!4%F)7$Ffw$\"5p*G6U4>`]B%
+F)F--F26&F4FehlF^rF^r-F76%7U7$F;$\"59)y&zzFZv/dF)7$F@$\"5'3/3ITWp%GaF)
+7$FC$\"5d$H?i/;%=_^F)7$FF$\"5GYDVzw))*e([F)7$FI$\"5**)zWEJf8'*f%F)7$FL
+$\"5q^q&e%4$GLK%F)7$FO$\"5T/$p!zDI/ZSF)7$FR$\"57d:G7UxvqPF)7$FU$\"5$)4
+Q\\XeCZ%\\$F)7$FX$\"5aigqyur==KF)7$Fen$\"5E:$=>6*=!>%HF)7$Fhn$\"5(zcI^
+ug;cm#F)7$F[o$\"5o?GMyB8L*Q#F)7$F^o$\"5Rt]b6Sg/8@F)7$Fao$\"55EtwWc2wO=
+F)7$Fdo$\"5\")y&zzFZv/c\"F)7$Fgo$\"5_J=>6*=!>%G\"F)7$Fjo$\"5B%3/Wa!\\!
+z+\"F)7$F]p$\"5SpL;w<i>;tF,7$Fbp$\"5]'*eG3\"QVLb%F,7$Fgp$\"5gB%3/Wa!\\
+!z\"F,7$F\\q$!5+#\\!puAHiB(*F_al7$Faq$!58AlM&*G^@NPF,7$Ffq$!5-&*RAjlz1
+)\\'F,7$Fjq$!5\"zY,6B!3#4E*F,7$F^r$!53%*y*)*QOxB?\"F)7$Fbr$!5PTcocZEmy
+9F)7$Fgr$!5m)QtM7$z%\\v\"F)7$F\\s$!5&f8h-\\@L7.#F)7$Fas$!5C$))[q&)\\=v
+I#F)7$Ffs$!5_Im$QAy.Qe#F)7$F[t$!5\"yPC1f1*3gGF)7$F`t$!55D@Td\\VPOJF)7$
+Fet$!5Rs)*>CL'fET$F)7$Fht$!5o>w)4p\"\\%*)o$F)7$F[u$!5(pOvx0?I_'RF)7$F]
+u$!5E9JcC%[::C%F)7$F`u$!5bh3N\"zw+y^%F)7$Fcu$!5%)3'Q\"e^g3%z%F)7$Ffu$!
+58cj#\\_Lr.2&F)7$Fiu$!5U.Tr\"*=mlY`F)7$F\\v$!5q]=]e->%Hi&F)7$F_v$!5*zf
+*GD'=F#**eF)7$Fbv$!5GXt2#*pC^vhF)7$Fev$!5d#4l)e`xz^kF)7$Fhv$!5')RGlDPI
+3GnF)7$Fjv$!5:(eSC4KoV+(F)7$F]w$!5WM$G#f/Ol!G(F)7$F`w$!5t\"3;g#)))Qpb(
+F)7$Fcw$!5-HQ!G><CK$yF)7$Ffw$!5Iw:ffb%4&4\")F)F-Ff_o-%*AXESSTYLEG6#%'N
+ORMALG-%(SCALINGG6#%,CONSTRAINEDG-%%VIEWG6$;$!#LF5F;F_jo" 1 2 0 1 10 
+0 2 9 1 4 1 1.000000 45.000000 45.000000 0 0 "Curve 1" "Curve 2" "Curv
+e 3" "Curve 4" "Curve 5" "Curve 6" "Curve 7" "Curve 8" "Curve 9" "Curv
+e 10" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "tanto12(7,23,7,1,1
+);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5Yb='R9-L-$G!#=" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#$\"5G8rP'G\")R\")p\"!#<" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"5B[J&=GZgG9#!#=" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$
+!5\\P*z$y$[%HL=!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"5iZhMM)**4q
+]*!#=$\"5@\\)*z\")pCc8IF&$\"5X*e(>K_Re`&*F&" }}{PARA 13 "" 1 "" 
+{GLPLOT2D 384 384 384 {PLOTDATA 2 "6/-%'POINTSG6%7$$\"5f!R'=1?\\I4%*!#
+=$\"5$))Ht2]6jh<\"F)-%&STYLEG6#%%LINEG-%'COLOURG6&%$RGBG\"\"!F4F4-%'CU
+RVESG6%7U7$$\"$h\"F4$\"5++++++++5;!#<7$$\"5+++++++gX:F>F@7$$\"5+++++++
+?\"[\"F>FC7$$\"5+++++++!oT\"F>FF7$$\"5+++++++S_8F>FI7$$\"5++++++++)G\"
+F>FL7$$\"5+++++++gB7F>FO7$$\"5+++++++?f6F>FR7$$\"5+++++++![4\"F>FU7$$
+\"5+++++++SI5F>FX7$$\"5++++++++g'*F)Fen7$$\"5++++++++;!*F)Fhn7$$\"5+++
++++++s$)F)F[o7$$\"5++++++++GxF)F^o7$$\"5++++++++%3(F)Fao7$$\"5++++++++
+SkF)Fdo7$$\"4+++++++gz&F>$\"5++++++++'z&F)7$$\"4+++++++?:&F>$\"5++++++
+++_^F)7$$\"4+++++++!3XF>$\"5++++++++3XF)7$$\"4+++++++S'QF>$\"5++++++++
+kQF)7$$\"4++++++++A$F>$\"5++++++++?KF)7$$\"4+++++++gd#F>$\"5++++++++wD
+F)7$$\"4+++++++?$>F>$\"5++++++++K>F)7$$\"4+++++++!)G\"F>$FMF)7$$\"3+++
+++++SkF>$Feo!#>7$$F4F4$!\"!F47$$!3+++++++SkF>$!5++++++++SkFar7$$!4++++
++++!)G\"F>$!5++++++++)G\"F)7$$!4+++++++?$>F>$!5++++++++K>F)7$$!4++++++
++gd#F>$!5++++++++wDF)7$$!4++++++++A$F>$!5++++++++?KF)7$$!4+++++++S'QF>
+$!5++++++++kQF)7$$!4+++++++!3XF>$!5++++++++3XF)7$$!4+++++++?:&F>$!5+++
++++++_^F)7$$!4+++++++gz&F>$!5++++++++'z&F)7$$!4++++++++W'F>$FjrF)7$$!4
++++++++S3(F>$!5++++++++%3(F)7$$!4+++++++!GxF>$!5++++++++GxF)7$$!4+++++
+++?P)F>$!5++++++++s$)F)7$$!4+++++++g,*F>$!5++++++++;!*F)7$$!4++++++++m
+*F>$!5++++++++g'*F)7$$!5+++++++SI5F>Faw7$$!5+++++++![4\"F>Fdw7$$!5++++
++++?f6F>Fgw7$$!5+++++++gB7F>Fjw7$$F_sF>F]x7$$!5+++++++S_8F>F_x7$$!5+++
+++++!oT\"F>Fbx7$$!5+++++++?\"[\"F>Fex7$$!5+++++++gX:F>Fhx7$$!5++++++++
+5;F>F[yF,F0-F66%7U7$$\"5gEkYJyU+#)))F)F:7$FayF@7$FayFC7$FayFF7$FayFI7$
+FayFL7$FayFO7$FayFR7$FayFU7$FayFX7$FayFen7$FayFhn7$FayF[o7$FayF^o7$Fay
+Fao7$FayFdo7$FayFgo7$FayF\\p7$FayFap7$FayFfp7$FayF[q7$FayF`q7$FayFeq7$
+FayFjq7$FayF^r7$FayFcr7$FayFgr7$FayF\\s7$FayFas7$FayFfs7$FayF[t7$FayF`
+t7$FayFet7$FayFjt7$FayF_u7$FayFdu7$FayFhu7$FayF]v7$FayFbv7$FayFgv7$Fay
+F\\w7$FayFaw7$FayFdw7$FayFgw7$FayFjw7$FayF]x7$FayF_x7$FayFbx7$FayFex7$
+FayFhx7$FayF[yF,F0-F66%7U7$F:$\"5!Q?&\\/ax&)o7F)7$F@Fi\\l7$FCFi\\l7$FF
+Fi\\l7$FIFi\\l7$FLFi\\l7$FOFi\\l7$FRFi\\l7$FUFi\\l7$FXFi\\l7$FenFi\\l7
+$FhnFi\\l7$F[oFi\\l7$F^oFi\\l7$FaoFi\\l7$FdoFi\\l7$FgoFi\\l7$F\\pFi\\l
+7$FapFi\\l7$FfpFi\\l7$F[qFi\\l7$F`qFi\\l7$FeqFi\\l7$FjqFi\\l7$F^rFi\\l
+7$FcrFi\\l7$FgrFi\\l7$F\\sFi\\l7$FasFi\\l7$FfsFi\\l7$F[tFi\\l7$F`tFi\\
+l7$FetFi\\l7$FjtFi\\l7$F_uFi\\l7$FduFi\\l7$FhuFi\\l7$F]vFi\\l7$FbvFi\\
+l7$FgvFi\\l7$F\\wFi\\l7$FawFi\\l7$FdwFi\\l7$FgwFi\\l7$FjwFi\\l7$F]xFi
+\\l7$F_xFi\\l7$FbxFi\\l7$FexFi\\l7$FhxFi\\l7$F[yFi\\lF,F0-F66%7UF97$F@
+$\"50o!p*RvMNm9F>7$FC$\"55O\"Q*z]pqA8F>7$FF$\"5:/s!*>E/1z6F>7$FI$\"5>s
+i()f,RTN5F>7$FL$\"5S-MX)*pPn<*)F)7$FO$\"5(G3W\")R_37[(F)7$FR$\"5MjZ$yz
+FVZ/'F)7$FU$\"5#QWDv>.y#3YF)7$FX$\"5HCh@(fy7=<$F)7$Fen$\"5w/o!p*RvMN<F
+)7$Fhn$\"5L_[(f'RH#)))HFar7$F[o$!5HM=r._HeP6F)7$F^o$!5#Q:@S!)>[Sd#F)7$
+Fao$!5Nt/L/WM^5SF)7$Fdo$!5)GzRY+pypW&F)7$Fgo$!5T7\"\\\\g$RW$)oF)7$F\\p
+$!5$>Ve_?=4*>$)F)7$Fap$!5Y^xc0GWPc(*F)7$Ffp$!552xeSnRG>6F>7$F[q$!50R'=
+1?\\IHE\"F>7$F`q$!5+r&\\1m,xlS\"F>7$Feq$!5'H]!o?TNA]:F>7$Fjq$!5\"\\V62
+e1qQp\"F>7$F^r$!5'oOU2/f;v$=F>7$Fcr$!5#))Ht2]6j6)>F>7$Fgr$!5xIU!3'R'4[
+7#F>7$F\\s$!5si^$3U;c%oAF>7$Fas$!5n%4m3))o-@T#F>7$Ffs$!5jEq*3M@\\db#F>
+7$F[t$!5eez#4!QdR*p#F>7$F`t$!5`!*)e4EEUI%GF>7$Fet$!5[A)*)4sy)o')HF>7$F
+jt$!5Wa2-\"=JN.8$F>7$F_u$!5R'o^5k$=)RF$F>7$Fdu$!5M=E3,h$GwT$F>7$Fhu$!5
+I]N6h&)[FhNF>7$F]v$!5D#[W6-T@\\q$F>7$Fbv$!5?9a<\"[$zc[QF>7$Fgv$!5:Yj?T
+fW@#*RF>7$F\\w$!56ysB,%)4'e8%F>7$Faw$!515#o7'3v]zUF>7$Fdw$!5,U\"*H@LS:
+BWF>7$Fgw$!5'R2I8yb+oc%F>7$Fjw$!5#f+h8C3Z/r%F>7$F]x$!5(y$>R,2O4a[F>7$F
+_x$!5#)pGUhJ,u(*\\F>7$Fbx$!5y,QX@cmQT^F>7$Fex$!5tLZ[\"3=L]G&F>7$Fhx$!5
+olc^T0(z'GaF>7$F[y$!5j(fY:+BEBd&F>F,-F16&F3Fcr$\"*++++\"!\")Fcr-F66%7U
+7$F:Fcr7$F@$\"5EUZed3K4K6Far7$FC$\"5P%[p^rT'=kAFar7$FF$\"5jEUvsD'ziR$F
+ar7$FI$\"5uo*Q.V$GPGXFar7$FL$\"5+6P#zG/m/m&Far7$FO$\"57`%3b9DfDz'Far7$
+FR$\"5P&>$4.gClCzFar7$FU$\"5\\Pzngocuc!*Far7$FX$\"5'zEE=x)Q))=5F)7$Fen
+$\"5>UZed3K4K6F)7$Fhn$\"5S;KMVHDIX7F)7$F[o$\"5i!p,\"H]=^e8F)7$F^o$\"5%
+[;g[6<@<Z\"F)7$Fao$\"51R'=1?\\I\\e\"F)7$Fdo$\"5F8rP'G\")R\")p\"F)7$Fgo
+$\"5](eN@P8\\8\"=F)7$F\\p$\"5rhS*yXXeX#>F)7$Fap$\"5%f`_Oaxnx.#F)7$Ffp$
+\"5:55TH'4x4:#F)7$F[q$FdjlF)7$F`q$\"5eez#4!QdRxBF)7$Feq$\"5\"GV'o')e]g
+!\\#F)7$Fjq$\"5-2\\WszV\"Qg#F)7$F^r$\"5D\"Q.#e+P-<FF)7$Fcr$\"5Yb='R9-L
+-$GF)7$Fgr$\"5nH.sHUBWVHF)7$F\\s$\"5!R!)yaJm^m0$F)7$Fas$\"56ysB,%)4')p
+JF)7$Ffs$\"5L_d*p[IqIG$F)7$F[t$\"5aEUvsD'ziR$F)7$F`t$\"5x+F^eY*)[4NF)7
+$Fet$\"5)\\<rUuE)pAOF)7$Fjt$\"5@\\'H+$)e2ft$F)7$F_u$\"5UB\")y:4p6\\QF)
+7$Fdu$\"5k(fY:+BEB'RF)7$Fhu$\"5'=20t3bNb2%F)7$F]v$\"53YN1tr[u)=%F)7$Fb
+v$\"5H??#)e#>a>I%F)7$Fgv$\"5_%\\!eW8N;:WF)7$F\\w$\"5to*Q.V$GPGXF)7$Faw
+$\"5'HW(4;b@eTYF)7$Fdw$\"5<<f&=gZ\"zaZF)7$Fgw$\"5Q\"R9woz+!o[F)7$Fjw$
+\"5hlGPt<,@\")\\F)7$F]x$\"5#)R88fQ%>W4&F)7$F_x$\"5/9)*)[%f(Gw?&F)7$Fbx
+$\"5D)G[1.3Q3K&F)7$Fex$\"5[inS;,u/MaF)7$Fhx$\"5pO_;-AnDZbF)7$F[y$\"5#4
+rBzG/m/m&F)F,Ffil-F66%7U7$F:$\"5B[J&=GZgG9#F)7$F@$\"5b-b1(f(G\")\\?F)7
+$FC$\"5)o&yF7z_wc>F)7$FF$\"5>6-\\F#o<P'=F)7$FI$\"5_lDqU&3q1x\"F)7$FL$
+\"5$)>\\\"z&)[Awn\"F)7$FO$\"5;us7t\"*[d%e\"F)7$FR$\"5ZG'R$)[HF:\\\"F)7
+$FU$\"5!G)>b.)pz%)R\"F)7$FX$\"56PVw=,@V08F)7$Fen$\"5W\"pwRV]%Q77F)7$Fh
+n$\"5wX!*=\\2pL>6F)7$F[o$\"53+9Sk5$*GE5F)7$F^o$\"5+Wv8'z8<CL*Far7$Fao$
+\"5@(3h#[p6%>S)Far7$Fdo$\"5UIYQ+,_YruFar7$Fgo$\"5jt\"3DDB*)4a'Far7$F\\
+p$\"5$orJYSE80h&Far7$Fap$\"50g_vc&HP+o%Far7$Ffp$\"5E.)y)3F8c\\PFar7$F[
+q$\"5YYB+he`3>GFar7$F`q$\"5o*)e78!R4'))=Far7$Feq$\"5&)GV\\_;UL\"e*!#?7
+$Fjq$\"504wHP<`ulF!#@7$F^r$!5'p![.0`^=G!*F\\hm7$Fcr$!5\\P*z$y$[%HL=Far
+7$Fgr$!5G%RciAXqPw#Far7$F\\s$!51^G8u?kC%p$Far7$Fas$!5'yI4?#*QAZi%Far7$
+Ffs$!5lkd))pd$)>bbFar7$F[t$!5W@Aw<EVn&['Far7$F`t$!5By'QcYH]hT(Far7$Fet
+$!5.N^^8jiiY$)Far7$Fjt$!5\"=f\"RhJA5x#*Far7$F_u$!5'[!o#4+#yv?5F)7$Fdu$
+!5a]Wr&oT0Q6\"F)7$Fhu$!5A'4-0P,`o?\"F)7$F]v$!5!>u*Gb51!**H\"F)7$Fbv$!5
+d(Qx+u?[HR\"F)7$Fgv$!5EL]'[U!e*f[\"F)7$F\\w$!5$*yEl4,M/z:F)7$Faw$!5hC.
+W%z*44s;F)7$Fdw$!5HqzAz%fQ^w\"F)7$Fgw$!5'fh:S;>'=e=F)7$Fjw$!5lhK!)[)yL
+7&>F)7$F]x$!5K24fL&Q\"GW?F)7$F_x$!5,`&y$=#)*Gt8#F)7$Fbx$!5o)>mJ!zlPIAF
+)7$Fex$!5PWQ&ze<CMK#F)7$Fhx$!5/!\\TFFxrkT#F)7$F[y$!5tN\"Hv&p$>&4DF)F,-
+F16&F3FcrFcrFhil-F66%7U7$F:$!5iwfY:+BwN%*F)7$F@$!5iPt%[\"3=L9%)F)7$FC$
+!5^)pGUhJ,HR(F)7$FF$!5]f+h8C3ZrjF)7$FI$!5R?9*H@LS+N&F)7$FL$!5G\"ysB,%)
+4'GVF)7$FO$!5GUTv6[$zrI$F)7$FR$!5<.b86c)[dG#F)7$FU$!5<ko^5k$=VE\"F)7$F
+X$!5g]A)*)4sy)GCFar7$Fen$\"5VRT?2*>Eay(Far7$Fhn$\"50`!R8>6t**z\"F)7$F[
+o$\"5;#pd>Rg.9#GF)7$F^o$\"5<Jjd#f4MG%QF)7$Fao$\"5Fq\\>$zekU'[F)7$Fdo$
+\"5J4O\"Q*z]p&)eF)7$Fgo$\"5P[AV%>dDr!pF)7$F\\p$\"5V()30&R1c&GzF)7$Fap$
+\"5]E&pcfb')*\\*)F)7$Ffp$\"5dl\")G'z/<9(**F)7$F[q$\"5Y!o!p*Rv%G*4\"F>7
+$F`q$\"5PWDv>.yU,7F>7$Feq$\"5F3W\")R_3d.8F>7$Fjq$\"5=si()f,Rr09F>7$F^r
+$\"53O\"Q*z]p&y]\"F>7$Fcr$\"5****************4;F>7$Fgr$\"5\"R'=1?\\I97
+<F>7$F\\s$\"5\"ysB,%)4'G9=F>7$Fas$\"5s\"f&=gZ\"Hk\">F>7$Ffs$\"5ibuC!o>
+s&=?F>7$F[t$\"5`>$4.gC:27#F>7$F`t$\"5V$=r._HeGA#F>7$Fet$\"5MZIVSW8+DBF
+>7$Fjt$\"5D6\\\\g$RWrU#F>7$F_u$\"5:vnb!GW(GHDF>7$Fdu$\"51R'=1?\\I9j#F>
+7$Fhu$\"5'H]!o?TNdLFF>7$F]v$\"5(oOU2/f;d$GF>7$Fbv$\"5xIU!3'R'fy$HF>7$F
+gv$\"5o%4m3))o-+/$F>7$F\\w$\"5gez#4!Qd9UJF>7$Faw$\"5]A)*)4sy)GWKF>7$Fd
+w$\"5T'o^5k$=VYLF>7$Fgw$\"5J]N6h&)[d[MF>7$Fjw$\"5A9a<\"[$zr]NF>7$F]x$
+\"57ysB,%)4'Gl$F>7$F_x$\"5.U\"*H@LS+bPF>7$Fbx$\"5%f+h8C3Zr&QF>7$Fex$\"
+5%)pGUhJ,HfRF>7$Fhx$\"5vLZ[\"3=L91%F>7$F[y$\"5l(fY:+BwN;%F>F,Fb]n-F66%
+7U7$F:$!5mLm#o#)eD]#=F>7$F@$!5r,dzmj!zdu\"F>7$FC$!5wpZw1RD`m;F>7$FF$!5
+\"y$QtY9gG(e\"F>7$FI$!5&e!Hq')*[R!3:F>7$FL$!5!R(>nElHzG9F>7$FO$!5&>/Tm
+1WY&\\8F>7$FR$!5**4,h1;**Hq7F>7$FU$!5/y\"zl9R`5>\"F>7$FX$!54Y#[lo'o!=6
+\"F>7$Fen$!589t^EU.cK5F>7$Fhn$!5!=#Q'[m<QJ`*F)7$F[o$!5E-XbkIHnS()F)7$F
+^o$!5t#=XUYo2#[zF)7$Fao$!5?je$R'QCubrF)7$Fdo$!5mVlij#>xKO'F)7$Fgo$!58C
+sJjY>\"3d&F)7$F\\p$!5g/z+j+nMyZF)7$Fap$!51&e)pia9)e)RF)7$Ffp$!5`l#*Qi3
+iT$>$F)7$F[q$!5+Y*z?E'4&4S#F)7$F`q$!5ZE1xh;d[3;F)7$Feq$!5LpIh91Z?g\")F
+ar7$Fjq$!5(*R()>:hC_bBF\\hm7$F^r$\"5L@Ld\"R@+\"*o(Far7$Fcr$\"5n^mYRn_P
+h:F)7$Fgr$\"5?rfxR80%QN#F)7$F\\s$\"5t!H&3SfdIYJF)7$Fas$\"5F5YRS05xQRF)
+7$Ffs$\"5!)HRqS^iBJZF)7$F[t$\"5L\\K,T(\\,P_&F)7$F`t$\"5')oDKTVn;;jF)7$
+Fet$\"5S))=jT*)>j3rF)7$Fjt$\"5$z?T>aB(4,zF)7$F_u$\"5YF0DU\"[iNp)F)7$Fd
+u$\"5+Z)fDusFg[*F)7$Fhu$\"5l;pGM(H\\y-\"F>7$F]v$\"5h[yJ%>#e426F>7$Fbv$
+\"5c!y[VlMUj=\"F>7$Fgv$\"5^7(zV6())el7F>7$F\\w$\"5ZW1Tu&RN[M\"F>7$Faw$
+\"5Uw:WM?>3C9F>7$Fdw$\"5P3DZ%\\WGL]\"F>7$Fgw$\"5LSM]ap\\d#e\"F>7$Fjw$
+\"5GsV`9%\\@=m\"F>7$F]x$\"5B/`cu=!o5u\"F>7$F_x$\"5>OifMVXJ?=F>7$Fbx$\"
+5:ori%z1h&**=F>7$Fex$\"55+\"eYDf2)y>F>7$Fhx$\"50K!*o9<T0e?F>7$F[y$\"5,
+k*>Z<k+t8#F>F,-F16&F3FhilFcrFcr-F66%7U7$F:$\"5G8rP'G\")R\"3LF>7$F@$\"5
+L\"=Yj#)G$\\kJF>7$FC$\"5Q\\_Jmjn%3-$F>7$FF$\"5U<VG1R-?xGF>7$FI$\"5Z&Q`
+iWr`Nt#F>7$FL$\"5_`CA')*=2**e#F>7$FO$\"5c@:>El1EYCF>7$FR$\"5h*egh199EI
+#F>7$FU$\"5md'Hhghn*e@F>7$FX$\"5qD()4Y\"4@`,#F>7$Fen$\"5v$zngocu;(=F>7
+$Fhn$\"5!='o.EU!G!G<F>7$F[o$\"5%)Hf+m<:Q%e\"F>7$F^o$\"5*y*\\(fI*\\tS9F
+>7$Fao$\"5%f1Wf%o%)3(H\"F>7$Fdo$\"5)R88fQ%>W`6F>7$Fgo$\"5.-A)e#>az45F>
+7$F\\p$\"5$3q7&eY*)[h')F)7$Fap$\"5B\"Q.#e+P-DsF)7$Ffp$\"5thS*yXXe&)y&F
+)7$F[q$\"5>UZed3K4_VF)7$F`q$\"5mAaFdizi:HF)7$Feq$\"58.h'plri\"z9F)7$Fj
+q$\"5+g$ycm0Z(pUF\\hm7$F^r$!5%f`_OaxnPR\"F)7$Fcr$!5Zb='R9-L-$GF)7$Fgr$
+!5+v6FWn#)pmUF)7$F\\s$!5a%\\!eW8N;.dF)7$Fas$!529)*)[%f(G'RrF)7$Ffs$!5g
+L\"*>X0S4w&)F)7$F[t$!5JX3b9DfD,5F>7$F`t$!5Fx<eu\\C!\\9\"F>7$Fet$!5A4Fh
+Mu*[&)G\"F>7$Fjt$!5=TOk%*)\\&>K9F>7$F_u$!58tXnaB?%ed\"F>7$Fdu$!530bq9[
+&)[><F>7$Fhu$!5/Pktus]8j=F>7$F]v$!5**otwM(f\"y1?F>7$Fbv$!5%4I)z%>7G/:#
+F>7$Fgv$!5!HBH[lkuSH#F>7$F\\w$!5&[;g[6<@xV#F>7$Faw$!5!o4\"*[dpn8e#F>7$
+Fdw$!5wG?#\\.A9]s#F>7$Fgw$!5rgH&\\\\ug'oGF>7$Fjw$!5m#*Q)\\&psI7IF>7$F]
+x$!5iC[,:%z`f:$F>7$F_x$!5dcd/v=.g*H$F>7$Fbx$!5_)ow]L%oCVMF>7$Fex$!5[?w
+5&zO$*oe$F>7$Fhx$!5V_&Q^D*)R0t$F>7$F[y$!5Q%[p^rT'=uQF>F,F\\ao-%*AXESST
+YLEG6#%'NORMALG-%(SCALINGG6#%,CONSTRAINEDG-%%VIEWG6$;$!$h\"F4F:Fe[p" 
+1 2 0 1 10 0 2 9 1 4 1 1.000000 45.000000 45.000000 0 0 "Curve 1" "Cur
+ve 2" "Curve 3" "Curve 4" "Curve 5" "Curve 6" "Curve 7" "Curve 8" "Cur
+ve 9" "Curve 10" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "tanto12
+(101,103,101,1,1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5]i6`HaZUX5!#
+:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5\\i6`HaZUX5!#8" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#$\"5\"e1]g,\\++-\"!#<" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$!55nL%*y$\\]*45!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+7%$\"5%ym=e'Q&*HI5!#:$\"5%o0pW$\\d_X5F&$\"5I&fjM2I&eg9F&" }}{PARA 13 "
+" 1 "" {GLPLOT2D 384 384 384 {PLOTDATA 2 "6/-%'POINTSG6%7$$\"5J*>,QE.
+\\-.\"!#:$\"5&\\st872[+,\"!#<-%&STYLEG6#%%LINEG-%'COLOURG6&%$RGBG\"\"!
+F5F5-%'CURVESG6%7U7$$\"&./\"F5$\"5+++++++IS5F)7$$\"5+++++++)o)**!#;F@7
+$$\"5+++++++wq&*FBFD7$$\"5+++++++ka\"*FBFG7$$\"5+++++++_Q()FBFJ7$$\"5+
+++++++SA$)FBFM7$$\"5+++++++G1zFBFP7$$\"5+++++++;!\\(FBFS7$$\"5+++++++/
+uqFBFV7$$\"5+++++++#zl'FBFY7$$\"5+++++++!=C'FBFfn7$$\"5+++++++oDeFBFin
+7$$\"5+++++++c4aFBF\\o7$$\"5+++++++W$*\\FBF_o7$$\"5+++++++KxXFBFbo7$$
+\"5+++++++?hTFBFeo7$$\"5+++++++3XPFBFho7$$\"5+++++++'*GLFBF[p7$$\"5+++
+++++%G\"HFBF^p7$$\"5+++++++s'\\#FBFap7$$\"5+++++++g!3#FBFdp7$$\"5+++++
+++[k;FBFgp7$$\"5+++++++O[7FBFjp7$$\"4+++++++CK)FB$FNF,7$$\"4+++++++7;%
+FB$FfoF,7$$F5F5$!\"!F57$$!3++++++?hTF)$!5+++++++?hTF,7$$!3++++++SA$)F)
+$!5+++++++SA$)F,7$$!4++++++g$[7F)$!5+++++++O[7FB7$$!4++++++![k;F)$!5++
++++++[k;FB7$$!4+++++++13#F)$!5+++++++g!3#FB7$$!4++++++?n\\#F)$!5++++++
++s'\\#FB7$$!4++++++SG\"HF)$!5+++++++%G\"HFB7$$!4++++++g*GLF)$!5+++++++
+'*GLFB7$$!4++++++!3XPF)$!5+++++++3XPFB7$$!4+++++++7;%F)$F\\rFB7$$!4+++
++++?td%F)$!5+++++++KxXFB7$$!4++++++SM*\\F)$!5+++++++W$*\\FB7$$!4++++++
+g&4aF)$!5+++++++c4aFB7$$!4++++++!oDeF)$!5+++++++oDeFB7$$!4+++++++=C'F)
+$!5+++++++!=C'FB7$$!4++++++?zl'F)$!5+++++++#zl'FB7$$!4++++++SS2(F)$!5+
+++++++/uqFB7$$!4++++++g,\\(F)$!5+++++++;!\\(FB7$$!4++++++!G1zF)$!5++++
++++G1zFB7$$!4+++++++CK)F)$FarFB7$$!4++++++?&Q()F)$!5+++++++_Q()FB7$$!4
+++++++SY:*F)$!5+++++++ka\"*FB7$$!4++++++g2d*F)$!5+++++++wq&*FB7$$!4+++
++++!)o)**F)$!5+++++++)o)**FB7$$!5+++++++IS5F)F_yF-F1-F76%7U7$$\"5jIRj+
+*[],.\"F)F;7$FeyF@7$FeyFD7$FeyFG7$FeyFJ7$FeyFM7$FeyFP7$FeyFS7$FeyFV7$F
+eyFY7$FeyFfn7$FeyFin7$FeyF\\o7$FeyF_o7$FeyFbo7$FeyFeo7$FeyFho7$FeyF[p7
+$FeyF^p7$FeyFap7$FeyFdp7$FeyFgp7$FeyFjp7$FeyF]q7$FeyFaq7$FeyFeq7$FeyFi
+q7$FeyF^r7$FeyFcr7$FeyFhr7$FeyF]s7$FeyFbs7$FeyFgs7$FeyF\\t7$FeyFat7$Fe
+yFft7$FeyFjt7$FeyF_u7$FeyFdu7$FeyFiu7$FeyF^v7$FeyFcv7$FeyFhv7$FeyF]w7$
+FeyFbw7$FeyFgw7$FeyF[x7$FeyF`x7$FeyFex7$FeyFjx7$FeyF_yF-F1-F76%7U7$F;$
+\"5IL(>9#z4&*>5F,7$F@F]]l7$FDF]]l7$FGF]]l7$FJF]]l7$FMF]]l7$FPF]]l7$FSF
+]]l7$FVF]]l7$FYF]]l7$FfnF]]l7$FinF]]l7$F\\oF]]l7$F_oF]]l7$FboF]]l7$Feo
+F]]l7$FhoF]]l7$F[pF]]l7$F^pF]]l7$FapF]]l7$FdpF]]l7$FgpF]]l7$FjpF]]l7$F
+]qF]]l7$FaqF]]l7$FeqF]]l7$FiqF]]l7$F^rF]]l7$FcrF]]l7$FhrF]]l7$F]sF]]l7
+$FbsF]]l7$FgsF]]l7$F\\tF]]l7$FatF]]l7$FftF]]l7$FjtF]]l7$F_uF]]l7$FduF]
+]l7$FiuF]]l7$F^vF]]l7$FcvF]]l7$FhvF]]l7$F]wF]]l7$FbwF]]l7$FgwF]]l7$F[x
+F]]l7$F`xF]]l7$FexF]]l7$FjxF]]l7$F_yF]]lF-F1-F76%7U7$F;$\"5V++++++IS5F
+)7$F@$!50'*eIN2!G[A$F)7$FD$!5a#z61Z,c**[(F)7$FG$!5!*o<f?-%3b<\"!#97$FJ
+$!5beB7%H?@?g\"F`al7$FM$!5?[Hln.S`G?F`al7$FP$!5&y`$=T/o/bCF`al7$FS$!5]
+FTr90'f:)GF`al7$FV$!59<ZC)eSs!3LF`al7$FY$!5z1`xh1_eMPF`al7$Ffn$!5W'*eI
+N2!)4hTF`al7$Fin$!54'[O)333h(e%F`al7$F\\o$!5uvqO#)3O79]F`al7$F_o$!5Rlw
+*e&4kjSaF`al7$Fbo$!5.b#G%H5#\\r'eF`al7$Feo$!5oW)eH5,iOH'F`al7$Fho$!5LM
+%*[w6[<?nF`al7$F[p$!5)R-?+Dh(oYrF`al7$F^p$!5j81bB8/?tvF`al7$Fap$!5G.73
+(R@8(**zF`al7$Fdp$!5$Hz61Z,EiU)F`al7$Fgp$!5d#QUTa\")QF&))F`al7$Fjp$!5A
+sHn<;;Dz#*F`al7$F]q$!5(=c.7pTkdq*F`al7$Faq$!5::MZw@xA85!#87$Feq$!57uk#
+Q=+ze0\"F`el7$Fiq$!53L&z6>GI&)4\"F`el7$F^r$!50#fK&)>c\"=T6F`el7$Fcr$!5
+,^c)e?%G$Q=\"F`el7$Fhr$!5)*4(QK@7%[E7F`el7$F]s$!5%*o<f?-a8p7F`el7$Fbs$
+!5\"z#[%zAo'y68F`el7$Fgs$!5(o)yHNizVa8F`el7$F\\t$!5%e%4lUU#*3(R\"F`el7
+$Fat$!5![+/+D_S(R9F`el7$Fft$!5xjqNd-=R#[\"F`el7$Fjt$!5tA,rk#3V]_\"F`el
+7$F_u$!5p\"=j?FO%pn:F`el7$Fdu$!5mSiTzUcM5;F`el7$Fiu$!5i*HpnG#p*Hl\"F`e
+l7$F^v$!5feB7%H?[cp\"F`el7$Fcv$!5b<aZ,$[*HQ<F`el7$Fhv$!5_w%G)3j2&4y\"F
+`el7$F]w$!5[N:=;V?gB=F`el7$Fbw$!5X%fMNKK`i'=F`el7$Fgw$!5T`w)3Lg/*3>F`e
+l7$F[x$!5Q72CQ$)eb^>F`el7$F`x$!5MrPfXjr?%*>F`el7$Fex$!5JIo%HNWeo.#F`el
+7$Fjx$!5F*))*HgB(4&z?F`el7$F_y$!5C[Hln.5;A@F`elF--F26&F4Feq$\"*++++\"!
+\")Feq-F76%7U7$F;Feq7$F@$\"5z\\Y7=<!*p\"=%F,7$FD$\"5y*H\\iV.)Rj$)F,7$F
+G$\"5)\\RPa^q4XD\"FB7$FJ$\"5)*f)\\sogzEn\"FB7$FM$\"5(\\Ki!f3&\\34#FB7$
+FP$\"5(**yu3.T>!4DFB7$FS$\"5)\\D(o-7$*=FHFB7$FV$\"5)*>(*\\u8#f`M$FB7$F
+Y$\"5)\\=7ja6HNw$FB7$Ffn$\"5)*\\Y7=<!*p\"=%FB7$Fin$\"5)\\6P**)=*o)*f%F
+B7$F\\o$\"5)*z&\\<1#)Q!=]FB7$F_o$\"5)\\/iNBs3iV&FB7$Fbo$\"5(*4XP0C'yV&
+eFB7$Feo$\"5(\\(p=xD&[DF'FB7$Fho$\"5(*R%***[F%=2p'FB7$F[p$\"5(\\!>\"3#
+H$)))3rFB7$F^p$\"5(*pVi#4Beq_(FB7$Fap$\"5)\\$oVkK\"G_%zFB7$Fdp$\"5)**H
+\\iV.)Rj$)FB7$Fgp$\"5)\\wh!3Ozc\"y)FB7$Fjp$\"5)*HU()zPyt*>*FB7$F]q$\"5
+(\\p'o^Rx!zh*FB7$Faq$\"5+;*\\BTw2O+\"F)7$Feq$\"5]i6`HaZUX5F)7$Fiq$\"5+
+4CrYW<C(3\"F)7$F^r$\"5\\bO*QYte!H6F)7$Fcr$\"5+-\\2\"[sv3<\"F)7$Fhr$\"5
+][hD)\\r#p77F)7$F]s$\"5+&RPa^q4XD\"F)7$Fbs$\"5\\T'=E`pEjH\"F)7$Fgs$\"5
+*z))*z\\&oV\"Q8F)7$F\\t$\"5]M6)pcng*z8F)7$Fat$\"5+\"QiTemx<U\"F)7$Fft$
+\"5]FOM,cYfj9F)7$Fjt$\"5*R([_=Y;T0:F)7$F_u$\"5]?hqNO'Gsa\"F)7$Fdu$\"5+
+nt)GliX!*e\"F)7$Fiu$\"5]8'o+nhi3j\"F)7$F^v$\"5+g)\\sogzEn\"F)7$Fcv$\"5
+\\16V/(f'\\9<F)7$Fhv$\"5*HN7;se8jv\"F)7$F]w$\"5]*f$zQx08)z\"F)7$Fbw$\"
+5+Y[(fvcZ*R=F)7$Fgw$\"5\\#4cJxbk<)=F)7$F[x$\"5**QtL!za\"eB>F)7$F`x$\"5
+]&e=v!Q&)Rl>F)7$Fex$\"5+K)*pCGb@2?F)7$Fjx$\"5]y5)=%=D.\\?F)7$F_y$\"5*
+\\Ki!f3&\\34#F)F-F_jl-F76%7U7$F;$\"5\"e1]g,\\++-\"F,7$F@$\"5Ee[cc.\\'z
+y*!#=7$FD$\"5]e!HEb!\\#fP*Fgdm7$FG$\"5reKp[2\\)Q'*)Fgdm7$FJ$\"5\"*euvW
+4\\%=b)Fgdm7$FM$\"57f;#39\"\\!)R\")Fgdm7$FP$\"5Lfe)oL\"\\wFxFgdm7$FS$
+\"5af+&H`\"\\s:tFgdm7$FV$\"5vfU,H<\\o.pFgdm7$FY$\"5'*f%y]#>\\k\"\\'Fgd
+m7$Ffn$\"5;gE9@@\\gzgFgdm7$Fin$\"5Qgo?<B\\cncFgdm7$F\\o$\"5eg5F8D\\_b_
+Fgdm7$F_o$\"5zg_L4F\\[V[Fgdm7$Fbo$\"5+h%*R0H\\WJWFgdm7$Feo$\"5?hOY,J\\
+S>SFgdm7$Fho$\"5Uhy_(H$\\O2OFgdm7$F[p$\"5ih?f$\\$\\K&>$Fgdm7$F^p$\"5$=
+Ec'*o$\\G$y#Fgdm7$Fap$\"5/i/s&)Q\\CrBFgdm7$Fdp$\"5DiYy\"3%\\?f>Fgdm7$F
+gp$\"5Xi)[yF%\\;Z:Fgdm7$Fjp$\"5niI\"RZ%\\7N6Fgdm7$F]q$\"5tGEx*pY\\3B(!
+#>7$Faq$\"5#3j9/m[\\/6$Fjhm7$Feq$!55nL%*y$\\]*45Fjhm7$Fiq$!5,l8I=u/NI^
+Fjhm7$F^r$!5$HOfwXX]2D*Fjhm7$Fcr$!54O<q\\V]6P8Fgdm7$Fhr$!5(e`PO:/b\"\\
+<Fgdm7$F]s$!5nNLddR]>h@Fgdm7$Fbs$!5YN\"4:w.NKd#Fgdm7$Fgs$!5DN\\WlN]F&)
+HFgdm7$F\\t$!5/N2QpL]J(R$Fgdm7$Fat$!5%[`;L<.b$4QFgdm7$Fft$!5jMBDxH]R@U
+Fgdm7$Fjt$!5UM\")=\"y-NMj%Fgdm7$F_u$!5@MR7&e-va/&Fgdm7$Fdu$!5+M(f!*Q-:
+vX&Fgdm7$Fiu$!5!Q`&*H>-b&peFgdm7$F^v$!5eL8$p*>]f\"G'Fgdm7$Fcv$!5QLr'3!
+=]j$p'Fgdm7$Fhv$!5<LH![g,vc5(Fgdm7$F]w$!5'HtQ(39]r<vFgdm7$Fbw$!5wKXn77
+]vHzFgdm7$Fgw$!5aK.h;5]zT$)Fgdm7$F[x$!5MKha?3]$Qv)Fgdm7$F`x$!58K>[C1](
+e;*Fgdm7$Fex$!5#>t<%G/]\"zd*Fgdm7$Fjx$!5pJNNK-]&**)**Fgdm7$F_y$!5;L*GO
++]*>S5F,F--F26&F4FeqFeqFajl-F76%7U7$F;$\"5A:$zKfbR'**\\!#?7$F@$\"5c[&p
+tRl**f;%F,7$FD$\"5.<e9Ro'**pK)F,7$FG$\"5f3A4Go**z[7FB7$FJ$\"5YN)pA(p**
+*[m\"FB7$FM$\"5NiuW;r***43#FB7$FP$\"5B*3D1E(**4(\\#FB7$FS$\"56;F![S(**
+>8HFB7$FV$\"5+V.)*[v**HHLFB7$FY$\"5()pz:$p(**RXPFB7$Ffn$\"5w'fNt$y**\\
+hTFB7$Fin$\"5kBK^\")z**fxXFB7$F\\o$\"5_]3pD\")**p$*\\FB7$F_o$\"5Sx%o)p
+#)**z4aFB7$Fbo$\"5G/h/9%)***e#eFB7$Feo$\"5;JPAe&)***>C'FB7$Fho$\"50e8S
+-()**4emFB7$F[p$\"5$\\)*yl%))**>uqFB7$F^p$\"5\"=hc2**)**H!\\(FB7$Fap$
+\"5pQU$\\8***R1zFB7$Fdp$\"5dl=6z#***\\A$)FB7$Fgp$\"5Y#\\*GB%***fQ()FB7
+$Fjp$\"5L>rYn&***pa\"*FB7$F]q$\"5AYZk6(***zq&*FB7$Faq$\"50tB#e&)****o)
+**FB7$FeqF=7$Fiq$\"5pixT9++\">3\"F)7$F^r$\"5PDb$)G++_B6F)7$Fcr$\"52)G`
+K/+I^;\"F)7$Fhr$\"5v]5nd++u17F)7$F]s$\"5W8))3s++N[7F)7$Fbs$\"57wl]'3+g
+**G\"F)7$Fgs$\"5#)QV#45+q:L\"F)7$F\\t$\"5],@M:,+=t8F)7$Fat$\"5>k)f(H,+
+z99F)7$Fft$\"5)oixT9++kX\"F)7$Fjt$\"5d*Q&fe,+,)\\\"F)7$F_u$\"5E_J,t,+i
+R:F)7$Fdu$\"5%\\\"4V(=+I7e\"F)7$Fiu$\"5jx'[=?+SGi\"F)7$F^v$\"5KSkE;-+X
+k;F)7$Fcv$\"5,.UoI-+11<F)7$Fhv$\"5pl>5X-+nZ<F)7$F]w$\"5QG(>&f-+G*y\"F)
+7$Fbw$\"53\"\\PRF+!*3$=F)7$Fgw$\"5w`_N)G++D(=F)7$F[x$\"5X;Ix-.+69>F)7$
+F`x$\"58z2><.+sb>F)7$Fex$\"5$=a3;L+It*>F)7$Fjx$\"5^/j-Y.+%*Q?F)7$F_y$
+\"5?nSWg.+b!3#F)F-F\\^n-F76%7U7$F;$!5Y/LKR\\n_X5F`el7$F@$!5]X-(>$*e\"H
+.5F`el7$FD$!5Ml=<Y#Hk0h*F`al7$FG$!5pv7ks\"p7#)=*F`al7$FJ$!50'o5\"*44he
+w)F`al7$FM$!5S'4!eD!\\4NM)F`al7$FP$!5w1&\\?&*)y:@zF`al7$FS$!56<*=&y)G1
+))\\(F`al7$FV$!5YF$))\\!)oak2(F`al7$FY$!5#ytd9t3.Tl'F`al7$Ffn$!5<[r#zl
+[^<B'F`al7$Fin$!5`elR%e))*R4eF`al7$F\\o$!5))of'3^G[qQ&F`al7$F_o$!5Cz`L
+P%o'pk\\F`al7$Fbo$!5f*y/QO3XBa%F`al7$Feo$!5%**>u-H[$**>TF`al7$Fho$!5I5
+Ou;#)=k(p$F`al7$F[p$!5l?I@V\"G!HvKF`al7$F^p$!5,JCop!oQH&GF`al7$Fap$!5O
+T=:'*zqeICF`al7$Fdp$!5s^7iAzaB3?F`al7$Fgp$!52i14\\yQ)ee\"F`al7$Fjp$!5U
+s+cvxA`j6F`al7$F]q$!5wF[H?qn!=T(F)7$Faq$!5IJ*))\\Gw!H)=$F)7$Feq$\"5;lp
+J]W_AN5F)7$Fiq$\"5hhGi&=DT(e_F)7$F^r$\"52e(G4#fsD#[*F)7$Fcr$\"5XlMilEt
+dq8F`al7$Fhr$\"55bS:RF*GHz\"F`al7$F]s$\"5uWYo7G0G:AF`al7$Fbs$\"5RM_@')
+G@jPEF`al7$Fgs$\"5.CeufHP)*fIF`al7$F\\t$\"5o8kFLI`L#[$F`al7$Fat$\"5K.q
+!o5$po/RF`al7$Fft$\"5(HfP.=`QqK%F`al7$Fjt$\"5h#=oQD8!R\\ZF`al7$F_u$\"5
+Es()RFL<ur^F`al7$Fdu$\"5\">OH4SL$4%f&F`al7$Fiu$\"5b^*fWZ$\\W;gF`al7$F^
+v$\"5?T0*za`'zQkF`al7$Fcv$\"5%38@:i8[6'oF`al7$Fhv$\"5\\?<0&pt*\\$G(F`a
+l7$F]w$\"585BeoP8&eq(F`al7$Fbw$\"5y**G6UQH?G\")F`al7$Fgw$\"5V*[Vc\"RXb
+]&)F`al7$F[x$\"52zS<*)Rh!H(*)F`al7$F`x$\"5soYqiSxD&R*F`al7$Fex$\"5Oe_B
+OT$4w\")*F`al7$Fjx$\"5![ew4U4'*R-\"F`el7$F_y$\"5xV'H$Ga7Bm5F`elF--F26&
+F4FajlFeqFeq-F76%7U7$F;$\"5\\i6`Hax#e0\"F`el7$F@$\"5`.\"y@UZwJ,\"F`el7
+$FD$\"5cX/D[T>D0(*F`al7$FG$\"5\"f&)>Z29R(y#*F`al7$FJ$\"5Fm#*=,SjA_))F`
+al7$FM$\"5jw'ew#RNrD%)F`al7$FP$\"5)p3GT&Q2?**zF`al7$FS$\"5M(\\(f!y$zos
+vF`al7$FV$\"5p2p12P^<YrF`al7$FY$\"50=j`LOBm>nF`al7$Ffn$\"5TGd+gN&\\JH'
+F`al7$Fin$\"5wQ^Z'[tOm'eF`al7$F\\o$\"57\\X%HT$R7SaF`al7$F_o$\"5[fRTRL6
+h8]F`al7$Fbo$\"5$)pL)eEL)4(e%F`al7$Feo$\"5>!y_B>`&egTF`al7$Fho$\"5a!>A
+)=JF2MPF`al7$F[p$\"5!4g\"HXI*fvI$F`al7$F^p$\"5E65wrHr/\")GF`al7$Fap$\"
+5h@/B)*GV`aCF`al7$Fdp$\"5(>$)*pCG:-G?F`al7$Fgp$\"5LU#p6vs3:g\"F`al7$Fj
+p$\"5o_'Qwn#f*\\<\"F`al7$F]q$\"5RI13Tg7$[[(F)7$Faq$\"5&RtudID.(>KF)7$F
+eq$!5\\i6`HaZUX5F)7$Fiq$!5$*eq$[;w_0J&F)7$F^r$!5PbH9+p2ov&*F)7$Fcr$!5=
+&)[ajx33%Q\"F`al7$Fhr$!5$[Zvq$yOf5=F`al7$F]s$!5Zkgg5zk5PAF`al7$Fbs$!56
+am8%)z#>Om#F`al7$Fgs$!5wVsmd!3K,4$F`al7$F\\t$!5SLy>J\")[k;NF`al7$Fat$!
+5/B%GZ?odJ%RF`al7$Fft$!5p7!f#y#[q'pVF`al7$Fjt$!5L-'*y^$G$='z%F`al7$F_u
+$!5)>>?`U3'pA_F`al7$Fdu$!5i\"y]))\\))3#\\cF`al7$Fiu$!5Er8Qs&o@d2'F`al7
+$F^v$!5\"4'>\"fk[MA]'F`al7$Fcv$!5b]DW>(GZ(GpF`al7$Fhv$!5>SJ(Hz3g_N(F`a
+l7$F]w$!5%)HP]m))Gx\"y(F`al7$Fbw$!5[>V.S*o&G3#)F`al7$Fgw$!584\\c8!\\)z
+M')F`al7$F[x$!5x)\\&4(3H681*F`al7$F`x$!5T)3E1;4Cy[*F`al7$Fex$!51ym:M#*
+oL9**F`al7$Fjx$!5xE(o2$p\\3M5F`el7$F_y$!5t&y@\"Q\\itw5F`elF-Feao-%*AXE
+SSTYLEG6#%'NORMALG-%(SCALINGG6#%,CONSTRAINEDG-%%VIEWG6$;$!&./\"F5F;F^
+\\p" 1 2 0 1 10 0 2 9 1 4 1 1.000000 45.000000 45.000000 0 0 "Curve 1
+" "Curve 2" "Curve 3" "Curve 4" "Curve 5" "Curve 6" "Curve 7" "Curve 8
+" "Curve 9" "Curve 10" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "n
+1:=nextprime(231);n2:=nextprime(799);" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%#n1G\"$L#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n2G\"$4)" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "tanto12(n1,n2,216,1,2);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5<a$G3pL9-k)!#<" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#$\"5:'4GNC3Yw&=!#9" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#$\"57$3!Q-%p0nq)!#<" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$!5KJW&*R+E.5?
+!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"5S.1jUU\\x*R*!#:$\"5[)*yA
+\"Hm9.m)!#<$\"5&QuJhK&Hx*R*F&" }}{PARA 13 "" 1 "" {GLPLOT2D 384 384 
+384 {PLOTDATA 2 "6/-%'POINTSG6%7$$\"5m)yy(*p?u'*R*!#:$\"5Df!)*)***4Z;L
+%!#<-%&STYLEG6#%%LINEG-%'COLOURG6&%$RGBG\"\"!F5F5-%'CURVESG6%7U7$$\"5+
+++++++&[U*F)F;7$$\"5++++++g&y/*F)F>7$$\"5++++++?'3n)F)FA7$$\"5++++++!o
+QH)F)FD7$$\"5++++++S(o\"zF)FG7$$\"5+++++++))RvF)FJ7$$\"5++++++g)G;(F)F
+M7$$\"5++++++?*ey'F)FP7$$\"5++++++!)*)3kF)FS7$$\"5++++++S!>.'F)FV7$$\"
+5+++++++\"\\l&F)FY7$$\"5++++++g\"zF&F)Ffn7$$\"5++++++?#4!\\F)Fin7$$\"5
+++++++!GR_%F)F\\o7$$\"5++++++S$p9%F)F_o7$$\"5+++++++%*pPF)Fbo7$$\"5+++
++++g%HR$F)Feo7$$\"5++++++?&f,$F)Fho7$$\"5++++++!e*QEF)F[p7$$\"5++++++S
+'>E#F)F^p7$$\"5+++++++(\\)=F)Fap7$$\"5++++++g(z]\"F)Fdp7$$\"5++++++?)4
+8\"F)Fgp7$$\"4++++++!))RvF)$FK!#;7$$\"4++++++S*pPF)$FcoF]q7$$F5F5$!\"!
+F57$$!4++++++S*pPF)$!5+++++++%*pPF]q7$$!4++++++!))RvF)$!5+++++++))RvF]
+q7$$!5++++++?)48\"F)Far7$$!5++++++g(z]\"F)Fdr7$$!5+++++++(\\)=F)Fgr7$$
+!5++++++S'>E#F)Fjr7$$!5++++++!e*QEF)F]s7$$!5++++++?&f,$F)F`s7$$!5+++++
++g%HR$F)Fcs7$$FjqF)Ffs7$$!5++++++S$p9%F)Fhs7$$!5++++++!GR_%F)F[t7$$!5+
++++++?#4!\\F)F^t7$$!5++++++g\"zF&F)Fat7$$!5+++++++\"\\l&F)Fdt7$$!5++++
+++S!>.'F)Fgt7$$!5++++++!)*)3kF)Fjt7$$!5++++++?*ey'F)F]u7$$!5++++++g)G;
+(F)F`u7$$F_rF)Fcu7$$!5++++++S(o\"zF)Feu7$$!5++++++!oQH)F)Fhu7$$!5+++++
++?'3n)F)F[v7$$!5++++++g&y/*F)F^v7$$!5+++++++&[U*F)FavF-F1-F76%7U7$$\"5
+eomxN*43zP*F)F;7$FgvF>7$FgvFA7$FgvFD7$FgvFG7$FgvFJ7$FgvFM7$FgvFP7$FgvF
+S7$FgvFV7$FgvFY7$FgvFfn7$FgvFin7$FgvF\\o7$FgvF_o7$FgvFbo7$FgvFeo7$FgvF
+ho7$FgvF[p7$FgvF^p7$FgvFap7$FgvFdp7$FgvFgp7$FgvFjp7$FgvF_q7$FgvFcq7$Fg
+vFgq7$FgvF\\r7$FgvFar7$FgvFdr7$FgvFgr7$FgvFjr7$FgvF]s7$FgvF`s7$FgvFcs7
+$FgvFfs7$FgvFhs7$FgvF[t7$FgvF^t7$FgvFat7$FgvFdt7$FgvFgt7$FgvFjt7$FgvF]
+u7$FgvF`u7$FgvFcu7$FgvFeu7$FgvFhu7$FgvF[v7$FgvF^v7$FgvFavF-F1-F76%7U7$
+F;$\"5B8SI2?TiTVF,7$F>F_z7$FAF_z7$FDF_z7$FGF_z7$FJF_z7$FMF_z7$FPF_z7$F
+SF_z7$FVF_z7$FYF_z7$FfnF_z7$FinF_z7$F\\oF_z7$F_oF_z7$FboF_z7$FeoF_z7$F
+hoF_z7$F[pF_z7$F^pF_z7$FapF_z7$FdpF_z7$FgpF_z7$FjpF_z7$F_qF_z7$FcqF_z7
+$FgqF_z7$F\\rF_z7$FarF_z7$FdrF_z7$FgrF_z7$FjrF_z7$F]sF_z7$F`sF_z7$FcsF
+_z7$FfsF_z7$FhsF_z7$F[tF_z7$F^tF_z7$FatF_z7$FdtF_z7$FgtF_z7$FjtF_z7$F]
+uF_z7$F`uF_z7$FcuF_z7$FeuF_z7$FhuF_z7$F[vF_z7$F^vF_z7$FavF_zF-F1-F76%7
+U7$F;$\"5!puP0Rh^=M*F,7$F>$!5JuSQ:KuKolF]q7$FA$!5L#>#)pD+%329F)7$FD$!5
+BxfU#>ENt:#F)7$FG$!58i(py7_'e2HF)7$FJ$!5.ZNJj!yPyl$F)7$FM$!5$>Ld()*R!*
+33WF)7$FP$!5$o6,U$*HS$e^F)7$FS$!5t,\\kpe:f3fF)7$FV$!5j'o)30=G%)emF)7$F
+Y$!5`rC`SxS44uF)7$Ffn$!5Vci(fnLX$f\")F)7$Fin$!5LT+U6'f'f4*)F)7$F\\o$!5
+BEQ'oa&y%)f'*F)7$F_o$!56h2B[6*45/\"!#97$Fbo$!5gR^xTP].;6Fc`l7$Feo$!54=
+&>`L;g5>\"Fc`l7$Fho$!5e'*Q')G*G&3m7Fc`l7$F[p$!52v#3C_T56M\"Fc`l7$F^p$!
+5c`E&f6aNhT\"Fc`l7$Fap$!50Kq\\4n1;\"\\\"Fc`l7$Fdp$!5a59/.$z&=m:Fc`l7$F
+gp$!5.*y&e'*=4@T;Fc`l7$Fjp$!5_n,8!\\/Oir\"Fc`l7$F_q$!5,YXn$3<h7z\"Fc`l
+7$Fcq$!5]C*=snH'Gm=Fc`l7$Fgq$!5*HIj2FU68%>Fc`l7$F\\r$!5[\"o2V'[lL;?Fc`
+l7$Far$!5(*f?&yXnh84#Fc`l7$Fdr$!5YQkR^+oQm@Fc`l7$Fgr$!5&p\"3%\\k#>TTAF
+c`l7$Fjr$!5W&>&[Q_qV;BFc`l7$F]s$!5$RdH?$y@Y\"R#Fc`l7$F`s$!5U_RdD/t[mCF
+c`l7$Fcs$!5\"4L=\">IC^TDFc`l7$Ffs$!5S4Fm7cv`;EFc`l7$Fhs$!5*y32i?oi:p#F
+c`l7$F[t$!5Qm9v*z!yemFFc`l7$F^t$!5([%eH$R$HhTGFc`l7$Fat$!5OB-%o)f!Qm\"
+HFc`l7$Fdt$!5&=g%Q!e=j;*HFc`l7$Fgt$!5M!)*GR<J)omIFc`l7$Fjt$!5$)eLZnPMr
+TJFc`l7$F]u$!5KPx,hj&Qn@$Fc`l7$F`u$!5\"e6iX&*oj<H$Fc`l7$Fcu$!5I%\\1\"[
+:))ymLFc`l7$Feu$!5zs3lTTR\"=W$Fc`l7$Fhu$!5G^_>Nn!Ro^$Fc`l7$F[v$!5xH'R(
+G$>k=f$Fc`l7$F^v$!5E3SGA>$*)om$Fc`l7$Fav$!5v'QGe^W9>u$Fc`lF--F26&F4Fcq
+$\"*++++\"!\")Fcq-F76%7U7$F;$\"53xTTXor5?VF,7$F>$\"5<W2B>b9\"H\\%F,7$F
+A$\"5D6t/$>u:dm%F,7$FD$\"5MyQ'o'G+_Q[F,7$FG$\"5UX/oS:VK6]F,7$FJ$\"5]7q
+\\9-'GT=&F,7$FM$\"5fzNJ))))G$pN&F,7$FP$\"5nY,8ivrtHbF,7$FS$\"5v8n%fBYT
+Dq&F,7$FV$\"5%3Gj(4\\dMveF,7$FY$\"5\"z%)zNe.]\"[gF,7$Ffn$\"5+:kRdAV&4A
+'F,7$Fin$\"54#)H@J4'ePR'F,7$F\\o$\"5;\\&H]g*GcmlF,7$F_o$\"5D;h%)y#=n$R
+nF,7$Fbo$\"5M$oiE&p9<7pF,7$Feo$\"5U]#zkivv\\3(F,7$Fho$\"5]<eH+V+ydsF,7
+$F[p$\"5f%Q7T(HVeIuF,7$F^p$\"5n^*Gzkh)Q.wF,7$Fap$\"5v=bu@.H>wxF,7$Fdp$
+\"5%e3ib**=(**[zF,7$Fgp$\"5#Hly$pw9!=7)F,7$Fjp$\"5+?_>Vjdg%H)F,7$F_q$
+\"53(y6q,05uY)F,7$Fcq$\"5<a$G3pL9-k)F,7$Fgq$\"5E@\\kkB'=I\"))F,7$F\\r$
+\"5L)[h%Q5H#e)*)F,7$Far$\"5Ub!yAr>F'e\"*F,7$Fdr$\"5]AY4'Q[J9L*F,7$Fgr$
+\"5e*=6*fqdB/&*F,7$Fjr$\"5ncxsLd+/x'*F,7$F]s$\"5vBVa2WV%)\\)*F,7$F`s$
+\"53*3O\"3j[E-5F]q7$Fcs$\"5zXx^v\"HX&>5F]q7$Ffs$\"5]-%**G/sDo.\"F]q7$F
+hs$\"5@f5G5\\h5a5F]q7$F[t$\"5#friwxd'Qr5F]q7$F^t$\"5isV/X1qm)3\"F]q7$F
+at$\"5LHgU7Nu%f5\"F]q7$Fdt$\"50'o2)zjyAB6F]q7$Fgt$\"5vU$*=Z#H309\"F]q7
+$Fjt$\"5Y**4d9@()yd6F]q7$F]u$\"5<cE&>)\\\"p]<\"F]q7$F`u$\"5(GJM$\\y&\\
+B>\"F]q7$Fcu$\"5fpfr;2+j47F]q7$Feu$\"5IEw4%eV5pA\"F]q7$Fhu$\"5+$Gz9X'3
+>W7F]q7$F[v$\"5rR4')=$Hr9E\"F]q7$F^v$\"5U'fUi=s^(y7F]q7$Fav$\"57`Ui`]@
+.'H\"F]qF-F`gl-F76%7U7$F;$\"5Sp-*4So-LM%F,7$F>$\"5'onM4Ocm(oTF,7$FA$\"
+5I%3z3KWIU*RF,7$FD$\"5w\"\\B3GK%p>QF,7$FG$\"5@**ywS-#e^k$F,7$FJ$\"5m1B
+r+#3A1Z$F,7$FM$\"569nlghf3'H$F,7$FP$\"5d@6g?T)\\:7$F,7$FS$\"5,Hba!3s8q
+%HF,7$FV$\"5ZO**[S+wZsFF,7$FY$\"5\"RMM/+[Tzf#F,7$Ffn$\"5P^(y.'f`SBCF,7
+$Fin$\"5#)eJK?R#p)[AF,7$F\\o$\"5FmvE!)=JLu?F,7$F_o$\"5st>@S)*pz**=F,7$
+Fbo$\"5<\"Qc,!y3ED<F,7$Feo$\"5i)y+,wvC2b\"F,7$Fho$\"53'>X+sj)=w8F,7$F[
+p$\"5_.'*)*z;Dl,7F,7$F^p$\"5)4,M*R'R;r-\"F,7$Fap$\"5I%=%y)*fF!e_)!#=7$
+Fdp$\"5#)e#G#)fbT/y'Fcem7$Fgp$\"5MLBn(>N!3N]Fcem7$Fjp$\"5&yS;rz9>(*G$F
+cem7$F_q$\"5O#[glR%zNW:Fcem7$Fcq$!5KJW&*R+E.5?!#>7$Fgq$!5io8b/kWOY>Fce
+m7$F\\r$!56%H2^!ocs\"p$Fcem7$Far$!5f>Km0so3PaFcem7$Fdr$!53X\">ig2[C=(F
+cem7$Fgr$!5cq]x1!G4y#*)Fcem7$Fjr$!5g*4L2%[qJn5F,7$F]s$!5:#p)y!)oJ&=C\"
+F,7$F`s$!5q%GW3#*G*Q;9F,7$Fcs$!5Dx)**3'4a#4f\"F,7$Ffs$!5!)pa&4+`haw\"F
+,7$Fhs$!5Ni5,T]w**R>F,7$F[t$!5!\\lm53xLX6#F,7$F^t$!5WZA7@\"*)p!*G#F,7$
+Fat$!5+Sy<h6ggjCF,7$Fdt$!5aKMB,K@9QEF,7$Fgt$!55D!*GT_#yE\"GF,7$Fjt$!5k
+<YM\"GP9s)HF,7$F]u$!5>5-S@$\\]<;$F,7$F`u$!5u-eXh8mGOLF,7$Fcu$!5H&R6:St
+A3^$F,7$Feu$!5$y)pcTa)e`o$F,7$Fhu$!5R!eA;[(\\*)fQF,7$F[v$!5$H<y;_4JW.%
+F,7$F^v$!5\\lPth:s'*3UF,7$Fav$!5.e$*y,OL]$Q%F,F--F26&F4FcqFcqFbgl-F76%
+7U7$F;$!5Twya7Ow&R0(Fcem7$F>$\"58T&>$p1?;suF]q7$FA$\"5+ckZ(*ej[,:F)7$F
+D$\"5)y&4-G<lvbAF)7$FG$\"5()facevm-5IF)7$FJ$\"5vh*4\"*Q$oHkPF)7$FM$\"5
+jjWl>#*pc=XF)7$FP$\"5_l*)>]]r$GF&F)7$FS$\"5]nMu!)3t5FgF)7$FV$\"5RpzG6n
+uP\"y'F)7$FY$\"5FrC$=aiZc`(F)7$Ffn$\"5BtpPs$y<**G)F)7$Fin$\"59v9#H?%z=
+W!*F)7$F\\o$\"51xfYL+\"e%)z*F)7$F_o$\"5!z/,ke#GFb5Fc`l7$Fbo$\"54)\\b%p
+T)*pI6Fc`l7$Feo$\"5G[*4Dv&o717Fc`l7$Fho$\"5Z)RkbL(Qb\"G\"Fc`l7$F[p$\"5
+m[)='=*)3)pN\"Fc`l7$F^p$\"5&))Ht;]!zSK9Fc`l7$Fap$\"50\\xs%3#\\$y]\"Fc`
+l7$Fdp$\"5C*>#ynO>E$e\"Fc`l7$Fgp$\"5V\\m$3D&*)oe;Fc`l7$Fjp$\"5i*4\"*Q$
+of6M<Fc`l7$F_q$\"5#)\\b%pT)Ha4=Fc`l7$Fcq$FbpFc`l7$Fgq$\"5>]W0$e,(Rg>Fc
+`l7$F\\r$\"5R+*3h;.Ce.#Fc`l7$Far$\"5e]L;\\Z5D6@Fc`l7$Fdr$\"5x+y@Kj!ym=
+#Fc`l7$Fgr$\"5'4Ds_\"z]5iAFc`l7$Fjr$\"5;,nK)\\4KvL#Fc`l7$F]s$\"5M^6Q\"
+36fHT#Fc`l7$F`s$\"5a,cVkEhQ)[#Fc`l7$Fcs$\"5t^+\\ZUJ\"Qc#Fc`l7$Ffs$\"5#
+>]W0$e,CREFc`l7$Fhs$\"56_*)f8urm9FFc`l7$F[t$\"5J-Ml'**=%4!z#Fc`l7$F^t$
+\"5\\_yqz07_lGFc`l7$Fat$\"5o-Bwi@#[4%HFc`l7$Fdt$\"5)Gv;euBvj,$Fc`l7$Fg
+t$\"52.7()G`A!=4$Fc`l7$Fjt$\"5E`c#>\"p#Hs;$Fc`l7$F]u$\"5Y.,)\\\\GcEC$F
+c`l7$F`u$\"5l`X.y+L3=LFc`l7$Fcu$\"5$Q+*3h;.^$R$Fc`l7$Feu$\"5-aM9WKt$*o
+MFc`l7$Fhu$\"5A/z>F[VOWNFc`l7$F[v$\"5TaBD5k8z>OFc`l7$F^v$\"5g/oI$*z$=_
+p$Fc`l7$Fav$\"5![DhjdRX1x$Fc`lF-F_[n-F76%7U7$F;$!51z$f#p\"eX%)G*F)7$F>
+$!5;%f:QBK)=:*)F)7$FA$!5E4=P)H1J>a)F)7$FD$!5OC!GHO!Qno\")F)7$FG$!5YRU[
+FWlT&z(F)7$FJ$!5ca//#\\Gf@U(F)7$FM$!5mpmfcD?!*[qF)7$FP$!5w%)G:@mZkvmF)
+7$FS$!5()*44do](Q-jF)7$FV$!5(\\Jl-vCI\"HfF)7$FY$!52I:#[\"))H(eb&F)7$Ff
+n$!5<XxPzGdh#=&F)7$Fin$!5FgR$R%p%e$4[F)7$F\\o$!5Qv,\\3575OWF)7$F_o$!5[
+!RYI2&R%G1%F)7$Fbo$!5e0EgP\"p'e*o$F)7$Feo$!5o?)e@?VHjJ$F)7$Fho$!5yN]rm
+s@2VHF)7$F[p$!5)3Dr7L\"\\\")pDF)7$F^p$!5)fYFeRldl>#F)7$Fap$!53\"o$Qg%R
++L#=F)7$Fdp$!5='*)R\\_8V+X\"F)7$Fgp$!5H6h\\*e(eyw5F)7$Fjp$!5(QEB0a;'GN
+qF]q7$F_q$!5!\\T&3'=d8FI$F]q7$Fcq$\"5#4MCNo@!f)H%F,7$Fgq$\"53$G!zA:;Vi
+TF]q7$F\\r$\"54K\"Gs(3U+&*yF]q7$Far$\"56)fmJ-odF;\"F)7$Fdr$\"5,$Q5'eR
+\\,O:F)7$Fgr$\"5\"z;aS*)>s#4>F)7$Fjr$\"5!G&z\\He%HDG#F)7$F]s$\"5qP<%\\
+wr'ybEF)7$F`s$\"5gAbQ+xR/HIF)7$Fcs$\"5]2$HejB,BS$F)7$Ffs$\"5S#4t7d\\eb
+x$F)7$Fhs$\"5Ixor1bd\")[TF)7$F[t$\"5?i1;U9I2AXF)7$F^t$\"55ZWgxt-L&*[F)
+7$Fat$\"5+K#[IJ`(eo_F)7$Fdt$\"5!p,#\\[#zW=k&F)7$Fgt$\"5!=!e$R=0-^,'F)7
+$Fjt$\"5q'ez$>6$f$)Q'F)7$F]u$\"5grL#[0d;;w'F)7$F`u$\"5\\crE!*HQ([8(F)7
+$Fcu$\"5RT4rD*3J\"3vF)7$Feu$\"5HEZ:h[$)Q\")yF)7$Fhu$\"5>6&)f'zgXYD)F)7
+$F[v$\"54'HU?t'G!zi)F)7$F^v$\"5*43'[nE,;,!*F)7$Fav$\"5*e')HHgQ<WP*F)F-
+-F26&F4FbglFcqFcq-F76%7U7$F;$\"5!Rj=\\S$z)p'=Fc`l7$F>$\"5TbUP63G'>z\"F
+c`l7$FA$\"5#p()Hy@oPpr\"Fc`l7$FD$\"5V)\\&GCcD\">k\"Fc`l7$FG$\"5%*>6uII
+u)oc\"Fc`l7$FJ$\"5XTn>P/B'=\\\"Fc`l7$FM$\"5'HO_O%yr$oT\"Fc`l7$FP$\"5Z%
+)z5]_?\"=M\"Fc`l7$FS$\"5)fgjll#pym7Fc`l7$FV$\"5\\F#>I1!=w\">\"Fc`l7$FY
+$\"5+\\[Zpumt;6Fc`l7$Ffn$\"5^q/$f([:rT5Fc`l7$Fin$\"5:?4'Q#GU'om*F)7$F
+\\o$\"5DNrT))oHh;*)F)7$F_o$\"5N]L(H&4<Om\")F)7$Fbo$\"5Xl&Hv,X5hT(F)7$F
+eo$\"5b!y&3#3>fem'F)7$Fho$\"5l&*>kYJzg:fF)7$F[p$\"5v5#)>6smNl^F)7$F^p$
+\"5'eUadFT0^T%F)7$Fap$\"5'4k5.M:a[m$F)7$Fdp$\"51co'[S*Gg9HF)7$Fgp$\"5;
+rIUpM;Nk@F)7$Fjp$\"5E'GzR`P+TT\"F)7$F_q$\"5d8]N&)f6\\QmF]q7$Fcq$!5;a$G
+3pL9-k)F,7$Fgq$!5T%o?Ns-MlO)F]q7$F\\r$!5M`ez2iY!pe\"F)7$Far$!5CQ'RK9#f
+:PBF)7$Fdr$!59BMoy!=2u3$F)7$Fgr$!5/3s79S%ew$QF)7$Fjr$!5%H*4d\\*p4ze%F)
+7$F]s$!5$yx9])e4;Q`F)7$F`s$!5ti&e/#=AT)3'F)7$Fcs$!5jZB!fvZj'QoF)7$Ffs$
+!5`KhM\"pt9*)e(F)7$Fhs$!5V<**yE'*f;R$)F)7$F[t$!5L-PBibsT*3*F)7$F^t$!5B
+([xw\\^o'R)*F)7$Fat$!5@F@JVx>**e5Fc`l7$Fdt$!5q0l&oL5<S8\"Fc`l7$Fgt$!5>
+%)3SIHA/47Fc`l7$Fjt$!5oi_%R_NnSG\"Fc`l7$F]u$!5<T'*[<\"[#4f8Fc`l7$F`u$!
+5m>S.62w6M9Fc`l7$Fcu$!5:)RyXItU\"4:Fc`l7$Feu$!5kwF7)*ey;%e\"Fc`l7$Fhu$
+!58brm\"\\)H>f;Fc`l7$F[v$!5iL:@&36=Ut\"Fc`l7$F^v$!567fvyOKC4=Fc`l7$Fav
+$!5g!H+BFOoU)=Fc`lF-Fh^o-%*AXESSTYLEG6#%'NORMALG-%(SCALINGG6#%,CONSTRA
+INEDG-%%VIEWG6$;$!0++++][U*!#5$\"0++++][U*FdioFaio" 1 2 0 1 10 0 2 9 
+1 4 1 1.000000 45.000000 45.000000 0 0 "Curve 1" "Curve 2" "Curve 3" "
+Curve 4" "Curve 5" "Curve 6" "Curve 7" "Curve 8" "Curve 9" "Curve 10" 
+}}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "tanto12(23,97,24,1,1);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5'=D&[6A!HDg*!#=" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#$\"5$zgT'3v;e3A!#;" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#$\"5***G=?%o412\"*!#=" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$!5\"f9
+4)R!f)zp>!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"5#=cHup**ft:\"!#;
+$\"5XmhY:\"))3&*z*!#=$\"5]B\"f)f#\\Du:\"F&" }}{PARA 13 "" 1 "" 
+{GLPLOT2D 456 401 401 {PLOTDATA 2 "6/-%'POINTSG6%7$$\"5$=VAC-)[Nc6!#;$
+\"5EF(*o*3_>ai%!#=-%&STYLEG6#%%LINEG-%'COLOURG6&%$RGBG\"\"!F5F5-%'CURV
+ESG6%7U7$$\"%JAF5$\"5++++++++JAF)7$$\"5+++++++wT@F)F@7$$\"5+++++++__?F
+)FC7$$\"5+++++++Gj>F)FF7$$\"5+++++++/u=F)FI7$$\"5+++++++![y\"F)FL7$$\"
+5+++++++c&p\"F)FO7$$\"5+++++++K1;F)FR7$$\"5+++++++3<:F)FU7$$\"5+++++++
+%yU\"F)FX7$$\"5+++++++gQ8F)Fen7$$\"5+++++++O\\7F)Fhn7$$\"5+++++++7g6F)
+F[o7$$\"5+++++++)32\"F)F^o7$$\"4+++++++k\")*F)$\"5+++++++S;)*!#<7$$\"4
++++++++S#*)F)$\"5++++++++C*)Feo7$$\"4+++++++;.)F)$\"5+++++++gJ!)Feo7$$
+\"4+++++++#RrF)$\"5+++++++?RrFeo7$$\"4+++++++oC'F)$\"5+++++++!oC'Feo7$
+$\"4+++++++WN&F)$\"5+++++++Sa`Feo7$$\"4+++++++?Y%F)$\"5++++++++iWFeo7$
+$\"4+++++++'pNF)$\"5+++++++gpNFeo7$$\"4+++++++sn#F)$\"5+++++++?xEFeo7$
+$\"4+++++++[y\"F)$FMFeo7$$\"3+++++++C*)F)$FjoF,7$$F5F5$!\"!F57$$!3++++
++++C*)F)$!5++++++++C*)F,7$$!4+++++++[y\"F)$!5+++++++![y\"Feo7$$!4+++++
+++sn#F)$!5+++++++?xEFeo7$$!4+++++++'pNF)$!5+++++++gpNFeo7$$!4+++++++?Y
+%F)$!5++++++++iWFeo7$$!4+++++++WN&F)$!5+++++++Sa`Feo7$$!4+++++++oC'F)$
+!5+++++++!oC'Feo7$$!4+++++++#RrF)$!5+++++++?RrFeo7$$!4+++++++;.)F)$!5+
+++++++gJ!)Feo7$$!4+++++++S#*)F)$F^sFeo7$$!4+++++++k\")*F)$!5+++++++S;)
+*Feo7$$!5+++++++)32\"F)Fav7$$!5+++++++7g6F)Fdv7$$!5+++++++O\\7F)Fgv7$$
+!5+++++++gQ8F)Fjv7$$!5+++++++%yU\"F)F]w7$$!5+++++++3<:F)F`w7$$!5++++++
++K1;F)Fcw7$$!5+++++++c&p\"F)Ffw7$$FcsF)Fiw7$$!5+++++++/u=F)F[x7$$!5+++
+++++Gj>F)F^x7$$!5+++++++__?F)Fax7$$!5+++++++wT@F)Fdx7$$!5++++++++JAF)F
+gxF-F1-F76%7U7$$\"5#3iZZ^5.O8\"F)F;7$F]yF@7$F]yFC7$F]yFF7$F]yFI7$F]yFL
+7$F]yFO7$F]yFR7$F]yFU7$F]yFX7$F]yFen7$F]yFhn7$F]yF[o7$F]yF^o7$F]yFao7$
+F]yFgo7$F]yF\\p7$F]yFap7$F]yFfp7$F]yF[q7$F]yF`q7$F]yFeq7$F]yFjq7$F]yF_
+r7$F]yFcr7$F]yFgr7$F]yF[s7$F]yF`s7$F]yFes7$F]yFjs7$F]yF_t7$F]yFdt7$F]y
+Fit7$F]yF^u7$F]yFcu7$F]yFhu7$F]yF\\v7$F]yFav7$F]yFdv7$F]yFgv7$F]yFjv7$
+F]yF]w7$F]yF`w7$F]yFcw7$F]yFfw7$F]yFiw7$F]yF[x7$F]yF^x7$F]yFax7$F]yFdx
+7$F]yFgxF-F1-F76%7U7$F;$\"5S`<yWriMBZF,7$F@Fe\\l7$FCFe\\l7$FFFe\\l7$FI
+Fe\\l7$FLFe\\l7$FOFe\\l7$FRFe\\l7$FUFe\\l7$FXFe\\l7$FenFe\\l7$FhnFe\\l
+7$F[oFe\\l7$F^oFe\\l7$FaoFe\\l7$FgoFe\\l7$F\\pFe\\l7$FapFe\\l7$FfpFe\\
+l7$F[qFe\\l7$F`qFe\\l7$FeqFe\\l7$FjqFe\\l7$F_rFe\\l7$FcrFe\\l7$FgrFe\\
+l7$F[sFe\\l7$F`sFe\\l7$FesFe\\l7$FjsFe\\l7$F_tFe\\l7$FdtFe\\l7$FitFe\\
+l7$F^uFe\\l7$FcuFe\\l7$FhuFe\\l7$F\\vFe\\l7$FavFe\\l7$FdvFe\\l7$FgvFe
+\\l7$FjvFe\\l7$F]wFe\\l7$F`wFe\\l7$FcwFe\\l7$FfwFe\\l7$FiwFe\\l7$F[xFe
+\\l7$F^xFe\\l7$FaxFe\\l7$FdxFe\\l7$FgxFe\\lF-F1-F76%7UF:7$F@$\"5eT(p(Q
+@dd\\?F)7$FC$\"5;$[RvFW^\"o=F)7$FF$\"5uC#4jT;Fno\"F)7$FI$\"5Lm*y]b)GI0
+:F)7$FL$\"5\"zq[QpgyQK\"F)7$FO$\"5\\\\%=E$GVXU6F)7$FR$\"5q5>)Qr\\+.h*F
+eo7$FU$\"5^E$z:5rdgz(Feo7$FX$\"5LUnF*[#\\\"=)fFeo7$Fen$\"59eT(p(Q@dnTF
+eo7$Fhn$\"5'RdrYENHLN#Feo7$F[o$\"5u(*)*oBlc'3R&F,7$F^o$!5T%fL*f>i:v7Fe
+o7$Fao$!5gyhBs0!*R*3$Feo7$Fgo$!5yi(QX=zTO!\\Feo7$F\\p$!5(pMTozd%)yr'Fe
+o7$Fap$!5:JR94kt7K&)Feo7$Ffp$!5`^Y9-:qjM5F)7$F[q$!5&*4\\Pj$Hhg@\"F)7$F
+`q$!5Po^gCsb[(R\"F)7$Feq$!5zEa$e3&)4*y:F)7$Fjq$!5@&olq%HTLg<F)7$F_r$!5
+jVfH33%e<%>F)7$Fcr$!5/-i_p'o#=B@F)7$Fgr$!5YgkvIlpg/BF)7$F[s$!5))=n)>RC
+Jg[#F)7$F`s$!5Ixp@`AbXnEF)7$Fes$!5sNsW9,)z)[GF)7$Fjs$!59%\\xc(zSIIIF)7
+$F_t$!5c_x!p$e$G<@$F)7$Fdt$!5(4,Q\")pj_JR$F)7$Fit$!5Rp#o$f:pduNF)7$F^u
+$!5\"y_)f?%>,gv$F)7$Fcu$!5B'yG=GZDu$RF)7$Fhu$!5lW!fI9v\\)=TF)7$F\\v$!5
+2.$*G/ISF+VF)7$Fav$!5\\h&>b'3$)p\"[%F)7$Fdv$!5!*>)\\nseAJm%F)7$Fgv$!5K
+y+)ze'oaW[F)7$Fjv$!5uO.@\\W6(f-&F)7$F]w$!5;&fS/JU&R2_F)7$F`w$!5e`3nr,(
+>))Q&F)7$Fcw$!5+76!H.)RCqbF)7$Ffw$!5Tq88%*e#o;v&F)7$Fiw$!5$)G;ObPD4LfF
+)7$F[x$!5D()=f;;o^9hF)7$F^x$!5nX@#yZ4TfH'F)7$Fax$!54/C0Rt`OxkF)7$Fdx$!
+5^iEG+_'*yemF)7$Fgx$!5$4#H^hIR@SoF)F--F26&F4Fgr$\"*++++\"!\")Fgr-F76%7
+U7$F;Fgr7$F@$\"54+Tf%)3;,TQ!#>7$FC$\"5=,#)=p<K-#o(F^jl7$FF$\"5>I#y`E[.
+B:\"F,7$FI$\"5FSw$QNk/k`\"F,7$FL$\"5M]qHU/e]?>F,7$FO$\"5VgkvIlpg/BF,7$
+FR$\"5]qe@>E\"3()o#F,7$FU$\"5d!GvwqG4G2$F,7$FX$\"5l!pMhzW5pX$F,7$Fen$
+\"5t+Tf%)3;,TQF,7$Fhn$\"5!3^`I(pF6DUF,7$F[o$\"5)3#H^hIR@4YF,7$F^o$\"5&
+4Ls*\\\"4:L*\\F,7$Fao$\"5.T<VQ_iTx`F,7$Fgo$\"56^6*oKT<:w&F,7$F\\p$\"5=
+h0N:u&=c9'F,7$Fap$\"5Dr*4Q]t>(HlF,7$Ffp$\"5L\"QpAf*3#Q\"pF,7$F[q$\"5T
+\"zG2o0AzH(F,7$F`q$\"5[,#)=p<K-#o(F,7$Feq$\"5c6wkdyV7m!)F,7$Fjq$\"5j@q
+5YRbA]%)F,7$F_r$\"5rJkcM+nKM))F,7$Fcr$\"5wTe-BhyU=#*F,7$Fgr$\"5'=D&[6A
+!HDg*F,7$F[s$\"5'>mW**H=Im)**F,7$F`s$\"5?2/%)QMJ2P5Feo7$Fes$\"5@[joZ]K
+[v5Feo7$Fjs$\"5A*GKllO$*Q6\"Feo7$F_t$\"5BI#y`E[.B:\"Feo7$Fdt$\"5BrTAu)
+f82>\"Feo7$Fit$\"5C7,2$[rB\"H7Feo7$F^u$\"5D`g\">4$Q`n7Feo7$Fcu$\"5E%*>
+w+ZR%fI\"Feo7$Fhu$\"5ENzg4jSNW8Feo7$F\\v$\"5FwQX=zTw#Q\"Feo7$Fav$\"5G<
+)*HF&Hu6U\"Feo7$Fdv$\"5Hed9O6Wef9Feo7$Fgv$\"5H*p\"*\\u_%*z\\\"Feo7$Fjv
+$\"5ISw$QNk/k`\"Feo7$F]w$\"5J\"e$oifZ\"[d\"Feo7$F`w$\"5JA&H:d([A8;Feo7
+$Fcw$\"5KjaP!=*\\j^;Feo7$Ffw$\"5L/9A*y5X+p\"Feo7$Fiw$\"5MXt1)RAb%G<Feo
+7$F[x$\"5M'G8p+Mlow\"Feo7$F^x$\"5NF#fdhXv_!=Feo7$Fax$\"5Oo^gCsboV=Feo7
+$Fdx$\"5P46XL)o&4#)=Feo7$Fgx$\"5P]qHU/e]?>FeoF-Fbil-F76%7U7$F;$\"5***G
+=?%o412\"*F,7$F@$\"5&=Ky@`L**[t)F,7$FC$\"5m`$QBAqPFO)F,7$FF$\"5[&Q)\\7
+pgd!*zF,7$FI$\"5G<%eEgV9%=wF,7$FL$\"55\\%=GH!GDYsF,7$FO$\"5#4[yH)p64uo
+F,7$FR$\"5t7&QJn`H>]'F,7$FU$\"5bW&)Hj.zwHhF,7$FX$\"5Ow&eM0F1wv&F,7$Fen
+$\"5=3'=OujWaQ&F,7$Fhn$\"5+S'yPV+$G8]F,7$F[o$\"5\"=nQR7P@6k%F,7$F^o$\"
+5j.()49Q(f*oUF,7$Fao$\"5WN(eU]5)z'*QF,7$Fgo$\"5En(=W>ZOY_$F,7$F\\p$\"5
+3*zyX)Q[Z_JF,7$Fap$\"5*3$)QZd?8.y#F,7$Ffp$\"5qi))*[Ed^\"3CF,7$F[q$\"5^
+%*)e]&R**)f.#F,7$F`q$\"5LE*=_kIGQm\"F,7$Feq$\"5:e*y`Lnm;H\"F,7$Fjq$\"5
+j**)*Qb-/0&>*F^jl7$F_r$\"5y<-*p:2MMZ&F^jl7$Fcr$\"5%f`!feSx\"=v\"F^jl7$
+Fgr$!5\"f94)R!f)zp>F^jl7$F[s$!5wF)3#Q@\\T\"p&F^jl7$F`s$!5e4&3mBDJIT*F^
+jl7$Fes$!59>3]LeZY88F,7$Fjs$!5L(ySL9REco\"F,7$F_t$!5^b2=`C!)yd?F,7$Fdt
+$!5pB2-jd'\\*HCF,7$Fit$!5)=pgG2H6@!GF,7$F^u$!52g1q#Q#HFuJF,7$Fcu$!5EG1
+a#pbMka$F,7$Fhu$!5W'f!Q-!>'f=RF,7$F\\v$!5ik0A7Byv!H%F,7$Fav$!5\"G`g?iX
+>Hm%F,7$Fdv$!5*4]+>$*3\"3N]F,7$Fgv$!5=p/uTAFC2aF,7$Fjv$!5OP/e^bVSzdF,7
+$F]w$!5a0/Uh))fc^hF,7$F`w$!5tt.Er@wsBlF,7$Fcw$!5\">M+6[D*)e*oF,7$Ffw$!
+555.%4z)30osF,7$Fiw$!5Gy-y+@D@SwF,7$F[x$!5YY-i5aTP7!)F,7$F^x$!5m9-Y?(y
+NXQ)F,7$Fax$!5%G=+..U(pc()F,7$Fdx$!5+^,9S`!f)G\"*F,7$Fgx$!5A>,)*\\'o?5
+]*F,F--F26&F4FgrFgrFdil-F76%7U7$F;$!5rOK+k7U6%)>F)7$F@$!5C2JW8W'4b\"=F
+)7$FC$!5yxH)Gc20pk\"F)7$FF$!5J[GK720Iy9F)7$FI$!5%)=FwhQfp48F)7$FL$!5P*
+e-7,P\"4T6F)7$FO$!5'*)fCkg,o[s*Feo7$FR$!5M/L#35LA)Q!)Feo7$FU$!5k4?A&fk
+wFN'Feo7$FX$!5$\\r?'*3'4tmYFeo7$Fen$!5B?%>SeF&o!)HFeo7$Fhn$!5hD\"=%y!f
+RYH\"Feo7$F[o$\"5#4pJ=F%419RF,7$F^o$\"5!QY%yKz<Xx?Feo7$Fao$\"5]edQQku
+\\jPFeo7$Fgo$\"57`q)R%\\Ja\\aFeo7$F\\p$\"5#yM)e\\M))eNrFeo7$Fap$\"5_U'
+*=b>Xj@))Feo7$Ffp$\"5s$4zg/-o20\"F)7$F[q$\"5=B#Rm*)es$>7F)7$F`q$\"5l_$
+*>Zdr(zQ\"F)7$Feq$\"57#[fxfs\"ec:F)7$Fjq$\"5g6'>$[%H'=D<F)7$F_r$\"52T(
+z))H'3z$*=F)7$Fcr$\"5`q)R%\\JaRi?F)7$FgrF=7$F[s$\"5ZH,c]oXg*R#F)7$F`s$
+\"5$*e-7,P\"4#oDF)7$Fes$\"5S)Q!o^0P\"ot#F)7$Fjs$\"5(y^SASF=a!HF)7$F_t$
+\"5MZ1!GD%G-uIF)7$Fdt$\"5\"oxgL5TFEC$F)7$Fit$\"5F14#R&z>B6MF)7$F^u$\"5
+uN5[/[l$)zNF)7$Fcu$\"5@l6/b;6W[PF)7$Fhu$\"5o%H,c]oXq\"RF)7$F\\v$\"5:C9
+;c`-l&3%F)7$Fav$\"5i`:s1A[DaUF)7$Fdv$\"54$o\"Gd!RfGU%F)7$Fgv$\"5c7=%y!
+fRY\"f%F)7$Fjv$\"5-U>SeF&o+w%F)7$F]w$\"5\\r?'*3'4t'G\\F)7$F`w$\"5'4?A&
+fkwF(4&F)7$Fcw$\"5VIB35LA)eE&F)7$Ffw$\"5*)fCkg,o[MaF)7$Fiw$\"5O*e-7,P
+\"4.cF)7$F[x$\"5$)=FwhQfprdF)7$F^x$\"5I[GK720ISfF)7$Fax$\"5xxH)Gc20*3h
+F)7$Fdx$\"5B2JW8W'4vF'F)7$Fgx$\"5qOK+k7U6YkF)F-F^]n-F76%7U7$F;$!5ZD%*3
+!y8:eD#F)7$F@$!50n\"f)=f3jj@F)7$FC$!5j3*Gw0eY92#F)7$FF$!5@]')R'>Ii#z>F
+)7$FI$!5z\"Ro^L-yq)=F)7$FL$!5QL\"QRZu$*[z\"F)7$FO$!5'\\(yq7m%4Fq\"F)7$
+FR$!5a;wZ^(=D0h\"F)7$FU$!57etC!*34M=:F)7$FX$!5q*4<!HIm:E9F)7$Fen$!5HTo
+yn^B(RL\"F)7$Fhn$!5(GeclI2)yT7F)7$F[o$!5XCjKX%z.'\\6F)7$F^o$!5.mg4%e^>
+u0\"F)7$Fao$!59w!e'GsBN_'*Feo7$Fgo$!5'>\\bjhe40t)Feo7$F\\p$!5y2H0/+om3
+yFeo7$Fap$!5gB.v\"R,Co)oFeo7$Ffp$!5URxWzF7)\\'fFeo7$F[q$!5Cb^9nT%QJ/&F
+eo7$F`q$!50rD%[bl&H@TFeo7$Feq$!5(o)*RD%pGX*>$Feo7$Fjq$!5p-uBI$35wF#Feo
+7$F_r$!5^=[$zrHndN\"Feo7$Fcr$!5KVBKc5^CRVF,7$Fgr$\"5[)\\.n1v#=z[F,7$F[
+s$\"5.MH(*=h5w49Feo7$F`s$\"5@=bFJZQgJBFeo7$Fes$\"5R-\"yNMjYMD$Feo7$Fjs
+$\"5d'o!)e&>%*GvTFeo7$F_t$\"5uqK=o0A8(4&Feo7$Fdt$\"5#\\&e[!=*\\(*=gFeo
+7$Fit$\"55R%)y#zx<3%pFeo7$F^u$\"5GB540k0miyFeo7$Fcu$\"5Y2OR<]L]%y)Feo7
+$Fhu$\"5k\">'pHOhM1(*Feo7$F\\v$\"5ex)*>C#*)=G1\"F)7$Fav$\"5+O,V&3<.]:
+\"F)7$Fdv$\"5U%Rgm%\\u=Z7F)7$Fgv$\"5%Gl!*y!G<PR8F)7$Fjv$\"5D647p1gbJ9F
+)7$F]w$\"5np6NI&GSP_\"F)7$F`w$\"54G9e\"RcCfh\"F)7$Fcw$\"5^'o6GD%)3\"3<
+F)7$Ffw$\"5$\\%>/9@JH+=F)7$Fiw$\"5M.AFv*RxC*=F)7$F[x$\"5whC]Oy;m%)>F)7
+$F^x$\"5=?Ft(p&f%o2#F)7$Fax$\"5gyH'*eN-.p@F)7$Fdx$\"5-PK>?9X@hAF)7$Fgx
+$\"5V&\\B9Gz)R`BF)F--F26&F4FdilFgrFgr-F76%7U7$F;$\"5$zgT'3v;eRWF)7$F@$
+\"5^\\8TZ'Rd\"eUF)7$FC$\"54\"4\"='y6Ln2%F)7$FF$\"5nK3&\\#R)3`*QF)7$FI$
+\"5Eu0sjgX)Qr$F)7$FL$\"5%eJ!\\-#GgC`$F)7$FO$\"5Ud+ET.g.^LF)7$FR$\"5+*z
+H+[s6'pJF)7$FU$\"5eS&*z=Yu=))HF)7$FX$\"5<#Gpvv;jn!GF)7$Fen$\"5vB!Rj*))
+)Q`i#F)7$Fhn$\"5Ll(3^.h9RW#F)7$F[o$\"5\"p]yQ<L!\\iAF)7$F^o$\"5\\[#[EJ0
+m53#F)7$Fao$\"53!*zT^u<k**=F)7$Fgo$\"5mJx=!f\\<#=<F)7$F\\p$\"5Ctu&*G<K
+zO:F)7$Fap$\"5#[@Fx'Q*o`N\"F)7$Ffp$\"5Tcp\\1gY%R<\"F)7$F[q$\"5\"*zpm_9
+Q?D**Feo7$F`q$\"5q&Rk.%G5'46)Feo7$Feq$\"5`6=1GU#=nH'Feo7$Fjq$\"5NF#fdh
+XvC[%Feo7$F_r$\"5<VmX.qEBoEFeo7$Fcr$\"5%**eS:\"R))*)R&)F,7$Fgr$!5'=D&[
+6A!HDg*F,7$F[s$!5P46XL)o&\\uFFeo7$F`s$!5b$p`dWZQ()e%Feo7$Fes$!5txi0eg7
+)HS'Feo7$Fjs$!5\">')e.n/Cs@)Feo7$F_t$!5hWhEG$oYJ+\"F)7$Fdt$!5..k\\*='4
+d%=\"F)7$Fit$!5Xhms]S_*fO\"F)7$F^u$!5')>p&>\">&>ua\"F)7$Fcu$!5Gyr=t(zV
+)G<F)7$Fhu$!5qOuTMw!o-\">F)7$F\\v$!57&pZc\\N#p\"4#F)7$Fav$!5``z(oNj;JF
+#F)7$Fdv$!5&>@3\"=74aaCF)7$Fgv$!5Pq%Q$z!>lfj#F)7$Fjv$!5zG(o0%p%*Q<GF)7
+$F]w$!5@()*)z,[P\"))*HF)7$F`w$!5iX#HIm-Q-=$F)7$Fcw$!5//&fU_Ii;O$F)7$Ff
+w$!5Yi(*[&Qe'3VNF)7$Fiw$!5)3-?nC'3^CPF)7$F[x$!5Iz-&z59Nf!RF)7$F^x$!5rP
+0=p>%ft3%F)7$Fax$!58'z5/$)p$yoUF)7$Fdx$!5ba5k\"p(z?]WF)7$Fgx$!5(HJrGbD
+K;j%F)F-Ff`o-%*AXESSTYLEG6#%'NORMALG-%(SCALINGG6#%,CONSTRAINEDG-%%VIEW
+G6$;$!%JAF5F;F_[p" 1 2 0 1 10 0 2 9 1 4 1 1.000000 45.000000 
+45.000000 0 0 "Curve 1" "Curve 2" "Curve 3" "Curve 4" "Curve 5" "Curve
+ 6" "Curve 7" "Curve 8" "Curve 9" "Curve 10" }}}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 39 "n1:=nextprime(231);n2:=nextprime(3422);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n1G\"$L#" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#n2G\"%LM" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+25 "tanto12(n1,n2,816,816,1);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#%c[ln
+ame~of~the~object:~~T1|+form~of~the~object:~~triangle2d|+method~to~def
+ine~the~triangle:~~points|+the~three~vertices:~~[[894.3651379610008031
+7,~.17540114291480636088e-15],~[894.26002058711031988,~1.0945655086745
+536351],~[894.46106641057789710,~1.0948115867938529952]]G" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#7%$\"5aKC^kM9g*4\"!#>$\"5_P]7mS(f/,#!#?$\"5aq^(
+>HA1!*4\"F&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%)area~T1=G$\"5X(*y<eb%
+=/5\"!#?" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"5pG4u'[(y]Q;!#<$\"5xO
+#3`7**\\8a%F&$\"5(QS\"Qb@'G)HXF&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%)
+area~T2=G$\"5@dETAT(*eaO!#:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"53
+\\>^kMHC&*e!#<$\"5>'=#)R\"e2(*RXF&$\"5k'>k)QJM_E9F&" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6$%*area~T3~=G$\"5U3N3TSca]6!#:" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#7%$\"5>o2Wh0hw#3'!#<$\"5v-EPLOp?2;F&$\"57y!e//nkNb%F&" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$%*area~T4~=G$\"5`bXk&p=b,I\"!#:" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#7%$\"5Py!e//nkNb%!#<$\"5=#R!)4XFhDk\"F
+&$\"5['=#)R\"e2(*RXF&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%*area~T5~=G$
+\"5=C&*e@_QisO!#:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5l`M%yhDT\")4(
+!#:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"5Bcw89xJ'pI(!#9" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#$\"5%o&3gEpx!))H(!#9" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 0 "" }}}}{MARK "4 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 
+1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

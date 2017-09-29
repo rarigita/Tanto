@@ -1,0 +1,46 @@
+> restart;with(plots);
+Warning, the name changecoords has been redefined
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, interactiveparams, listcontplot, 
+
+  listcontplot3d, listdensityplot, listplot, listplot3d, loglogplot, logplot, 
+
+  matrixplot, multiple, odeplot, pareto, plotcompare, pointplot, pointplot3d, 
+
+  polarplot, polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, 
+
+  replot, rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+> F:=plot(sin((Pi*x)/3), x=0..33, y=-1..1, style=line):
+> G:=plot(sin((Pi*x)/11), x=0..33, y=-1..1, style=line):
+> display({F, G}, axes=normal, scaling=unconstrained, title=`senos 3,11`);
+
+> F:=plot(sin((Pi*2*x)/3), x=0..33, y=-1..1, style=line):
+> G:=plot(sin((Pi*2*x)/11), x=0..33, y=-1..1, style=line):
+> display({F, G}, axes=normal, scaling=unconstrained, title=`senos 3,11`);
+
+> F:=plot(sin((Pi*2*x)/7), x=0..161, y=-1..1, style=line):
+> G:=plot(sin((Pi*2*x)/23), x=0..161, y=-1..1, style=line):
+> display({F, G}, axes=normal, scaling=unconstrained, title=`senos 7,23`);
+
+> F:=plot(sin((Pi*2*x)/11), x=0..187, y=-1..1, style=line):
+> G:=plot(sin((Pi*2*x)/17), x=0..187, y=-1..1, style=line):
+> display({F, G}, axes=normal, scaling=unconstrained, title=`senos 11,17`);
+
+> animate( plot, [[sin((Pi*x)/t), sin((Pi*x)/(91/t))], x=0..91], t=1..10, frames=100 );
+
+> animate( plot, [[sin((Pi*x)/t), sin((Pi*x)/(33/t))], x=0..33], t=1..12, frames=300 );
+
+> 
+> 
+
+
+

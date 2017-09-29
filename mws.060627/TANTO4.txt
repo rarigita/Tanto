@@ -1,0 +1,274 @@
+> restart;Digits:=30;with(plots);
+                          Digits := 30
+Warning, the name changecoords has been redefined
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, interactiveparams, listcontplot, 
+
+  listcontplot3d, listdensityplot, listplot, listplot3d, loglogplot, logplot, 
+
+  matrixplot, multiple, odeplot, pareto, plotcompare, pointplot, pointplot3d, 
+
+  polarplot, polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, 
+
+  replot, rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto4 := proc( p1, p2, s, v )
+>   global k,sq,ssq,a,c_a,b,c_b,p3_x,p3_y,p4_x,p4_y,p5_x,p5_y,p6_x,p6_y,p7_x,p7_y,
+>          p8_x,p8_y,c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,n,c_n,m,c_m,l,c_l,o,c_o,t,
+>          Py,Psq,Pssq,Pa,Pb,Pp3,Pc,Pd,Pe,Pf,Pg,Pn,Pl,Pm,Po,Pz,xrange,yrange;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   ssq := evalf( sqrt(sq) );
+>   a :=  k / ( k - sq );
+>   c_a := (a * sq);
+>   b := (a-1);
+>   c_b := (c_a);
+>   p3_x :=(c_b+c_a)/(a+b);
+>   p3_y := a * p3_x - c_a;
+>   p4_x := p3_x;
+>   p4_y := -p3_y;
+>   p6_x := sq - (p3_x - sq);
+>   p6_y := p3_y;
+>   p5_x := p6_x;
+>   p5_y := -p6_y;
+>   c := c_a / ( (k/2) - c_a );
+>   c_c := c * (k/2);
+>   d := p2 / (p2-sq);
+>   c_d := d * sq;
+>   e := sq / ( sq - ssq );
+>   c_e := e * ssq;
+>   g := ssq / ( sq - ssq );
+>   c_g := g * sq;
+>   p7_x :=(c_g+c_e)/(e+g);
+>   p7_y := e * p7_x - c_e;
+>   p8_x := ssq - (p7_x - ssq);
+>   p8_y := p7_y;
+>   l := (c_d-p4_y) / ( p4_x );
+>   c_l := c_d;
+>   z := (c_d-p5_y) / ( p5_x );
+>   c_z := c_d;
+>   o := (k/2 - p6_y) / (p6_x);
+>   c_o := k/2;
+>   m := c_o / o;
+>   f := trunc(sq/m);
+>   o := p6_y / ( (sq/f) - p6_x );
+>   c_o := o * (sq/f);
+>   n := p3_y / ( (k/2) - p3_x);
+>   c_n := n * (k/2);
+>   m := c_o - c_n;
+
+>   printf("  p1=%d, p2=%d, k=%d, sq(k)=%f ssq=%f\n", p1,p2,k,sq,ssq);
+>   printf("  d(x) = -%f x + %f <----- objetivo\n", d, c_d);
+>   printf("  a(x) = %f x - %f\n", a, c_a);
+>   printf("  b(x) = -%f x + %f\n", b, c_b);
+>   printf("  f(x) = %f x - %f\n", e, c_e);
+>   printf("  g(x) = -%f x + %f\n", g, c_g);
+>   printf("\n  n(x) = -%f x + %f\n", n, c_n);
+>   printf("  o(x) = -%f x + %f\n", o, c_o);
+>   printf("  l(x) = -%f x + %f\n", l, c_l);
+>   printf("  z(x) = -%f x + %f\n", z, c_z);
+>   printf("  p3 = ( %f , %f ) \n  p6 = ( %f , %f ) \n", p3_x, p3_y, p6_x, p6_y);
+>   printf("  p7 = ( %f , %f ) \n  p8 = ( %f , %f ) \n", p7_x, p7_y, p8_x, p8_y);
+>   printf("  Inicial fraccion = %d ,  Diferencia = %f\n", f, m);
+
+>   o := p6_y / ( (sq/s) - p6_x );
+>   c_o := o * (sq/s);
+>   n := p3_y / ( (k/s) - p3_x);
+>   c_n := n * (k/s);
+>   m := c_o - c_n;
+
+>   printf("  resultado: \n");
+>   printf("  n(x) = -%f x + %f\n", n, c_n);
+>   printf("  o(x) = -%f x + %f\n", o, c_o);
+>   printf("  Diferencia = %f\n", m);
+
+>   xrange:=0..p3_x;
+>   yrange:=-c_d..c_d;
+>   Py:=implicitplot(x=y,x=xrange,y=yrange,colour=black);
+>   Psq:=implicitplot({x=sq,y=sq},x=0..sq,y=0..sq,colour=black);
+>   Pssq:=implicitplot({x=ssq,y=ssq},x=0..ssq,y=0..ssq,colour=black);
+>   Pa:=plot(a*x-c_a,x=xrange,y=yrange,colour=green);
+>   Pb:=plot(-b*x+c_b,x=xrange,y=yrange,colour=green);
+>   Pe:=plot(e*x-c_e,x=xrange,y=yrange,colour=green);
+>   Pg:=plot(-g*x+c_g,x=xrange,y=yrange,colour=green);
+>   Pp3:=pointplot({[p3_x,p3_y],[p4_x,p4_y],[p5_x,p5_y],
+>                   [p6_x,p6_y],[p7_x,p7_y],[p8_x,p8_y],[0,0],[p1,0],[p2,0]},colour=black);
+>   Pd:=plot(d*x-c_d,x=xrange,y=yrange,colour=red);
+>   Pn:=plot(-n*x+c_n,x=xrange,y=yrange,colour=blue);
+>   Po:=plot(-o*x+c_o,x=xrange,y=yrange,colour=blue);
+>   Pl:=plot(-l*x+c_l,x=xrange,y=yrange,colour=blue);
+>   Pz:=plot(-z*x+c_z,x=xrange,y=yrange,colour=blue);
+>   display({Py,Psq,Pssq,Pa,Pb,Pp3,Pd,Pn,Pl,Pz,Po});
+> end proc:
+Con argv[3] = 2: c_n = c_d; argv[3]=3: n(x)=0 => x=p2; argv[3]=6: c_n=c_e; argv[3]=11: n(x)=0 => x=p1.
+6-4 = (p2-p1)/2
+> tanto4(3,11,2,1);
+
+  p1=3, p2=11, k=33, sq(k)=5.744563 ssq=2.396782
+  d(x) = -2.093070 x + 12.023774 <----- objetivo
+  a(x) = 1.210768 x - 6.955330
+  b(x) = -0.210768 x + 6.955330
+  f(x) = 1.715931 x - 4.112713
+  g(x) = -0.715931 x + 4.112713
+
+  n(x) = -0.728714 x + 12.023774
+  o(x) = -4.186141 x + 12.023774
+  l(x) = -1.728714 x + 12.023774
+  z(x) = -9.930703 x + 12.023774
+  p3 = ( 9.785660 , 4.892830 ) 
+  p6 = ( 1.703465 , 4.892830 ) 
+  p7 = ( 3.382356 , 1.691178 ) 
+  p8 = ( 1.411207 , 1.691178 ) 
+  Inicial fraccion = 2 ,  Diferencia = -0.000000
+  resultado: 
+  n(x) = -0.728714 x + 12.023774
+  o(x) = -4.186141 x + 12.023774
+  Diferencia = -0.000000
+
+> c_l/l;c_z/z;
+                6.95533022924234205547094307662
+                1.21076758270431339562033160833
+> tanto4(7,23,4,1);
+  p1=7, p2=23, k=161, sq(k)=12.688578 ssq=3.562103
+  d(x) = -2.230536 x + 28.302330 <----- objetivo
+  a(x) = 1.085554 x - 13.774131
+  b(x) = -0.085554 x + 13.774131
+  f(x) = 1.390304 x - 4.952407
+  g(x) = -0.390304 x + 4.952407
+
+  n(x) = -0.206429 x + 16.617506
+  o(x) = -17.199825 x + 43.648262
+  l(x) = -1.703163 x + 28.302330
+  z(x) = -21.610722 x + 28.302330
+  p3 = ( 23.523262 , 11.761631 ) 
+  p6 = ( 1.853893 , 11.761631 ) 
+  p7 = ( 5.562600 , 2.781300 ) 
+  p8 = ( 1.561606 , 2.781300 ) 
+  Inicial fraccion = 5 ,  Diferencia = 27.030756
+  resultado: 
+  n(x) = -0.703163 x + 28.302330
+  o(x) = -8.922144 x + 28.302330
+  Diferencia = 0.000000
+
+> c_l/l;c_z/z;a:=(k/2)/((k/2)-sq);c_a:=a*sq; 
+                16.6175064737656104027052461324
+                1.30964297777203000750382446211
+              a := 1.18711563745795567363304169104
+             c_a := 15.0628088153654317274598561283
+> tanto4(23,61,11,1);
+  p1=23, p2=61, k=1403, sq(k)=37.456642 ssq=6.120183
+  d(x) = -2.590964 x + 97.048819 <----- objetivo
+  a(x) = 1.027430 x - 38.484071
+  b(x) = -0.027430 x + 38.484071
+  f(x) = 1.195306 x - 7.315489
+  g(x) = -0.195306 x + 7.315489
+
+  n(x) = -0.058044 x + 40.717839
+  o(x) = -274.447664 x + 571.104877
+  l(x) = -1.830068 x + 97.048819
+  z(x) = -68.548213 x + 97.048819
+  p3 = ( 72.965290 , 36.482645 ) 
+  p6 = ( 1.947993 , 36.482645 ) 
+  p7 = ( 10.521258 , 5.260629 ) 
+  p8 = ( 1.719108 , 5.260629 ) 
+  Inicial fraccion = 18 ,  Diferencia = 530.387038
+  resultado: 
+  n(x) = -0.668423 x + 85.254333
+  o(x) = -25.036886 x + 85.254333
+  Diferencia = 0.000000
+
+> c_l/l;c_z/z;
+                53.0301623757570097343873140697
+                1.41577461591826593519476867788
+> tanto4(59,127,30,3);
+  p1=59, p2=127, k=7493, sq(k)=86.562116 ssq=9.303876
+  d(x) = -3.140619 x + 271.858659 <----- objetivo
+  a(x) = 1.011687 x - 87.573804
+  b(x) = -.011687 x + 87.573804
+  f(x) = 1.120426 x - 10.424302
+  g(x) = -.120426 x + 10.424302
+
+  n(x) = -.023934 x + 89.669821
+  o(x) = -1020.631685 x + 2103.524732
+  l(x) = -2.088451 x + 271.858659
+  z(x) = -180.780697 x + 271.858659
+  p3 = ( 171.147074 , 85.573537 ) 
+  p6 = ( 1.977159 , 85.573537 ) 
+  p7 = ( 16.801855 , 8.400927 ) 
+  p8 = ( 1.805898 , 8.400927 ) 
+  Inicial fraccion = 42 ,  Diferencia = 2013.854912
+  resultado: 
+  n(x) = -1.088451 x + 271.858659
+  o(x) = -94.218581 x + 271.858659
+  Diferencia = .000000
+
+> c_l/l;c_z/z;a:=(k/3)/((k/3)-sq);c_a:=a*sq;
+                130.172420080215874816634562621
+                1.50380357431286005200619275567
+              a := 1.03590143630083228219205838030
+             c_a := 89.6698207340454301550311478562
+> tanto4(101,103,51,42);
+  p1=101, p2=103, k=10403, sq(k)=101.995098 ssq=10.099262
+  d(x) = -102.497549 x + 10454.247543 <----- objetivo
+  a(x) = 1.009901 x - 103.004999
+  b(x) = -.009901 x + 103.004999
+  f(x) = 1.109899 x - 11.209161
+  g(x) = -.109899 x + 11.209161
+
+  n(x) = -.020203 x + 105.086012
+  o(x) = -1702.700556 x + 3473.342199
+  l(x) = -52.251238 x + 10454.247543
+  z(x) = -5329.370095 x + 10454.247543
+  p3 = ( 202.009614 , 101.004807 ) 
+  p6 = ( 1.980582 , 101.004807 ) 
+  p7 = ( 18.378717 , 9.189358 ) 
+  p8 = ( 1.819808 , 9.189358 ) 
+  Inicial fraccion = 50 ,  Diferencia = 3368.256187
+  resultado: 
+  n(x) = -51.251238 x + 10454.247543
+  o(x) = -5227.374997 x + 10454.247543
+  Diferencia = .000000
+
+> c_l/l;c_z/z;a:=(k/41)/((k/41)-sq);c_a:=a*sq;
+                200.076553672849485702152589896
+                1.96162911502859504807340473905
+              a := 1.67218516564758186943794731390
+             c_a := 170.554689712970589945438192841
+> tanto4(1237,9743,619,4);
+  p1=1237, p2=9743, k=12052091, sq(k)=3471.612162 ssq=58.920388
+  d(x) = -1.553564 x + 5393.370361 <----- objetivo
+  a(x) = 1.000288 x - 3472.612450
+  b(x) = -.000288 x + 3472.612450
+  f(x) = 1.017265 x - 59.937653
+  g(x) = -.017265 x + 59.937653
+
+  n(x) = -.000577 x + 3474.614756
+  o(x) = -2305847.880624 x + 4613838.354458
+  l(x) = -1.277006 x + 5393.370361
+  z(x) = -4433.268043 x + 5393.370361
+  p3 = ( 6941.224899 , 3470.612449 ) 
+  p6 = ( 1.999424 , 3470.612449 ) 
+  p7 = ( 115.874154 , 57.937077 ) 
+  p8 = ( 1.966622 , 57.937077 ) 
+  Inicial fraccion = 1735 ,  Diferencia = 4610363.739702
+  resultado: 
+  n(x) = -.277006 x + 5393.370361
+  o(x) = -961.655881 x + 5393.370361
+  Diferencia = -.000000
+
+> c_l/l;c_z/z;a:=(k/3)/((k/3)-sq);c_a:=a*sq;
+                4223.45095192915314644061727734
+                1.21656762202444510620607672290
+              a := 1.00086489923355600619149585819
+             c_a := 3474.61475621574673882383634708
+
+

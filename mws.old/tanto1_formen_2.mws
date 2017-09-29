@@ -1,0 +1,196 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Text Output" -1 6 
+1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 2 1 3 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }{PSTYLE "Maple Output" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 1 1 1 1 }1 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "with(plots);Digits:=
+30;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#7Z%(animateG%*animate3dG%-anima
+tecurveG%&arrowG%-changecoordsG%,complexplotG%.complexplot3dG%*conform
+alG%,conformal3dG%,contourplotG%.contourplot3dG%*coordplotG%,coordplot
+3dG%-cylinderplotG%,densityplotG%(displayG%*display3dG%*fieldplotG%,fi
+eldplot3dG%)gradplotG%+gradplot3dG%,graphplot3dG%-implicitplotG%/impli
+citplot3dG%(inequalG%,interactiveG%-listcontplotG%/listcontplot3dG%0li
+stdensityplotG%)listplotG%+listplot3dG%+loglogplotG%(logplotG%+matrixp
+lotG%(odeplotG%'paretoG%,plotcompareG%*pointplotG%,pointplot3dG%*polar
+plotG%,polygonplotG%.polygonplot3dG%4polyhedra_supportedG%.polyhedrapl
+otG%'replotG%*rootlocusG%,semilogplotG%+setoptionsG%-setoptions3dG%+sp
+acecurveG%1sparsematrixplotG%+sphereplotG%)surfdataG%)textplotG%+textp
+lot3dG%)tubeplotG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'DigitsG\"#I" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "tanto2 := proc( p1, p2 )" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 63 "  local k,sq,a,c_a,b,c_b,c,c_c,d,
+c_d,e,c_e,f,c_f,g,c_g,z,c_z,t," }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 59 " \+
+       Py,Psq,Pa,Pb,Pc,Pd,Pe,Pf,Pg,Pz,xrange,yrange,index;" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 21 "  index := (p1-1)/2 ;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "  k := p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 
+"  sq := evalf( sqrt(k) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  a :
+= evalf( k / ( k - sq ));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  c_a \+
+:= (a * sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "  b := (a-1);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_b := (c_a);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 20 "  d := p2 / (p2-sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 16 "  c_d := d * sq;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  e := \+
+p1 / (sq-p1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "  c_e := e * sq;" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "  f := d/2;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "  c_f := c_e/2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 
+"  g := e/2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_g := c_d/2;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "  printf(\"  p1=%d, p2=%d, k=%d, sq
+(k)=%f \\n\", p1,p2,k,sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  pri
+ntf(\"a(x) y b(x) vienen de k y van a sq(k)\\n\"); " }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 42 "  printf(\"  a(x) = %g x - %f \\n\", a, c_a);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "  printf(\"  b(x) = -%f x + %f \\n
+\", b, c_b);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 65 "  printf(\"d(x) y e
+(x) vienen sq(k) y van a los primos en y=x\\n\");" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 42 "  printf(\"  d(x) = %f x - %f \\n\", d, c_d);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "  printf(\"  e(x) = %f x - %f \\n\"
+, e, c_e);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 77 "  printf(\"f(x) y g(x
+) vienen de los primos por abajo y pasan por sq(k)/2\\n\");" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 42 "  printf(\"  f(x) = %f x - %f \\n\", f, c
+_f);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "  printf(\"  g(x) = -%f x +
+ %f \\n\\n\", g, c_g);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 20 "  while index > 1 do" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 35 "    c := c_a / ( (k/index) - c_a );" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 25 "    c_c := c * (k/index);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 13 "    c_z:=c_d;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 
+"    z:=c_z/(k/index);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "    t:=0;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "    while true do " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+26 "      if( c_z > c_c ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 " \+
+       c_z := ( (z*k) / index ) / ( 1+z ) ;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 30 "        z := c_z / (k/index) ;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "        t := t+1 ;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+17 "      else break;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "      end \+
+if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "    end do;" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 58 "    if( abs(trunc(c_z*1000)) = abs(trunc(c_c*100
+0)) ) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 59 "      printf(\"%d    \+
+z(x) = -%f x + %f \\n\", index, z, c_z) ;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 39 "      printf(\"total cycles = %d \\n\",t);" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 11 "    end if;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "    index := index - 1;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "  end do;" }{TEXT -1 1 " " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "end proc:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+13 "tanto2(3,11);" }}{PARA 6 "" 1 "" {TEXT -1 36 "  p1=3, p2=11, k=33,
+ sq(k)=5.744563 " }}{PARA 6 "" 1 "" {TEXT -1 37 "a(x) y b(x) vienen de
+ k y van a sq(k)" }}{PARA 6 "" 1 "" {TEXT -1 31 "  a(x) = 1.210768 x -
+ 6.955330 " }}{PARA 6 "" 1 "" {TEXT -1 31 "  b(x) = -.210768 x + 6.955
+330 " }}{PARA 6 "" 1 "" {TEXT -1 50 "d(x) y e(x) vienen sq(k) y van a \+
+los primos en y=x" }}{PARA 6 "" 1 "" {TEXT -1 32 "  d(x) = 2.093070 x \+
+- 12.023774 " }}{PARA 6 "" 1 "" {TEXT -1 31 "  e(x) = 1.093070 x - 6.2
+79211 " }}{PARA 6 "" 1 "" {TEXT -1 62 "f(x) y g(x) vienen de los primo
+s por abajo y pasan por sq(k)/2" }}{PARA 6 "" 1 "" {TEXT -1 31 "  f(x)
+ = 1.046535 x - 3.139605 " }}{PARA 6 "" 1 "" {TEXT -1 31 "  g(x) = -.5
+46535 x + 6.011887 " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 16 "tanto2(101,103);" }}{PARA 6 "" 1 "" 
+{TEXT -1 44 "  p1=101, p2=103, k=10403, sq(k)=101.995098 " }}{PARA 6 "
+" 1 "" {TEXT -1 37 "a(x) y b(x) vienen de k y van a sq(k)" }}{PARA 6 "
+" 1 "" {TEXT -1 33 "  a(x) = 1.009901 x - 103.004999 " }}{PARA 6 "" 1 
+"" {TEXT -1 33 "  b(x) = -.009901 x + 103.004999 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "d(x) y e(x) vienen sq(k) y van a los primos en y=x" }}
+{PARA 6 "" 1 "" {TEXT -1 37 "  d(x) = 102.497549 x - 10454.247543 " }}
+{PARA 6 "" 1 "" {TEXT -1 37 "  e(x) = 101.497549 x - 10352.252445 " }}
+{PARA 6 "" 1 "" {TEXT -1 62 "f(x) y g(x) vienen de los primos por abaj
+o y pasan por sq(k)/2" }}{PARA 6 "" 1 "" {TEXT -1 35 "  f(x) = 51.2487
+74 x - 5176.126223 " }}{PARA 6 "" 1 "" {TEXT -1 36 "  g(x) = -50.74877
+4 x + 5227.123771 " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" 
+{TEXT -1 37 "50    z(x) = -.980486 x + 204.000000 " }}{PARA 6 "" 1 "" 
+{TEXT -1 17 "total cycles = 1 " }}{PARA 6 "" 1 "" {TEXT -1 37 "20    z
+(x) = -.246929 x + 128.439872 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total c
+ycles = 4 " }}{PARA 6 "" 1 "" {TEXT -1 36 "5    z(x) = -.052086 x + 10
+8.370117 " }}{PARA 6 "" 1 "" {TEXT -1 18 "total cycles = 19 " }}{PARA 
+6 "" 1 "" {TEXT -1 36 "4    z(x) = -.041239 x + 107.252843 " }}{PARA 
+6 "" 1 "" {TEXT -1 18 "total cycles = 24 " }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "ta
+nto2(13,29);" }}{PARA 6 "" 1 "" {TEXT -1 39 "  p1=13, p2=29, k=377, sq
+(k)=19.416488 " }}{PARA 6 "" 1 "" {TEXT -1 37 "a(x) y b(x) vienen de k
+ y van a sq(k)" }}{PARA 6 "" 1 "" {TEXT -1 32 "  a(x) = 1.054299 x - 2
+0.470787 " }}{PARA 6 "" 1 "" {TEXT -1 32 "  b(x) = -.054299 x + 20.470
+787 " }}{PARA 6 "" 1 "" {TEXT -1 50 "d(x) y e(x) vienen sq(k) y van a \+
+los primos en y=x" }}{PARA 6 "" 1 "" {TEXT -1 32 "  d(x) = 3.026030 x \+
+- 58.754884 " }}{PARA 6 "" 1 "" {TEXT -1 32 "  e(x) = 2.026030 x - 39.
+338396 " }}{PARA 6 "" 1 "" {TEXT -1 62 "f(x) y g(x) vienen de los prim
+os por abajo y pasan por sq(k)/2" }}{PARA 6 "" 1 "" {TEXT -1 32 "  f(x
+) = 1.513015 x - 19.669198 " }}{PARA 6 "" 1 "" {TEXT -1 33 "  g(x) = -
+1.013015 x + 29.377442 " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 
+1 "" {TEXT -1 35 "6    z(x) = -.483228 x + 30.362853 " }}{PARA 6 "" 1 
+"" {TEXT -1 17 "total cycles = 1 " }}{PARA 6 "" 1 "" {TEXT -1 35 "4   \+
+ z(x) = -.277460 x + 26.150613 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total \+
+cycles = 2 " }}{PARA 6 "" 1 "" {TEXT -1 35 "3    z(x) = -.194597 x + 2
+4.454338 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cycles = 3 " }}{PARA 
+6 "" 1 "" {TEXT -1 35 "2    z(x) = -.121829 x + 22.964717 " }}{PARA 6 
+"" 1 "" {TEXT -1 17 "total cycles = 5 " }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "n1:=nextpri
+me(134893);n2:=nextprime(983484320);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%#n1G\"'4\\8" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n2G\"*HV[$)*" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "tanto2(n1,n2);" }}{PARA 6 "
+" 1 "" {TEXT -1 68 "  p1=134909, p2=983484329, k=132680887341061, sq(k
+)=11518718.997400 " }}{PARA 6 "" 1 "" {TEXT -1 37 "a(x) y b(x) vienen \+
+de k y van a sq(k)" }}{PARA 6 "" 1 "" {TEXT -1 38 "  a(x) = 1        x
+ - 11518719.997400 " }}{PARA 6 "" 1 "" {TEXT -1 38 "  b(x) = -.000000 \+
+x + 11518719.997400 " }}{PARA 6 "" 1 "" {TEXT -1 50 "d(x) y e(x) viene
+n sq(k) y van a los primos en y=x" }}{PARA 6 "" 1 "" {TEXT -1 38 "  d(
+x) = 1.011851 x - 11655226.797651 " }}{PARA 6 "" 1 "" {TEXT -1 35 "  e
+(x) = .011851 x - 136507.800251 " }}{PARA 6 "" 1 "" {TEXT -1 62 "f(x) \+
+y g(x) vienen de los primos por abajo y pasan por sq(k)/2" }}{PARA 6 "
+" 1 "" {TEXT -1 34 "  f(x) = .505925 x - 68253.900125 " }}{PARA 6 "" 
+1 "" {TEXT -1 37 "  g(x) = -.005925 x + 5827613.398825 " }}{PARA 6 "" 
+1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 45 "67454    z(x) = -.00
+5891 x + 11586571.348909 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cycles
+ = 1 " }}{PARA 6 "" 1 "" {TEXT -1 45 "33727    z(x) = -.002937 x + 115
+52546.046497 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cycles = 3 " }}
+{PARA 6 "" 1 "" {TEXT -1 44 "2326    z(x) = -.000202 x + 11521046.4675
+93 " }}{PARA 6 "" 1 "" {TEXT -1 18 "total cycles = 57 " }}{PARA 6 "" 
+1 "" {TEXT -1 44 "1163    z(x) = -.000101 x + 11519883.115037 " }}
+{PARA 6 "" 1 "" {TEXT -1 19 "total cycles = 115 " }}{PARA 6 "" 1 "" 
+{TEXT -1 41 "4    z(x) = -.000000 x + 11518723.997402 " }}{PARA 6 "" 
+1 "" {TEXT -1 21 "total cycles = 33726 " }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "n1:=nextpri
+me(71348);n2:=nextprime(98348);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#
+n1G\"&`8(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n2G\"&p$)*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "tanto2(n1,n2);" }}{PARA 6 "" 1 "" 
+{TEXT -1 55 "  p1=71353, p2=98369, k=7018923257, sq(k)=83779.014419 " 
+}}{PARA 6 "" 1 "" {TEXT -1 37 "a(x) y b(x) vienen de k y van a sq(k)" 
+}}{PARA 6 "" 1 "" {TEXT -1 35 "  a(x) = 1.000012 x - 83780.014431 " }}
+{PARA 6 "" 1 "" {TEXT -1 35 "  b(x) = -.000012 x + 83780.014431 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "d(x) y e(x) vienen sq(k) y van a los prim
+os en y=x" }}{PARA 6 "" 1 "" {TEXT -1 36 "  d(x) = 6.742227 x - 564857
+.163398 " }}{PARA 6 "" 1 "" {TEXT -1 36 "  e(x) = 5.742227 x - 481078.
+148980 " }}{PARA 6 "" 1 "" {TEXT -1 62 "f(x) y g(x) vienen de los prim
+os por abajo y pasan por sq(k)/2" }}{PARA 6 "" 1 "" {TEXT -1 36 "  f(x
+) = 3.371114 x - 240539.074490 " }}{PARA 6 "" 1 "" {TEXT -1 37 "  g(x)
+ = -2.871114 x + 282428.581699 " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 43 "23784    z(x) = -.396440 x + 116993.72554
+1 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cycles = 2 " }}{PARA 6 "" 1 "
+" {TEXT -1 43 "17838    z(x) = -.270519 x + 106444.066154 " }}{PARA 6 
+"" 1 "" {TEXT -1 17 "total cycles = 3 " }}{PARA 6 "" 1 "" {TEXT -1 42 
+"11892    z(x) = -.165429 x + 97639.621750 " }}{PARA 6 "" 1 "" {TEXT 
+-1 17 "total cycles = 5 " }}{PARA 6 "" 1 "" {TEXT -1 41 "8919    z(x) \+
+= -.119144 x + 93761.897769 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cyc
+les = 7 " }}{PARA 6 "" 1 "" {TEXT -1 41 "7928    z(x) = -.104522 x + 9
+2536.874393 " }}{PARA 6 "" 1 "" {TEXT -1 17 "total cycles = 8 " }}
+{PARA 6 "" 1 "" {TEXT -1 41 "5946    z(x) = -.076395 x + 90180.413669 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 18 "total cycles = 11 " }}{PARA 6 "" 1 "
+" {TEXT -1 41 "3964    z(x) = -.049665 x + 87940.987659 " }}{PARA 6 "
+" 1 "" {TEXT -1 18 "total cycles = 17 " }}{PARA 6 "" 1 "" {TEXT -1 41 
+"1982    z(x) = -.024231 x + 85810.088754 " }}{PARA 6 "" 1 "" {TEXT 
+-1 18 "total cycles = 35 " }}{PARA 6 "" 1 "" {TEXT -1 40 "991    z(x) \+
+= -.011970 x + 84782.901114 " }}{PARA 6 "" 1 "" {TEXT -1 18 "total cyc
+les = 71 " }}{PARA 6 "" 1 "" {TEXT -1 39 "18    z(x) = -.000215 x + 83
+798.018729 " }}{PARA 6 "" 1 "" {TEXT -1 20 "total cycles = 3963 " }}
+{PARA 6 "" 1 "" {TEXT -1 39 "12    z(x) = -.000143 x + 83792.016436 " 
+}}{PARA 6 "" 1 "" {TEXT -1 20 "total cycles = 5945 " }}{PARA 6 "" 1 "
+" {TEXT -1 38 "9    z(x) = -.000107 x + 83789.015613 " }}{PARA 6 "" 1 
+"" {TEXT -1 20 "total cycles = 7927 " }}{PARA 6 "" 1 "" {TEXT -1 38 "8
+    z(x) = -.000095 x + 83788.015386 " }}{PARA 6 "" 1 "" {TEXT -1 20 "
+total cycles = 8918 " }}{PARA 6 "" 1 "" {TEXT -1 38 "4    z(x) = -.000
+048 x + 83784.014717 " }}{PARA 6 "" 1 "" {TEXT -1 21 "total cycles = 1
+7837 " }}{PARA 6 "" 1 "" {TEXT -1 38 "3    z(x) = -.000036 x + 83783.0
+14610 " }}{PARA 6 "" 1 "" {TEXT -1 21 "total cycles = 23783 " }}{PARA 
+6 "" 1 "" {TEXT -1 38 "2    z(x) = -.000024 x + 83782.014526 " }}
+{PARA 6 "" 1 "" {TEXT -1 21 "total cycles = 35675 " }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}}}{MARK "9 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 
+0 1 2 33 1 1 }

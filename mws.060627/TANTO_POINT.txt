@@ -1,0 +1,84 @@
+> restart;Digits:=30;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 30
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+> tanto_point:=proc(k,p1)
+>   local sq, p2, v1, v2;
+>   sq := evalf(sqrt(k));
+>   p2 := evalf(k/p1);
+>   print( k, sq, p1, p2);
+
+>   point(K,[k,0]);
+
+>   point(S,[sq*p1,sq]);
+>   line(A,[K,S]);
+>   v1 := fsolve({Equation(A),x=0});
+>   print(v1);
+
+>   point(P,[p1,p2]);
+>   line(B,[K,P]);
+>   v2 := fsolve({Equation(B),x=0});
+>   print(v2);
+
+>   draw([A(colour=green),B(colour=blue)],view=[0..k,0..k]);
+
+> end proc:
+> tanto_point(33,3);
+          33, 5.74456264653802865985061146822, 3, 11.
+         {x = -0., y = 12.0237736389897894072945907688}
+         {x = -0., y = 12.1000000000000000000000000000}
+
+> tanto_point(161,7);
+          161, 12.6885775404495203801937727461, 7, 23.
+         {x = -0., y = 28.3023302143961855465285483226}
+         {x = -0., y = 24.0454545454545454545454545455}
+
+> tanto_point(1403,23);
+         1403, 37.4566416006560844472448586154, 23, 61.
+         {x = -0., y = 97.0488194115795039811035888298}
+         {x = -0., y = 62.0166666666666666666666666667}
+
+> tanto_point(7493,59);
+        7493, 86.5621164251429333084549727151, 59, 127.
+         {x = -0., y = 271.858658617546360737849728453}
+         {x = -0., y = 128.007936507936507936507936508}
+
+
+

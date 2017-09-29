@@ -1,0 +1,140 @@
+> restart;with(plots);Digits:=30;
+Warning, the name changecoords has been redefined
+[animate, animate3d, animatecurve, arrow, changecoords, complexplot, 
+
+  complexplot3d, conformal, conformal3d, contourplot, contourplot3d, 
+
+  coordplot, coordplot3d, cylinderplot, densityplot, display, display3d, 
+
+  fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, implicitplot, 
+
+  implicitplot3d, inequal, interactive, interactiveparams, listcontplot, 
+
+  listcontplot3d, listdensityplot, listplot, listplot3d, loglogplot, logplot, 
+
+  matrixplot, multiple, odeplot, pareto, plotcompare, pointplot, pointplot3d, 
+
+  polarplot, polygonplot, polygonplot3d, polyhedra_supported, polyhedraplot, 
+
+  replot, rootlocus, semilogplot, setoptions, setoptions3d, spacecurve, 
+
+  sparsematrixplot, sphereplot, surfdata, textplot, textplot3d, tubeplot]
+                          Digits := 30
+> tanto1_1 := proc( p1, p2 )
+>   local k,sq,a,c_a,b,c_b,c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,t,
+>         Py,Psq,Pa,Pb,Pc,Pd,Pe,Pf,Pg,Pz,p3x,p3y,xrange,yrange;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   a := evalf( k / ( k - sq ));
+>   c_a := (a * sq);
+>   b := (a-1);
+>   c_b := (c_a);
+>   p3x := (c_a+c_b)/(a+b);
+>   p3y := a * p3x - c_a;
+>   c := p2 / (p2 - sq);
+>   c_c := c * sq;
+>   d := p1 / (sq - p1);
+>   c_d := d * sq;
+>   printf("  p1=%d, p2=%d, k=%d, sq(k)=%f \n", p1,p2,k,sq);
+>   printf("  a(x) y b(x) vienen de k y van a sq(k)\n"); 
+>   printf("    a(x) = %g x - %f \n", a, c_a);
+>   printf("    b(x) = -%f x + %f \n", b, c_b);
+>   printf("  punto de interseccion: (%f , %f) \n",p3x,p3y);
+>   printf("    c(x) = %f x - %f \n", c, c_c);
+>   printf("    d(x) = -%f x + %f \n", d, c_d);
+
+>   t:=2;
+>   while true do
+>     z := p3y / (k/t - p3x);
+>     c_z := z * (k/t);   
+>     if( abs(trunc(c_z)) = abs(trunc(c_c)) ) then break;
+>     else t:=t+1;
+>     end if;
+>   end do;
+>   printf("\n    z(x) = -%f x + %f \n", z, c_z);
+>   printf("    total cycles = %d \n", t);
+>   xrange:=-k/2..k/2;
+>   yrange:=-k/2..k/2;
+>   Py:=implicitplot(x=y,x=-k/2..k/2,y=-k/2..k/2,colour=black);
+>   Psq:=implicitplot({x=sq,y=sq},x=-k/2..k/2,y=-k/2..k/2,colour=black);
+>   Pa:=plot(a*x-c_a,x=-k/2..k/2,y=-k/2..k/2,colour=green);
+>   Pb:=plot(-b*x+c_b,x=-k/2..k/2,y=-k/2..k/2,colour=green);
+>   Pc:=plot(c*x-c_c,x=-k/2..k/2,y=-k/2..k/2,colour=red);
+>   Pd:=plot(-d*x+c_d,x=xrange,y=yrange,colour=red);
+>   Pz:=plot(-z*x+c_z,x=xrange,y=yrange,colour=blue);
+>   display({Py,Psq,Pa,Pb,Pc,Pd,Pz});
+> end proc:
+> tanto1_1(3,11);
+  p1=3, p2=11, k=33, sq(k)=5.744563 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.210768 x - 6.955330 
+    b(x) = -.210768 x + 6.955330 
+  punto de interseccion: (9.785660 , 4.892830) 
+    c(x) = 2.093070 x - 12.023774 
+    d(x) = -1.093070 x + 6.279211 
+
+    z(x) = -.728714 x + 12.023774 
+    total cycles = 2 
+
+> tanto1_1(7,23);
+  p1=7, p2=23, k=161, sq(k)=12.688578 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.085554 x - 13.774131 
+    b(x) = -.085554 x + 13.774131 
+  punto de interseccion: (23.523262 , 11.761631) 
+    c(x) = 2.230536 x - 28.302330 
+    d(x) = -1.230536 x + 15.613753 
+
+    z(x) = -.703163 x + 28.302330 
+    total cycles = 4 
+
+> tanto1_1(23,61);
+  p1=23, p2=61, k=1403, sq(k)=37.456642 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.02743  x - 38.484071 
+    b(x) = -.027430 x + 38.484071 
+  punto de interseccion: (72.965290 , 36.482645) 
+    c(x) = 2.590964 x - 97.048819 
+    d(x) = -1.590964 x + 59.592178 
+
+    z(x) = -.830068 x + 97.048819 
+    total cycles = 12 
+
+> tanto1_1(59,127);
+  p1=59, p2=127, k=7493, sq(k)=86.562116 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.011687 x - 87.573804 
+    b(x) = -.011687 x + 87.573804 
+  punto de interseccion: (171.147074 , 85.573537) 
+    c(x) = 3.140619 x - 271.858659 
+    d(x) = -2.140619 x + 185.296542 
+
+    z(x) = -1.088451 x + 271.858659 
+    total cycles = 30 
+
+> tanto1_1(101,103);
+  p1=101, p2=103, k=10403, sq(k)=101.995098 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.009901 x - 103.004999 
+    b(x) = -.009901 x + 103.004999 
+  punto de interseccion: (202.009614 , 101.004807) 
+    c(x) = 102.497549 x - 10454.247543 
+    d(x) = -101.497549 x + 10352.252445 
+
+    z(x) = -51.251238 x + 10454.247543 
+    total cycles = 51 
+
+> tanto1_1(1237,9743);
+  p1=1237, p2=9743, k=12052091, sq(k)=3471.612162 
+  a(x) y b(x) vienen de k y van a sq(k)
+    a(x) = 1.000288 x - 3472.612450 
+    b(x) = -.000288 x + 3472.612450 
+  punto de interseccion: (6941.224899 , 3470.612449) 
+    c(x) = 1.553564 x - 5393.370361 
+    d(x) = -.553564 x + 1921.758199 
+
+    z(x) = -.277006 x + 5393.370361 
+    total cycles = 619 
+
+
+

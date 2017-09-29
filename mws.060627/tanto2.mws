@@ -1,0 +1,57 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 
+11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 
+0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 12 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "Digits:=20;with(plot
+s);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'DigitsG\"#?" }}{PARA 12 "" 
+1 "" {XPPMATH 20 "6#7Z%(animateG%*animate3dG%-animatecurveG%&arrowG%-c
+hangecoordsG%,complexplotG%.complexplot3dG%*conformalG%,conformal3dG%,
+contourplotG%.contourplot3dG%*coordplotG%,coordplot3dG%-cylinderplotG%
+,densityplotG%(displayG%*display3dG%*fieldplotG%,fieldplot3dG%)gradplo
+tG%+gradplot3dG%,graphplot3dG%-implicitplotG%/implicitplot3dG%(inequal
+G%,interactiveG%-listcontplotG%/listcontplot3dG%0listdensityplotG%)lis
+tplotG%+listplot3dG%+loglogplotG%(logplotG%+matrixplotG%(odeplotG%'par
+etoG%,plotcompareG%*pointplotG%,pointplot3dG%*polarplotG%,polygonplotG
+%.polygonplot3dG%4polyhedra_supportedG%.polyhedraplotG%'replotG%*rootl
+ocusG%,semilogplotG%+setoptionsG%-setoptions3dG%+spacecurveG%1sparsema
+trixplotG%+sphereplotG%)surfdataG%)textplotG%+textplot3dG%)tubeplotG" 
+}}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 385 "Tanto toma como par\341metros \+
+el primo menor, el primo mayor y una supuesta fracci\363n de k que nos
+ ayuda a encontrar n(x) (negativa), que resulta ser el n\372mero de ci
+clos (+2) que necesita el algoritmo para encontrar la constante de d(x
+) a partir de a(x). Por otro lado, encontramos la constante de e(x) si
+ nos pasamos con n(x) y la hacemos positiva, entonce la fracci\363n de
+ k es diferente. " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "tanto2 := proc
+( p1, p2, s )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "  global k,sq,a,c_
+a,b,c_b,p3_x,p3_y,p4_x,p4_y,p5_x,p5_y," }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 53 "         c,c_c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,n,c_n,t," }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "         Py,Psq,Pa,Pb,Pp3,Pc,Pd,Pe,
+Pf,Pg,Pn,Pz,xrange,yrange;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  k :
+= p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  sq := evalf( sqrt(k
+) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  a := evalf( k / ( k - sq \+
+));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  c_a := (a * sq);" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 13 "  b := (a-1);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "  c_b := (c_a);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 
+"  p3_x :=(c_b+c_a)/(a+b);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  p3_
+y := a * p3_x - c_a;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "  c := c_a \+
+/ ( (k/2) - c_a );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  c_c := c * \+
+(k/2);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  d := p2 / (p2-sq);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "  c_d := d * sq;" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 20 "  e := p1 / (sq-p1);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "  c_e := e * sq;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+11 "  f := d/2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  c_f := c_e/2;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "  g := e/2;" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 15 "  c_g := c_d/2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+26 "  n:= p3_y / (p3_x - k/s);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 " \+
+ c_n := -(n * (k/s));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "  z:=c;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "  c_z:=c_c;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 60 "  printf(\"    p1=%d, p2=%d, k=%d, sq(k)=%f \\n\", p1
+,p2,k,sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "  printf(\"  a(x) y b
+(x) vienen de " }}}}{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 
+}{PAGENUMBERS 0 1 2 33 1 1 }

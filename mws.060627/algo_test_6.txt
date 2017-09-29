@@ -1,0 +1,134 @@
+> restart;with(geometry);Digits:=20;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               20
+                               x
+                               y
+> tantoC := proc( p1, p2, c )
+>   local sq, k, a, c_a, b, c_b, i, c_c, prime;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+> 
+>   a  := evalf( k / ( k - sq ) );
+>   c_a:= a * sq;
+>   
+>   line(Y_X,y=x,[x,y]);
+>   line(Y_1,y=-x,[x,y]);
+>   line(l0,y=0,[x,y]);
+>   line(l1,x=0,[x,y]);
+>   line(sqv,x=sq,[x,y]);
+>   line(sqh,y=sq,[x,y]);
+>   line(sqv_1,x=-sq,[x,y]);
+>   line(sqh_1,y=-sq,[x,y]);
+>   line(_sqh,y=k-sq,[x,y]);
+>   line(top,y=k,[x,y]);
+>   line(right,x=k,[x,y]);
+> 
+>   point(K,k,0);
+>   point(_K,-k,0);
+>   point(KK,k,k);
+>   point(_KK,-k,k);
+>   point(K_K,k,-k);
+>   point(_K_K,-k,-k);
+>   point(SQ,sq,sq);
+>   point(SQ0,sq,0);
+> 
+>   line(A,[K,SQ]);
+>   line(B,[KK,SQ0]);
+> 
+>   intersection(p3,A,B);
+> 
+>   c_b := frac(k/a) + c;
+> 
+>   i := evalf(k/c_b);
+>   line(C,[point(PC,0,i),p3]);
+> 
+>   c_c := HorizontalCoord(intersection(ICX,C,l0));
+>   prime := ((c_c*k)-(c_a*k))/(c_c*c_a)+1;
+>   print("intersection C-X",coordinates(intersection(Q,C,l0)));
+>   print("intersection C-Y",coordinates(intersection(Q,C,l1)));
+>   print(a,c_a);
+>   print("i",i);
+>   print(round(prime));
+>   draw([A(colour=green),B(colour=green),sqv,sqh,p3,C(colour=magenta)],colour=black,axes=normal,view=[-k..k,-k..k]);
+> end proc:
+> tantoC(3,11,1);
+        "intersection C-X", [12.023773638989789409, 0.]
+        "intersection C-Y", [0., 26.285660458484684093]
+          1.2107675827043133956, 6.9553302292423420554
+                   "i", 26.285660458484684093
+                               3
+
+> tantoC(7,23,2);
+        "intersection C-X", [28.302330214396185547, 0.]
+        "intersection C-Y", [0., 69.654077875193324702]
+          1.0855536096278095024, 13.774131150077329883
+                   "i", 69.654077875193324701
+                               7
+
+> tantoC(23,61,9);
+        "intersection C-X", [97.048819411579504139, 0.]
+        "intersection C-Y", [0., 147.01323593761846886]
+          1.0274298442230071929, 38.484071444879091640
+                   "i", 147.01323593761846885
+                               23
+
+> tantoC(59,127,32);
+"intersection C-X", [271.8586586175463607378497284532010930688, 0.]
+"intersection C-Y", [0., 230.9953416877018595201339397951773823167]
+          1.011687415433147748706414171478256780280, 
+
+            87.57380384057608105716138688657805463981
+         "i", 230.9953416877018595201339397951773823167
+                               59
+
+> tantoC(1237,9743,-997);
+        "intersection C-X", [5393.3703608829442267, 0.]
+        "intersection C-Y", [0., -12093.060335168073938]
+          1.0002881336068281971, 3472.6124496516528990
+                  "i", -12093.060335168073938
+                              1237
+
+> tantoC(101,103,101);
+        "intersection C-X", [10454.247542953117817, 0.]
+        "intersection C-Y", [0., 102.99500109318085685]
+          1.0099014706711612895, 103.00499939209089459
+                   "i", 102.99500109318085685
+                              101
+
+> 

@@ -1,0 +1,361 @@
+> restart;Digits:=40;with(geometry);_EnvHorizontalName := x; _EnvVerticalName := y;
+                          Digits := 40
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                    _EnvHorizontalName := x
+                     _EnvVerticalName := y
+Ahora jugamos solo con las rectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante de la recta d(x) que pasa por raiz de k y se junta con el primo mayor en y(x)=x.
+> tanto9 := proc( p1, p2, v, s )
+>   global k,sq,a,ca,b,cb,c,cc,d,cd,x1,x2,x3,x4;
+>   k := p1 * p2;
+>   sq := evalf( sqrt(k) );
+>   line(y,y=x,[x,y]);
+>   point(a1,k,k),point(a2,sq,0):
+>   line(A,[a1,a2]);
+>   point(b1,k,0),point(b2,sq,sq):
+>   line(B,[b1,b2]);
+>   point(c1,sq,0),point(c2,sq,sq):
+>   line(sqv,[c1,c2]);
+>   point(c3,0,sq),point(c4,sq,sq):
+>   line(sqh,[c3,c4]);
+>   point(p2v,p2,p2),point(p2h,sq,0):
+>   line(p2l,[p2v,p2h]);
+>   point(p1v,p1,p1),point(p1h,sq,0):
+>   line(p1l,[p1v,p1h]);
+>   line(p1m,[point(p1m1,p1,0),point(p1m2,sq,sq/2)]);  
+>   line(p2m,[point(p2m1,p2,0),point(p2m2,sq,sq/2)]);
+
+>   intersection(p3,A,B);
+>   point(p4,HorizontalCoord(p3),-VerticalCoord(p3));
+>   point(p5,sq-(HorizontalCoord(p3)-sq),VerticalCoord(p3));
+>   point(p6,HorizontalCoord(p5),-VerticalCoord(p5));
+>   circle(circ,[p3,p5,p6],[x,y]);
+
+>   rotation(A1, A, Pi/2, 'clockwise', p3);
+
+>   line(l0,y=0,[x,y]);line(l1,x=0,[x,y]);
+
+>   line(r1,[p5,point(k1,sq/v,0)]);
+
+>   a := slope(r1)/v; ca := -(a*sq);
+>   line(r2,a*x+ca=y,[x,y]);
+>   
+>   line(r3,[p3,point(k2,k/v,0)]);
+
+>   b := slope(r3)/v; cb := -(b*k);
+>   line(r4,b*x+cb=y,[x,y]);
+
+>   intersection(Q,r1,l0);
+>   rotation(P1,r1,Pi/2,'clockwise',p5);
+>   intersection(Q,r3,l0);
+>   rotation(P2,r4,Pi/2,'clockwise',b1);
+
+>   #line(P1,slope(P1)*x+(VerticalCoord(p4)-slope(P1)*HorizontalCoord(p4))=y,[x,y]);
+
+>   #line(P2,slope(P2)*x+(VerticalCoord(p6)-slope(P2)*HorizontalCoord(p6))=y,[x,y]);
+>   line(P2,slope(P2)*x-slope(P2)*sq+k=y,[x,y]);
+
+>   rotation(P3,r2,Pi/2,'clockwise',a2);
+>   #line(P3,slope(P3)*x+(VerticalCoord(p6)-slope(P3)*HorizontalCoord(p6))=y,[x,y]);
+>   line(P3,slope(P3)*x-slope(P3)*sq+sq=y,[x,y]);
+
+>   x1 := VerticalCoord(intersection(Q,r1,l1));
+>   x2 := VerticalCoord(intersection(Q,P3,l1));
+>   x3 := HorizontalCoord(intersection(Q,P3,l0));
+>  
+>   line(r5,slope(P3)*x+0=y,[x,y]);
+>   rotation(P5,r5,Pi/2,'clockwise');
+>   line(P5,slope(P5)*x+sq=y,[x,y]);
+>   #draw options: p1l(colour=red),p2l(colour=red),p1m(colour=red),p2m(colour=red),
+>   draw([y(colour=black),sqv(colour=black),sqh(colour=black),A,B,p3(colour=black),p4(colour=black),p5(colour=black),p6(colour=black),r1(colour=brown),r2(colour=magenta),r3(colour=blue),r4(colour=yellow),P2(colour=yellow),P3(colour=magenta),r5(colour=red),P5(colour=red),circ(colour=green), A1(colour=green)],colour=green,axes=normal,view=[-sq*2..k/s,-k/s..k/s]);
+> end proc:
+> tanto9(3,11,1,1);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);a:=distance(b2,intersection(Q,P2,l0));HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);distance(point(pp1,0,0),intersection(Q,P2,y));radius(circ)*2;distance(point(pp2,0,x1),intersection(Q,A,r4));distance(pp2,intersection(Q,r1,l0));b:=distance(pp2,p2h);distance(point(pp3,0,x2),intersection(Q,P3,r4));distance(p3,pp2);distance(intersection(Q,P2,r4),intersection(H,P2,l0));distance(intersection(Q,P2,l1),point(pp4,sq,k));detail(intersection(Q,r1,P5));detail(intersection(Q,sqh,r5));detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));distance(pp1,intersection(Q,r5,sqv));
+
+           6.955330229242342055470943076600770859406
+           0.9999999999999999999999999999999999999940
+           -1.210767582704313395620331608381841541186
+       difer := 5.744562646538028659850611468218929318220
+                               Q
+           -12.02377363898978940729459076880102781255
+           -1.210767582704313395620331608381841541193
+         a := 9.020898990555893065658847544364394779158
+           -1.210767582704313395620331608381841541197
+                               Q
+           5.744562646538028659850611468218929318230
+           2.169556012675312321771568794325935078963
+           12.69177043251377373018870579071936836085
+           10.00065282162872995523666015789949337568
+           9.020898990555893065658847544364394779149
+         b := 9.020898990555893065658847544364394779149
+           7.450562039666802390668218395017735253133
+           10.00065282162872995523666015789949337568
+           7.055510214965759159497945108983629051338
+           27.85424321945383797164892692669497891046
+intersection:, "two given lines are ParallelLine, no intersection"
+
+Error, (in geometry:-detail) expecting 1 argument but got 0
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [6.955330229242342055470943076600770859406, 
+
+   5.744562646538028659850611468218929318220]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [5.744562646538028659850611468218929318221, 
+
+   -1.210767582704313395620331608381841541187]
+           0.7710240671715730100503191824200643306239
+           7.450562039666802390668218395017735253133
+> tanto9(7,23,4,1);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);a:=distance(b2,intersection(Q,P2,l0));HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);distance(point(pp1,0,0),intersection(Q,P2,y));radius(circ)*2;distance(point(pp2,0,x1),intersection(Q,A,r4));distance(pp2,intersection(Q,r1,l0));b:=distance(pp2,p2h);distance(point(pp3,0,x2),intersection(Q,P3,r4));distance(p3,pp2);distance(intersection(Q,P2,r4),intersection(H,P2,l0));distance(intersection(Q,P2,l1),point(pp4,sq,k));detail(intersection(Q,r1,P5));detail(intersection(Q,sqh,r5));detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));distance(pp1,intersection(Q,r5,sqv));
+
+           28.30233021439618554652854832250364157553
+           6.999999999999999999999999999999999999981
+           -15.61375267394666516633477557641415178379
+       difer := 12.68857754044952038019377274608948979174
+                               Q
+           -28.30233021439618554652854832250364157563
+           -2.230536096278095023762110796630593111976
+         a := 31.01647780720311308320124919053511582906
+           -15.61375267394666516633477557641415178387
+                               Q
+           88.82004278314664266135640922262642854214
+           26.79075007948818888933130583745572284836
+           31.98289299939304662569626674839768241938
+           33.86992843913122860823187661412932267365
+           28.47954345780007819196704530018696448434
+         b := 31.01647780720311308320124919053511582899
+           37.40535321975019738080121098262062859649
+           28.75654003489008344691114488768635260171
+           30.57820968736840103996119907818422573955
+           73.28673975438381488053586390713664090020
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [2.333333333333333333333333333333333333327, 
+
+   7.483993315800631991415514220618105863815]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [28.30233021439618554652854832250364157553, 
+
+   12.68857754044952038019377274608948979174]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [12.68857754044952038019377274608948979174, 
+
+   -15.61375267394666516633477557641415178378]
+           6.387453557178686115663516309098008178897
+           13.90539155988448657095111093018571963847
+const2 - const3 = -const4/2 ; const2 + const4 = sq ; const4 - const5*2 = -sq
+> tanto9(23,61,12,5);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);a:=distance(b2,intersection(Q,P2,l0));HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);distance(point(pp1,0,0),intersection(Q,P2,y));radius(circ)*2;distance(point(pp2,0,x1),intersection(Q,A,r4));distance(pp2,intersection(Q,r1,l0));b:=distance(pp2,p2h);distance(point(pp3,0,x2),intersection(Q,P3,r4));distance(p3,pp2);distance(intersection(Q,P2,r4),intersection(H,P2,l0));distance(intersection(Q,P2,l1),point(pp4,sq,k));detail(intersection(Q,r1,P5));detail(intersection(Q,sqh,r5));detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));distance(pp1,intersection(Q,r5,sqv));
+
+           97.04881941157950398110358882995556791552
+           22.99999999999999999999999999999999999964
+           -59.59217781092341953385873021457341085188
+       difer := 37.45664160065608444724485861538215706364
+                               Q
+           -97.04881941157950398110358882995556791790
+           -2.590964252648844327559075226720583080557
+         a := 104.0263108505793871658823496241520090556
+           -59.59217781092341953385873021457341085429
+                               Q
+           861.5027568150899422866317481537896124629
+           90.53885203053259611518755476928505548042
+           101.8203806373892642555504344261316567303
+           123.8888208107850021174988619134143822648
+           97.09900310887298855706952645413150025768
+         b := 104.0263108505793871658823496241520090534
+           174.3959997676977868420286234528010413956
+           94.82718498671046706479529074646232063334
+           100.9297739106566900245554487438772331036
+           542.7911793469544047466308914605421203449
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [2.090909090909090909090909090909090909060, 
+
+   32.03917089057213721689406495951184698615]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [97.04881941157950398110358882995556791547, 
+
+   37.45664160065608444724485861538215706359]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [37.45664160065608444724485861538215706360, 
+
+   -59.59217781092341953385873021457341085187]
+           21.45729122003076890251844100495142559783
+           40.14965113634015270566236383834430322106
+> tanto9(101,103,51,30);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);intersection(Q,P2,l0);HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);detail(intersection(Q,P3,A));IsOnLine(p6,r5);detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));
+
+           10454.24754295311626487184117801227759951
+           101.0000000000000000000000000000000000084
+           -10352.25244503169653157335882504116541481
+        difer := 101.99509792141973329848235297111218470
+                               Q
+           -10454.24754295311626487184117801227751203
+           -102.4975489607098666492411764855560932074
+                               Q
+           -10352.25244503169653157335882504116532657
+                               Q
+           10301.50489006339306314671765008233065395
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [203.9753944418605815655279141624055782611, 
+
+   102.9900514354743250283983196793672487247]
+                             false
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [101.9950979214197332984823529711121846926, 
+
+   -10352.25244503169653157335882504116541481]
+           100.9951934505459943123089284364447281212
+> tanto9(59,127,30,10);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);a:=distance(b2,intersection(Q,P2,l0));HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);distance(point(pp1,0,0),intersection(Q,P2,y));radius(circ)*2;distance(point(pp2,0,x1),intersection(Q,A,r4));distance(pp2,intersection(Q,r1,l0));b:=distance(pp2,p2h);distance(point(pp3,0,x2),intersection(Q,P3,r4));distance(p3,pp2);distance(intersection(Q,P2,r4),intersection(H,P2,l0));distance(intersection(Q,P2,l1),point(pp4,sq,k));detail(intersection(Q,r1,P5));detail(intersection(Q,sqh,r5));detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));distance(pp1,intersection(Q,r5,sqv));
+
+           271.8586586175463607378497284532010930582
+           58.99999999999999999999999999999999999970
+           -185.2965421924034274293947557381012951987
+       difer := 86.5621164251429333084549727150997978595
+                               Q
+           -271.8586586175463607378497284532010930611
+           -3.140619359193278431006690775222055850842
+         a := 285.3070806435262905729308486980230761040
+           -185.2965421924034274293947557381012952015
+                               Q
+           5107.164869083433065198843390190888073712
+           271.9143952059662675117224391955735169499
+           240.6445114783201655987537480672620444622
+           343.2056882188252339160031650345958585639
+           271.8739704732455068775234116790534513998
+         b := 285.3070806435262905729308486980230761014
+           629.8128138050499419067017325647640053618
+           252.9693013791235104245373989109988391562
+           278.3983531679994396118722100701519949562
+           2387.404924162566957347807023911882410781
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [2.034482758620689655172413793103448275851, 
+
+   80.17258048747384960399308458619975319753]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [271.8586586175463607378497284532010930583, 
+
+   86.56211642514293330845497271509979785956]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [86.56211642514293330845497271509979785955, 
+
+   -185.2965421924034274293947557381012951988]
+           56.21893723162029889659972307769525144884
+           90.84420874130135693447077785482249703274
+> tanto9(1237,9743,619,100);x1;x2;x3;difer:=x1+x3;intersection(Q,p2l,l1);VerticalCoord(Q);slope(r2);a:=distance(b2,intersection(Q,P2,l0));HorizontalCoord(Q);intersection(Q,P2,l1);VerticalCoord(Q);distance(point(pp1,0,0),intersection(Q,P2,y));radius(circ)*2;distance(point(pp2,0,x1),intersection(Q,A,r4));distance(pp2,intersection(Q,r1,l0));b:=distance(pp2,p2h);distance(point(pp3,0,x2),intersection(Q,P3,r4));distance(p3,pp2);distance(intersection(Q,P2,r4),intersection(H,P2,l0));distance(intersection(Q,P2,l1),point(pp4,sq,k));detail(intersection(Q,r1,P5));detail(intersection(Q,sqh,r5));detail(intersection(Q,sqv,P5));distance(intersection(Q,r5,P5),intersection(H,r5,r2));distance(pp1,intersection(Q,r5,sqv));
+
+           5393.370360882944141530174735151439330074
+           1237.000000000000000000000000000000002638
+           -1921.758199364898070724912875642238582106
+       difer := 3471.612161518046070805261859509200747968
+                               Q
+           -5393.370360882944141530174735151439323707
+           -1.553563621151898197837439673114178316902
+         a := 6414.088777811749241247649825814810978551
+           -1921.758199364898070724912875642238575739
+                               Q
+                                                     6
+         4.294384243797822989586108920212881325237 10 
+           2718.993272087420988844706231909360789169
+           9814.960687119194729094373760262136317456
+           8859.466333275052719127200528235331462307
+           5393.373276904613135494359255235028180725
+         b := 6414.088777811749241247649825814810983905
+           7673.900720889057307026172823557125354968
+           7202.610713063796565616999122149604215464
+           5394.229817060723421906522248923474210309
+                                                     6
+         7.757707532983948696653712085166985067267 10 
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [2.001618122977346278317152103559870554431, 
+
+   3468.502520418750119234509573302659908837]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [5393.370360882944141530174735151439330074, 
+
+   3471.612161518046070805261859509200747968]
+name of the object:  Q
+
+  form of the object:  point2d
+
+  coordinates of the point:  [3471.612161518046070805261859509200747968, 
+
+   -1921.758199364898070724912875642238582106]
+           1040.147613717362001965350093626544922850
+           4128.629616762001820151543400843052548991
+
+

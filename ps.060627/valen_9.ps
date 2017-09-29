@@ -1,0 +1,10540 @@
+%!PS-Adobe-2.0
+%%Title: valen_9.mws - [Server 1]
+%%Creator: Maple 8.00 IBM INTEL LINUX
+%%DocumentFonts: Times-Roman Courier Times-Italic Symbol Times-Bold 
+%%Pages: 22
+%%EndComments
+/sc { setrgbcolor } def % color
+/stc { setrgbcolor } def % color
+% /sc { 11 mul exch 59 mul add exch 30 mul add 100 div setgray } def % b&w
+% /stc { pop pop pop 0 setgray } def % b&w
+/fsf    %% stk: size font 
+{ findfont exch scalefont setfont } def 
+/line   %% stk: width x1 y1 x2 y2 
+{ gsave newpath 4 2 roll moveto lineto setlinewidth 
+  stroke grestore } def 
+/underline   %% stk: string ulOffset ulThickness 
+{ gsave setlinewidth 0 exch rmoveto  %% stk: string 
+  dup stringwidth pop 0 rlineto stroke       %% stk: string 
+  grestore show } def 
+/pagenum   %% stk: x y string 
+{ gsave 10 /Times-Roman fsf 
+  3 1 roll moveto 
+  dup stringwidth pop       %% stk: string wx 
+  2 div neg -14 rmoveto     %% stk: string 
+  show grestore 
+} def 
+/solid { [] 0 setdash } def 
+/dot { [1 3] 0 setdash } def 
+/dash { [5 5] 0 setdash } def 
+/dashdot { [5 3 1 3] 0 setdash } def 
+% ReEncodeSmall is copied from the Postscript Tutorial and Cookbook 
+% Adobe Systems Inc., Addison-Wesley, page 211-212 
+/reencsmalldict 12 dict def 
+/ReEncodeSmall 
+{ reencsmalldict begin 
+  /newcodesandnames exch def 
+  /newfontname exch def 
+  /basefontname exch def 
+  /basefontdict basefontname findfont def 
+  /newfont basefontdict maxlength dict def 
+  basefontdict 
+  { exch dup /FID ne 
+    { dup /Encoding eq 
+      { exch dup length array copy newfont 3 1 roll put } 
+      { exch newfont 3 1 roll put } 
+      ifelse 
+    } 
+    {pop pop} 
+    ifelse 
+  } forall 
+  newfont /FontName newfontname put 
+  newcodesandnames aload pop 
+  newcodesandnames length 2 idiv 
+  { newfont /Encoding get 3 1 roll put } repeat 
+  newfontname newfont definefont pop 
+  end 
+} def 
+/ExtraChars [ 
+ 8#260 /oacute
+] def
+/Times-Roman /Times-Roman-Maple ExtraChars ReEncodeSmall
+/Courier /Courier-Maple ExtraChars ReEncodeSmall
+/Times-Italic /Times-Italic-Maple ExtraChars ReEncodeSmall
+/Times-Bold /Times-Bold-Maple ExtraChars ReEncodeSmall
+%%EndProlog
+%%Page: 1 1
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(restart;with\(plots,pointplot\);Digits:=8;) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+285 694 moveto
+([) show
+grestore
+gsave
+0 0 1 stc
+333 694 moveto
+(]) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+289 694 moveto
+(pointplot) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+314 677 moveto
+( := ) show
+grestore
+12 /Times-Italic-Maple fsf
+gsave
+0 0 1 stc
+285 677 moveto
+(Digits) show
+grestore
+12 /Times-Roman-Maple fsf
+gsave
+0 0 1 stc
+330 677 moveto
+(8) show
+grestore
+newpath
+59 718 moveto
+56 718 lineto
+56 676 lineto
+59 676 lineto
+stroke
+12 /Times-Roman-Maple fsf
+gsave
+0 0 0 stc
+64 663 moveto
+(Tanto que genera un array con los resultados de todos los numeros entre 2 y sq/2, que sirven para ) show
+grestore
+gsave
+0 0 0 stc
+64 650 moveto
+(hacer un plot de imagenes.) show
+grestore
+gsave
+0 0 0 stc
+64 637 moveto
+(Esta versi\260n computa c_z para t=sq/2 y luego da marcha atras con t y tres iteraciones.) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 625 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 625 moveto
+(tanto := proc\( p1, p2 \)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 612 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 612 moveto
+(  local k,sq,a,c_a,b,c_b,c,c_c,d,c_d,z,c_z,i,t,j;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 599 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 599 moveto
+(  global L;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 586 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 586 moveto
+(  k  := p1 * p2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 573 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 573 moveto
+(  sq := evalf\( sqrt\( k \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 560 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 560 moveto
+(  printf\("  p1=%d, p2=%d, k=%d, sq\(k\)=%f \\n", p1, p2, k, sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 547 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 547 moveto
+(  # recta que viene de \(k,k\) y pasa por \(sq,0\)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 534 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 534 moveto
+(  a  := evalf\( k / \( k - sq \) \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 521 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 521 moveto
+(  c_a:= a * sq;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 508 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 508 moveto
+(  # recta que viene de \(k,0\) y pasa por \(sq,sq\)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 495 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 495 moveto
+(  b  := a - 1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 482 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 482 moveto
+(  c_b:= c_a;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 469 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 469 moveto
+(  # recta que viene de \(sq,0\) y pasa por \(p2,p2\)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 456 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 456 moveto
+(  c  := p2 / \( p2 - sq \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 443 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 443 moveto
+(  c_c:= c * sq;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 430 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 430 moveto
+(  printf\( "  c\(x\) = %f x - %f <--- Objetivo \\n", c, c_c \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 417 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 417 moveto
+(  # recta que viene de \(sq,0\) y pasa por \(p1,p1\)) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 404 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 404 moveto
+(  d  := p1 / \( sq - p1 \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 391 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 391 moveto
+(  c_d:= d * sq;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 378 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 378 moveto
+(  printf\( "  d\(x\) = %f x - %f <--- Objetivo \\n", d, c_d \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 365 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 365 moveto
+(  # loop que encuentra la constante c_d) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 352 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 352 moveto
+(  # y genera la lista de puntos para el plot) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 339 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 339 moveto
+(  t  := trunc\(sq/2\)+1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 326 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 326 moveto
+(  L  := [];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 313 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 313 moveto
+(  while\( t > \(trunc\(p1/2\)-2\) \) do) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 300 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 300 moveto
+(    z  := c_a / \( \( k / t \) - c_a \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 287 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 287 moveto
+(    c_z:= z * \( k / t \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 274 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 274 moveto
+(    i  := 1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 261 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 261 moveto
+(    if\( t >= trunc\(sq/2\) \) then) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 248 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 248 moveto
+(      j := 2;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 235 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 235 moveto
+(    else) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 222 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 222 moveto
+(      j := 3;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 209 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 209 moveto
+(    end if;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 196 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 196 moveto
+(    while\( i < j \) do) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 183 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 183 moveto
+(      z   := c_z / \( \( k / t \) - c_z \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 170 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 170 moveto
+(      c_z := z * \( k / t \);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 157 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 157 moveto
+(      i   := i + 1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 144 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 144 moveto
+(    end do;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 131 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 131 moveto
+(    #if\( abs\( trunc\( c_z \) \) = abs\( trunc\( c_c \) \) ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 118 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 118 moveto
+(    #    or abs\( trunc\( c_z \) \) = abs\( trunc\( c_d \) \) \) then) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 105 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 105 moveto
+(      printf\( "  t = %d, c_z = %f, iteraciones = %d \\n", t, c_z, i ) show
+grestore
+gsave
+1 0 0 stc
+78 92 moveto
+(\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 79 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 79 moveto
+(    #end if;) show
+grestore
+newpath
+59 671 moveto
+56 671 lineto
+56 -13 lineto
+59 -13 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 2 2
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 711 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 711 moveto
+(    L := [op\(L\),[t,c_z]];) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 698 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 698 moveto
+(    t := t - 1;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 685 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 685 moveto
+(  end do;) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 672 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 672 moveto
+(  pointplot\(L,connect=true\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 659 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 659 moveto
+(  #print\(L\);) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 646 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 646 moveto
+(end proc:) show
+grestore
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 633 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 633 moveto
+(#stopat\(tanto,20,t=48\);) show
+grestore
+newpath
+59 1316 moveto
+56 1316 lineto
+56 632 lineto
+59 632 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 620 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 620 moveto
+(tanto\(3,11\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 609 moveto
+(  p1=3, p2=11, k=33, sq\(k\)=5.744563 ) show
+grestore
+gsave
+0 0 1 stc
+64 600 moveto
+(  c\(x\) = 2.093070 x - 12.023773 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 591 moveto
+(  d\(x\) = 1.093070 x - 6.279211 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 582 moveto
+(  t = 3, c_z = -26.285659, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 573 moveto
+(  t = 2, c_z = 44.321326, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 564 moveto
+(  t = 1, c_z = 18.915914, iteraciones = 3 ) show
+grestore
+10 /Courier-Maple fsf
+gsave
+1 0 1 stc
+64 555 moveto
+(Error, \(in tanto\) numeric exception: division by zero\12) show
+grestore
+newpath
+59 627 moveto
+56 627 lineto
+56 547 lineto
+59 547 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 535 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 535 moveto
+(tanto\(7,23\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 524 moveto
+(  p1=7, p2=23, k=161, sq\(k\)=12.688578 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  c\(x\) = 2.230536 x - 28.302333 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  d\(x\) = 1.230536 x - 15.613752 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 7, c_z = -69.654053, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 6, c_z = -516.980900, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 5, c_z = -48.619582, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 4, c_z = -516.981280, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 3, c_z = 59.882980, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 2, c_z = 28.302334, iteraciones = 3 ) show
+grestore
+newpath
+59 542 moveto
+56 542 lineto
+56 69 lineto
+59 69 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 3 3
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+22.000000 132.500000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 119 242 459 549 
+%%DocumentNeededResources: font Helvetica
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+114.500000 204.500000 translate
+/defaultTitleFont {/Helvetica findfont 267 scalefont setfont} def
+/defaultFont {/Helvetica findfont 163 scalefont setfont} def
+0.0766 0.0766 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+NP 1345 4421 m 576 4211 l
+S
+NP 2114 576 m 1345 4421 l
+S
+NP 2883 3698 m 2114 576 l
+S
+NP 3652 576 m 2883 3698 l
+S
+NP 4421 3558 m 3652 576 l
+S
+medium setlinewidth
+NP 499 500 m 499 4500 l
+S
+thin setlinewidth
+NP 473 556 m 499 556 l
+S
+NP 446 690 m 499 690 l
+S
+NP 473 823 m 499 823 l
+S
+NP 473 956 m 499 956 l
+S
+NP 473 1089 m 499 1089 l
+S
+NP 473 1223 m 499 1223 l
+S
+NP 446 1356 m 499 1356 l
+S
+NP 473 1489 m 499 1489 l
+S
+NP 473 1623 m 499 1623 l
+S
+NP 473 1756 m 499 1756 l
+S
+NP 473 1889 m 499 1889 l
+S
+NP 446 2023 m 499 2023 l
+S
+NP 473 2156 m 499 2156 l
+S
+NP 473 2289 m 499 2289 l
+S
+NP 473 2422 m 499 2422 l
+S
+NP 473 2556 m 499 2556 l
+S
+NP 446 2689 m 499 2689 l
+S
+NP 473 2822 m 499 2822 l
+S
+NP 473 2956 m 499 2956 l
+S
+NP 473 3089 m 499 3089 l
+S
+NP 473 3222 m 499 3222 l
+S
+NP 446 3355 m 499 3355 l
+S
+NP 473 3489 m 499 3489 l
+S
+NP 473 3622 m 499 3622 l
+S
+NP 473 3755 m 499 3755 l
+S
+NP 473 3889 m 499 3889 l
+S
+NP 446 4022 m 499 4022 l
+S
+NP 473 4155 m 499 4155 l
+S
+NP 473 4289 m 499 4289 l
+S
+NP 473 4422 m 499 4422 l
+S
+medium setlinewidth
+NP 499 4022 m 4500 4022 l
+S
+thin setlinewidth
+NP 576 4079 m 576 4022 l
+S
+NP 730 4042 m 730 4022 l
+S
+NP 884 4042 m 884 4022 l
+S
+NP 1038 4042 m 1038 4022 l
+S
+NP 1192 4042 m 1192 4022 l
+S
+NP 1345 4079 m 1345 4022 l
+S
+NP 1499 4042 m 1499 4022 l
+S
+NP 1653 4042 m 1653 4022 l
+S
+NP 1807 4042 m 1807 4022 l
+S
+NP 1960 4042 m 1960 4022 l
+S
+NP 2114 4079 m 2114 4022 l
+S
+NP 2268 4042 m 2268 4022 l
+S
+NP 2422 4042 m 2422 4022 l
+S
+NP 2576 4042 m 2576 4022 l
+S
+NP 2729 4042 m 2729 4022 l
+S
+NP 2883 4079 m 2883 4022 l
+S
+NP 3037 4042 m 3037 4022 l
+S
+NP 3191 4042 m 3191 4022 l
+S
+NP 3345 4042 m 3345 4022 l
+S
+NP 3498 4042 m 3498 4022 l
+S
+NP 3652 4079 m 3652 4022 l
+S
+NP 3806 4042 m 3806 4022 l
+S
+NP 3960 4042 m 3960 4022 l
+S
+NP 4113 4042 m 4113 4022 l
+S
+NP 4267 4042 m 4267 4022 l
+S
+NP 4421 4079 m 4421 4022 l
+S
+medium setlinewidth
+(\261500) dup 0 stringbbox 2 idiv 690 exch sub exch 423 exch sub exch m show
+(\261400) dup 0 stringbbox 2 idiv 1356 exch sub exch 423 exch sub exch m show
+(\261300) dup 0 stringbbox 2 idiv 2023 exch sub exch 423 exch sub exch m show
+(\261200) dup 0 stringbbox 2 idiv 2689 exch sub exch 423 exch sub exch m show
+(\261100) dup 0 stringbbox 2 idiv 3355 exch sub exch 423 exch sub exch m show
+(0) dup 0 stringbbox 4022 exch sub exch 423 exch sub exch m show
+(2) dup 0 stringbbox pop 4103 exch 2 idiv 576 exch sub exch m show
+(3) dup 0 stringbbox pop 4103 exch 2 idiv 1345 exch sub exch m show
+(4) dup 0 stringbbox pop 4103 exch 2 idiv 2114 exch sub exch m show
+(5) dup 0 stringbbox pop 4103 exch 2 idiv 2883 exch sub exch m show
+(6) dup 0 stringbbox pop 4103 exch 2 idiv 3652 exch sub exch m show
+(7) dup 0 stringbbox pop 4103 exch 2 idiv 4421 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 812 moveto
+56 812 lineto
+56 339 lineto
+59 339 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 327 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 327 moveto
+(tanto\(23,61\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 316 moveto
+(  p1=23, p2=61, k=1403, sq\(k\)=37.456642 ) show
+grestore
+gsave
+0 0 1 stc
+64 307 moveto
+(  c\(x\) = 2.590964 x - 97.048822 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 298 moveto
+(  d\(x\) = 1.590964 x - 59.592176 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 289 moveto
+(  t = 19, c_z = -909.056950, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 280 moveto
+(  t = 18, c_z = 3072.420200, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 271 moveto
+(  t = 17, c_z = -96.470165, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 262 moveto
+(  t = 16, c_z = -121.541760, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 253 moveto
+(  t = 15, c_z = -164.221160, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 244 moveto
+(  t = 14, c_z = -253.095860, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 235 moveto
+(  t = 13, c_z = -551.633710, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 226 moveto
+(  t = 12, c_z = 3072.407500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 217 moveto
+(  t = 11, c_z = 405.885490, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 208 moveto
+(  t = 10, c_z = 217.295560, iteraciones = 3 ) show
+grestore
+newpath
+59 334 moveto
+56 334 lineto
+56 -175 lineto
+59 -175 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 4 4
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+21.000000 132.500000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 121 242 459 549 
+%%DocumentNeededResources: font Helvetica
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+114.500000 204.500000 translate
+/defaultTitleFont {/Helvetica findfont 267 scalefont setfont} def
+/defaultFont {/Helvetica findfont 163 scalefont setfont} def
+0.0766 0.0766 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+NP 1004 1846 m 576 1664 l
+S
+NP 1431 4421 m 1004 1846 l
+S
+NP 1858 922 m 1431 4421 l
+S
+NP 2285 1210 m 1858 922 l
+S
+NP 2712 1296 m 2285 1210 l
+S
+NP 3140 1337 m 2712 1296 l
+S
+NP 3567 1361 m 3140 1337 l
+S
+NP 3994 4421 m 3567 1361 l
+S
+NP 4421 576 m 3994 4421 l
+S
+medium setlinewidth
+NP 500 500 m 500 4499 l
+S
+thin setlinewidth
+NP 473 682 m 500 682 l
+S
+NP 473 875 m 500 875 l
+S
+NP 473 1068 m 500 1068 l
+S
+NP 473 1261 m 500 1261 l
+S
+NP 446 1454 m 500 1454 l
+S
+NP 473 1647 m 500 1647 l
+S
+NP 473 1840 m 500 1840 l
+S
+NP 473 2034 m 500 2034 l
+S
+NP 473 2227 m 500 2227 l
+S
+NP 446 2420 m 500 2420 l
+S
+NP 473 2613 m 500 2613 l
+S
+NP 473 2806 m 500 2806 l
+S
+NP 473 2999 m 500 2999 l
+S
+NP 473 3192 m 500 3192 l
+S
+NP 446 3385 m 500 3385 l
+S
+NP 473 3579 m 500 3579 l
+S
+NP 473 3772 m 500 3772 l
+S
+NP 473 3965 m 500 3965 l
+S
+NP 473 4158 m 500 4158 l
+S
+NP 446 4351 m 500 4351 l
+S
+medium setlinewidth
+NP 500 1454 m 4500 1454 l
+S
+thin setlinewidth
+NP 576 1414 m 576 1454 l
+S
+NP 747 1434 m 747 1454 l
+S
+NP 918 1434 m 918 1454 l
+S
+NP 1089 1434 m 1089 1454 l
+S
+NP 1260 1434 m 1260 1454 l
+S
+NP 1431 1414 m 1431 1454 l
+S
+NP 1602 1434 m 1602 1454 l
+S
+NP 1773 1434 m 1773 1454 l
+S
+NP 1943 1434 m 1943 1454 l
+S
+NP 2114 1434 m 2114 1454 l
+S
+NP 2285 1414 m 2285 1454 l
+S
+NP 2456 1434 m 2456 1454 l
+S
+NP 2627 1434 m 2627 1454 l
+S
+NP 2798 1434 m 2798 1454 l
+S
+NP 2969 1434 m 2969 1454 l
+S
+NP 3140 1414 m 3140 1454 l
+S
+NP 3310 1434 m 3310 1454 l
+S
+NP 3481 1434 m 3481 1454 l
+S
+NP 3652 1434 m 3652 1454 l
+S
+NP 3823 1434 m 3823 1454 l
+S
+NP 3994 1414 m 3994 1454 l
+S
+NP 4165 1434 m 4165 1454 l
+S
+NP 4336 1434 m 4336 1454 l
+S
+medium setlinewidth
+(0) dup 0 stringbbox 1454 exch sub exch 423 exch sub exch m show
+(1000) dup 0 stringbbox 2 idiv 2420 exch sub exch 423 exch sub exch m show
+(2000) dup 0 stringbbox 2 idiv 3385 exch sub exch 423 exch sub exch m show
+(3000) dup 0 stringbbox 2 idiv 4351 exch sub exch 423 exch sub exch m show
+(12) dup 0 stringbbox 1396 exch sub exch 2 idiv 1431 exch sub exch m show
+(14) dup 0 stringbbox 1396 exch sub exch 2 idiv 2285 exch sub exch m show
+(16) dup 0 stringbbox 1396 exch sub exch 2 idiv 3140 exch sub exch m show
+(18) dup 0 stringbbox 1396 exch sub exch 2 idiv 3994 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 848 moveto
+56 848 lineto
+56 339 lineto
+59 339 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 327 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 327 moveto
+(tanto\(59,127\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 316 moveto
+(  p1=59, p2=127, k=7493, sq\(k\)=86.562116 ) show
+grestore
+gsave
+0 0 1 stc
+64 307 moveto
+(  c\(x\) = 3.140619 x - 271.858650 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 298 moveto
+(  d\(x\) = 2.140619 x - 185.296540 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 289 moveto
+(  t = 44, c_z = -3073.566400, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 280 moveto
+(  t = 43, c_z = -17111.876000, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 271 moveto
+(  t = 42, c_z = -185.296540, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 262 moveto
+(  t = 41, c_z = -200.144880, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 253 moveto
+(  t = 40, c_z = -217.580160, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 244 moveto
+(  t = 39, c_z = -238.343070, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 235 moveto
+(  t = 38, c_z = -263.486580, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 226 moveto
+(  t = 37, c_z = -294.560680, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 217 moveto
+(  t = 36, c_z = -333.944190, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 208 moveto
+(  t = 35, c_z = -385.484370, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 199 moveto
+(  t = 34, c_z = -455.837320, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 190 moveto
+(  t = 33, c_z = -557.602940, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 181 moveto
+(  t = 32, c_z = -717.866120, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 172 moveto
+(  t = 31, c_z = -1007.410700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 163 moveto
+(  t = 30, c_z = -1688.420300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 154 moveto
+(  t = 29, c_z = -5211.145200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 145 moveto
+(  t = 28, c_z = 4796.687500, iteraciones = 3 ) show
+grestore
+newpath
+59 334 moveto
+56 334 lineto
+56 -238 lineto
+59 -238 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 5 5
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+28.000000 132.000000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 107 242 459 550 
+%%DocumentNeededResources: font Helvetica
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+114.500000 204.500000 translate
+/defaultTitleFont {/Helvetica findfont 267 scalefont setfont} def
+/defaultFont {/Helvetica findfont 163 scalefont setfont} def
+0.0766 0.0766 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+NP 817 2665 m 576 4421 l
+S
+NP 1057 3283 m 817 2665 l
+S
+NP 1297 3403 m 1057 3283 l
+S
+NP 1538 3453 m 1297 3403 l
+S
+NP 1778 3481 m 1538 3453 l
+S
+NP 2018 3499 m 1778 3481 l
+S
+NP 2258 3512 m 2018 3499 l
+S
+NP 2499 3521 m 2258 3512 l
+S
+NP 2739 3528 m 2499 3521 l
+S
+NP 2979 3533 m 2739 3528 l
+S
+NP 3220 3537 m 2979 3533 l
+S
+NP 3460 3541 m 3220 3537 l
+S
+NP 3700 3544 m 3460 3541 l
+S
+NP 3940 3547 m 3700 3544 l
+S
+NP 4181 576 m 3940 3547 l
+S
+NP 4421 3040 m 4181 576 l
+S
+medium setlinewidth
+NP 500 500 m 500 4500 l
+S
+thin setlinewidth
+NP 473 596 m 500 596 l
+S
+NP 473 772 m 500 772 l
+S
+NP 446 947 m 500 947 l
+S
+NP 473 1122 m 500 1122 l
+S
+NP 473 1298 m 500 1298 l
+S
+NP 473 1473 m 500 1473 l
+S
+NP 473 1649 m 500 1649 l
+S
+NP 446 1824 m 500 1824 l
+S
+NP 473 2000 m 500 2000 l
+S
+NP 473 2175 m 500 2175 l
+S
+NP 473 2351 m 500 2351 l
+S
+NP 473 2526 m 500 2526 l
+S
+NP 446 2702 m 500 2702 l
+S
+NP 473 2877 m 500 2877 l
+S
+NP 473 3053 m 500 3053 l
+S
+NP 473 3228 m 500 3228 l
+S
+NP 473 3404 m 500 3404 l
+S
+NP 446 3579 m 500 3579 l
+S
+NP 473 3755 m 500 3755 l
+S
+NP 473 3930 m 500 3930 l
+S
+NP 473 4106 m 500 4106 l
+S
+NP 473 4281 m 500 4281 l
+S
+NP 446 4457 m 500 4457 l
+S
+medium setlinewidth
+NP 500 3579 m 4500 3579 l
+S
+thin setlinewidth
+NP 576 3620 m 576 3579 l
+S
+NP 673 3600 m 673 3579 l
+S
+NP 769 3600 m 769 3579 l
+S
+NP 865 3600 m 865 3579 l
+S
+NP 961 3600 m 961 3579 l
+S
+NP 1057 3636 m 1057 3579 l
+S
+NP 1153 3600 m 1153 3579 l
+S
+NP 1249 3600 m 1249 3579 l
+S
+NP 1345 3600 m 1345 3579 l
+S
+NP 1441 3600 m 1441 3579 l
+S
+NP 1538 3636 m 1538 3579 l
+S
+NP 1634 3600 m 1634 3579 l
+S
+NP 1730 3600 m 1730 3579 l
+S
+NP 1826 3600 m 1826 3579 l
+S
+NP 1922 3600 m 1922 3579 l
+S
+NP 2018 3636 m 2018 3579 l
+S
+NP 2114 3600 m 2114 3579 l
+S
+NP 2210 3600 m 2210 3579 l
+S
+NP 2306 3600 m 2306 3579 l
+S
+NP 2403 3600 m 2403 3579 l
+S
+NP 2499 3636 m 2499 3579 l
+S
+NP 2595 3600 m 2595 3579 l
+S
+NP 2691 3600 m 2691 3579 l
+S
+NP 2787 3600 m 2787 3579 l
+S
+NP 2883 3600 m 2883 3579 l
+S
+NP 2979 3636 m 2979 3579 l
+S
+NP 3075 3600 m 3075 3579 l
+S
+NP 3172 3600 m 3172 3579 l
+S
+NP 3268 3600 m 3268 3579 l
+S
+NP 3364 3600 m 3364 3579 l
+S
+NP 3460 3636 m 3460 3579 l
+S
+NP 3556 3600 m 3556 3579 l
+S
+NP 3652 3600 m 3652 3579 l
+S
+NP 3748 3600 m 3748 3579 l
+S
+NP 3844 3600 m 3844 3579 l
+S
+NP 3940 3636 m 3940 3579 l
+S
+NP 4037 3600 m 4037 3579 l
+S
+NP 4133 3600 m 4133 3579 l
+S
+NP 4229 3600 m 4229 3579 l
+S
+NP 4325 3600 m 4325 3579 l
+S
+NP 4421 3636 m 4421 3579 l
+S
+medium setlinewidth
+(\26115000) dup 0 stringbbox 2 idiv 947 exch sub exch 423 exch sub exch m show
+(\26110000) dup 0 stringbbox 2 idiv 1824 exch sub exch 423 exch sub exch m show
+(\2615000) dup 0 stringbbox 2 idiv 2702 exch sub exch 423 exch sub exch m show
+(0) dup 0 stringbbox 3579 exch sub exch 423 exch sub exch m show
+(5000) dup 0 stringbbox 2 idiv 4457 exch sub exch 423 exch sub exch m show
+(30) dup 0 stringbbox pop 3660 exch 2 idiv 1057 exch sub exch m show
+(32) dup 0 stringbbox pop 3660 exch 2 idiv 1538 exch sub exch m show
+(34) dup 0 stringbbox pop 3660 exch 2 idiv 2018 exch sub exch m show
+(36) dup 0 stringbbox pop 3660 exch 2 idiv 2499 exch sub exch m show
+(38) dup 0 stringbbox pop 3660 exch 2 idiv 2979 exch sub exch m show
+(40) dup 0 stringbbox pop 3660 exch 2 idiv 3460 exch sub exch m show
+(42) dup 0 stringbbox pop 3660 exch 2 idiv 3940 exch sub exch m show
+(44) dup 0 stringbbox pop 3660 exch 2 idiv 4421 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 911 moveto
+56 911 lineto
+56 339 lineto
+59 339 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 327 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 327 moveto
+(tanto\(101,103\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 316 moveto
+(  p1=101, p2=103, k=10403, sq\(k\)=101.995100 ) show
+grestore
+gsave
+0 0 1 stc
+64 307 moveto
+(  c\(x\) = 102.497760 x - 10454.269000 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 298 moveto
+(  d\(x\) = 101.497340 x - 10352.231000 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 289 moveto
+(  t = 51, c_z = -10352.273000, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 280 moveto
+(  t = 50, c_z = 10454.246000, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 271 moveto
+(  t = 49, c_z = -226.128060, iteraciones = 3 ) show
+grestore
+newpath
+59 334 moveto
+56 334 lineto
+56 -112 lineto
+59 -112 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 6 6
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+
+ gsave
+10 dict begin
+/showpage {} def 
+28.000000 132.500000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 107 242 459 549 
+%%DocumentNeededResources: font Helvetica
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+114.500000 204.500000 translate
+/defaultTitleFont {/Helvetica findfont 267 scalefont setfont} def
+/defaultFont {/Helvetica findfont 163 scalefont setfont} def
+0.0766 0.0766 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+NP 2499 4421 m 576 2448 l
+S
+NP 4421 576 m 2499 4421 l
+S
+medium setlinewidth
+NP 500 500 m 500 4500 l
+S
+thin setlinewidth
+NP 446 641 m 500 641 l
+S
+NP 473 826 m 500 826 l
+S
+NP 473 1011 m 500 1011 l
+S
+NP 473 1196 m 500 1196 l
+S
+NP 473 1381 m 500 1381 l
+S
+NP 446 1565 m 500 1565 l
+S
+NP 473 1750 m 500 1750 l
+S
+NP 473 1935 m 500 1935 l
+S
+NP 473 2120 m 500 2120 l
+S
+NP 473 2305 m 500 2305 l
+S
+NP 446 2489 m 500 2489 l
+S
+NP 473 2674 m 500 2674 l
+S
+NP 473 2859 m 500 2859 l
+S
+NP 473 3044 m 500 3044 l
+S
+NP 473 3228 m 500 3228 l
+S
+NP 446 3413 m 500 3413 l
+S
+NP 473 3598 m 500 3598 l
+S
+NP 473 3783 m 500 3783 l
+S
+NP 473 3968 m 500 3968 l
+S
+NP 473 4152 m 500 4152 l
+S
+NP 446 4337 m 500 4337 l
+S
+medium setlinewidth
+NP 500 2489 m 4500 2489 l
+S
+thin setlinewidth
+NP 576 2449 m 576 2489 l
+S
+NP 769 2469 m 769 2489 l
+S
+NP 961 2469 m 961 2489 l
+S
+NP 1153 2469 m 1153 2489 l
+S
+NP 1345 2469 m 1345 2489 l
+S
+NP 1538 2449 m 1538 2489 l
+S
+NP 1730 2469 m 1730 2489 l
+S
+NP 1922 2469 m 1922 2489 l
+S
+NP 2114 2469 m 2114 2489 l
+S
+NP 2306 2469 m 2306 2489 l
+S
+NP 2499 2449 m 2499 2489 l
+S
+NP 2691 2469 m 2691 2489 l
+S
+NP 2883 2469 m 2883 2489 l
+S
+NP 3075 2469 m 3075 2489 l
+S
+NP 3268 2469 m 3268 2489 l
+S
+NP 3460 2449 m 3460 2489 l
+S
+NP 3652 2469 m 3652 2489 l
+S
+NP 3844 2469 m 3844 2489 l
+S
+NP 4037 2469 m 4037 2489 l
+S
+NP 4229 2469 m 4229 2489 l
+S
+NP 4421 2449 m 4421 2489 l
+S
+medium setlinewidth
+(\26110000) dup 0 stringbbox 2 idiv 641 exch sub exch 423 exch sub exch m show
+(\2615000) dup 0 stringbbox 2 idiv 1565 exch sub exch 423 exch sub exch m show
+(0) dup 0 stringbbox 2489 exch sub exch 423 exch sub exch m show
+(5000) dup 0 stringbbox 2 idiv 3413 exch sub exch 423 exch sub exch m show
+(10000) dup 0 stringbbox 2 idiv 4337 exch sub exch 423 exch sub exch m show
+(49.5) dup 0 stringbbox 2432 exch sub exch 2 idiv 1538 exch sub exch m show
+(50) dup 0 stringbbox 2432 exch sub exch 2 idiv 2499 exch sub exch m show
+(50.5) dup 0 stringbbox 2432 exch sub exch 2 idiv 3460 exch sub exch m show
+(51) dup 0 stringbbox 2432 exch sub exch 2 idiv 4421 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 785 moveto
+56 785 lineto
+56 339 lineto
+59 339 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 327 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+gsave
+1 0 0 stc
+78 327 moveto
+(tanto\(1237,9743\);) show
+grestore
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 316 moveto
+(  p1=1237, p2=9743, k=12052091, sq\(k\)=3471.612200 ) show
+grestore
+gsave
+0 0 1 stc
+64 307 moveto
+(  c\(x\) = 1.553564 x - 5393.370300 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 298 moveto
+(  d\(x\) = .553564 x - 1921.758200 <--- Objetivo ) show
+grestore
+gsave
+0 0 1 stc
+64 289 moveto
+(  t = 1736, c_z = -8682909.000000, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 280 moveto
+(  t = 1735, c_z = 19697071.000000, iteraciones = 2 ) show
+grestore
+gsave
+0 0 1 stc
+64 271 moveto
+(  t = 1734, c_z = -6960.941800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 262 moveto
+(  t = 1733, c_z = -6973.023700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 253 moveto
+(  t = 1732, c_z = -6985.147800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 244 moveto
+(  t = 1731, c_z = -6997.314300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 235 moveto
+(  t = 1730, c_z = -7009.523100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 226 moveto
+(  t = 1729, c_z = -7021.775000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 217 moveto
+(  t = 1728, c_z = -7034.069400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 208 moveto
+(  t = 1727, c_z = -7046.407600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 199 moveto
+(  t = 1726, c_z = -7058.788000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 190 moveto
+(  t = 1725, c_z = -7071.212800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 181 moveto
+(  t = 1724, c_z = -7083.681000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 172 moveto
+(  t = 1723, c_z = -7096.194400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 163 moveto
+(  t = 1722, c_z = -7108.750300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 154 moveto
+(  t = 1721, c_z = -7121.351500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 145 moveto
+(  t = 1720, c_z = -7133.998300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 136 moveto
+(  t = 1719, c_z = -7146.689400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 127 moveto
+(  t = 1718, c_z = -7159.425500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 118 moveto
+(  t = 1717, c_z = -7172.207300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 109 moveto
+(  t = 1716, c_z = -7185.034400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 100 moveto
+(  t = 1715, c_z = -7197.907300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 91 moveto
+(  t = 1714, c_z = -7210.827300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 82 moveto
+(  t = 1713, c_z = -7223.793900, iteraciones = 3 ) show
+grestore
+newpath
+59 334 moveto
+56 334 lineto
+56 -10166 lineto
+59 -10166 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 7 7
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1712, c_z = -7236.806100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1711, c_z = -7249.866200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1710, c_z = -7262.973700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1709, c_z = -7276.127600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1708, c_z = -7289.329600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1707, c_z = -7302.580000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1706, c_z = -7315.878700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1705, c_z = -7329.225800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1704, c_z = -7342.620900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1703, c_z = -7356.066300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1702, c_z = -7369.559900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1701, c_z = -7383.104100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1700, c_z = -7396.697600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1699, c_z = -7410.341400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1698, c_z = -7424.036500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1697, c_z = -7437.780800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1696, c_z = -7451.576100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1695, c_z = -7465.423600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1694, c_z = -7479.322900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1693, c_z = -7493.273500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1692, c_z = -7507.276000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1691, c_z = -7521.331800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1690, c_z = -7535.438500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1689, c_z = -7549.599800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1688, c_z = -7563.812800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1687, c_z = -7578.081800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1686, c_z = -7592.403300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1685, c_z = -7606.779800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1684, c_z = -7621.209600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1683, c_z = -7635.695800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1682, c_z = -7650.236000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1681, c_z = -7664.832800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1680, c_z = -7679.483900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1679, c_z = -7694.191800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1678, c_z = -7708.957100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1677, c_z = -7723.777600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1676, c_z = -7738.656300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1675, c_z = -7753.591600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1674, c_z = -7768.584800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1673, c_z = -7783.637200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1672, c_z = -7798.747600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1671, c_z = -7813.915600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1670, c_z = -7829.144300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1669, c_z = -7844.431400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1668, c_z = -7859.778200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1667, c_z = -7875.186000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1666, c_z = -7890.654300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1665, c_z = -7906.183200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1664, c_z = -7921.772200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1663, c_z = -7937.424500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1662, c_z = -7953.137800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1661, c_z = -7968.913900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1660, c_z = -7984.753600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1659, c_z = -8000.655200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1658, c_z = -8016.620600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1657, c_z = -8032.649400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1656, c_z = -8048.742100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1655, c_z = -8064.900300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1654, c_z = -8081.122700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1653, c_z = -8097.411400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1652, c_z = -8113.766400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1651, c_z = -8130.185900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1650, c_z = -8146.672700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1649, c_z = -8163.226200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1648, c_z = -8179.848300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1647, c_z = -8196.538000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1646, c_z = -8213.295300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1645, c_z = -8230.121600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1644, c_z = -8247.016400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1643, c_z = -8263.981100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1642, c_z = -8281.015800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1641, c_z = -8298.120100, iteraciones = 3 ) show
+grestore
+newpath
+59 974 moveto
+56 974 lineto
+56 -9526 lineto
+59 -9526 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 8 8
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1640, c_z = -8315.295100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1639, c_z = -8332.543000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1638, c_z = -8349.862000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1637, c_z = -8367.252300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1636, c_z = -8384.716400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1635, c_z = -8402.252600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1634, c_z = -8419.862300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1633, c_z = -8437.546200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1632, c_z = -8455.305100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1631, c_z = -8473.138600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1630, c_z = -8491.047200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1629, c_z = -8509.032500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1628, c_z = -8527.092700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1627, c_z = -8545.230500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1626, c_z = -8563.445900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1625, c_z = -8581.738500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1624, c_z = -8600.109600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1623, c_z = -8618.559500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1622, c_z = -8637.088800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1621, c_z = -8655.698900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1620, c_z = -8674.387700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1619, c_z = -8693.158100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1618, c_z = -8712.009900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1617, c_z = -8730.945000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1616, c_z = -8749.959800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1615, c_z = -8769.058800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1614, c_z = -8788.242200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1613, c_z = -8807.509600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1612, c_z = -8826.860400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1611, c_z = -8846.297300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1610, c_z = -8865.821100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1609, c_z = -8885.430100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1608, c_z = -8905.125600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1607, c_z = -8924.909200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1606, c_z = -8944.780800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1605, c_z = -8964.740800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1604, c_z = -8984.789300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1603, c_z = -9004.930100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1602, c_z = -9025.160400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1601, c_z = -9045.480900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1600, c_z = -9065.893800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1599, c_z = -9086.398400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1598, c_z = -9106.997500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1597, c_z = -9127.688200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1596, c_z = -9148.473700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1595, c_z = -9169.355500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1594, c_z = -9190.331200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1593, c_z = -9211.403000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1592, c_z = -9232.573500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1591, c_z = -9253.840300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1590, c_z = -9275.205000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1589, c_z = -9296.669000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1588, c_z = -9318.231700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1587, c_z = -9339.896700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1586, c_z = -9361.661400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1585, c_z = -9383.526800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1584, c_z = -9405.496200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1583, c_z = -9427.569200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1582, c_z = -9449.743400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1581, c_z = -9472.024700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1580, c_z = -9494.410100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1579, c_z = -9516.901800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1578, c_z = -9539.499400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1577, c_z = -9562.206700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1576, c_z = -9585.021600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1575, c_z = -9607.944800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1574, c_z = -9630.977800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1573, c_z = -9654.122100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1572, c_z = -9677.378500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1571, c_z = -9700.745400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1570, c_z = -9724.226700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1569, c_z = -9747.821500, iteraciones = 3 ) show
+grestore
+newpath
+59 1622 moveto
+56 1622 lineto
+56 -8878 lineto
+59 -8878 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 9 9
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1568, c_z = -9771.531900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1567, c_z = -9795.357400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1566, c_z = -9819.299500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1565, c_z = -9843.358500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1564, c_z = -9867.536400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1563, c_z = -9891.833000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1562, c_z = -9916.249000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1561, c_z = -9940.786000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1560, c_z = -9965.445500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1559, c_z = -9990.227100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1558, c_z = -10015.132000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1557, c_z = -10040.162000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1556, c_z = -10065.317000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1555, c_z = -10090.599000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1554, c_z = -10116.007000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1553, c_z = -10141.545000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1552, c_z = -10167.211000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1551, c_z = -10193.007000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1550, c_z = -10218.936000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1549, c_z = -10244.995000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1548, c_z = -10271.189000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1547, c_z = -10297.517000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1546, c_z = -10323.979000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1545, c_z = -10350.579000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1544, c_z = -10377.315000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1543, c_z = -10404.191000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1542, c_z = -10431.206000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1541, c_z = -10458.361000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1540, c_z = -10485.658000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1539, c_z = -10513.099000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1538, c_z = -10540.683000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1537, c_z = -10568.412000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1536, c_z = -10596.287000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1535, c_z = -10624.310000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1534, c_z = -10652.482000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1533, c_z = -10680.803000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1532, c_z = -10709.275000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1531, c_z = -10737.900000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1530, c_z = -10766.679000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1529, c_z = -10795.610000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1528, c_z = -10824.699000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1527, c_z = -10853.945000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1526, c_z = -10883.349000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1525, c_z = -10912.913000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1524, c_z = -10942.638000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1523, c_z = -10972.525000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1522, c_z = -11002.576000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1521, c_z = -11032.792000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1520, c_z = -11063.174000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1519, c_z = -11093.725000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1518, c_z = -11124.445000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1517, c_z = -11155.335000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1516, c_z = -11186.397000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1515, c_z = -11217.634000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1514, c_z = -11249.044000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1513, c_z = -11280.630000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1512, c_z = -11312.395000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1511, c_z = -11344.339000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1510, c_z = -11376.464000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1509, c_z = -11408.772000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1508, c_z = -11441.264000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1507, c_z = -11473.941000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1506, c_z = -11506.806000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1505, c_z = -11539.858000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1504, c_z = -11573.102000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1503, c_z = -11606.539000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1502, c_z = -11640.168000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1501, c_z = -11673.992000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1500, c_z = -11708.014000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1499, c_z = -11742.235000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1498, c_z = -11776.658000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1497, c_z = -11811.282000, iteraciones = 3 ) show
+grestore
+newpath
+59 2270 moveto
+56 2270 lineto
+56 -8230 lineto
+59 -8230 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 10 10
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1496, c_z = -11846.110000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1495, c_z = -11881.144000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1494, c_z = -11916.386000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1493, c_z = -11951.839000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1492, c_z = -11987.501000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1491, c_z = -12023.378000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1490, c_z = -12059.470000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1489, c_z = -12095.780000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1488, c_z = -12132.308000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1487, c_z = -12169.058000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1486, c_z = -12206.032000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1485, c_z = -12243.232000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1484, c_z = -12280.658000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1483, c_z = -12318.313000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1482, c_z = -12356.200000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1481, c_z = -12394.321000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1480, c_z = -12432.679000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1479, c_z = -12471.275000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1478, c_z = -12510.110000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1477, c_z = -12549.189000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1476, c_z = -12588.511000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1475, c_z = -12628.082000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1474, c_z = -12667.902000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1473, c_z = -12707.974000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1472, c_z = -12748.301000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1471, c_z = -12788.882000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1470, c_z = -12829.724000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1469, c_z = -12870.829000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1468, c_z = -12912.198000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1467, c_z = -12953.833000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1466, c_z = -12995.736000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1465, c_z = -13037.913000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1464, c_z = -13080.364000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1463, c_z = -13123.092000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1462, c_z = -13166.100000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1461, c_z = -13209.392000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1460, c_z = -13252.968000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1459, c_z = -13296.833000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1458, c_z = -13340.990000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1457, c_z = -13385.441000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1456, c_z = -13430.188000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1455, c_z = -13475.236000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1454, c_z = -13520.589000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1453, c_z = -13566.246000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1452, c_z = -13612.213000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1451, c_z = -13658.493000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1450, c_z = -13705.088000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1449, c_z = -13752.002000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1448, c_z = -13799.239000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1447, c_z = -13846.802000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1446, c_z = -13894.692000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1445, c_z = -13942.916000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1444, c_z = -13991.475000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1443, c_z = -14040.376000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1442, c_z = -14089.617000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1441, c_z = -14139.206000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1440, c_z = -14189.145000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1439, c_z = -14239.439000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1438, c_z = -14290.089000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1437, c_z = -14341.102000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1436, c_z = -14392.480000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1435, c_z = -14444.228000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1434, c_z = -14496.349000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1433, c_z = -14548.847000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1432, c_z = -14601.728000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1431, c_z = -14654.992000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1430, c_z = -14708.648000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1429, c_z = -14762.699000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1428, c_z = -14817.147000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1427, c_z = -14872.000000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1426, c_z = -14927.260000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1425, c_z = -14982.931000, iteraciones = 3 ) show
+grestore
+newpath
+59 2918 moveto
+56 2918 lineto
+56 -7582 lineto
+59 -7582 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 11 11
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1424, c_z = -15039.019000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1423, c_z = -15095.531000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1422, c_z = -15152.467000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1421, c_z = -15209.833000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1420, c_z = -15267.637000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1419, c_z = -15325.882000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1418, c_z = -15384.574000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1417, c_z = -15443.713000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1416, c_z = -15503.314000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1415, c_z = -15563.374000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1414, c_z = -15623.900000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1413, c_z = -15684.900000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1412, c_z = -15746.379000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1411, c_z = -15808.339000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1410, c_z = -15870.793000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1409, c_z = -15933.740000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1408, c_z = -15997.188000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1407, c_z = -16061.144000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1406, c_z = -16125.613000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1405, c_z = -16190.601000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1404, c_z = -16256.115000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1403, c_z = -16322.163000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1402, c_z = -16388.749000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1401, c_z = -16455.880000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1400, c_z = -16523.564000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1399, c_z = -16591.806000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1398, c_z = -16660.617000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1397, c_z = -16729.998000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1396, c_z = -16799.958000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1395, c_z = -16870.510000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1394, c_z = -16941.654000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1393, c_z = -17013.401000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1392, c_z = -17085.761000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1391, c_z = -17158.733000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1390, c_z = -17232.337000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1389, c_z = -17306.573000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1388, c_z = -17381.452000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1387, c_z = -17456.981000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1386, c_z = -17533.170000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1385, c_z = -17610.025000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1384, c_z = -17687.556000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1383, c_z = -17765.776000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1382, c_z = -17844.690000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1381, c_z = -17924.307000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1380, c_z = -18004.639000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1379, c_z = -18085.693000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1378, c_z = -18167.481000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1377, c_z = -18250.014000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1376, c_z = -18333.297000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1375, c_z = -18417.345000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1374, c_z = -18502.166000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1373, c_z = -18587.774000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1372, c_z = -18674.176000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1371, c_z = -18761.385000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1370, c_z = -18849.415000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1369, c_z = -18938.274000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1368, c_z = -19027.970000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1367, c_z = -19118.525000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1366, c_z = -19209.946000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1365, c_z = -19302.245000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1364, c_z = -19395.433000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1363, c_z = -19489.528000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1362, c_z = -19584.535000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1361, c_z = -19680.479000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1360, c_z = -19777.365000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1359, c_z = -19875.211000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1358, c_z = -19974.029000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1357, c_z = -20073.835000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1356, c_z = -20174.642000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1355, c_z = -20276.467000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1354, c_z = -20379.326000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1353, c_z = -20483.234000, iteraciones = 3 ) show
+grestore
+newpath
+59 3566 moveto
+56 3566 lineto
+56 -6934 lineto
+59 -6934 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 12 12
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1352, c_z = -20588.209000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1351, c_z = -20694.262000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1350, c_z = -20801.413000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1349, c_z = -20909.680000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1348, c_z = -21019.080000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1347, c_z = -21129.633000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1346, c_z = -21241.352000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1345, c_z = -21354.263000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1344, c_z = -21468.376000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1343, c_z = -21583.719000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1342, c_z = -21700.303000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1341, c_z = -21818.159000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1340, c_z = -21937.299000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1339, c_z = -22057.750000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1338, c_z = -22179.528000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1337, c_z = -22302.660000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1336, c_z = -22427.164000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1335, c_z = -22553.067000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1334, c_z = -22680.394000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1333, c_z = -22809.164000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1332, c_z = -22939.409000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1331, c_z = -23071.146000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1330, c_z = -23204.407000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1329, c_z = -23339.214000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1328, c_z = -23475.595000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1327, c_z = -23613.580000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1326, c_z = -23753.201000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1325, c_z = -23894.480000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1324, c_z = -24037.455000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1323, c_z = -24182.140000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1322, c_z = -24328.584000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1321, c_z = -24476.815000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1320, c_z = -24626.859000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1319, c_z = -24778.758000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1318, c_z = -24932.537000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1317, c_z = -25088.243000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1316, c_z = -25245.899000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1315, c_z = -25405.548000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1314, c_z = -25567.236000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1313, c_z = -25730.991000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1312, c_z = -25896.861000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1311, c_z = -26064.879000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1310, c_z = -26235.099000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1309, c_z = -26407.551000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1308, c_z = -26582.281000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1307, c_z = -26759.347000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1306, c_z = -26938.781000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1305, c_z = -27120.644000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1304, c_z = -27304.976000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1303, c_z = -27491.827000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1302, c_z = -27681.262000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1301, c_z = -27873.323000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1300, c_z = -28068.059000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1299, c_z = -28265.544000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1298, c_z = -28465.821000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1297, c_z = -28668.968000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1296, c_z = -28875.024000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1295, c_z = -29084.069000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1294, c_z = -29296.158000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1293, c_z = -29511.369000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1292, c_z = -29729.758000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1291, c_z = -29951.408000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1290, c_z = -30176.387000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1289, c_z = -30404.773000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1288, c_z = -30636.644000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1287, c_z = -30872.079000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1286, c_z = -31111.159000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1285, c_z = -31353.964000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1284, c_z = -31600.595000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1283, c_z = -31851.143000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1282, c_z = -32105.679000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1281, c_z = -32364.324000, iteraciones = 3 ) show
+grestore
+newpath
+59 4214 moveto
+56 4214 lineto
+56 -6286 lineto
+59 -6286 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 13 13
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1280, c_z = -32627.180000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1279, c_z = -32894.334000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1278, c_z = -33165.896000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1277, c_z = -33441.980000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1276, c_z = -33722.700000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1275, c_z = -34008.176000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1274, c_z = -34298.516000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1273, c_z = -34593.869000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1272, c_z = -34894.339000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1271, c_z = -35200.097000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1270, c_z = -35511.233000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1269, c_z = -35827.932000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1268, c_z = -36150.338000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1267, c_z = -36478.582000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1266, c_z = -36812.854000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1265, c_z = -37153.315000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1264, c_z = -37500.119000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1263, c_z = -37853.462000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1262, c_z = -38213.522000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1261, c_z = -38580.512000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1260, c_z = -38954.609000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1259, c_z = -39336.034000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1258, c_z = -39724.998000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1257, c_z = -40121.730000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1256, c_z = -40526.479000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1255, c_z = -40939.460000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1254, c_z = -41360.952000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1253, c_z = -41791.214000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1252, c_z = -42230.529000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1251, c_z = -42679.185000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1250, c_z = -43137.454000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1249, c_z = -43605.677000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1248, c_z = -44084.187000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1247, c_z = -44573.304000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1246, c_z = -45073.401000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1245, c_z = -45584.848000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1244, c_z = -46108.023000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1243, c_z = -46643.370000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1242, c_z = -47191.296000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1241, c_z = -47752.223000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1240, c_z = -48326.640000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1239, c_z = -48915.066000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1238, c_z = -49518.006000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1237, c_z = -50135.981000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1236, c_z = -50769.563000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1235, c_z = -51419.377000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1234, c_z = -52086.048000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1233, c_z = -52770.226000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1232, c_z = -53472.619000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1231, c_z = -54193.952000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1230, c_z = -54935.035000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1229, c_z = -55696.653000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1228, c_z = -56479.660000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1227, c_z = -57285.051000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1226, c_z = -58113.712000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1225, c_z = -58966.706000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1224, c_z = -59845.108000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1223, c_z = -60750.106000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1222, c_z = -61682.827000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1221, c_z = -62644.699000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1220, c_z = -63637.032000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1219, c_z = -64661.251000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1218, c_z = -65719.028000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1217, c_z = -66811.989000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1216, c_z = -67941.903000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1215, c_z = -69110.770000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1214, c_z = -70320.465000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1213, c_z = -71573.264000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1212, c_z = -72871.620000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1211, c_z = -74217.784000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1210, c_z = -75614.738000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1209, c_z = -77065.245000, iteraciones = 3 ) show
+grestore
+newpath
+59 4862 moveto
+56 4862 lineto
+56 -5638 lineto
+59 -5638 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 14 14
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1208, c_z = -78572.477000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1207, c_z = -80139.952000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1206, c_z = -81771.124000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1205, c_z = -83470.017000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1204, c_z = -85241.063000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1203, c_z = -87088.978000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1202, c_z = -89018.802000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1201, c_z = -91036.195000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1200, c_z = -93146.800000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1199, c_z = -95358.007000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1198, c_z = -97676.302000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1197, c_z = -100110.590000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1196, c_z = -102668.730000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1195, c_z = -105361.560000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1194, c_z = -108199.380000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1193, c_z = -111193.570000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1192, c_z = -114359.420000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1191, c_z = -117709.900000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1190, c_z = -121263.290000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1189, c_z = -125036.720000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1188, c_z = -129054.160000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1187, c_z = -133336.710000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1186, c_z = -137914.150000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1185, c_z = -142817.430000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1184, c_z = -148081.820000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1183, c_z = -153748.450000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1182, c_z = -159866.450000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1181, c_z = -166492.360000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1180, c_z = -173690.270000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1179, c_z = -181539.150000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1178, c_z = -190131.690000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1177, c_z = -199576.280000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1176, c_z = -210011.070000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1175, c_z = -221595.530000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1174, c_z = -234532.490000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1173, c_z = -249069.970000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1172, c_z = -265534.220000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1171, c_z = -284328.110000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1170, c_z = -305980.940000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1169, c_z = -331208.050000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1168, c_z = -360969.030000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1167, c_z = -396604.880000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1166, c_z = -440046.720000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1165, c_z = -494173.970000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1164, c_z = -563495.150000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1163, c_z = -655427.690000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1162, c_z = -783210.630000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1161, c_z = -972899.400000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1160, c_z = -1283795.100000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1159, c_z = -1886663.900000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1158, c_z = -3557223.700000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1157, c_z = -31039035.000000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1156, c_z = 4614692.000000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1155, c_z = 2147548.300000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1154, c_z = 1399483.600000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1153, c_z = 1037908.400000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1152, c_z = 824793.520000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1151, c_z = 684314.370000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1150, c_z = 584718.850000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1149, c_z = 510427.410000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1148, c_z = 452884.230000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1147, c_z = 407001.560000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1146, c_z = 369559.000000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1145, c_z = 338426.410000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1144, c_z = 312132.090000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1143, c_z = 289628.960000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1142, c_z = 270153.150000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1141, c_z = 253131.870000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1140, c_z = 238126.600000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1139, c_z = 224803.760000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1138, c_z = 212888.970000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1137, c_z = 202175.900000, iteraciones = 3 ) show
+grestore
+newpath
+59 5510 moveto
+56 5510 lineto
+56 -4990 lineto
+59 -4990 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 15 15
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1136, c_z = 192488.710000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1135, c_z = 183688.540000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1134, c_z = 175656.250000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1133, c_z = 168296.750000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1132, c_z = 161531.120000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1131, c_z = 155286.630000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1130, c_z = 149507.930000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1129, c_z = 144143.400000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1128, c_z = 139150.320000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1127, c_z = 134492.310000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1126, c_z = 130135.100000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1125, c_z = 126052.010000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1124, c_z = 122217.330000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1123, c_z = 118608.980000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1122, c_z = 115207.730000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1121, c_z = 111996.030000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1120, c_z = 108958.090000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1119, c_z = 106081.270000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1118, c_z = 103351.960000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1117, c_z = 100759.680000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1116, c_z = 98294.427000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1115, c_z = 95947.130000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1114, c_z = 93709.048000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1113, c_z = 91573.190000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1112, c_z = 89532.266000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1111, c_z = 87580.194000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1110, c_z = 85711.621000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1109, c_z = 83921.320000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1108, c_z = 82204.188000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1107, c_z = 80555.785000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1106, c_z = 78972.157000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1105, c_z = 77449.592000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1104, c_z = 75984.812000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1103, c_z = 74574.403000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1102, c_z = 73215.089000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1101, c_z = 71904.734000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1100, c_z = 70640.466000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1099, c_z = 69419.669000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1098, c_z = 68240.633000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1097, c_z = 67100.814000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1096, c_z = 65998.485000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1095, c_z = 64931.626000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1094, c_z = 63898.782000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1093, c_z = 62898.366000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1092, c_z = 61928.932000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1091, c_z = 60988.582000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1090, c_z = 60076.713000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1089, c_z = 59191.370000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1088, c_z = 58331.932000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1087, c_z = 57497.214000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1086, c_z = 56685.817000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1085, c_z = 55897.144000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1084, c_z = 55130.080000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1083, c_z = 54383.822000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1082, c_z = 53657.445000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1081, c_z = 52950.227000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1080, c_z = 52261.282000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1079, c_z = 51590.203000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1078, c_z = 50936.156000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1077, c_z = 50298.387000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1076, c_z = 49676.427000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1075, c_z = 49069.715000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1074, c_z = 48477.553000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1073, c_z = 47899.585000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1072, c_z = 47335.166000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 1071, c_z = 46783.838000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 1070, c_z = 46245.413000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 1069, c_z = 45719.079000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 1068, c_z = 45204.667000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 1067, c_z = 44701.573000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 1066, c_z = 44209.647000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 1065, c_z = 43728.523000, iteraciones = 3 ) show
+grestore
+newpath
+59 6158 moveto
+56 6158 lineto
+56 -4342 lineto
+59 -4342 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 16 16
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 1064, c_z = 43257.650000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 1063, c_z = 42796.804000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 1062, c_z = 42345.697000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 1061, c_z = 41903.997000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 1060, c_z = 41471.447000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 1059, c_z = 41047.655000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 1058, c_z = 40632.560000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 1057, c_z = 40225.718000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 1056, c_z = 39826.890000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 1055, c_z = 39435.932000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 1054, c_z = 39052.620000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 1053, c_z = 38676.563000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 1052, c_z = 38307.823000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 1051, c_z = 37945.937000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 1050, c_z = 37590.896000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 1049, c_z = 37242.418000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 1048, c_z = 36900.333000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 1047, c_z = 36564.466000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 1046, c_z = 36234.659000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 1045, c_z = 35910.828000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 1044, c_z = 35592.664000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 1043, c_z = 35280.045000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 1042, c_z = 34972.950000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 1041, c_z = 34671.108000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 1040, c_z = 34374.453000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 1039, c_z = 34082.796000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 1038, c_z = 33796.080000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 1037, c_z = 33514.175000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 1036, c_z = 33236.914000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 1035, c_z = 32964.186000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 1034, c_z = 32695.879000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 1033, c_z = 32431.955000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 1032, c_z = 32172.193000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 1031, c_z = 31916.606000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 1030, c_z = 31665.050000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 1029, c_z = 31417.379000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 1028, c_z = 31173.613000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 1027, c_z = 30933.554000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 1026, c_z = 30697.233000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 1025, c_z = 30464.408000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 1024, c_z = 30235.153000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 1023, c_z = 30009.299000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 1022, c_z = 29786.774000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 1021, c_z = 29567.550000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 1020, c_z = 29351.561000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 1019, c_z = 29138.647000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 1018, c_z = 28928.828000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 1017, c_z = 28722.004000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 1016, c_z = 28518.114000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 1015, c_z = 28317.098000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 1014, c_z = 28118.904000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 1013, c_z = 27923.462000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 1012, c_z = 27730.686000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 1011, c_z = 27540.608000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 1010, c_z = 27353.088000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 1009, c_z = 27168.084000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 1008, c_z = 26985.618000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 1007, c_z = 26805.535000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 1006, c_z = 26627.861000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 1005, c_z = 26452.545000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 1004, c_z = 26279.486000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 1003, c_z = 26108.702000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 1002, c_z = 25940.123000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 1001, c_z = 25773.701000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 1000, c_z = 25609.405000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 999, c_z = 25447.194000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 998, c_z = 25287.025000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 997, c_z = 25128.845000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 996, c_z = 24972.634000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 995, c_z = 24818.367000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 994, c_z = 24665.981000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 993, c_z = 24515.470000, iteraciones = 3 ) show
+grestore
+newpath
+59 6806 moveto
+56 6806 lineto
+56 -3694 lineto
+59 -3694 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 17 17
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 992, c_z = 24366.770000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 991, c_z = 24219.860000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 990, c_z = 24074.727000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 989, c_z = 23931.292000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 988, c_z = 23789.583000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 987, c_z = 23649.543000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 986, c_z = 23511.143000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 985, c_z = 23374.360000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 984, c_z = 23239.132000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 983, c_z = 23105.472000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 982, c_z = 22973.351000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 981, c_z = 22842.714000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 980, c_z = 22713.567000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 979, c_z = 22585.871000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 978, c_z = 22459.617000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 977, c_z = 22334.732000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 976, c_z = 22211.253000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 975, c_z = 22089.124000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 974, c_z = 21968.339000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 973, c_z = 21848.863000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 972, c_z = 21730.666000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 971, c_z = 21613.766000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 970, c_z = 21498.104000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 969, c_z = 21383.678000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 968, c_z = 21270.458000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 967, c_z = 21158.417000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 966, c_z = 21047.566000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 965, c_z = 20937.888000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 964, c_z = 20829.317000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 963, c_z = 20721.868000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 962, c_z = 20615.544000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 961, c_z = 20510.284000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 960, c_z = 20406.119000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 959, c_z = 20302.989000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 958, c_z = 20200.884000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 957, c_z = 20099.829000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 956, c_z = 19999.749000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 955, c_z = 19900.675000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 954, c_z = 19802.590000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 953, c_z = 19705.464000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 952, c_z = 19609.278000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 951, c_z = 19514.010000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 950, c_z = 19419.681000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 949, c_z = 19326.263000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 948, c_z = 19233.744000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 947, c_z = 19142.092000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 946, c_z = 19051.316000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 945, c_z = 18961.408000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 944, c_z = 18872.315000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 943, c_z = 18784.089000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 942, c_z = 18696.658000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 941, c_z = 18610.055000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 940, c_z = 18524.247000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 939, c_z = 18439.212000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 938, c_z = 18354.970000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 937, c_z = 18271.483000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 936, c_z = 18188.756000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 935, c_z = 18106.783000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 934, c_z = 18025.533000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 933, c_z = 17945.025000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 932, c_z = 17865.223000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 931, c_z = 17786.125000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 930, c_z = 17707.723000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 929, c_z = 17630.024000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 928, c_z = 17552.989000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 927, c_z = 17476.626000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 926, c_z = 17400.930000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 925, c_z = 17325.878000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 924, c_z = 17251.475000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 923, c_z = 17177.717000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 922, c_z = 17104.582000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 921, c_z = 17032.065000, iteraciones = 3 ) show
+grestore
+newpath
+59 7454 moveto
+56 7454 lineto
+56 -3046 lineto
+59 -3046 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 18 18
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 920, c_z = 16960.159000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 919, c_z = 16888.855000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 918, c_z = 16818.162000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 917, c_z = 16748.048000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 916, c_z = 16678.506000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 915, c_z = 16609.557000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 914, c_z = 16541.170000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 913, c_z = 16473.336000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 912, c_z = 16406.066000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 911, c_z = 16339.338000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 910, c_z = 16273.153000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 909, c_z = 16207.501000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 908, c_z = 16142.378000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 907, c_z = 16077.777000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 906, c_z = 16013.682000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 905, c_z = 15950.104000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 904, c_z = 15887.032000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 903, c_z = 15824.455000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 902, c_z = 15762.365000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 901, c_z = 15700.755000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 900, c_z = 15639.640000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 899, c_z = 15578.988000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 898, c_z = 15518.805000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 897, c_z = 15459.088000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 896, c_z = 15399.836000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 895, c_z = 15341.030000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 894, c_z = 15282.664000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 893, c_z = 15224.744000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 892, c_z = 15167.266000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 891, c_z = 15110.220000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 890, c_z = 15053.603000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 889, c_z = 14997.402000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 888, c_z = 14941.621000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 887, c_z = 14886.256000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 886, c_z = 14831.295000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 885, c_z = 14776.746000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 884, c_z = 14722.597000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 883, c_z = 14668.840000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 882, c_z = 14615.475000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 881, c_z = 14562.495000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 880, c_z = 14509.896000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 879, c_z = 14457.676000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 878, c_z = 14405.834000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 877, c_z = 14354.364000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 876, c_z = 14303.252000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 875, c_z = 14252.512000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 874, c_z = 14202.124000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 873, c_z = 14152.098000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 872, c_z = 14102.417000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 871, c_z = 14053.090000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 870, c_z = 14004.098000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 869, c_z = 13955.453000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 868, c_z = 13907.143000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 867, c_z = 13859.166000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 866, c_z = 13811.516000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 865, c_z = 13764.195000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 864, c_z = 13717.200000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 863, c_z = 13670.519000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 862, c_z = 13624.158000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 861, c_z = 13578.108000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 860, c_z = 13532.374000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 859, c_z = 13486.939000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 858, c_z = 13441.816000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 857, c_z = 13396.987000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 856, c_z = 13352.460000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 855, c_z = 13308.229000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 854, c_z = 13264.288000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 853, c_z = 13220.640000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 852, c_z = 13177.271000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 851, c_z = 13134.194000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 850, c_z = 13091.389000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 849, c_z = 13048.873000, iteraciones = 3 ) show
+grestore
+newpath
+59 8102 moveto
+56 8102 lineto
+56 -2398 lineto
+59 -2398 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 19 19
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 848, c_z = 13006.626000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 847, c_z = 12964.649000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 846, c_z = 12922.947000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 845, c_z = 12881.504000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 844, c_z = 12840.333000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 843, c_z = 12799.425000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 842, c_z = 12758.779000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 841, c_z = 12718.385000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 840, c_z = 12678.250000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 839, c_z = 12638.365000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 838, c_z = 12598.728000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 837, c_z = 12559.339000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 836, c_z = 12520.197000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 835, c_z = 12481.299000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 834, c_z = 12442.645000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 833, c_z = 12404.220000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 832, c_z = 12366.043000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 831, c_z = 12328.094000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 830, c_z = 12290.376000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 829, c_z = 12252.896000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 828, c_z = 12215.639000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 827, c_z = 12178.605000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 826, c_z = 12141.798000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 825, c_z = 12105.210000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 824, c_z = 12068.844000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 823, c_z = 12032.696000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 822, c_z = 11996.766000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 821, c_z = 11961.044000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 820, c_z = 11925.539000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 819, c_z = 11890.241000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 818, c_z = 11855.154000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 817, c_z = 11820.276000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 816, c_z = 11785.600000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 815, c_z = 11751.122000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 814, c_z = 11716.849000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 813, c_z = 11682.778000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 812, c_z = 11648.899000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 811, c_z = 11615.222000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 810, c_z = 11581.732000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 809, c_z = 11548.439000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 808, c_z = 11515.341000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 807, c_z = 11482.430000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 806, c_z = 11449.705000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 805, c_z = 11417.159000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 804, c_z = 11384.806000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 803, c_z = 11352.632000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 802, c_z = 11320.643000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 801, c_z = 11288.832000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 800, c_z = 11257.199000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 799, c_z = 11225.741000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 798, c_z = 11194.461000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 797, c_z = 11163.354000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 796, c_z = 11132.419000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 795, c_z = 11101.657000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 794, c_z = 11071.062000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 793, c_z = 11040.639000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 792, c_z = 11010.376000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 791, c_z = 10980.283000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 790, c_z = 10950.358000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 789, c_z = 10920.589000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 788, c_z = 10890.981000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 787, c_z = 10861.536000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 786, c_z = 10832.251000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 785, c_z = 10803.124000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 784, c_z = 10774.149000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 783, c_z = 10745.331000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 782, c_z = 10716.669000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 781, c_z = 10688.154000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 780, c_z = 10659.794000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 779, c_z = 10631.583000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 778, c_z = 10603.522000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 777, c_z = 10575.608000, iteraciones = 3 ) show
+grestore
+newpath
+59 8750 moveto
+56 8750 lineto
+56 -1750 lineto
+59 -1750 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 20 20
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 776, c_z = 10547.844000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 775, c_z = 10520.224000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 774, c_z = 10492.745000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 773, c_z = 10465.410000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 772, c_z = 10438.217000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 771, c_z = 10411.169000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 770, c_z = 10384.257000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 769, c_z = 10357.484000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 768, c_z = 10330.850000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 767, c_z = 10304.350000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 766, c_z = 10277.989000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 765, c_z = 10251.761000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 764, c_z = 10225.666000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 763, c_z = 10199.705000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 762, c_z = 10173.875000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 761, c_z = 10148.174000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 760, c_z = 10122.605000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 759, c_z = 10097.160000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 758, c_z = 10071.848000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 757, c_z = 10046.658000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 756, c_z = 10021.598000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 755, c_z = 9996.661400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 754, c_z = 9971.843800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 753, c_z = 9947.155500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 752, c_z = 9922.585300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 751, c_z = 9898.138900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 750, c_z = 9873.809800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 749, c_z = 9849.604400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 748, c_z = 9825.513800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 747, c_z = 9801.540200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 746, c_z = 9777.685500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 745, c_z = 9753.947700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 744, c_z = 9730.321000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 743, c_z = 9706.811700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 742, c_z = 9683.413600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 741, c_z = 9660.129300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 740, c_z = 9636.956900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 739, c_z = 9613.893900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 738, c_z = 9590.941100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 737, c_z = 9568.098500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 736, c_z = 9545.363000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 735, c_z = 9522.737600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 734, c_z = 9500.220200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 733, c_z = 9477.807500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 732, c_z = 9455.499700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 731, c_z = 9433.295800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 730, c_z = 9411.195900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 729, c_z = 9389.200300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 728, c_z = 9367.309900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 727, c_z = 9345.518200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 726, c_z = 9323.829100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 725, c_z = 9302.238500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 724, c_z = 9280.748100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 723, c_z = 9259.358300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 722, c_z = 9238.066100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 721, c_z = 9216.871400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 720, c_z = 9195.775600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 719, c_z = 9174.773500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 718, c_z = 9153.867800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 717, c_z = 9133.057500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 716, c_z = 9112.342700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 715, c_z = 9091.719600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 714, c_z = 9071.191400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 713, c_z = 9050.754300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 712, c_z = 9030.409800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 711, c_z = 9010.154300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 710, c_z = 8989.993500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 709, c_z = 8969.920100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 708, c_z = 8949.938000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 707, c_z = 8930.041900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 706, c_z = 8910.237400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 705, c_z = 8890.516600, iteraciones = 3 ) show
+grestore
+newpath
+59 9398 moveto
+56 9398 lineto
+56 -1102 lineto
+59 -1102 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 21 21
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 704, c_z = 8870.887700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 703, c_z = 8851.343300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 702, c_z = 8831.882300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 701, c_z = 8812.508000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 700, c_z = 8793.218200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 699, c_z = 8774.015100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 698, c_z = 8754.894000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 697, c_z = 8735.855100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 696, c_z = 8716.899400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 695, c_z = 8698.027500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 694, c_z = 8679.237800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 693, c_z = 8660.525100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 692, c_z = 8641.898400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 691, c_z = 8623.345900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 690, c_z = 8604.875300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 689, c_z = 8586.486200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 569 moveto
+(  t = 688, c_z = 8568.171200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 560 moveto
+(  t = 687, c_z = 8549.935300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 551 moveto
+(  t = 686, c_z = 8531.777300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 542 moveto
+(  t = 685, c_z = 8513.699000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 533 moveto
+(  t = 684, c_z = 8495.693400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 524 moveto
+(  t = 683, c_z = 8477.763700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 515 moveto
+(  t = 682, c_z = 8459.911000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 506 moveto
+(  t = 681, c_z = 8442.135100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 497 moveto
+(  t = 680, c_z = 8424.432100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 488 moveto
+(  t = 679, c_z = 8406.801800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 479 moveto
+(  t = 678, c_z = 8389.248100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 470 moveto
+(  t = 677, c_z = 8371.765100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 461 moveto
+(  t = 676, c_z = 8354.354100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 452 moveto
+(  t = 675, c_z = 8337.016100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 443 moveto
+(  t = 674, c_z = 8319.751400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 434 moveto
+(  t = 673, c_z = 8302.559000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 425 moveto
+(  t = 672, c_z = 8285.434100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 416 moveto
+(  t = 671, c_z = 8268.382700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 407 moveto
+(  t = 670, c_z = 8251.398500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 398 moveto
+(  t = 669, c_z = 8234.485500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 389 moveto
+(  t = 668, c_z = 8217.642700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 380 moveto
+(  t = 667, c_z = 8200.866800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 371 moveto
+(  t = 666, c_z = 8184.158900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 362 moveto
+(  t = 665, c_z = 8167.522100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 353 moveto
+(  t = 664, c_z = 8150.950600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 344 moveto
+(  t = 663, c_z = 8134.446600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 335 moveto
+(  t = 662, c_z = 8118.007100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 326 moveto
+(  t = 661, c_z = 8101.636300, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 317 moveto
+(  t = 660, c_z = 8085.331800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 308 moveto
+(  t = 659, c_z = 8069.090700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 299 moveto
+(  t = 658, c_z = 8052.916900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 290 moveto
+(  t = 657, c_z = 8036.807200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 281 moveto
+(  t = 656, c_z = 8020.761600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 272 moveto
+(  t = 655, c_z = 8004.779900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 263 moveto
+(  t = 654, c_z = 7988.860700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 254 moveto
+(  t = 653, c_z = 7973.004900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 245 moveto
+(  t = 652, c_z = 7957.214100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 236 moveto
+(  t = 651, c_z = 7941.483600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 227 moveto
+(  t = 650, c_z = 7925.817900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 218 moveto
+(  t = 649, c_z = 7910.211100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 209 moveto
+(  t = 648, c_z = 7894.665800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 200 moveto
+(  t = 647, c_z = 7879.183100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 191 moveto
+(  t = 646, c_z = 7863.758200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 182 moveto
+(  t = 645, c_z = 7848.397500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 173 moveto
+(  t = 644, c_z = 7833.094200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 164 moveto
+(  t = 643, c_z = 7817.849900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 155 moveto
+(  t = 642, c_z = 7802.666500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 146 moveto
+(  t = 641, c_z = 7787.541200, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 137 moveto
+(  t = 640, c_z = 7772.474800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 128 moveto
+(  t = 639, c_z = 7757.467000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 119 moveto
+(  t = 638, c_z = 7742.515100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 110 moveto
+(  t = 637, c_z = 7727.622100, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 101 moveto
+(  t = 636, c_z = 7712.785800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 92 moveto
+(  t = 635, c_z = 7698.006800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 83 moveto
+(  t = 634, c_z = 7683.284900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 74 moveto
+(  t = 633, c_z = 7668.619100, iteraciones = 3 ) show
+grestore
+newpath
+59 10046 moveto
+56 10046 lineto
+56 -454 lineto
+59 -454 lineto
+stroke
+grestore
+ grestore showpage
+%%Page: 22 22
+ gsave  newpath
+54 720 moveto
+504 0 rlineto
+0 -648 rlineto
+-504 0 rlineto
+0 648 rlineto
+closepath clip newpath
+gsave
+0 setgray
+0 setlinewidth
+solid
+10 /Courier-Maple fsf
+gsave
+0 0 1 stc
+64 713 moveto
+(  t = 632, c_z = 7654.007600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 704 moveto
+(  t = 631, c_z = 7639.451600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 695 moveto
+(  t = 630, c_z = 7624.953500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 686 moveto
+(  t = 629, c_z = 7610.507800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 677 moveto
+(  t = 628, c_z = 7596.117700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 668 moveto
+(  t = 627, c_z = 7581.781800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 659 moveto
+(  t = 626, c_z = 7567.499800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 650 moveto
+(  t = 625, c_z = 7553.271700, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 641 moveto
+(  t = 624, c_z = 7539.097900, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 632 moveto
+(  t = 623, c_z = 7524.976400, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 623 moveto
+(  t = 622, c_z = 7510.907500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 614 moveto
+(  t = 621, c_z = 7496.891600, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 605 moveto
+(  t = 620, c_z = 7482.927800, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 596 moveto
+(  t = 619, c_z = 7469.015500, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 587 moveto
+(  t = 618, c_z = 7455.155000, iteraciones = 3 ) show
+grestore
+gsave
+0 0 1 stc
+64 578 moveto
+(  t = 617, c_z = 7441.344600, iteraciones = 3 ) show
+grestore
+
+ gsave
+10 dict begin
+/showpage {} def 
+27.500000 -12.000000 translate 
+1.000000 1.000000 scale 
+%!PS-Adobe-3.0 EPSF-2.0
+%%Title: Maple plot
+%%Creator: Maple 
+%%Pages:  1
+%%BoundingBox: 107 242 459 549 
+%%DocumentNeededResources: font Helvetica
+%%EndComments
+20 dict begin
+gsave
+/drawborder false def
+/m {moveto} def
+/l {lineto} def
+/C {setrgbcolor} def
+/Y /setcmykcolor where { %%ifelse Use built-in operator
+       /setcmykcolor get
+   }{ %%ifelse Emulate setcmykcolor with setrgbcolor
+       { %%def
+           1 sub 3 { %%repeat
+               3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+           } repeat setrgbcolor
+       } bind
+   } ifelse def
+/G {setgray} def
+/S {stroke} def
+/NP {newpath} def
+%%%%This draws a filled polygon and avoids bugs/features
+%%%%   of some postscript interpreters
+%%%%GHOSTSCRIPT: has a bug in reversepath - removing
+%%%%the call to reversepath is a sufficient work around
+/P {gsave fill grestore reversepath stroke} def
+%%%%This function is needed for drawing text.  It takes two arguments: a
+%%%%string and a rotation. It outputs width and height.
+/stringbbox {
+    gsave NP 0 0 m    % Set origin for easy calculations.
+    dup rotate exch   % Set orientation, and put string on top.
+    false charpath flattenpath
+    0 exch sub rotate % Undo rotation.
+    pathbbox 4 2 roll pop pop  % Get dimens. of our string.
+    1.1 mul cvi exch 1.1 mul cvi exch % Pad some.
+    grestore} def
+/thin 3 def
+/medium 7 def
+/thick 16 def
+/boundarythick 20 def % thichess of bounding box
+%%IncludeResource: font Helvetica
+114.000000 204.000000 translate
+/defaultTitleFont {/Helvetica findfont 266 scalefont setfont} def
+/defaultFont {/Helvetica findfont 162 scalefont setfont} def
+0.0768 0.0768 scale
+1 setlinejoin
+1 setlinecap
+0.0 setgray
+/inch {72 mul} def
+/fheight 0.35 inch neg def
+    0     0     0     1 Y
+medium setlinewidth
+[] 0 setdash defaultFont
+NP 580 2929 m 576 2929 l
+S
+NP 583 2929 m 580 2929 l
+S
+NP 587 2929 m 583 2929 l
+S
+NP 590 2929 m 587 2929 l
+S
+NP 594 2929 m 590 2929 l
+S
+NP 597 2929 m 594 2929 l
+S
+NP 600 2929 m 597 2929 l
+S
+NP 604 2929 m 600 2929 l
+S
+NP 607 2929 m 604 2929 l
+S
+NP 611 2929 m 607 2929 l
+S
+NP 614 2929 m 611 2929 l
+S
+NP 618 2929 m 614 2929 l
+S
+NP 621 2929 m 618 2929 l
+S
+NP 624 2929 m 621 2929 l
+S
+NP 628 2929 m 624 2929 l
+S
+NP 631 2929 m 628 2929 l
+S
+NP 635 2929 m 631 2929 l
+S
+NP 638 2929 m 635 2929 l
+S
+NP 642 2929 m 638 2929 l
+S
+NP 645 2929 m 642 2929 l
+S
+NP 649 2929 m 645 2929 l
+S
+NP 652 2929 m 649 2929 l
+S
+NP 655 2929 m 652 2929 l
+S
+NP 659 2929 m 655 2929 l
+S
+NP 662 2929 m 659 2929 l
+S
+NP 666 2929 m 662 2929 l
+S
+NP 669 2929 m 666 2929 l
+S
+NP 673 2929 m 669 2929 l
+S
+NP 676 2929 m 673 2929 l
+S
+NP 679 2929 m 676 2929 l
+S
+NP 683 2929 m 679 2929 l
+S
+NP 686 2929 m 683 2929 l
+S
+NP 690 2929 m 686 2929 l
+S
+NP 693 2929 m 690 2929 l
+S
+NP 697 2929 m 693 2929 l
+S
+NP 700 2929 m 697 2929 l
+S
+NP 704 2929 m 700 2929 l
+S
+NP 707 2929 m 704 2929 l
+S
+NP 710 2929 m 707 2929 l
+S
+NP 714 2929 m 710 2929 l
+S
+NP 717 2929 m 714 2929 l
+S
+NP 721 2929 m 717 2929 l
+S
+NP 724 2929 m 721 2929 l
+S
+NP 728 2929 m 724 2929 l
+S
+NP 731 2929 m 728 2929 l
+S
+NP 734 2929 m 731 2929 l
+S
+NP 738 2929 m 734 2929 l
+S
+NP 741 2929 m 738 2929 l
+S
+NP 745 2929 m 741 2929 l
+S
+NP 748 2929 m 745 2929 l
+S
+NP 752 2929 m 748 2929 l
+S
+NP 755 2929 m 752 2929 l
+S
+NP 758 2929 m 755 2929 l
+S
+NP 762 2929 m 758 2929 l
+S
+NP 765 2929 m 762 2929 l
+S
+NP 769 2929 m 765 2929 l
+S
+NP 772 2929 m 769 2929 l
+S
+NP 776 2929 m 772 2929 l
+S
+NP 779 2929 m 776 2929 l
+S
+NP 783 2929 m 779 2929 l
+S
+NP 786 2929 m 783 2929 l
+S
+NP 789 2929 m 786 2929 l
+S
+NP 793 2929 m 789 2929 l
+S
+NP 796 2929 m 793 2929 l
+S
+NP 800 2929 m 796 2929 l
+S
+NP 803 2929 m 800 2929 l
+S
+NP 807 2929 m 803 2929 l
+S
+NP 810 2929 m 807 2929 l
+S
+NP 813 2929 m 810 2929 l
+S
+NP 817 2929 m 813 2929 l
+S
+NP 820 2929 m 817 2929 l
+S
+NP 824 2929 m 820 2929 l
+S
+NP 827 2929 m 824 2929 l
+S
+NP 831 2929 m 827 2929 l
+S
+NP 834 2929 m 831 2929 l
+S
+NP 838 2929 m 834 2929 l
+S
+NP 841 2929 m 838 2929 l
+S
+NP 844 2929 m 841 2929 l
+S
+NP 848 2929 m 844 2929 l
+S
+NP 851 2929 m 848 2929 l
+S
+NP 855 2929 m 851 2929 l
+S
+NP 858 2929 m 855 2929 l
+S
+NP 862 2929 m 858 2929 l
+S
+NP 865 2929 m 862 2929 l
+S
+NP 868 2929 m 865 2929 l
+S
+NP 872 2929 m 868 2929 l
+S
+NP 875 2929 m 872 2929 l
+S
+NP 879 2929 m 875 2929 l
+S
+NP 882 2929 m 879 2929 l
+S
+NP 886 2929 m 882 2929 l
+S
+NP 889 2929 m 886 2929 l
+S
+NP 892 2929 m 889 2929 l
+S
+NP 896 2929 m 892 2929 l
+S
+NP 899 2929 m 896 2929 l
+S
+NP 903 2929 m 899 2929 l
+S
+NP 906 2929 m 903 2929 l
+S
+NP 910 2929 m 906 2929 l
+S
+NP 913 2929 m 910 2929 l
+S
+NP 917 2929 m 913 2929 l
+S
+NP 920 2929 m 917 2929 l
+S
+NP 923 2929 m 920 2929 l
+S
+NP 927 2929 m 923 2929 l
+S
+NP 930 2929 m 927 2929 l
+S
+NP 934 2929 m 930 2929 l
+S
+NP 937 2929 m 934 2929 l
+S
+NP 941 2929 m 937 2929 l
+S
+NP 944 2929 m 941 2929 l
+S
+NP 947 2929 m 944 2929 l
+S
+NP 951 2929 m 947 2929 l
+S
+NP 954 2929 m 951 2929 l
+S
+NP 958 2929 m 954 2929 l
+S
+NP 961 2929 m 958 2929 l
+S
+NP 965 2929 m 961 2929 l
+S
+NP 968 2929 m 965 2929 l
+S
+NP 972 2929 m 968 2929 l
+S
+NP 975 2929 m 972 2929 l
+S
+NP 978 2929 m 975 2929 l
+S
+NP 982 2929 m 978 2929 l
+S
+NP 985 2929 m 982 2929 l
+S
+NP 989 2929 m 985 2929 l
+S
+NP 992 2929 m 989 2929 l
+S
+NP 996 2929 m 992 2929 l
+S
+NP 999 2929 m 996 2929 l
+S
+NP 1002 2929 m 999 2929 l
+S
+NP 1006 2929 m 1002 2929 l
+S
+NP 1009 2929 m 1006 2929 l
+S
+NP 1013 2929 m 1009 2929 l
+S
+NP 1016 2929 m 1013 2929 l
+S
+NP 1020 2929 m 1016 2929 l
+S
+NP 1023 2929 m 1020 2929 l
+S
+NP 1026 2929 m 1023 2929 l
+S
+NP 1030 2929 m 1026 2929 l
+S
+NP 1033 2929 m 1030 2929 l
+S
+NP 1037 2929 m 1033 2929 l
+S
+NP 1040 2929 m 1037 2929 l
+S
+NP 1044 2929 m 1040 2929 l
+S
+NP 1047 2929 m 1044 2929 l
+S
+NP 1051 2929 m 1047 2929 l
+S
+NP 1054 2929 m 1051 2929 l
+S
+NP 1057 2929 m 1054 2929 l
+S
+NP 1061 2929 m 1057 2929 l
+S
+NP 1064 2929 m 1061 2929 l
+S
+NP 1068 2929 m 1064 2929 l
+S
+NP 1071 2929 m 1068 2929 l
+S
+NP 1075 2929 m 1071 2929 l
+S
+NP 1078 2929 m 1075 2929 l
+S
+NP 1081 2929 m 1078 2929 l
+S
+NP 1085 2929 m 1081 2929 l
+S
+NP 1088 2929 m 1085 2929 l
+S
+NP 1092 2929 m 1088 2929 l
+S
+NP 1095 2929 m 1092 2929 l
+S
+NP 1099 2929 m 1095 2929 l
+S
+NP 1102 2929 m 1099 2929 l
+S
+NP 1106 2929 m 1102 2929 l
+S
+NP 1109 2929 m 1106 2929 l
+S
+NP 1112 2929 m 1109 2929 l
+S
+NP 1116 2929 m 1112 2929 l
+S
+NP 1119 2929 m 1116 2929 l
+S
+NP 1123 2929 m 1119 2929 l
+S
+NP 1126 2929 m 1123 2929 l
+S
+NP 1130 2929 m 1126 2929 l
+S
+NP 1133 2929 m 1130 2929 l
+S
+NP 1136 2929 m 1133 2929 l
+S
+NP 1140 2929 m 1136 2929 l
+S
+NP 1143 2929 m 1140 2929 l
+S
+NP 1147 2929 m 1143 2929 l
+S
+NP 1150 2929 m 1147 2929 l
+S
+NP 1154 2929 m 1150 2929 l
+S
+NP 1157 2929 m 1154 2929 l
+S
+NP 1160 2929 m 1157 2929 l
+S
+NP 1164 2929 m 1160 2929 l
+S
+NP 1167 2929 m 1164 2929 l
+S
+NP 1171 2929 m 1167 2929 l
+S
+NP 1174 2929 m 1171 2929 l
+S
+NP 1178 2929 m 1174 2929 l
+S
+NP 1181 2929 m 1178 2929 l
+S
+NP 1185 2929 m 1181 2929 l
+S
+NP 1188 2929 m 1185 2929 l
+S
+NP 1191 2929 m 1188 2929 l
+S
+NP 1195 2929 m 1191 2929 l
+S
+NP 1198 2929 m 1195 2929 l
+S
+NP 1202 2929 m 1198 2929 l
+S
+NP 1205 2929 m 1202 2929 l
+S
+NP 1209 2929 m 1205 2929 l
+S
+NP 1212 2929 m 1209 2929 l
+S
+NP 1215 2929 m 1212 2929 l
+S
+NP 1219 2929 m 1215 2929 l
+S
+NP 1222 2929 m 1219 2929 l
+S
+NP 1226 2929 m 1222 2929 l
+S
+NP 1229 2929 m 1226 2929 l
+S
+NP 1233 2929 m 1229 2929 l
+S
+NP 1236 2929 m 1233 2929 l
+S
+NP 1240 2929 m 1236 2929 l
+S
+NP 1243 2929 m 1240 2929 l
+S
+NP 1246 2929 m 1243 2929 l
+S
+NP 1250 2929 m 1246 2929 l
+S
+NP 1253 2929 m 1250 2929 l
+S
+NP 1257 2929 m 1253 2929 l
+S
+NP 1260 2929 m 1257 2929 l
+S
+NP 1264 2929 m 1260 2929 l
+S
+NP 1267 2929 m 1264 2929 l
+S
+NP 1270 2929 m 1267 2929 l
+S
+NP 1274 2929 m 1270 2929 l
+S
+NP 1277 2929 m 1274 2929 l
+S
+NP 1281 2929 m 1277 2929 l
+S
+NP 1284 2929 m 1281 2929 l
+S
+NP 1288 2929 m 1284 2929 l
+S
+NP 1291 2929 m 1288 2929 l
+S
+NP 1294 2929 m 1291 2929 l
+S
+NP 1298 2929 m 1294 2929 l
+S
+NP 1301 2929 m 1298 2929 l
+S
+NP 1305 2929 m 1301 2929 l
+S
+NP 1308 2929 m 1305 2929 l
+S
+NP 1312 2929 m 1308 2929 l
+S
+NP 1315 2929 m 1312 2929 l
+S
+NP 1319 2929 m 1315 2929 l
+S
+NP 1322 2929 m 1319 2929 l
+S
+NP 1325 2929 m 1322 2929 l
+S
+NP 1329 2929 m 1325 2929 l
+S
+NP 1332 2929 m 1329 2929 l
+S
+NP 1336 2929 m 1332 2929 l
+S
+NP 1339 2929 m 1336 2929 l
+S
+NP 1343 2929 m 1339 2929 l
+S
+NP 1346 2929 m 1343 2929 l
+S
+NP 1349 2929 m 1346 2929 l
+S
+NP 1353 2929 m 1349 2929 l
+S
+NP 1356 2929 m 1353 2929 l
+S
+NP 1360 2929 m 1356 2929 l
+S
+NP 1363 2929 m 1360 2929 l
+S
+NP 1367 2929 m 1363 2929 l
+S
+NP 1370 2929 m 1367 2929 l
+S
+NP 1374 2929 m 1370 2929 l
+S
+NP 1377 2929 m 1374 2929 l
+S
+NP 1380 2929 m 1377 2929 l
+S
+NP 1384 2929 m 1380 2929 l
+S
+NP 1387 2929 m 1384 2929 l
+S
+NP 1391 2929 m 1387 2929 l
+S
+NP 1394 2929 m 1391 2929 l
+S
+NP 1398 2929 m 1394 2929 l
+S
+NP 1401 2929 m 1398 2929 l
+S
+NP 1404 2929 m 1401 2929 l
+S
+NP 1408 2929 m 1404 2929 l
+S
+NP 1411 2929 m 1408 2929 l
+S
+NP 1415 2929 m 1411 2929 l
+S
+NP 1418 2929 m 1415 2929 l
+S
+NP 1422 2930 m 1418 2929 l
+S
+NP 1425 2930 m 1422 2930 l
+S
+NP 1428 2930 m 1425 2930 l
+S
+NP 1432 2930 m 1428 2930 l
+S
+NP 1435 2930 m 1432 2930 l
+S
+NP 1439 2930 m 1435 2930 l
+S
+NP 1442 2930 m 1439 2930 l
+S
+NP 1446 2930 m 1442 2930 l
+S
+NP 1449 2930 m 1446 2930 l
+S
+NP 1453 2930 m 1449 2930 l
+S
+NP 1456 2930 m 1453 2930 l
+S
+NP 1459 2930 m 1456 2930 l
+S
+NP 1463 2930 m 1459 2930 l
+S
+NP 1466 2930 m 1463 2930 l
+S
+NP 1470 2930 m 1466 2930 l
+S
+NP 1473 2930 m 1470 2930 l
+S
+NP 1477 2930 m 1473 2930 l
+S
+NP 1480 2930 m 1477 2930 l
+S
+NP 1483 2930 m 1480 2930 l
+S
+NP 1487 2930 m 1483 2930 l
+S
+NP 1490 2930 m 1487 2930 l
+S
+NP 1494 2930 m 1490 2930 l
+S
+NP 1497 2930 m 1494 2930 l
+S
+NP 1501 2930 m 1497 2930 l
+S
+NP 1504 2930 m 1501 2930 l
+S
+NP 1507 2930 m 1504 2930 l
+S
+NP 1511 2930 m 1507 2930 l
+S
+NP 1514 2930 m 1511 2930 l
+S
+NP 1518 2930 m 1514 2930 l
+S
+NP 1521 2930 m 1518 2930 l
+S
+NP 1525 2930 m 1521 2930 l
+S
+NP 1528 2930 m 1525 2930 l
+S
+NP 1532 2930 m 1528 2930 l
+S
+NP 1535 2930 m 1532 2930 l
+S
+NP 1538 2930 m 1535 2930 l
+S
+NP 1542 2930 m 1538 2930 l
+S
+NP 1545 2930 m 1542 2930 l
+S
+NP 1549 2930 m 1545 2930 l
+S
+NP 1552 2930 m 1549 2930 l
+S
+NP 1556 2930 m 1552 2930 l
+S
+NP 1559 2930 m 1556 2930 l
+S
+NP 1562 2930 m 1559 2930 l
+S
+NP 1566 2930 m 1562 2930 l
+S
+NP 1569 2930 m 1566 2930 l
+S
+NP 1573 2930 m 1569 2930 l
+S
+NP 1576 2930 m 1573 2930 l
+S
+NP 1580 2930 m 1576 2930 l
+S
+NP 1583 2930 m 1580 2930 l
+S
+NP 1587 2930 m 1583 2930 l
+S
+NP 1590 2930 m 1587 2930 l
+S
+NP 1593 2930 m 1590 2930 l
+S
+NP 1597 2930 m 1593 2930 l
+S
+NP 1600 2930 m 1597 2930 l
+S
+NP 1604 2930 m 1600 2930 l
+S
+NP 1607 2930 m 1604 2930 l
+S
+NP 1611 2930 m 1607 2930 l
+S
+NP 1614 2930 m 1611 2930 l
+S
+NP 1617 2930 m 1614 2930 l
+S
+NP 1621 2930 m 1617 2930 l
+S
+NP 1624 2930 m 1621 2930 l
+S
+NP 1628 2930 m 1624 2930 l
+S
+NP 1631 2930 m 1628 2930 l
+S
+NP 1635 2930 m 1631 2930 l
+S
+NP 1638 2930 m 1635 2930 l
+S
+NP 1641 2930 m 1638 2930 l
+S
+NP 1645 2930 m 1641 2930 l
+S
+NP 1648 2930 m 1645 2930 l
+S
+NP 1652 2930 m 1648 2930 l
+S
+NP 1655 2930 m 1652 2930 l
+S
+NP 1659 2930 m 1655 2930 l
+S
+NP 1662 2930 m 1659 2930 l
+S
+NP 1666 2930 m 1662 2930 l
+S
+NP 1669 2930 m 1666 2930 l
+S
+NP 1672 2930 m 1669 2930 l
+S
+NP 1676 2930 m 1672 2930 l
+S
+NP 1679 2930 m 1676 2930 l
+S
+NP 1683 2930 m 1679 2930 l
+S
+NP 1686 2930 m 1683 2930 l
+S
+NP 1690 2930 m 1686 2930 l
+S
+NP 1693 2930 m 1690 2930 l
+S
+NP 1696 2930 m 1693 2930 l
+S
+NP 1700 2930 m 1696 2930 l
+S
+NP 1703 2930 m 1700 2930 l
+S
+NP 1707 2930 m 1703 2930 l
+S
+NP 1710 2930 m 1707 2930 l
+S
+NP 1714 2930 m 1710 2930 l
+S
+NP 1717 2930 m 1714 2930 l
+S
+NP 1721 2930 m 1717 2930 l
+S
+NP 1724 2930 m 1721 2930 l
+S
+NP 1727 2930 m 1724 2930 l
+S
+NP 1731 2930 m 1727 2930 l
+S
+NP 1734 2930 m 1731 2930 l
+S
+NP 1738 2930 m 1734 2930 l
+S
+NP 1741 2930 m 1738 2930 l
+S
+NP 1745 2930 m 1741 2930 l
+S
+NP 1748 2930 m 1745 2930 l
+S
+NP 1751 2930 m 1748 2930 l
+S
+NP 1755 2930 m 1751 2930 l
+S
+NP 1758 2930 m 1755 2930 l
+S
+NP 1762 2930 m 1758 2930 l
+S
+NP 1765 2930 m 1762 2930 l
+S
+NP 1769 2930 m 1765 2930 l
+S
+NP 1772 2930 m 1769 2930 l
+S
+NP 1775 2930 m 1772 2930 l
+S
+NP 1779 2930 m 1775 2930 l
+S
+NP 1782 2930 m 1779 2930 l
+S
+NP 1786 2930 m 1782 2930 l
+S
+NP 1789 2930 m 1786 2930 l
+S
+NP 1793 2930 m 1789 2930 l
+S
+NP 1796 2930 m 1793 2930 l
+S
+NP 1800 2930 m 1796 2930 l
+S
+NP 1803 2930 m 1800 2930 l
+S
+NP 1806 2930 m 1803 2930 l
+S
+NP 1810 2930 m 1806 2930 l
+S
+NP 1813 2930 m 1810 2930 l
+S
+NP 1817 2930 m 1813 2930 l
+S
+NP 1820 2930 m 1817 2930 l
+S
+NP 1824 2930 m 1820 2930 l
+S
+NP 1827 2930 m 1824 2930 l
+S
+NP 1830 2930 m 1827 2930 l
+S
+NP 1834 2930 m 1830 2930 l
+S
+NP 1837 2930 m 1834 2930 l
+S
+NP 1841 2930 m 1837 2930 l
+S
+NP 1844 2930 m 1841 2930 l
+S
+NP 1848 2930 m 1844 2930 l
+S
+NP 1851 2930 m 1848 2930 l
+S
+NP 1855 2930 m 1851 2930 l
+S
+NP 1858 2930 m 1855 2930 l
+S
+NP 1861 2930 m 1858 2930 l
+S
+NP 1865 2930 m 1861 2930 l
+S
+NP 1868 2930 m 1865 2930 l
+S
+NP 1872 2930 m 1868 2930 l
+S
+NP 1875 2930 m 1872 2930 l
+S
+NP 1879 2930 m 1875 2930 l
+S
+NP 1882 2930 m 1879 2930 l
+S
+NP 1885 2930 m 1882 2930 l
+S
+NP 1889 2930 m 1885 2930 l
+S
+NP 1892 2930 m 1889 2930 l
+S
+NP 1896 2930 m 1892 2930 l
+S
+NP 1899 2930 m 1896 2930 l
+S
+NP 1903 2930 m 1899 2930 l
+S
+NP 1906 2930 m 1903 2930 l
+S
+NP 1909 2930 m 1906 2930 l
+S
+NP 1913 2930 m 1909 2930 l
+S
+NP 1916 2930 m 1913 2930 l
+S
+NP 1920 2931 m 1916 2930 l
+S
+NP 1923 2931 m 1920 2931 l
+S
+NP 1927 2931 m 1923 2931 l
+S
+NP 1930 2931 m 1927 2931 l
+S
+NP 1934 2931 m 1930 2931 l
+S
+NP 1937 2931 m 1934 2931 l
+S
+NP 1940 2931 m 1937 2931 l
+S
+NP 1944 2931 m 1940 2931 l
+S
+NP 1947 2931 m 1944 2931 l
+S
+NP 1951 2931 m 1947 2931 l
+S
+NP 1954 2931 m 1951 2931 l
+S
+NP 1958 2931 m 1954 2931 l
+S
+NP 1961 2931 m 1958 2931 l
+S
+NP 1964 2931 m 1961 2931 l
+S
+NP 1968 2931 m 1964 2931 l
+S
+NP 1971 2931 m 1968 2931 l
+S
+NP 1975 2931 m 1971 2931 l
+S
+NP 1978 2931 m 1975 2931 l
+S
+NP 1982 2931 m 1978 2931 l
+S
+NP 1985 2931 m 1982 2931 l
+S
+NP 1989 2931 m 1985 2931 l
+S
+NP 1992 2931 m 1989 2931 l
+S
+NP 1995 2931 m 1992 2931 l
+S
+NP 1999 2931 m 1995 2931 l
+S
+NP 2002 2931 m 1999 2931 l
+S
+NP 2006 2931 m 2002 2931 l
+S
+NP 2009 2931 m 2006 2931 l
+S
+NP 2013 2931 m 2009 2931 l
+S
+NP 2016 2931 m 2013 2931 l
+S
+NP 2019 2931 m 2016 2931 l
+S
+NP 2023 2931 m 2019 2931 l
+S
+NP 2026 2931 m 2023 2931 l
+S
+NP 2030 2931 m 2026 2931 l
+S
+NP 2033 2931 m 2030 2931 l
+S
+NP 2037 2931 m 2033 2931 l
+S
+NP 2040 2931 m 2037 2931 l
+S
+NP 2043 2931 m 2040 2931 l
+S
+NP 2047 2931 m 2043 2931 l
+S
+NP 2050 2931 m 2047 2931 l
+S
+NP 2054 2931 m 2050 2931 l
+S
+NP 2057 2931 m 2054 2931 l
+S
+NP 2061 2931 m 2057 2931 l
+S
+NP 2064 2931 m 2061 2931 l
+S
+NP 2068 2931 m 2064 2931 l
+S
+NP 2071 2931 m 2068 2931 l
+S
+NP 2074 2931 m 2071 2931 l
+S
+NP 2078 2931 m 2074 2931 l
+S
+NP 2081 2931 m 2078 2931 l
+S
+NP 2085 2931 m 2081 2931 l
+S
+NP 2088 2932 m 2085 2931 l
+S
+NP 2092 2932 m 2088 2932 l
+S
+NP 2095 2932 m 2092 2932 l
+S
+NP 2098 2932 m 2095 2932 l
+S
+NP 2102 2932 m 2098 2932 l
+S
+NP 2105 2932 m 2102 2932 l
+S
+NP 2109 2932 m 2105 2932 l
+S
+NP 2112 2932 m 2109 2932 l
+S
+NP 2116 2932 m 2112 2932 l
+S
+NP 2119 2932 m 2116 2932 l
+S
+NP 2123 2932 m 2119 2932 l
+S
+NP 2126 2932 m 2123 2932 l
+S
+NP 2129 2932 m 2126 2932 l
+S
+NP 2133 2932 m 2129 2932 l
+S
+NP 2136 2932 m 2133 2932 l
+S
+NP 2140 2932 m 2136 2932 l
+S
+NP 2143 2932 m 2140 2932 l
+S
+NP 2147 2932 m 2143 2932 l
+S
+NP 2150 2932 m 2147 2932 l
+S
+NP 2153 2932 m 2150 2932 l
+S
+NP 2157 2932 m 2153 2932 l
+S
+NP 2160 2932 m 2157 2932 l
+S
+NP 2164 2932 m 2160 2932 l
+S
+NP 2167 2932 m 2164 2932 l
+S
+NP 2171 2932 m 2167 2932 l
+S
+NP 2174 2933 m 2171 2932 l
+S
+NP 2177 2933 m 2174 2933 l
+S
+NP 2181 2933 m 2177 2933 l
+S
+NP 2184 2933 m 2181 2933 l
+S
+NP 2188 2933 m 2184 2933 l
+S
+NP 2191 2933 m 2188 2933 l
+S
+NP 2195 2933 m 2191 2933 l
+S
+NP 2198 2933 m 2195 2933 l
+S
+NP 2202 2933 m 2198 2933 l
+S
+NP 2205 2933 m 2202 2933 l
+S
+NP 2208 2933 m 2205 2933 l
+S
+NP 2212 2933 m 2208 2933 l
+S
+NP 2215 2933 m 2212 2933 l
+S
+NP 2219 2933 m 2215 2933 l
+S
+NP 2222 2933 m 2219 2933 l
+S
+NP 2226 2934 m 2222 2933 l
+S
+NP 2229 2934 m 2226 2934 l
+S
+NP 2232 2934 m 2229 2934 l
+S
+NP 2236 2934 m 2232 2934 l
+S
+NP 2239 2934 m 2236 2934 l
+S
+NP 2243 2934 m 2239 2934 l
+S
+NP 2246 2934 m 2243 2934 l
+S
+NP 2250 2934 m 2246 2934 l
+S
+NP 2253 2934 m 2250 2934 l
+S
+NP 2257 2934 m 2253 2934 l
+S
+NP 2260 2935 m 2257 2934 l
+S
+NP 2263 2935 m 2260 2935 l
+S
+NP 2267 2935 m 2263 2935 l
+S
+NP 2270 2935 m 2267 2935 l
+S
+NP 2274 2935 m 2270 2935 l
+S
+NP 2277 2935 m 2274 2935 l
+S
+NP 2281 2935 m 2277 2935 l
+S
+NP 2284 2936 m 2281 2935 l
+S
+NP 2287 2936 m 2284 2936 l
+S
+NP 2291 2936 m 2287 2936 l
+S
+NP 2294 2936 m 2291 2936 l
+S
+NP 2298 2936 m 2294 2936 l
+S
+NP 2301 2937 m 2298 2936 l
+S
+NP 2305 2937 m 2301 2937 l
+S
+NP 2308 2937 m 2305 2937 l
+S
+NP 2311 2937 m 2308 2937 l
+S
+NP 2315 2937 m 2311 2937 l
+S
+NP 2318 2938 m 2315 2937 l
+S
+NP 2322 2938 m 2318 2938 l
+S
+NP 2325 2938 m 2322 2938 l
+S
+NP 2329 2939 m 2325 2938 l
+S
+NP 2332 2939 m 2329 2939 l
+S
+NP 2336 2939 m 2332 2939 l
+S
+NP 2339 2940 m 2336 2939 l
+S
+NP 2342 2940 m 2339 2940 l
+S
+NP 2346 2941 m 2342 2940 l
+S
+NP 2349 2941 m 2346 2941 l
+S
+NP 2353 2942 m 2349 2941 l
+S
+NP 2356 2942 m 2353 2942 l
+S
+NP 2360 2943 m 2356 2942 l
+S
+NP 2363 2944 m 2360 2943 l
+S
+NP 2366 2945 m 2363 2944 l
+S
+NP 2370 2946 m 2366 2945 l
+S
+NP 2373 2947 m 2370 2946 l
+S
+NP 2377 2948 m 2373 2947 l
+S
+NP 2380 2949 m 2377 2948 l
+S
+NP 2384 2950 m 2380 2949 l
+S
+NP 2387 2952 m 2384 2950 l
+S
+NP 2391 2954 m 2387 2952 l
+S
+NP 2394 2956 m 2391 2954 l
+S
+NP 2397 2959 m 2394 2956 l
+S
+NP 2401 2963 m 2397 2959 l
+S
+NP 2404 2967 m 2401 2963 l
+S
+NP 2408 2973 m 2404 2967 l
+S
+NP 2411 2980 m 2408 2973 l
+S
+NP 2415 2991 m 2411 2980 l
+S
+NP 2418 3007 m 2415 2991 l
+S
+NP 2421 3035 m 2418 3007 l
+S
+NP 2425 3091 m 2421 3035 l
+S
+NP 2428 3278 m 2425 3091 l
+S
+NP 2432 576 m 2428 3278 l
+S
+NP 2435 2659 m 2432 576 l
+S
+NP 2439 2785 m 2435 2659 l
+S
+NP 2442 2831 m 2439 2785 l
+S
+NP 2445 2855 m 2442 2831 l
+S
+NP 2449 2869 m 2445 2855 l
+S
+NP 2452 2879 m 2449 2869 l
+S
+NP 2456 2886 m 2452 2879 l
+S
+NP 2459 2891 m 2456 2886 l
+S
+NP 2463 2895 m 2459 2891 l
+S
+NP 2466 2898 m 2463 2895 l
+S
+NP 2470 2901 m 2466 2898 l
+S
+NP 2473 2903 m 2470 2901 l
+S
+NP 2476 2905 m 2473 2903 l
+S
+NP 2480 2907 m 2476 2905 l
+S
+NP 2483 2908 m 2480 2907 l
+S
+NP 2487 2910 m 2483 2908 l
+S
+NP 2490 2911 m 2487 2910 l
+S
+NP 2494 2912 m 2490 2911 l
+S
+NP 2497 2913 m 2494 2912 l
+S
+NP 2500 2913 m 2497 2913 l
+S
+NP 2504 2914 m 2500 2913 l
+S
+NP 2507 2915 m 2504 2914 l
+S
+NP 2511 2915 m 2507 2915 l
+S
+NP 2514 2916 m 2511 2915 l
+S
+NP 2518 2916 m 2514 2916 l
+S
+NP 2521 2917 m 2518 2916 l
+S
+NP 2524 2917 m 2521 2917 l
+S
+NP 2528 2918 m 2524 2917 l
+S
+NP 2531 2918 m 2528 2918 l
+S
+NP 2535 2918 m 2531 2918 l
+S
+NP 2538 2919 m 2535 2918 l
+S
+NP 2542 2919 m 2538 2919 l
+S
+NP 2545 2919 m 2542 2919 l
+S
+NP 2549 2920 m 2545 2919 l
+S
+NP 2552 2920 m 2549 2920 l
+S
+NP 2555 2920 m 2552 2920 l
+S
+NP 2559 2920 m 2555 2920 l
+S
+NP 2562 2920 m 2559 2920 l
+S
+NP 2566 2921 m 2562 2920 l
+S
+NP 2569 2921 m 2566 2921 l
+S
+NP 2573 2921 m 2569 2921 l
+S
+NP 2576 2921 m 2573 2921 l
+S
+NP 2579 2921 m 2576 2921 l
+S
+NP 2583 2922 m 2579 2921 l
+S
+NP 2586 2922 m 2583 2922 l
+S
+NP 2590 2922 m 2586 2922 l
+S
+NP 2593 2922 m 2590 2922 l
+S
+NP 2597 2922 m 2593 2922 l
+S
+NP 2600 2922 m 2597 2922 l
+S
+NP 2604 2922 m 2600 2922 l
+S
+NP 2607 2923 m 2604 2922 l
+S
+NP 2610 2923 m 2607 2923 l
+S
+NP 2614 2923 m 2610 2923 l
+S
+NP 2617 2923 m 2614 2923 l
+S
+NP 2621 2923 m 2617 2923 l
+S
+NP 2624 2923 m 2621 2923 l
+S
+NP 2628 2923 m 2624 2923 l
+S
+NP 2631 2923 m 2628 2923 l
+S
+NP 2634 2923 m 2631 2923 l
+S
+NP 2638 2923 m 2634 2923 l
+S
+NP 2641 2923 m 2638 2923 l
+S
+NP 2645 2924 m 2641 2923 l
+S
+NP 2648 2924 m 2645 2924 l
+S
+NP 2652 2924 m 2648 2924 l
+S
+NP 2655 2924 m 2652 2924 l
+S
+NP 2658 2924 m 2655 2924 l
+S
+NP 2662 2924 m 2658 2924 l
+S
+NP 2665 2924 m 2662 2924 l
+S
+NP 2669 2924 m 2665 2924 l
+S
+NP 2672 2924 m 2669 2924 l
+S
+NP 2676 2924 m 2672 2924 l
+S
+NP 2679 2924 m 2676 2924 l
+S
+NP 2683 2924 m 2679 2924 l
+S
+NP 2686 2924 m 2683 2924 l
+S
+NP 2689 2924 m 2686 2924 l
+S
+NP 2693 2924 m 2689 2924 l
+S
+NP 2696 2925 m 2693 2924 l
+S
+NP 2700 2925 m 2696 2925 l
+S
+NP 2703 2925 m 2700 2925 l
+S
+NP 2707 2925 m 2703 2925 l
+S
+NP 2710 2925 m 2707 2925 l
+S
+NP 2713 2925 m 2710 2925 l
+S
+NP 2717 2925 m 2713 2925 l
+S
+NP 2720 2925 m 2717 2925 l
+S
+NP 2724 2925 m 2720 2925 l
+S
+NP 2727 2925 m 2724 2925 l
+S
+NP 2731 2925 m 2727 2925 l
+S
+NP 2734 2925 m 2731 2925 l
+S
+NP 2738 2925 m 2734 2925 l
+S
+NP 2741 2925 m 2738 2925 l
+S
+NP 2744 2925 m 2741 2925 l
+S
+NP 2748 2925 m 2744 2925 l
+S
+NP 2751 2925 m 2748 2925 l
+S
+NP 2755 2925 m 2751 2925 l
+S
+NP 2758 2925 m 2755 2925 l
+S
+NP 2762 2925 m 2758 2925 l
+S
+NP 2765 2925 m 2762 2925 l
+S
+NP 2768 2925 m 2765 2925 l
+S
+NP 2772 2925 m 2768 2925 l
+S
+NP 2775 2925 m 2772 2925 l
+S
+NP 2779 2925 m 2775 2925 l
+S
+NP 2782 2925 m 2779 2925 l
+S
+NP 2786 2926 m 2782 2925 l
+S
+NP 2789 2926 m 2786 2926 l
+S
+NP 2792 2926 m 2789 2926 l
+S
+NP 2796 2926 m 2792 2926 l
+S
+NP 2799 2926 m 2796 2926 l
+S
+NP 2803 2926 m 2799 2926 l
+S
+NP 2806 2926 m 2803 2926 l
+S
+NP 2810 2926 m 2806 2926 l
+S
+NP 2813 2926 m 2810 2926 l
+S
+NP 2817 2926 m 2813 2926 l
+S
+NP 2820 2926 m 2817 2926 l
+S
+NP 2823 2926 m 2820 2926 l
+S
+NP 2827 2926 m 2823 2926 l
+S
+NP 2830 2926 m 2827 2926 l
+S
+NP 2834 2926 m 2830 2926 l
+S
+NP 2837 2926 m 2834 2926 l
+S
+NP 2841 2926 m 2837 2926 l
+S
+NP 2844 2926 m 2841 2926 l
+S
+NP 2847 2926 m 2844 2926 l
+S
+NP 2851 2926 m 2847 2926 l
+S
+NP 2854 2926 m 2851 2926 l
+S
+NP 2858 2926 m 2854 2926 l
+S
+NP 2861 2926 m 2858 2926 l
+S
+NP 2865 2926 m 2861 2926 l
+S
+NP 2868 2926 m 2865 2926 l
+S
+NP 2872 2926 m 2868 2926 l
+S
+NP 2875 2926 m 2872 2926 l
+S
+NP 2878 2926 m 2875 2926 l
+S
+NP 2882 2926 m 2878 2926 l
+S
+NP 2885 2926 m 2882 2926 l
+S
+NP 2889 2926 m 2885 2926 l
+S
+NP 2892 2926 m 2889 2926 l
+S
+NP 2896 2926 m 2892 2926 l
+S
+NP 2899 2926 m 2896 2926 l
+S
+NP 2902 2926 m 2899 2926 l
+S
+NP 2906 2926 m 2902 2926 l
+S
+NP 2909 2926 m 2906 2926 l
+S
+NP 2913 2926 m 2909 2926 l
+S
+NP 2916 2926 m 2913 2926 l
+S
+NP 2920 2926 m 2916 2926 l
+S
+NP 2923 2926 m 2920 2926 l
+S
+NP 2926 2926 m 2923 2926 l
+S
+NP 2930 2926 m 2926 2926 l
+S
+NP 2933 2926 m 2930 2926 l
+S
+NP 2937 2926 m 2933 2926 l
+S
+NP 2940 2926 m 2937 2926 l
+S
+NP 2944 2926 m 2940 2926 l
+S
+NP 2947 2926 m 2944 2926 l
+S
+NP 2951 2926 m 2947 2926 l
+S
+NP 2954 2926 m 2951 2926 l
+S
+NP 2957 2926 m 2954 2926 l
+S
+NP 2961 2926 m 2957 2926 l
+S
+NP 2964 2927 m 2961 2926 l
+S
+NP 2968 2927 m 2964 2927 l
+S
+NP 2971 2927 m 2968 2927 l
+S
+NP 2975 2927 m 2971 2927 l
+S
+NP 2978 2927 m 2975 2927 l
+S
+NP 2981 2927 m 2978 2927 l
+S
+NP 2985 2927 m 2981 2927 l
+S
+NP 2988 2927 m 2985 2927 l
+S
+NP 2992 2927 m 2988 2927 l
+S
+NP 2995 2927 m 2992 2927 l
+S
+NP 2999 2927 m 2995 2927 l
+S
+NP 3002 2927 m 2999 2927 l
+S
+NP 3006 2927 m 3002 2927 l
+S
+NP 3009 2927 m 3006 2927 l
+S
+NP 3012 2927 m 3009 2927 l
+S
+NP 3016 2927 m 3012 2927 l
+S
+NP 3019 2927 m 3016 2927 l
+S
+NP 3023 2927 m 3019 2927 l
+S
+NP 3026 2927 m 3023 2927 l
+S
+NP 3030 2927 m 3026 2927 l
+S
+NP 3033 2927 m 3030 2927 l
+S
+NP 3036 2927 m 3033 2927 l
+S
+NP 3040 2927 m 3036 2927 l
+S
+NP 3043 2927 m 3040 2927 l
+S
+NP 3047 2927 m 3043 2927 l
+S
+NP 3050 2927 m 3047 2927 l
+S
+NP 3054 2927 m 3050 2927 l
+S
+NP 3057 2927 m 3054 2927 l
+S
+NP 3060 2927 m 3057 2927 l
+S
+NP 3064 2927 m 3060 2927 l
+S
+NP 3067 2927 m 3064 2927 l
+S
+NP 3071 2927 m 3067 2927 l
+S
+NP 3074 2927 m 3071 2927 l
+S
+NP 3078 2927 m 3074 2927 l
+S
+NP 3081 2927 m 3078 2927 l
+S
+NP 3085 2927 m 3081 2927 l
+S
+NP 3088 2927 m 3085 2927 l
+S
+NP 3091 2927 m 3088 2927 l
+S
+NP 3095 2927 m 3091 2927 l
+S
+NP 3098 2927 m 3095 2927 l
+S
+NP 3102 2927 m 3098 2927 l
+S
+NP 3105 2927 m 3102 2927 l
+S
+NP 3109 2927 m 3105 2927 l
+S
+NP 3112 2927 m 3109 2927 l
+S
+NP 3115 2927 m 3112 2927 l
+S
+NP 3119 2927 m 3115 2927 l
+S
+NP 3122 2927 m 3119 2927 l
+S
+NP 3126 2927 m 3122 2927 l
+S
+NP 3129 2927 m 3126 2927 l
+S
+NP 3133 2927 m 3129 2927 l
+S
+NP 3136 2927 m 3133 2927 l
+S
+NP 3140 2927 m 3136 2927 l
+S
+NP 3143 2927 m 3140 2927 l
+S
+NP 3146 2927 m 3143 2927 l
+S
+NP 3150 2927 m 3146 2927 l
+S
+NP 3153 2927 m 3150 2927 l
+S
+NP 3157 2927 m 3153 2927 l
+S
+NP 3160 2927 m 3157 2927 l
+S
+NP 3164 2927 m 3160 2927 l
+S
+NP 3167 2927 m 3164 2927 l
+S
+NP 3170 2927 m 3167 2927 l
+S
+NP 3174 2927 m 3170 2927 l
+S
+NP 3177 2927 m 3174 2927 l
+S
+NP 3181 2927 m 3177 2927 l
+S
+NP 3184 2927 m 3181 2927 l
+S
+NP 3188 2927 m 3184 2927 l
+S
+NP 3191 2927 m 3188 2927 l
+S
+NP 3194 2927 m 3191 2927 l
+S
+NP 3198 2927 m 3194 2927 l
+S
+NP 3201 2927 m 3198 2927 l
+S
+NP 3205 2927 m 3201 2927 l
+S
+NP 3208 2927 m 3205 2927 l
+S
+NP 3212 2927 m 3208 2927 l
+S
+NP 3215 2927 m 3212 2927 l
+S
+NP 3219 2927 m 3215 2927 l
+S
+NP 3222 2927 m 3219 2927 l
+S
+NP 3225 2927 m 3222 2927 l
+S
+NP 3229 2927 m 3225 2927 l
+S
+NP 3232 2927 m 3229 2927 l
+S
+NP 3236 2927 m 3232 2927 l
+S
+NP 3239 2927 m 3236 2927 l
+S
+NP 3243 2927 m 3239 2927 l
+S
+NP 3246 2927 m 3243 2927 l
+S
+NP 3249 2927 m 3246 2927 l
+S
+NP 3253 2927 m 3249 2927 l
+S
+NP 3256 2927 m 3253 2927 l
+S
+NP 3260 2927 m 3256 2927 l
+S
+NP 3263 2927 m 3260 2927 l
+S
+NP 3267 2927 m 3263 2927 l
+S
+NP 3270 2927 m 3267 2927 l
+S
+NP 3274 2927 m 3270 2927 l
+S
+NP 3277 2927 m 3274 2927 l
+S
+NP 3280 2927 m 3277 2927 l
+S
+NP 3284 2927 m 3280 2927 l
+S
+NP 3287 2927 m 3284 2927 l
+S
+NP 3291 2927 m 3287 2927 l
+S
+NP 3294 2927 m 3291 2927 l
+S
+NP 3298 2927 m 3294 2927 l
+S
+NP 3301 2927 m 3298 2927 l
+S
+NP 3304 2927 m 3301 2927 l
+S
+NP 3308 2927 m 3304 2927 l
+S
+NP 3311 2927 m 3308 2927 l
+S
+NP 3315 2927 m 3311 2927 l
+S
+NP 3318 2927 m 3315 2927 l
+S
+NP 3322 2927 m 3318 2927 l
+S
+NP 3325 2927 m 3322 2927 l
+S
+NP 3328 2927 m 3325 2927 l
+S
+NP 3332 2927 m 3328 2927 l
+S
+NP 3335 2927 m 3332 2927 l
+S
+NP 3339 2927 m 3335 2927 l
+S
+NP 3342 2927 m 3339 2927 l
+S
+NP 3346 2927 m 3342 2927 l
+S
+NP 3349 2927 m 3346 2927 l
+S
+NP 3353 2927 m 3349 2927 l
+S
+NP 3356 2927 m 3353 2927 l
+S
+NP 3359 2927 m 3356 2927 l
+S
+NP 3363 2927 m 3359 2927 l
+S
+NP 3366 2927 m 3363 2927 l
+S
+NP 3370 2927 m 3366 2927 l
+S
+NP 3373 2927 m 3370 2927 l
+S
+NP 3377 2927 m 3373 2927 l
+S
+NP 3380 2927 m 3377 2927 l
+S
+NP 3383 2927 m 3380 2927 l
+S
+NP 3387 2927 m 3383 2927 l
+S
+NP 3390 2927 m 3387 2927 l
+S
+NP 3394 2927 m 3390 2927 l
+S
+NP 3397 2927 m 3394 2927 l
+S
+NP 3401 2927 m 3397 2927 l
+S
+NP 3404 2927 m 3401 2927 l
+S
+NP 3408 2927 m 3404 2927 l
+S
+NP 3411 2927 m 3408 2927 l
+S
+NP 3414 2927 m 3411 2927 l
+S
+NP 3418 2927 m 3414 2927 l
+S
+NP 3421 2927 m 3418 2927 l
+S
+NP 3425 2927 m 3421 2927 l
+S
+NP 3428 2927 m 3425 2927 l
+S
+NP 3432 2927 m 3428 2927 l
+S
+NP 3435 2927 m 3432 2927 l
+S
+NP 3438 2927 m 3435 2927 l
+S
+NP 3442 2927 m 3438 2927 l
+S
+NP 3445 2927 m 3442 2927 l
+S
+NP 3449 2927 m 3445 2927 l
+S
+NP 3452 2927 m 3449 2927 l
+S
+NP 3456 2927 m 3452 2927 l
+S
+NP 3459 2927 m 3456 2927 l
+S
+NP 3462 2927 m 3459 2927 l
+S
+NP 3466 2927 m 3462 2927 l
+S
+NP 3469 2927 m 3466 2927 l
+S
+NP 3473 2927 m 3469 2927 l
+S
+NP 3476 2927 m 3473 2927 l
+S
+NP 3480 2927 m 3476 2927 l
+S
+NP 3483 2927 m 3480 2927 l
+S
+NP 3487 2927 m 3483 2927 l
+S
+NP 3490 2927 m 3487 2927 l
+S
+NP 3493 2927 m 3490 2927 l
+S
+NP 3497 2927 m 3493 2927 l
+S
+NP 3500 2927 m 3497 2927 l
+S
+NP 3504 2927 m 3500 2927 l
+S
+NP 3507 2927 m 3504 2927 l
+S
+NP 3511 2927 m 3507 2927 l
+S
+NP 3514 2928 m 3511 2927 l
+S
+NP 3517 2928 m 3514 2928 l
+S
+NP 3521 2928 m 3517 2928 l
+S
+NP 3524 2928 m 3521 2928 l
+S
+NP 3528 2928 m 3524 2928 l
+S
+NP 3531 2928 m 3528 2928 l
+S
+NP 3535 2928 m 3531 2928 l
+S
+NP 3538 2928 m 3535 2928 l
+S
+NP 3542 2928 m 3538 2928 l
+S
+NP 3545 2928 m 3542 2928 l
+S
+NP 3548 2928 m 3545 2928 l
+S
+NP 3552 2928 m 3548 2928 l
+S
+NP 3555 2928 m 3552 2928 l
+S
+NP 3559 2928 m 3555 2928 l
+S
+NP 3562 2928 m 3559 2928 l
+S
+NP 3566 2928 m 3562 2928 l
+S
+NP 3569 2928 m 3566 2928 l
+S
+NP 3572 2928 m 3569 2928 l
+S
+NP 3576 2928 m 3572 2928 l
+S
+NP 3579 2928 m 3576 2928 l
+S
+NP 3583 2928 m 3579 2928 l
+S
+NP 3586 2928 m 3583 2928 l
+S
+NP 3590 2928 m 3586 2928 l
+S
+NP 3593 2928 m 3590 2928 l
+S
+NP 3596 2928 m 3593 2928 l
+S
+NP 3600 2928 m 3596 2928 l
+S
+NP 3603 2928 m 3600 2928 l
+S
+NP 3607 2928 m 3603 2928 l
+S
+NP 3610 2928 m 3607 2928 l
+S
+NP 3614 2928 m 3610 2928 l
+S
+NP 3617 2928 m 3614 2928 l
+S
+NP 3621 2928 m 3617 2928 l
+S
+NP 3624 2928 m 3621 2928 l
+S
+NP 3627 2928 m 3624 2928 l
+S
+NP 3631 2928 m 3627 2928 l
+S
+NP 3634 2928 m 3631 2928 l
+S
+NP 3638 2928 m 3634 2928 l
+S
+NP 3641 2928 m 3638 2928 l
+S
+NP 3645 2928 m 3641 2928 l
+S
+NP 3648 2928 m 3645 2928 l
+S
+NP 3651 2928 m 3648 2928 l
+S
+NP 3655 2928 m 3651 2928 l
+S
+NP 3658 2928 m 3655 2928 l
+S
+NP 3662 2928 m 3658 2928 l
+S
+NP 3665 2928 m 3662 2928 l
+S
+NP 3669 2928 m 3665 2928 l
+S
+NP 3672 2928 m 3669 2928 l
+S
+NP 3675 2928 m 3672 2928 l
+S
+NP 3679 2928 m 3675 2928 l
+S
+NP 3682 2928 m 3679 2928 l
+S
+NP 3686 2928 m 3682 2928 l
+S
+NP 3689 2928 m 3686 2928 l
+S
+NP 3693 2928 m 3689 2928 l
+S
+NP 3696 2928 m 3693 2928 l
+S
+NP 3700 2928 m 3696 2928 l
+S
+NP 3703 2928 m 3700 2928 l
+S
+NP 3706 2928 m 3703 2928 l
+S
+NP 3710 2928 m 3706 2928 l
+S
+NP 3713 2928 m 3710 2928 l
+S
+NP 3717 2928 m 3713 2928 l
+S
+NP 3720 2928 m 3717 2928 l
+S
+NP 3724 2928 m 3720 2928 l
+S
+NP 3727 2928 m 3724 2928 l
+S
+NP 3730 2928 m 3727 2928 l
+S
+NP 3734 2928 m 3730 2928 l
+S
+NP 3737 2928 m 3734 2928 l
+S
+NP 3741 2928 m 3737 2928 l
+S
+NP 3744 2928 m 3741 2928 l
+S
+NP 3748 2928 m 3744 2928 l
+S
+NP 3751 2928 m 3748 2928 l
+S
+NP 3755 2928 m 3751 2928 l
+S
+NP 3758 2928 m 3755 2928 l
+S
+NP 3761 2928 m 3758 2928 l
+S
+NP 3765 2928 m 3761 2928 l
+S
+NP 3768 2928 m 3765 2928 l
+S
+NP 3772 2928 m 3768 2928 l
+S
+NP 3775 2928 m 3772 2928 l
+S
+NP 3779 2928 m 3775 2928 l
+S
+NP 3782 2928 m 3779 2928 l
+S
+NP 3785 2928 m 3782 2928 l
+S
+NP 3789 2928 m 3785 2928 l
+S
+NP 3792 2928 m 3789 2928 l
+S
+NP 3796 2928 m 3792 2928 l
+S
+NP 3799 2928 m 3796 2928 l
+S
+NP 3803 2928 m 3799 2928 l
+S
+NP 3806 2928 m 3803 2928 l
+S
+NP 3809 2928 m 3806 2928 l
+S
+NP 3813 2928 m 3809 2928 l
+S
+NP 3816 2928 m 3813 2928 l
+S
+NP 3820 2928 m 3816 2928 l
+S
+NP 3823 2928 m 3820 2928 l
+S
+NP 3827 2928 m 3823 2928 l
+S
+NP 3830 2928 m 3827 2928 l
+S
+NP 3834 2928 m 3830 2928 l
+S
+NP 3837 2928 m 3834 2928 l
+S
+NP 3840 2928 m 3837 2928 l
+S
+NP 3844 2928 m 3840 2928 l
+S
+NP 3847 2928 m 3844 2928 l
+S
+NP 3851 2928 m 3847 2928 l
+S
+NP 3854 2928 m 3851 2928 l
+S
+NP 3858 2928 m 3854 2928 l
+S
+NP 3861 2928 m 3858 2928 l
+S
+NP 3864 2928 m 3861 2928 l
+S
+NP 3868 2928 m 3864 2928 l
+S
+NP 3871 2928 m 3868 2928 l
+S
+NP 3875 2928 m 3871 2928 l
+S
+NP 3878 2928 m 3875 2928 l
+S
+NP 3882 2928 m 3878 2928 l
+S
+NP 3885 2928 m 3882 2928 l
+S
+NP 3889 2928 m 3885 2928 l
+S
+NP 3892 2928 m 3889 2928 l
+S
+NP 3895 2928 m 3892 2928 l
+S
+NP 3899 2928 m 3895 2928 l
+S
+NP 3902 2928 m 3899 2928 l
+S
+NP 3906 2928 m 3902 2928 l
+S
+NP 3909 2928 m 3906 2928 l
+S
+NP 3913 2928 m 3909 2928 l
+S
+NP 3916 2928 m 3913 2928 l
+S
+NP 3919 2928 m 3916 2928 l
+S
+NP 3923 2928 m 3919 2928 l
+S
+NP 3926 2928 m 3923 2928 l
+S
+NP 3930 2928 m 3926 2928 l
+S
+NP 3933 2928 m 3930 2928 l
+S
+NP 3937 2928 m 3933 2928 l
+S
+NP 3940 2928 m 3937 2928 l
+S
+NP 3943 2928 m 3940 2928 l
+S
+NP 3947 2928 m 3943 2928 l
+S
+NP 3950 2928 m 3947 2928 l
+S
+NP 3954 2928 m 3950 2928 l
+S
+NP 3957 2928 m 3954 2928 l
+S
+NP 3961 2928 m 3957 2928 l
+S
+NP 3964 2928 m 3961 2928 l
+S
+NP 3968 2928 m 3964 2928 l
+S
+NP 3971 2928 m 3968 2928 l
+S
+NP 3974 2928 m 3971 2928 l
+S
+NP 3978 2928 m 3974 2928 l
+S
+NP 3981 2928 m 3978 2928 l
+S
+NP 3985 2928 m 3981 2928 l
+S
+NP 3988 2928 m 3985 2928 l
+S
+NP 3992 2928 m 3988 2928 l
+S
+NP 3995 2928 m 3992 2928 l
+S
+NP 3998 2928 m 3995 2928 l
+S
+NP 4002 2928 m 3998 2928 l
+S
+NP 4005 2928 m 4002 2928 l
+S
+NP 4009 2928 m 4005 2928 l
+S
+NP 4012 2928 m 4009 2928 l
+S
+NP 4016 2928 m 4012 2928 l
+S
+NP 4019 2928 m 4016 2928 l
+S
+NP 4023 2928 m 4019 2928 l
+S
+NP 4026 2928 m 4023 2928 l
+S
+NP 4029 2928 m 4026 2928 l
+S
+NP 4033 2928 m 4029 2928 l
+S
+NP 4036 2928 m 4033 2928 l
+S
+NP 4040 2928 m 4036 2928 l
+S
+NP 4043 2928 m 4040 2928 l
+S
+NP 4047 2928 m 4043 2928 l
+S
+NP 4050 2928 m 4047 2928 l
+S
+NP 4053 2928 m 4050 2928 l
+S
+NP 4057 2928 m 4053 2928 l
+S
+NP 4060 2928 m 4057 2928 l
+S
+NP 4064 2928 m 4060 2928 l
+S
+NP 4067 2928 m 4064 2928 l
+S
+NP 4071 2928 m 4067 2928 l
+S
+NP 4074 2928 m 4071 2928 l
+S
+NP 4077 2928 m 4074 2928 l
+S
+NP 4081 2928 m 4077 2928 l
+S
+NP 4084 2928 m 4081 2928 l
+S
+NP 4088 2928 m 4084 2928 l
+S
+NP 4091 2928 m 4088 2928 l
+S
+NP 4095 2928 m 4091 2928 l
+S
+NP 4098 2928 m 4095 2928 l
+S
+NP 4102 2928 m 4098 2928 l
+S
+NP 4105 2928 m 4102 2928 l
+S
+NP 4108 2928 m 4105 2928 l
+S
+NP 4112 2928 m 4108 2928 l
+S
+NP 4115 2928 m 4112 2928 l
+S
+NP 4119 2928 m 4115 2928 l
+S
+NP 4122 2928 m 4119 2928 l
+S
+NP 4126 2928 m 4122 2928 l
+S
+NP 4129 2928 m 4126 2928 l
+S
+NP 4132 2928 m 4129 2928 l
+S
+NP 4136 2928 m 4132 2928 l
+S
+NP 4139 2928 m 4136 2928 l
+S
+NP 4143 2928 m 4139 2928 l
+S
+NP 4146 2928 m 4143 2928 l
+S
+NP 4150 2928 m 4146 2928 l
+S
+NP 4153 2928 m 4150 2928 l
+S
+NP 4157 2928 m 4153 2928 l
+S
+NP 4160 2928 m 4157 2928 l
+S
+NP 4163 2928 m 4160 2928 l
+S
+NP 4167 2928 m 4163 2928 l
+S
+NP 4170 2928 m 4167 2928 l
+S
+NP 4174 2928 m 4170 2928 l
+S
+NP 4177 2928 m 4174 2928 l
+S
+NP 4181 2928 m 4177 2928 l
+S
+NP 4184 2928 m 4181 2928 l
+S
+NP 4187 2928 m 4184 2928 l
+S
+NP 4191 2928 m 4187 2928 l
+S
+NP 4194 2928 m 4191 2928 l
+S
+NP 4198 2928 m 4194 2928 l
+S
+NP 4201 2928 m 4198 2928 l
+S
+NP 4205 2928 m 4201 2928 l
+S
+NP 4208 2928 m 4205 2928 l
+S
+NP 4211 2928 m 4208 2928 l
+S
+NP 4215 2928 m 4211 2928 l
+S
+NP 4218 2928 m 4215 2928 l
+S
+NP 4222 2928 m 4218 2928 l
+S
+NP 4225 2928 m 4222 2928 l
+S
+NP 4229 2928 m 4225 2928 l
+S
+NP 4232 2928 m 4229 2928 l
+S
+NP 4236 2928 m 4232 2928 l
+S
+NP 4239 2928 m 4236 2928 l
+S
+NP 4242 2928 m 4239 2928 l
+S
+NP 4246 2928 m 4242 2928 l
+S
+NP 4249 2928 m 4246 2928 l
+S
+NP 4253 2928 m 4249 2928 l
+S
+NP 4256 2928 m 4253 2928 l
+S
+NP 4260 2928 m 4256 2928 l
+S
+NP 4263 2928 m 4260 2928 l
+S
+NP 4266 2928 m 4263 2928 l
+S
+NP 4270 2928 m 4266 2928 l
+S
+NP 4273 2928 m 4270 2928 l
+S
+NP 4277 2928 m 4273 2928 l
+S
+NP 4280 2928 m 4277 2928 l
+S
+NP 4284 2928 m 4280 2928 l
+S
+NP 4287 2928 m 4284 2928 l
+S
+NP 4291 2928 m 4287 2928 l
+S
+NP 4294 2928 m 4291 2928 l
+S
+NP 4297 2928 m 4294 2928 l
+S
+NP 4301 2928 m 4297 2928 l
+S
+NP 4304 2928 m 4301 2928 l
+S
+NP 4308 2928 m 4304 2928 l
+S
+NP 4311 2928 m 4308 2928 l
+S
+NP 4315 2928 m 4311 2928 l
+S
+NP 4318 2928 m 4315 2928 l
+S
+NP 4321 2928 m 4318 2928 l
+S
+NP 4325 2928 m 4321 2928 l
+S
+NP 4328 2928 m 4325 2928 l
+S
+NP 4332 2928 m 4328 2928 l
+S
+NP 4335 2928 m 4332 2928 l
+S
+NP 4339 2928 m 4335 2928 l
+S
+NP 4342 2928 m 4339 2928 l
+S
+NP 4345 2928 m 4342 2928 l
+S
+NP 4349 2928 m 4345 2928 l
+S
+NP 4352 2928 m 4349 2928 l
+S
+NP 4356 2928 m 4352 2928 l
+S
+NP 4359 2928 m 4356 2928 l
+S
+NP 4363 2928 m 4359 2928 l
+S
+NP 4366 2928 m 4363 2928 l
+S
+NP 4370 2928 m 4366 2928 l
+S
+NP 4373 2928 m 4370 2928 l
+S
+NP 4376 2928 m 4373 2928 l
+S
+NP 4380 2928 m 4376 2928 l
+S
+NP 4383 2928 m 4380 2928 l
+S
+NP 4387 2928 m 4383 2928 l
+S
+NP 4390 2928 m 4387 2928 l
+S
+NP 4394 2928 m 4390 2928 l
+S
+NP 4397 2928 m 4394 2928 l
+S
+NP 4400 2928 m 4397 2928 l
+S
+NP 4404 2928 m 4400 2928 l
+S
+NP 4407 2928 m 4404 2928 l
+S
+NP 4411 2928 m 4407 2928 l
+S
+NP 4414 2928 m 4411 2928 l
+S
+NP 4418 4421 m 4414 2928 l
+S
+NP 4421 2270 m 4418 4421 l
+S
+medium setlinewidth
+NP 500 500 m 500 4499 l
+S
+thin setlinewidth
+NP 473 504 m 500 504 l
+S
+NP 446 655 m 500 655 l
+S
+NP 473 807 m 500 807 l
+S
+NP 473 958 m 500 958 l
+S
+NP 473 1110 m 500 1110 l
+S
+NP 473 1261 m 500 1261 l
+S
+NP 446 1413 m 500 1413 l
+S
+NP 473 1564 m 500 1564 l
+S
+NP 473 1716 m 500 1716 l
+S
+NP 473 1868 m 500 1868 l
+S
+NP 473 2019 m 500 2019 l
+S
+NP 446 2171 m 500 2171 l
+S
+NP 473 2322 m 500 2322 l
+S
+NP 473 2474 m 500 2474 l
+S
+NP 473 2625 m 500 2625 l
+S
+NP 473 2777 m 500 2777 l
+S
+NP 446 2928 m 500 2928 l
+S
+NP 473 3080 m 500 3080 l
+S
+NP 473 3232 m 500 3232 l
+S
+NP 473 3383 m 500 3383 l
+S
+NP 473 3535 m 500 3535 l
+S
+NP 446 3686 m 500 3686 l
+S
+NP 473 3838 m 500 3838 l
+S
+NP 473 3989 m 500 3989 l
+S
+NP 473 4141 m 500 4141 l
+S
+NP 473 4292 m 500 4292 l
+S
+NP 446 4444 m 500 4444 l
+S
+medium setlinewidth
+NP 500 2928 m 4500 2928 l
+S
+thin setlinewidth
+NP 518 2969 m 518 2928 l
+S
+NP 655 2949 m 655 2928 l
+S
+NP 793 2949 m 793 2928 l
+S
+NP 930 2949 m 930 2928 l
+S
+NP 1068 2949 m 1068 2928 l
+S
+NP 1205 2985 m 1205 2928 l
+S
+NP 1343 2949 m 1343 2928 l
+S
+NP 1480 2949 m 1480 2928 l
+S
+NP 1617 2949 m 1617 2928 l
+S
+NP 1755 2949 m 1755 2928 l
+S
+NP 1892 3001 m 1892 2928 l
+S
+NP 2030 2949 m 2030 2928 l
+S
+NP 2167 2949 m 2167 2928 l
+S
+NP 2305 2949 m 2305 2928 l
+S
+NP 2442 2949 m 2442 2928 l
+S
+NP 2579 3001 m 2579 2928 l
+S
+NP 2717 2949 m 2717 2928 l
+S
+NP 2854 2949 m 2854 2928 l
+S
+NP 2992 2949 m 2992 2928 l
+S
+NP 3129 2949 m 3129 2928 l
+S
+NP 3267 3001 m 3267 2928 l
+S
+NP 3404 2949 m 3404 2928 l
+S
+NP 3542 2949 m 3542 2928 l
+S
+NP 3679 2949 m 3679 2928 l
+S
+NP 3816 2949 m 3816 2928 l
+S
+NP 3954 3001 m 3954 2928 l
+S
+NP 4091 2949 m 4091 2928 l
+S
+NP 4229 2949 m 4229 2928 l
+S
+NP 4366 2949 m 4366 2928 l
+S
+medium setlinewidth
+(\2613e+07) dup 0 stringbbox 2 idiv 655 exch sub exch 423 exch sub exch m show
+(\2612e+07) dup 0 stringbbox 2 idiv 1413 exch sub exch 423 exch sub exch m show
+(\2611e+07) dup 0 stringbbox 2 idiv 2171 exch sub exch 423 exch sub exch m show
+(0) dup 0 stringbbox 2928 exch sub exch 423 exch sub exch m show
+(1e+07) dup 0 stringbbox 2 idiv 3686 exch sub exch 423 exch sub exch m show
+(2e+07) dup 0 stringbbox 2 idiv 4444 exch sub exch 423 exch sub exch m show
+(800) dup 0 stringbbox pop 3009 exch 2 idiv 1205 exch sub exch m show
+(1000) dup 0 stringbbox pop 3032 exch 2 idiv 1892 exch sub exch m show
+(1200) dup 0 stringbbox pop 3032 exch 2 idiv 2579 exch sub exch m show
+(1400) dup 0 stringbbox pop 3032 exch 2 idiv 3267 exch sub exch m show
+(1600) dup 0 stringbbox pop 3032 exch 2 idiv 3954 exch sub exch m show
+boundarythick setlinewidth
+% The following draws a box around the plot,
+% if the variable drawborder is true
+drawborder { 
+/bd boundarythick 2 idiv def
+[] 0 setdash 
+NP bd bd m bd 5000 bd sub l 
+5000 bd sub 5000 bd sub l 
+5000 bd sub bd l 
+bd bd l S
+} if % end of if to draw the border
+
+showpage
+grestore
+end
+%%EOF
+
+
+end
+grestore
+newpath
+59 10694 moveto
+56 10694 lineto
+56 194 lineto
+59 194 lineto
+stroke
+12 /Courier-Maple fsf
+gsave
+0 setgray
+64 182 moveto
+(> ) show
+grestore
+12 /Courier-Maple fsf
+newpath
+59 189 moveto
+56 189 lineto
+56 181 lineto
+59 181 lineto
+stroke
+grestore
+ grestore showpage
+%%Trailer
+%% END of Maple Session Output

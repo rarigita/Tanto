@@ -1,0 +1,282 @@
+> restart;with(geometry);with(plots);Digits:=30;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+[Interactive, animate, animate3d, animatecurve, arrow, changecoords, 
+
+  complexplot, complexplot3d, conformal, conformal3d, contourplot, 
+
+  contourplot3d, coordplot, coordplot3d, cylinderplot, densityplot, display, 
+
+  display3d, fieldplot, fieldplot3d, gradplot, gradplot3d, graphplot3d, 
+
+  implicitplot, implicitplot3d, inequal, interactive, interactiveparams, 
+
+  listcontplot, listcontplot3d, listdensityplot, listplot, listplot3d, 
+
+  loglogplot, logplot, matrixplot, multiple, odeplot, pareto, plotcompare, 
+
+  pointplot, pointplot3d, polarplot, polygonplot, polygonplot3d, 
+
+  polyhedra_supported, polyhedraplot, replot, rootlocus, semilogplot, 
+
+  setoptions, setoptions3d, spacecurve, sparsematrixplot, sphereplot, 
+
+  surfdata, textplot, textplot3d, tubeplot]
+                               30
+                               x
+                               y
+> distancia := proc( i )
+>   local r, s, t;
+> 
+>   r := (c_a*clave)/(clave-i*c_a);
+>   s := -(r - raiz);
+>   t := ((s*clave)-(c_a*clave))/(c_a*s);
+>   s := (c_a*clave)/(clave-t*c_a);
+> 
+>   point(P1,[i,r]):
+>   point(P2,[t,s]):
+> 
+>   return distance(P1,P2);
+> 
+> end proc:
+> 
+> distancia_div := proc( i, div )
+>   local r, s, t;
+> 
+>   r := (c_a*clave)/(clave-i*c_a);
+>   s := -(r - raiz);
+>   t := ((s*clave)-(c_a*clave))/(c_a*s);
+>   s := (c_a*clave)/(clave-t*c_a);
+> 
+>   point(P1,[i/div,r]):
+>   point(P2,[t/div,s]):
+> 
+>   return distance(P1,P2);
+> 
+> end proc:
+> 
+> lower := proc( left, right )
+>   local l, m_1, m, m1, r, new_left, middle, new_right, diff;
+> 
+>   new_left := left;
+>   new_right:= right;
+>   diff := new_right - new_left;
+> 
+>   if( diff < 4 ) then
+>     new_right := right + (4-diff);
+>     diff := new_right - new_left;
+>   end if;
+> 
+>   middle := round( new_left+((new_right-new_left)/2) );
+> 
+>   l  := distancia( new_left );
+>   m_1:= distancia( middle-1 );
+>   m  := distancia( middle );
+>   m1 := distancia( middle+1 );
+>   r  := distancia( new_right );
+> 
+>   if( diff = 4 ) then
+>     if( l < m_1 ) then 
+>       return [new_left,l]; 
+>     elif( m_1 < m ) then
+>       return [middle-1,m_1];
+>     elif( m < m1 ) then
+>       return [middle,m];
+>     elif( m1 < r ) then
+>       return [middle+1,m1]
+>     else
+>       return [new_right,r];
+>     end if;
+>   elif( (l < m_1) or (m_1 < m) ) then
+>     new_right:= middle-1;
+>     return lower( new_left, new_right );
+>   elif( (m_1 > m) and (m < m1) ) then
+>     return [middle,m];
+>   elif( (m > m1) and ( (m1 < r) or ( r < m1) ) ) then
+>     new_left := middle+1;
+>     return lower( new_left, new_right );
+>   end if;
+> 
+> end proc:
+> 
+> ask_one := proc( low, up )
+>   local res, l, u;
+> 
+>   l := distancia( low );
+>   u := distancia( up );
+> 
+>   if( l < u ) then
+>     res := evalf(u/l);
+>   else
+>     res := evalf(l/u);
+>   end if;
+> 
+>   return res;
+> 
+> end proc:
+> 
+> tanto11 := proc( p1, p2 )
+>   local d1, d2, t, i, low_below, low_over;
+>   global clave, raiz, a, c_a;
+>   clave := p1 * p2;
+>   raiz := evalf(sqrt(clave));
+> 
+>   print(p1,p2,clave,raiz);
+> 
+>   a  := evalf( clave / ( clave - raiz ) );
+>   c_a:= a * raiz;
+> 
+>   low_below := lower( 1, trunc(raiz) );
+>   low_over  := lower( trunc(raiz), clave );
+>   print( low_below );
+>   print( low_over );
+>   print( distancia_div( low_below[1], 2 ) );
+>   print( distancia_div( low_over[1], 2 ) );
+> 
+>   print( "-1", ask_one( low_below[1]-1, low_over[1]+1 ) );
+>   print( " 0", ask_one( low_below[1], low_over[1] ) );
+>   print( "+1", ask_one( low_below[1]+1, low_over[1]-1 ) );
+> 
+> end proc:
+> 
+> tanto11(3,11);
+           3, 11, 33, 5.74456264653802865985061146822
+              [1, 18.7458798622261846211370513706]
+             [13, 18.0090063375233911030601527744]
+                13.9183516196788619036512863822
+                14.9217028997438147986158037564
+             "-1", 1.81904653138583198505205269771
+             " 0", 1.04091694516023635252361956633
+             "+1", 1.10007802737699695037435208574
+> tanto11(7,23);
+          7, 23, 161, 12.6885775404495203801937727461
+              [4, 39.8998391171804467708017077028]
+             [30, 39.7799120098461906170283128862]
+                32.2043034636193138381927566967
+                32.9083832917125930959592845050
+             "-1", 1.09563516919236754815544283623
+             " 0", 1.00301476552548864858584373072
+             "+1", 1.03262255459878124749925142455
+> tanto11(23,61);
+         23, 61, 1403, 37.4566416006560844472448586154
+             [14, 117.570848466956976150545373010]
+             [90, 117.422395193439249441632912127]
+                95.9025081836070970222942892171
+                97.4858579859766894192280414259
+             "-1", 1.01405284551208063601921728211
+             " 0", 1.00126426712104763172240928095
+             "+1", 1.00198819433857681006467567704
+> tanto11(59,127);
+         59, 127, 7493, 86.5621164251429333084549727151
+             [35, 271.401290737714583171310237415]
+             [209, 271.362362693183941262500162061]
+                226.792444347627140405224502103
+                225.493201924843543931677216490
+             "-1", 1.00052756289111981682296433594
+             " 0", 1.00014345410374634721002650620
+             "+1", 1.00218899354991922818771320239
+> tanto11(1237,9743);
+     1237, 9743, 12052091, 3471.61216151804607080526185951
+            [1429, 10883.1036053368815906287831556]
+            [8426, 10883.1031739459585212486170706]
+                9039.50035759782485179032599988
+                9040.20311991693325485116646650
+             "-1", 1.00000115041570926631982880687
+             " 0", 1.00000003963859536883981528212
+             "+1", 1.00000045294065676964619475929
+> tanto11(101,103);
+        101, 103, 10403, 101.995097921419733298482352971
+             [41, 319.742965812389263787815226925]
+             [247, 319.744369838580114883980469256]
+                265.526147845940193535715213409
+                265.317286285654535962708528227
+             "-1", 1.00090005957515140473159564903
+             " 0", 1.00000439110892489473980619085
+             "+1", 1.00085829613443314919137908822
+> p1:=1634733645809253848443133883865090859841783670033092312181110852389333100104508151212118167511579;p2:=1900871281664822113126851573935413975471896789968515493666638539088027103802104498957191261465571;tanto11(p1,p2);
+p1 := 16347336458092538484431338838650908598417836700330923121811108523893331\
+
+  00104508151212118167511579
+p2 := 19008712816648221131268515739354139754718967899685154936666385390880271\
+
+  03802104498957191261465571
+16347336458092538484431338838650908598417836700330923121811108523893331001045\
+
+  08151212118167511579, 19008712816648221131268515739354139754718967899685154\
+
+  93666638539088027103802104498957191261465571, 31074182404900437213507500358\
+
+  885679300373460228427275457201619488232064405180815045563468296717232867824\
+
+  379162728380334154710731085019195485290073377248227835257423864540146917366\
+
+  02477652346609, 1.762787066122860943811705736776226385093299156422107330123\
+
+  170327876780025762012912130622946534606219861832977122921485408109320504914\
+
+  029737804930543186325554729631955454947006269084188528239879345888533284934\
+
+                 96
+  636752804775 10  
+
+  [                                                                           
+  [72623140868418184640332267754542848966823039216216300318718144370501243493\
+
+  8996397007256097281802, 5.5261338463985154262757504689098054757342777572074\
+
+  140240026212807726415861420408142356480496004511200000720000059793503273020\
+
+  142624967468487864189147562344461606936037096442598197200583623937197516804\
+
+                         96]
+  92649310569311800812 10  ]
+
+  [                                                                           
+  [42788265604212869085966819490236743004046595748937068946650685452998576681\
+
+  40482346989883544971523, 5.526133846398515426275750468909805475734277757207\
+
+  414024002621280772641586142040814235648049600451120000072000005979350327302\
+
+  014262496746848786418914756234446160693603709644259819720058362393719759170\
+
+                          96]
+  452156364943618750853 10  ]
+> 
+
+

@@ -1,0 +1,258 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Text Output" -1 6 
+1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 2 1 3 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }{PSTYLE "Maple Output" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 1 1 1 1 }1 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple O
+utput" -1 256 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 
+1 1 }1 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "Digits:=100;with(plo
+ts);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'DigitsG\"$+\"" }}{PARA 12 "
+" 1 "" {XPPMATH 20 "6#7Z%(animateG%*animate3dG%-animatecurveG%&arrowG%
+-changecoordsG%,complexplotG%.complexplot3dG%*conformalG%,conformal3dG
+%,contourplotG%.contourplot3dG%*coordplotG%,coordplot3dG%-cylinderplot
+G%,densityplotG%(displayG%*display3dG%*fieldplotG%,fieldplot3dG%)gradp
+lotG%+gradplot3dG%,graphplot3dG%-implicitplotG%/implicitplot3dG%(inequ
+alG%,interactiveG%-listcontplotG%/listcontplot3dG%0listdensityplotG%)l
+istplotG%+listplot3dG%+loglogplotG%(logplotG%+matrixplotG%(odeplotG%'p
+aretoG%,plotcompareG%*pointplotG%,pointplot3dG%*polarplotG%,polygonplo
+tG%.polygonplot3dG%4polyhedra_supportedG%.polyhedraplotG%'replotG%*roo
+tlocusG%,semilogplotG%+setoptionsG%-setoptions3dG%+spacecurveG%1sparse
+matrixplotG%+sphereplotG%)surfdataG%)textplotG%+textplot3dG%)tubeplotG
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 179 "Ahora jugamos solo con las r
+ectas o(x) y n(x) por que convergen hacia d(x)->c_d, osea la constante
+ de la recta d(x) que pasa por raiz de k y se junta con el primo mayor
+ en y(x)=x." }{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "t
+anto7 := proc( p1, p2, s, v )" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 80 "  \+
+global k,sq,ssq,a,c_a,b,c_b,p3_x,p3_y,p4_x,p4_y,p5_x,p5_y,p6_x,p6_y,p7
+_x,p7_y," }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 89 "         p8_x,p8_y,c,c_
+c,d,c_d,e,c_e,f,c_f,g,c_g,z,c_z,z2,c_z2,n,c_n,m,c_m,l,c_l,o,c_o,t," }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 85 "         Py,Psq,Pssq,Pa,Pb,Pp3,Pc,P
+d,Pe,Pf,Pg,Pn,Pl,Pm,Po,Pz,Pz2,Ptext,xrange,yrange;" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 15 "  k := p1 * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+25 "  sq := evalf( sqrt(k) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "  \+
+ssq := evalf( sqrt(sq) );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "  a :=
+  k / ( k - sq );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "  c_a := (a * \+
+sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "  b := (a-1);" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 15 "  c_b := (c_a);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "  d := p2 / (p2-sq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 16 "  c_d := d * sq;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "  e := (d
+-1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "  c_e := e * sq;" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "  f := (sq/2) / (sq - p1);" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 16 "  c_f := f * p1;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "  g := (sq/2) / (p2 - sq);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "  c_g := g * p2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+25 "  p3_x :=(c_b+c_a)/(a+b);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "  \+
+p3_y := a * p3_x - c_a;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  p4_x :
+= p3_x;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "  p4_y := -p3_y;" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "  p6_x := sq - (p3_x - sq);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "  p6_y := p3_y;" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 15 "  p5_x := p6_x;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+16 "  p5_y := -p6_y;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 68 "  printf(\"  p1=%d, p2=%d, k=%d, sq(k)=%f s
+sq=%f\\n\", p1,p2,k,sq,ssq);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "  p
+rintf(\"  a(x) = %f x - %f\\n\", a, c_a);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 42 "  printf(\"  b(x) = -%f x + %f\\n\", b, c_b);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+18 "  xrange:=0..p3_x;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  yrange:
+=-c_d..c_d;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "  Pa:=plot(a*x-c_a,x
+=xrange,y=yrange,colour=green);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  a := (k/v) / ( (k/v) - sq );
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "  c_a := a * sq;" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 29 "  l := p3_y / ( p3_x - c_a );" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 17 "  c_l := l * c_a;" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 27 "  z := p6_y / ( p6_x - a );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+15 "  c_z := z * a;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 28 "  z2 := (c_e + p6_y) / p6_x;" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 14 "  c_z2 := c_e;" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "  o := p6_y / ( (sq/s) -
+ p6_x );" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "  c_o := o * (sq/s);" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "  n := p3_y / ( (k/s) - p3_x);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "  c_n := n * (k/s);" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 17 "  m := c_o - c_n;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "  p7_x := (c_l \+
+- c_n) / (-n+l);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "  p7_y := -l * \+
+p7_x + c_l;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "  p8_x := (c_z - c_o
+) / (-o+z);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "  p8_y := -o * p8_x \+
++ c_o;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 59 "  printf(\"\\n  d(x) = %f x - %f <----- objetivo\\n\"
+, d, c_d);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "  printf(\"  e(x) = -
+%f x + %f <----- objetivo\\n\", e, c_e);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 57 "  printf(\"  f(x) = %f x - %f <----- objetivo\\n\", f
+, c_f);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 60 "  printf(\"  g(x) = -%f \+
+x + %f <----- objetivo\\n\\n\", g, c_g);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 59 "  printf(\"  n(
+x) = -%f x + %f , n(%f)= 0 \\n\", n,c_n,c_n/n);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 61 "  printf(\"  o(x) = -%f x + %f , o(%f)= 0 \\n\", o, c
+_o, c_o/o);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 60 "  printf(\"  l(x) = \+
+-%f x + %f , l(%f)= 0 \\n\", l, c_l,c_l/l);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 61 "  printf(\"  z(x) = -%f x + %f , z(%f)= 0 \\n\", z, c
+_z, c_z/z);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 67 "  printf(\"  z2(x)= \+
+-%f x + %f , z2(%f)= 0 \\n\\n\", z2,c_z2, c_z2/z2);" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 79 "  printf(\"  p3 = ( %f , %f ) \\n  p6 = ( %f , %f \+
+) \\n\", p3_x, p3_y, p6_x, p6_y);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+79 "  printf(\"  p7 = ( %f , %f ) \\n  p8 = ( %f , %f ) \\n\", p7_x, p
+7_y, p8_x, p8_y);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "  printf(\"  f
+racci\363n n(x), o(x) = %g\\n\", s);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 66 "  printf(\"  a(x) = (k/%g) / ((k/%g)-sq) = %f x - %f\\n\",v,v,a,
+c_a);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "  #Py:=implic
+itplot(x=y,x=xrange,y=yrange,colour=black);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 63 "  #Psq:=implicitplot(\{x=sq,y=sq\},x=0..sq,y=0..sq,co
+lour=black);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 68 "  #Pssq:=implicitpl
+ot(\{x=ssq,y=ssq\},x=0..ssq,y=0..ssq,colour=black);" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 53 "  #Pb:=plot(-b*x+c_b,x=xrange,y=yrange,colour=gree
+n);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "  #Pd:=plot(d*x-c_d,x=xrange
+,y=yrange,colour=red);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "  #Pe:=pl
+ot(-e*x+c_e,x=xrange,y=yrange,colour=red);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 50 "  #Pf:=plot(f*x-c_f,x=xrange,y=yrange,colour=red);" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "  #Pg:=plot(-g*x+c_g,x=xrange,y=yr
+ange,colour=red);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 55 "  #Pp3:=pointplot(\{[p3_x,p3_y],[p4_x,p4_y],[p
+5_x,p5_y]," }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 90 "  #                [p
+6_x,p6_y],[p7_x,p7_y],[p8_x,p8_y],[0,0],[p1,0],[p2,0]\},colour=black);
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 2 "  " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 52 "  #Pn:=plot(-n*x+c_n,x=xrange,y=yrange,colour=blue);
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "  #Po:=plot(-o*x+c_o,x=0..p6_x,
+y=yrange,colour=blue);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "  #Pl:=pl
+ot(-l*x+c_l,x=xrange,y=yrange,colour=blue);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 53 "  #Pz:=plot(-z*x+c_z,x=0..p5_x,y=yrange,colour=blue);
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "  #Pz2:=plot(-z2*x+c_z2,x=0..p6
+_x,y=yrange,colour=blue);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "  #Pte
+xt:=textplot(\{[p3_x,p3_y,\"N\"],[p6_x,p6_y,\"O\"]," }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 78 "  #                 [p4_x,p4_y,\"L\"],[p5_x,p5_y,
+\"Z\"]\},font=[TIMES,ITALIC,10]): " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+55 "  #display(\{Py,Psq,Pa,Pb,Pp3,Pd,Pe,Pn,Pz,Po,Pl,Ptext\});" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "end proc:" }}}{EXCHG {PARA 256 "" 1 
+"" {TEXT -1 345 "c_d - c_e = sq; sq * a = c_a; sq * p8_x = p7_x; si el
+ cuarto argumento es el negativo del tercero encontramos que k dividid
+o por la resta de las alturas de las rectas nos da una fracci\363n de \+
+k que es igual a la mitad de la distancia entre los dos primos. sq/2+1
+ hace la diferencia de alturas negativa, osea que reducimos la b\372sq
+ueda a (0..sq/2+1]" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "tanto
+7(7,23,4,-4);" }}{PARA 6 "" 1 "" {TEXT -1 50 "  p1=7, p2=23, k=161, sq
+(k)=12.688578 ssq=3.562103" }}{PARA 6 "" 1 "" {TEXT -1 31 "  a(x) = 1.
+085554 x - 13.774131" }}{PARA 6 "" 1 "" {TEXT -1 31 "  b(x) = -.085554
+ x + 13.774131" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" 
+{TEXT -1 47 "  d(x) = 2.230536 x - 28.302330 <----- objetivo" }}{PARA 
+6 "" 1 "" {TEXT -1 48 "  e(x) = -1.230536 x + 15.613753 <----- objetiv
+o" }}{PARA 6 "" 1 "" {TEXT -1 46 "  f(x) = 1.115268 x - 7.806876 <----
+- objetivo" }}{PARA 6 "" 1 "" {TEXT -1 47 "  g(x) = -.615268 x + 14.15
+1165 <----- objetivo" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 50 "  n(x) = -.703163 x + 28.302330 , n(40.250000)= 0 " }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  o(x) = -8.922144 x + 28.302330 , o(3.17
+2144)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  l(x) = -.847627 x + 8.1773
+30 , l(9.647317)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  z(x) = -10.7551
+86 x + 8.177330 , z(.760315)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 52 "  z2(
+x)= -14.766433 x + 15.613753 , z2(1.057381)= 0 " }}{PARA 6 "" 1 "" 
+{TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 33 "  p3 = ( 23.523262 , 11.7
+61631 ) " }}{PARA 6 "" 1 "" {TEXT -1 32 "  p6 = ( 1.853893 , 11.761631
+ ) " }}{PARA 6 "" 1 "" {TEXT -1 36 "  p7 = ( -139.308156 , 126.258738 \+
+) " }}{PARA 6 "" 1 "" {TEXT -1 35 "  p8 = ( -10.979021 , 126.258738 ) \+
+" }}{PARA 6 "" 1 "" {TEXT -1 32 "  fracci\363n n(x), o(x) = 4       " 
+}}{PARA 6 "" 1 "" {TEXT -1 66 "  a(x) = (k/-4       ) / ((k/-4       )
+-sq) = .760315 x - 9.647317" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+84 "c_o-c_z;convert((c_o-c_z),rational,10);k/(c_o-c_z);convert(k/(c_o-
+c_z),rational,10);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"_q$)*********
+**********************************************************************
+*************\\7?!#)*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6##\"$h\"\"\")
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"_qo++++++++++++++++++++++++++++
+++++++++++++++++++++!)!#**" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\")" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "tanto7(3,11,2,-2);" }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  p1=3, p2=11, k=33, sq(k)=5.744563 ssq=2
+.396782" }}{PARA 6 "" 1 "" {TEXT -1 30 "  a(x) = 1.210768 x - 6.955330
+" }}{PARA 6 "" 1 "" {TEXT -1 30 "  b(x) = -.210768 x + 6.955330" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 47 "  d(x) = \+
+2.093070 x - 12.023774 <----- objetivo" }}{PARA 6 "" 1 "" {TEXT -1 47 
+"  e(x) = -1.093070 x + 6.279211 <----- objetivo" }}{PARA 6 "" 1 "" 
+{TEXT -1 46 "  f(x) = 1.046535 x - 3.139605 <----- objetivo" }}{PARA 
+6 "" 1 "" {TEXT -1 46 "  g(x) = -.546535 x + 6.011887 <----- objetivo
+" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 50 "  n(x
+) = -.728714 x + 12.023774 , n(16.500000)= 0 " }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "  o(x) = -4.186141 x + 12.023774 , o(2.872281)= 0 " }}
+{PARA 6 "" 1 "" {TEXT -1 48 "  l(x) = -.885643 x + 3.773774 , l(4.2610
+54)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 48 "  z(x) = -5.087633 x + 3.77377
+4 , z(.741754)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 49 "  z2(x)= -6.558422 \+
+x + 6.279211 , z2(.957427)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 31 "  p3 = ( 9.785660 , 4.892830 ) " }}{PARA 
+6 "" 1 "" {TEXT -1 31 "  p6 = ( 1.703465 , 4.892830 ) " }}{PARA 6 "" 
+1 "" {TEXT -1 34 "  p7 = ( -52.571321 , 50.333208 ) " }}{PARA 6 "" 1 "
+" {TEXT -1 33 "  p8 = ( -9.151492 , 50.333208 ) " }}{PARA 6 "" 1 "" 
+{TEXT -1 32 "  fracci\363n n(x), o(x) = 2       " }}{PARA 6 "" 1 "" 
+{TEXT -1 66 "  a(x) = (k/-2       ) / ((k/-2       )-sq) = .741754 x -
+ 4.261054" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 86 "(c_o-c_z);conv
+ert((c_o-c_z),rational,10);k/(c_o-c_z);convert(k/(c_o-c_z),rational,10
+);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"_q$**************************
+*********************************************************************
+\\#)!#**" }}{PARA 11 "" 1 "" {XPPMATH 20 "6##\"#L\"\"%" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#$\"_q.++++++++++++++++++++++++++++++++++++++++++++
+++++S!#**" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"%" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 35 "tanto7(101,103,denom(v),-denom(v));" }}
+{PARA 6 "" 1 "" {TEXT -1 57 "  p1=101, p2=103, k=10403, sq(k)=101.9950
+98 ssq=10.099262" }}{PARA 6 "" 1 "" {TEXT -1 32 "  a(x) = 1.009901 x -
+ 103.004999" }}{PARA 6 "" 1 "" {TEXT -1 32 "  b(x) = -.009901 x + 103.
+004999" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 52 
+"  d(x) = 102.497549 x - 10454.247543 <----- objetivo" }}{PARA 6 "" 1 
+"" {TEXT -1 53 "  e(x) = -101.497549 x + 10352.252445 <----- objetivo
+" }}{PARA 6 "" 1 "" {TEXT -1 50 "  f(x) = 51.248774 x - 5176.126223 <-
+---- objetivo" }}{PARA 6 "" 1 "" {TEXT -1 51 "  g(x) = -50.748774 x + \+
+5227.123771 <----- objetivo" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 
+6 "" 1 "" {TEXT -1 52 "  n(x) = -.246394 x + 150.778828 , n(611.941176
+)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 52 "  o(x) = -25.131012 x + 150.7788
+28 , o(5.999712)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  l(x) = -.881477
+ x + 77.062058 , l(87.423769)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 50 "  z(
+x) = -89.906351 x + 77.062058 , z(.857137)= 0 " }}{PARA 6 "" 1 "" 
+{TEXT -1 57 "  z2(x)= -5277.872546 x + 10352.252445 , z2(1.961444)= 0 \+
+" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 35 "  p3 \+
+= ( 202.009614 , 101.004807 ) " }}{PARA 6 "" 1 "" {TEXT -1 33 "  p6 = \+
+( 1.980582 , 101.004807 ) " }}{PARA 6 "" 1 "" {TEXT -1 36 "  p7 = ( -1
+16.074256 , 179.378865 ) " }}{PARA 6 "" 1 "" {TEXT -1 34 "  p8 = ( -1.
+138038 , 179.378865 ) " }}{PARA 6 "" 1 "" {TEXT -1 33 "  fracci\363n n
+(x), o(x) = 17       " }}{PARA 6 "" 1 "" {TEXT -1 69 "  a(x) = (k/-17 \+
+      ) / ((k/-17       )-sq) = .857137 x - 87.423769" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 78 "j:=(c_o-c_z);v:=convert((c_o-c_z),r
+ational,6);convert(k/(c_o-c_z),rational,6);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"jG$\"_qk7IGEo`+v^q)y6Vc'*zoG_XS))>#oROl3@u#R.1nh/0X
+'GQ\"3`/x;P(!#)*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"vG#\"%2R\"#`" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6##\"%dY\"#L" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 42 "n1:=nextprime(263);n2:=nextprime(3422432);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n1G\"$p#" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#n2G\"(PCU$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 33 "tanto7(n1,n2,denom(v),-denom(v));" }}{PARA 6 "" 1 "" {TEXT -1 
+68 "  p1=269, p2=3422437, k=920635553, sq(k)=30341.976748 ssq=174.1894
+85" }}{PARA 6 "" 1 "" {TEXT -1 34 "  a(x) = 1.000033 x - 30342.976781
+" }}{PARA 6 "" 1 "" {TEXT -1 34 "  b(x) = -.000033 x + 30342.976781" }
+}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 50 "  d(x) =
+ 1.008945 x - 30613.382929 <----- objetivo" }}{PARA 6 "" 1 "" {TEXT 
+-1 48 "  e(x) = -.008945 x + 271.406180 <----- objetivo" }}{PARA 6 "" 
+1 "" {TEXT -1 47 "  f(x) = .504472 x - 135.703090 <----- objetivo" }}
+{PARA 6 "" 1 "" {TEXT -1 50 "  g(x) = -.004472 x + 15306.691464 <-----
+ objetivo" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 
+58 "  n(x) = -.028458 x + 32067.863688 , n(1126848.902081)= 0 " }}
+{PARA 6 "" 1 "" {TEXT -1 56 "  o(x) = -863.471911 x + 32067.863688 , o
+(37.138282)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 56 "  l(x) = -.974480 x + \+
+28792.375996 , l(29546.398793)= 0 " }}{PARA 6 "" 1 "" {TEXT -1 56 "  z
+(x) = -29567.650837 x + 28792.375996 , z(.973780)= 0 " }}{PARA 6 "" 1 
+"" {TEXT -1 55 "  z2(x)= -15306.695937 x + 271.406180 , z2(.017731)= 0
+ " }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 39 "  p3
+ = ( 60681.953563 , 30340.976781 ) " }}{PARA 6 "" 1 "" {TEXT -1 35 "  \+
+p6 = ( 1.999934 , 30340.976781 ) " }}{PARA 6 "" 1 "" {TEXT -1 39 "  p7
+ = ( -3462.379874 , 32166.396088 ) " }}{PARA 6 "" 1 "" {TEXT -1 35 "  \+
+p8 = ( -.114112 , 32166.396088 ) " }}{PARA 6 "" 1 "" {TEXT -1 34 "  fr
+acci\363n n(x), o(x) = 817       " }}{PARA 6 "" 1 "" {TEXT -1 74 "  a(
+x) = (k/-817       ) / ((k/-817       )-sq) = .973780 x - 29546.398793
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 79 "j:=(c_o-c_z);v:=convert
+((c_o-c_z),rational,9);convert(k/(c_o-c_z),rational,30);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"jG$\"^qXu,Hx31YUQXo5^BLjClfS@OsX.d1[(flVr;Fq
+ub#ysc\"\\Y#p([vK!#&*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"vG#\"'C\\
+m\"$.#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6##\"*KW)*e%\"%L;" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "evalf(j/v);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"_qI1E&QP`R5\\`+jyzsH[7?_[<\"=+c`m4EQ3'4C*yQW*=s'Rh9c
+d********!$+\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{MARK "9 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 
+33 1 1 }

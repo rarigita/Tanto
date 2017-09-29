@@ -1,0 +1,139 @@
+> restart;with(geometry);Digits:=20;_EnvHorizontalName := x; _EnvVerticalName := y;
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               20
+                               x
+                               y
+> tanto := proc( p1, p2, c )
+>   local sq, k, a, c_a, b, c_b, i;
+>   k := p1 * p2;
+>   sq := evalf(sqrt(k));
+>   
+>   line(Y_X,y=x,[x,y]);
+>   line(Y_1,y=-x,[x,y]);
+>   line(l0,y=0,[x,y]);
+>   line(l1,x=0,[x,y]);
+>   line(sqv,x=sq,[x,y]);
+>   line(sqh,y=sq,[x,y]);
+>   line(sqv_1,x=-sq,[x,y]);
+>   line(sqh_1,y=-sq,[x,y]);
+>   line(_sqh,y=k-sq,[x,y]);
+>   line(top,y=k,[x,y]);
+>   line(right,x=k,[x,y]);
+> 
+>   point(K,k,0);
+>   point(_K,-k,0);
+>   point(KK,k,k);
+>   point(_KK,-k,k);
+>   point(K_K,k,-k);
+>   point(_K_K,-k,-k);
+>   point(SQ,sq,sq);
+>   point(SQ_1,sq,k-sq);
+> 
+>   line(A,[K,SQ]);
+>   line(B,[KK,SQ_1]);
+> 
+>   i := 1;
+>   while (i < c ) do
+>     a := VerticalCoord(intersection(Ax,A,Y_1));
+>     point(A_N,0,a);
+>     line(A,[A_N,K]);
+>     b := VerticalCoord(intersection(Bx,B,Y_1));
+>     point(B_N,0,b);
+>     line(B,[B_N,KK]);
+>     i := i+1;
+>   end do;
+>   line(red,[intersection(I1,A,Y_X),intersection(I2,B,Y_1)]);
+>   print(coordinates(intersection(I3,A,l1)));
+>   print(coordinates(intersection(I4,B,l1)));
+>   print(coordinates(intersection(I5,red,l1)));
+>   print(coordinates(intersection(Q,B,Y_1)));print(coordinates(intersection(Q,A,B)));
+>   draw([A(colour=green),B(colour=green),Y_X,Y_1,sqv,sqh,sqv_1,sqh_1,_sqh,top,right],colour=black,axes=normal,view=[-k..k,-k..k]);
+> end proc:
+> tanto(3,11,3);
+                  [0., 12.023773638989789408]
+                  [0., 15.955783815757938513]
+                  [0., 9.5916378755450167441]
+        [-10.521512895346522066, 10.521512895346522066]
+        [-4.4638909199577492704, 13.650222547193239883]
+
+> tanto(7,23,7);
+                  [0., 28.302330214396185544]
+                  [0., 23.040484109908188432]
+                  [0., 16.375119747853720743]
+        [-12.408094556384582627, 12.408094556384582627]
+         [5.0953194775075925005, 27.406619565947337590]
+
+> tanto(23,61,23);
+                  [0., 97.048819411579503942]
+                 [0., 0.011860191260139861214]
+                 [0., 0.011859466596290635325]
+     [-0.0059301206950612489035, 0.0059301206950612489035]
+         [90.759666253071272398, 90.770759211971848546]
+
+> tanto(59,127,59);
+                  [0., 271.85865861754636084]
+               [                            -12]
+               [0., 2.1983246416751166734 10   ]
+               [                            -12]
+               [0., 2.1983246416751077852 10   ]
+  [                         -12                          -12]
+  [-1.0991623208375584979 10   , 1.0991623208375584979 10   ]
+         [262.34050336003573438, 262.34050336003785573]
+
+> tanto(1237,9743,1237,1);
+                  [0., 5393.3703608829441392]
+               [                            -362]
+               [0., 3.5340174769163715340 10    ]
+               [                            -362]
+               [0., 3.5340174769163715340 10    ]
+ [                         -362                          -362]
+ [-1.7670087384581857670 10    , 1.7670087384581857670 10    ]
+         [5390.9578805548622381, 5390.9578805548622381]
+
+> tanto(101,103,101,1);
+                  [0., 10454.247542953116361]
+               [                            -25]
+               [0., 8.2061177069552268495 10   ]
+               [                            -25]
+               [0., 8.2061177069552268493 10   ]
+  [                         -25                          -25]
+  [-4.1030588534776134247 10   , 4.1030588534776134247 10   ]
+         [5214.2804061452344791, 5214.2804061452344791]
+
+> 

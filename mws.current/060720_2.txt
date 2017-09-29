@@ -1,0 +1,184 @@
+> restart; Digits:=20; with(geometry); _EnvHorizontalName := x; _EnvVerticalName := y;
+                               20
+[Apollonius, AreCollinear, AreConcurrent, AreConcyclic, AreConjugate, 
+
+  AreHarmonic, AreOrthogonal, AreParallel, ArePerpendicular, AreSimilar, 
+
+  AreTangent, CircleOfSimilitude, CrossProduct, CrossRatio, DefinedAs, 
+
+  Equation, EulerCircle, EulerLine, ExteriorAngle, ExternalBisector, 
+
+  FindAngle, GergonnePoint, GlideReflection, HorizontalCoord, HorizontalName, 
+
+  InteriorAngle, IsEquilateral, IsOnCircle, IsOnLine, IsRightTriangle, 
+
+  MajorAxis, MakeSquare, MinorAxis, NagelPoint, OnSegment, ParallelLine, 
+
+  PedalTriangle, PerpenBisector, PerpendicularLine, Polar, Pole, RadicalAxis, 
+
+  RadicalCenter, RegularPolygon, RegularStarPolygon, SensedMagnitude, 
+
+  SimsonLine, SpiralRotation, StretchReflection, StretchRotation, TangentLine, 
+
+  VerticalCoord, VerticalName, altitude, apothem, area, asymptotes, bisector, 
+
+  center, centroid, circle, circumcircle, conic, convexhull, coordinates, 
+
+  detail, diagonal, diameter, dilatation, directrix, distance, draw, dsegment, 
+
+  ellipse, excircle, expansion, foci, focus, form, homology, homothety, 
+
+  hyperbola, incircle, inradius, intersection, inversion, line, medial, 
+
+  median, method, midpoint, orthocenter, parabola, perimeter, point, powerpc, 
+
+  projection, radius, randpoint, reciprocation, reflection, rotation, segment, 
+
+  sides, similitude, slope, square, stretch, tangentpc, translation, triangle, 
+
+  vertex, vertices]
+                               x
+                               y
+> tanto := proc( k, d )
+>   local sq, c, aa, c_b, i, n, a, b, f, para;
+>   sq := evalf( sqrt( k ) );
+>   print( k, sq );
+>   c := ( (k*sqrt(k))/(p*sqrt(k)-(2*k)) ) * 2 ;
+>   aa  := ( k / ( k - sq ) );
+>   c_b := frac(k/aa) + d;
+>   i := (k/c_b);
+>   print( i );
+>   n := c=i;
+>   f := solve(n,p);
+>   a := sqrt(k)/(f*sqrt(k)-(2*k));
+>   b := 1-(f*sqrt(k))/(f*sqrt(k)-(2*k));
+>   c := (k*sqrt(k))/(f*sqrt(k)-(2*k));
+>   para := a*x^2+b*x+c=y;
+>   parabola( P, para, [x,y] );
+>   line( Y, y=x, [x,y] );
+> 
+>   point(K,k,0);
+>   point(KK,k,k);
+>   point(SQ,sq,sq);
+>   point(SQ0,sq,0);
+> 
+>   line(A,[K,SQ]);
+>   line(B,[KK,SQ0]);
+> 
+>   intersection(A3,A,B);
+> 
+>   line(C,[point(PC,0,i),A3]);
+> 
+>   print( solve( {Equation(P), Equation(Y)} ) );
+>   print( solve( {Equation(P), y=sq} ) );
+>   print( Equation(C), slope(C) );
+>   print( solve( {Equation(C), y=0} ) );
+>   print( solve( {Equation(P), Equation(C)} ) );
+>   print( solve( {Equation(C), Equation(Y)} ) );
+> 
+>   draw([Y,P(colour=green),C(colour=blue)],axes=normal,colour=black,view=[-k..k,-k..k]);
+> 
+> end proc:
+> tanto(33,1);
+                   33, 5.7445626465380286599
+                     26.285660458484684093
+    {y = 2.9999999999999999993, x = 2.9999999999999999993}, 
+
+      {x = 11.000000000000000003, y = 11.000000000000000003}
+    {y = 5.7445626465380286599, x = 1.9466846796290863301}, 
+
+      {y = 5.7445626465380286599, x = 9.5424406134469709896}
+-257.22254817374796569 + 21.392830229242342037 x + 9.7856604584846841108 y = 0, 
+
+  -2.1861406616345071631
+              {y = 0., x = 12.023773638989789409}
+   {y = 5.5594277152821249934, x = 9.4807406984078602317}, 
+
+     {y = 33.895049231880200213, x = -3.4807406984078602314}
+     {y = 8.2499999999999999991, x = 8.2499999999999999991}
+
+> tanto(161,2);
+                   161, 12.688577540449520380
+                     69.654077875193324701
+              {x = 7., y = 7.}, {y = 23., x = 23.}
+    {y = 12.688577540449520380, x = 5.0297704392433794524}, 
+
+      {y = 12.688577540449520380, x = 20.347384641655661308}
+-1638.4911441335719235 + 57.892446725115994819 x + 23.523262300154659765 y = 0, 
+
+  -2.4610721925561900473
+              {y = 0., x = 28.302330214396185547}
+   {y = 16.762248185397765615, x = 21.491376746189438574}, 
+
+     {x = -7.4913767461894385729, y = 88.090896869202223125}
+     {x = 20.125000000000000000, y = 20.125000000000000000}
+
+> tanto(1403,4);
+                  1403, 37.456641600656084447
+                     308.80240489119248011
+    {y = 22.999999999999999943, x = 22.999999999999999943}, 
+
+      {y = 61.000000000000000152, x = 61.000000000000000152}
+    {x = 19.007850462613703294, y = 37.456641600656084447}, 
+
+      {y = 37.456641600656084447, x = 55.905432738698465600}
+-22531.856970836041447 + 272.31975997983692628 x + 72.965289822711107675 y = 0, 
+
+  -3.7321822559947529079
+              {y = 0., x = 82.740440768985486231}
+   {x = 63.199531613356135303, y = 72.930234416645273094}, 
+
+     {x = -22.199531613356135258, y = 391.65510286995481775}
+     {y = 65.255813953488372022, x = 65.255813953488372022}
+
+> tanto(7493,6);
+                  7493, 86.562116425142933308
+                     1163.8918152020726622
+    {y = 58.999999999999999983, x = 58.999999999999999983}, 
+
+      {y = 127.00000000000000004, x = 127.00000000000000004}
+    {y = 86.562116425142933308, x = 53.177184867978021291}, 
+
+      {y = 86.562116425142933308, x = 119.94704798230784533}
+                         5                                                       
+-1.9919667836637480038 10  + 1078.3182783129114236 x + 171.14707377832247712 y = 
+
+  0, -6.3005358754167109470
+              {y = 0., x = 184.72901959709800994}
+   {y = 256.45394210001989015, x = 144.02550688468792612}, 
+
+     {y = 1491.6803877657880272, x = -52.025506884687926127}
+     {y = 159.42553191489361702, x = 159.42553191489361702}
+
+> tanto(12052091,2018);
+                12052091, 3471.6121615180460708
+                     5971.1472543673648990
+    {y = 1236.9999999999999793, x = 1236.9999999999999793}, 
+
+      {x = 9743.0000000000001627, y = 9743.0000000000001627}
+   {x = 7215.1558748287570120, y = 3471.6121615180460708}, 
+
+     {x = -271.93155179266487044, y = 3471.6121615180460708}
+                         7                                                       
+-4.1447075997439543470 10  + 2500.5348048816583214 x + 6941.2248989714131551 y = 
+
+  0, -0.36024402627441168025
+              {y = 0., x = 16575.284581732142885}
+   {x = 7169.9232848395418218, y = 3388.2252221581128934}, 
+
+     {y = 6576.6898263563711665, x = -1680.9232848395417512}
+     {y = 4389.7617920233108157, x = 4389.7617920233108157}
+
+> 9743-7481;
+                              2262
+> 10980-2018;
+                              8962
+> 7481+2018;
+                              9499
+> 7481+3471;
+                             10952
+> 187+86;
+                              273
+> 5947-2018;
+                              3929
+> 
